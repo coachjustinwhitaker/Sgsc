@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGSC U13 Strikers White — Game Model</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #01428A;
+    --navy-dark: #0d3668;
+    --navy-deeper: #0a2540;
+    --gold: #C89D3F;
+    --gold-warm: #DFC477;
+    --gold-pale: #f5edce;
+    --white: #ffffff;
+    --off-white: #f8f6f1;
+    --text: #1a1a2e;
+    --text-light: #4a5568;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(15px, 2.2vw, 17px);
+    color: var(--text);
+    background: var(--off-white);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  .site-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy-dark);
+    border-bottom: 3px solid var(--gold);
+    display: flex; align-items: center;
+    gap: clamp(4px, 1vw, 8px);
+    padding: 0 clamp(12px, 3vw, 24px);
+    height: 54px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .nav-logo { flex-shrink: 0; margin-right: clamp(8px,2vw,16px); display: flex; align-items: center; }
+  .nav-logo svg { height: 34px; width: auto; }
+  .nav-tab {
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: clamp(11px,1.6vw,13px); letter-spacing: 0.04em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    padding: 6px 12px; border-radius: 4px;
+    transition: color 0.2s, background 0.2s; white-space: nowrap;
+  }
+  .nav-tab:hover, .nav-tab.active { color: var(--gold-warm); background: rgba(255,255,255,0.08); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(200,157,63,0.12) 0%, transparent 60%), radial-gradient(ellipse at 10% 80%, rgba(13,54,104,0.8) 0%, transparent 50%);
+    color: var(--white);
+    padding: clamp(48px,8vw,80px) clamp(20px,5vw,60px);
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(200,157,63,0.03) 40px, rgba(200,157,63,0.03) 41px);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: clamp(10px,1.8vw,13px); letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-warm);
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(28px,6vw,52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--white);
+  }
+  .hero-meta {
+    display: flex; gap: clamp(12px,3vw,32px); flex-wrap: wrap; justify-content: center; margin-top: 4px;
+  }
+  .hero-meta-item {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: clamp(10px,1.6vw,12px); letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .hero-meta-item span { color: var(--gold-warm); }
+
+  /* SECTIONS */
+  .section { max-width: 960px; margin: 0 auto; padding: clamp(40px,6vw,64px) clamp(16px,4vw,40px); }
+  .section-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: clamp(24px,4vw,40px); padding-bottom: 16px; border-bottom: 2px solid var(--gold);
+  }
+  .section-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(32px,6vw,52px); color: var(--gold); line-height: 1; opacity: 0.4; flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(20px,3.5vw,30px); color: var(--navy-dark); line-height: 1.2;
+  }
+  .section-divider { height: 4px; background-image: linear-gradient(90deg, var(--navy-dark) 0%, var(--gold) 50%, var(--navy-dark) 100%); }
+  .bg-white { background: var(--white); }
+  .bg-off { background: var(--off-white); }
+
+  /* MOTTO BANNER */
+  .motto-banner {
+    background: var(--navy-dark);
+    background-image: linear-gradient(135deg, var(--navy-deeper) 0%, var(--navy-dark) 100%);
+    border-left: 5px solid var(--gold); border-radius: 0 8px 8px 0;
+    padding: clamp(20px,3vw,32px); margin-bottom: 28px; color: var(--white);
+  }
+  .motto-eyebrow {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: clamp(11px,1.6vw,13px); letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-warm); margin-bottom: 10px;
+  }
+  .motto-words { display: flex; gap: clamp(12px,3vw,32px); flex-wrap: wrap; align-items: center; margin-top: 16px; }
+  .motto-word {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(22px,4.5vw,36px); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .motto-word:nth-child(1) { color: var(--gold-warm); }
+  .motto-word:nth-child(2) { color: var(--white); }
+  .motto-word:nth-child(3) { color: var(--gold); }
+  .motto-sep { color: rgba(255,255,255,0.3); font-size: 1.4em; font-weight: 300; }
+
+  /* PILLARS */
+  .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .pillar-card {
+    background: var(--navy); border-radius: 8px;
+    padding: clamp(20px,3vw,28px); color: var(--white);
+    position: relative; overflow: hidden;
+  }
+  .pillar-card::after {
+    content: ''; position: absolute; bottom: -16px; right: -16px;
+    width: 80px; height: 80px; border-radius: 50%; background: rgba(200,157,63,0.1);
+  }
+  .pillar-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-warm); opacity: 0.6; margin-bottom: 8px;
+  }
+  .pillar-name {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(18px,3vw,24px); color: var(--gold-warm); margin-bottom: 12px; letter-spacing: 0.04em;
+  }
+  .pillar-body { font-size: clamp(13px,1.8vw,14px); color: rgba(255,255,255,0.85); line-height: 1.7; position: relative; z-index: 1; }
+
+  /* MOMENT BLOCKS */
+  .moment-block {
+    background: var(--white); border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(1,66,138,0.08); margin-bottom: 16px; overflow: hidden;
+  }
+  .moment-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: clamp(16px,2.5vw,24px) clamp(16px,3vw,28px);
+    cursor: pointer; user-select: none; transition: background 0.15s;
+  }
+  .moment-header:hover { background: #f0f4fa; }
+  .moment-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(28px,5vw,40px); color: var(--gold); opacity: 0.35; line-height: 1; flex-shrink: 0; min-width: 48px;
+  }
+  .moment-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(16px,2.5vw,20px); color: var(--navy-dark); flex: 1;
+  }
+  .moment-badge {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 20px; flex-shrink: 0;
+  }
+  .badge-complete { background: #d1fae5; color: #065f46; }
+  .badge-progress { background: #fef3c7; color: #92400e; }
+  .moment-toggle { color: var(--gold); font-size: 20px; transition: transform 0.2s; flex-shrink: 0; margin-left: 8px; }
+  .moment-block.open .moment-toggle { transform: rotate(180deg); }
+  .moment-body { display: none; border-top: 2px solid var(--gold-pale); }
+  .moment-block.open .moment-body { display: block; }
+
+  /* UNIVERSAL PRINCIPLE */
+  .universal-principle {
+    background: var(--navy-deeper);
+    padding: clamp(16px,3vw,24px) clamp(20px,4vw,36px);
+    border-bottom: 2px solid rgba(200,157,63,0.2);
+  }
+  .universal-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-warm); margin-bottom: 10px;
+  }
+  .universal-text { font-size: clamp(13px,2vw,15px); color: rgba(255,255,255,0.9); line-height: 1.75; max-width: 760px; }
+  .universal-text em { color: var(--gold-warm); font-style: normal; font-weight: 600; }
+
+  /* ZONES */
+  .zones-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-bottom: 1px solid var(--gold-pale); }
+  .zone { padding: clamp(20px,3vw,28px); border-right: 1px solid var(--gold-pale); }
+  .zone:last-child { border-right: none; }
+  .zone-header { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--gold-pale); }
+  .zone-formation {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: clamp(20px,3.5vw,28px); color: var(--navy); letter-spacing: 0.04em; line-height: 1;
+  }
+  .zone-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-light); opacity: 0.7; margin-top: 4px;
+  }
+  .zone-leader {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 16px; padding: 10px 12px;
+    background: var(--off-white); border-radius: 6px;
+    border-left: 3px solid var(--gold);
+  }
+  .zone-leader-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .zone-leader-name {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(12px,1.8vw,14px); color: var(--navy);
+  }
+
+  /* PRINCIPLES */
+  .principle { margin-bottom: 14px; }
+  .principle-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(12px,1.8vw,13px); color: var(--navy); margin-bottom: 4px;
+  }
+  .principle-body { font-size: clamp(12px,1.7vw,13px); color: var(--text-light); line-height: 1.7; }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy-deeper); color: rgba(255,255,255,0.5);
+    text-align: center; padding: clamp(24px,4vw,40px) 20px;
+    font-size: clamp(11px,1.6vw,13px);
+  }
+  .footer-title {
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: clamp(13px,2vw,15px); color: var(--gold-warm); margin-bottom: 6px;
+  }
+
+  @media (max-width: 720px) {
+    .zones-grid { grid-template-columns: 1fr; }
+    .zone { border-right: none; border-bottom: 1px solid var(--gold-pale); }
+    .zone:last-child { border-bottom: none; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .formation-strip { grid-template-columns: 1fr; }
+    .formation-zone { border-right: none; border-bottom: 1px solid rgba(200,157,63,0.15); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" stroke="#C89D3F" stroke-width="2"/>
+      <text x="20" y="26" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900" font-size="13" fill="#C89D3F">SG</text>
+    </svg>
+  </div>
+  <a href="#model" class="nav-tab">Game Model</a>
+  <a href="#principles" class="nav-tab">Principles</a>
+  <a href="#m1" class="nav-tab">Out of Possession</a>
+  <a href="#m2" class="nav-tab">Ball Won</a>
+  <a href="#m3" class="nav-tab">Ball Lost</a>
+  <a href="#m4" class="nav-tab">In Possession</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Sierra Gold Soccer Club · U13 · NorCal Premier Silver</div>
+  <h1 class="hero-title">Strikers White<br>Game Model</h1>
+  <div class="hero-meta">
+    <div class="hero-meta-item">Base Formation <span>3–5–2</span></div>
+    <div class="hero-meta-item">Season <span>26/27</span></div>
+  </div>
+</div>
+
+
+
+<!-- SECTION 1: GAME MODEL -->
+<div class="bg-white">
+<section id="model" class="section">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">The Game Model — Three Pillars</h2>
+  </div>
+
+  <div class="motto-banner">
+    <div class="motto-eyebrow">Our Identity</div>
+    <p style="font-size:clamp(13px,2vw,15px);color:rgba(255,255,255,0.8);line-height:1.75;max-width:680px;">These three pillars are the foundation of how we play and who we are. They are not separate ideas. They are layered. Smart informs Competent, which enables Purpose. Every decision on the field flows from this foundation.</p>
+    <div class="motto-words">
+      <span class="motto-word">Smart</span>
+      <span class="motto-sep">·</span>
+      <span class="motto-word">Competent</span>
+      <span class="motto-sep">·</span>
+      <span class="motto-word">Purpose</span>
+    </div>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 01</div>
+      <div class="pillar-name">Smart</div>
+      <div class="pillar-body">We play with an understanding of the game, the rules, of our opponent and of ourselves. We see how our opponent plays and we shift and adapt to find areas to exploit. We understand each other's skills and weaknesses. We work together to build each other up and to always support each other.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 02</div>
+      <div class="pillar-name">Competent</div>
+      <div class="pillar-body">We play with confidence knowing that our skills have been honed through experience and training. We understand the game, how others play it, and how we use our skills on the field. Competency is a lifelong staircase. Every step lifts us further, and we have many more to go.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 03</div>
+      <div class="pillar-name">Purpose</div>
+      <div class="pillar-body">We play with purpose. Every decision on the field has a reason behind it. We are intentional in how we press, how we transition, how we build, and how we attack. We are patient when patience creates the opportunity, and direct when directness wins the moment. We know when, where, and how to strike.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- SECTION 2: PRINCIPLES OF PLAY -->
+<div class="bg-off">
+<section id="principles" class="section">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">Principles of Play — Four Moments</h2>
+  </div>
+
+  <p style="margin-bottom:28px;font-size:clamp(13px,1.9vw,15px);color:var(--text-light);line-height:1.75;">Every game moves through four moments: Out of Possession, Transition Ball Won, Transition Ball Lost, and In Possession. Each moment is organized across three zones of the field. Every zone has a leader, a formation, and a set of principles that tell us how to play in that situation. The system is fluid. The formation shifts as the ball moves and as the situation changes. That fluidity is the point.</p>
+
+  <!-- MOMENT 1: OUT OF POSSESSION -->
+  <div class="moment-block open" id="m1">
+    <div class="moment-header" onclick="toggleMoment('m1')">
+      <div class="moment-num">01</div>
+      <div class="moment-title">Out of Possession</div>
+      <span class="moment-toggle">▾</span>
+    </div>
+    <div class="moment-body">
+      <div class="universal-principle">
+        <div class="universal-label">Universal Principle</div>
+        <div class="universal-text">We defend as a unit. Every player has a role in every defensive moment. There is no standing and watching. <em>Press together, recover together, hold together.</em></div>
+      </div>
+      <div class="zones-grid">
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Their Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 10</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Trigger</div>
+            <div class="principle-body">Goal kick or deep pass back to CB or GK activates the press immediately. Both strikers go on the trigger. No hesitation.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Press Shape — Four Lines</div>
+            <div class="principle-body">The press operates in four lines. Line 1: both strikers apply direct pressure and cut the central lane, forcing play wide. Line 2: the 10 and 8 support the press, closing space and cutting secondary passing options. Line 3: the 6 and wingbacks hold shape, compress space, and anticipate the wide outlet. Line 4: the back three stays compact and does not step out to chase.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Backline and GK</div>
+            <div class="principle-body">Back three stay compact. Center CB holds fractionally deeper as a sweeper. GK plays higher to cover the ball over the top.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Press Broken</div>
+            <div class="principle-body">Midfield delays to allow strikers to recover. Backline snaps flat to hold the offside trap.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Adapt</div>
+            <div class="principle-body">If direct balls consistently bypass the press in the first 10–15 minutes, GK or center CB calls the shift to a mid-block. Their call, not the sideline.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Middle Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 6 — calls unit shifts and trap triggers</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Shape</div>
+            <div class="principle-body">Compress vertically. Gap between midfield and backline stays tight, roughly 15 to 20 yards. Mids flatten into a compact block. No space through the middle.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Controlled Pressure</div>
+            <div class="principle-body">Relax the press. Allow lateral and backward passing on their half. We are patient, waiting for the mistake, not chasing the ball.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Unit Shifting</div>
+            <div class="principle-body">The midfield block shifts together as a unit. One midfielder out of position creates the gap. Collective movement is non-negotiable.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Transition Readiness</div>
+            <div class="principle-body">Strikers stay connected to the midfield line, not dropping deep. The moment the ball is won, they are immediate outlets.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">5–3–2</div>
+            <div class="zone-label">Our Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">GK — takes full command of the defensive third</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Shape — Low Block</div>
+            <div class="principle-body">Wingbacks absorb into the defensive line creating a back five. Three mids hold a compact line above. Strikers drop into the gap between the mid and defensive lines to pressure opposing mids from behind.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Aerial Duels and Wide Coverage</div>
+            <div class="principle-body">CBs own the air. Opposite-side wingback tracks and covers back post runners. Strikers hold their gap position.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Mid Pressure Trigger</div>
+            <div class="principle-body">Mids apply primary pressure. Wingback steps if ball goes wide. When a wingback steps, a mid slides across to cover. Ball goes back, restructure immediately.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Set Pieces</div>
+            <div class="principle-body">Corner kicks and dead ball situations follow set piece principles, handled separately from open play structure.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 2: TRANSITION BALL WON -->
+  <div class="moment-block open" id="m2">
+    <div class="moment-header" onclick="toggleMoment('m2')">
+      <div class="moment-num">02</div>
+      <div class="moment-title">Transition — Ball Won</div>
+      <span class="moment-toggle">▾</span>
+    </div>
+    <div class="moment-body">
+      <div class="universal-principle">
+        <div class="universal-label">Universal Principle</div>
+        <div class="universal-text">Win it, read the pressure, play forward at the right moment, at the right speed, to the right target. <em>Attack is the default.</em> Three seconds is the window before their shape recovers. Scan before you win the ball, not after. All positions must master receiving half-turned or facing forward. Receiving with back to goal under pressure is how dangerous turnovers happen.</div>
+      </div>
+      <div class="zones-grid">
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Their Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 10 — organizes the attack</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Decision Tree — Forward First</div>
+            <div class="principle-body">Forward is always the first look. Can I shoot? Take it. Can I find the other striker in a better position? Play them. Are the wingbacks pushing into space? Find them. If none of those options are there, recycle to the midfield and create the next opportunity. Every decision starts with: can we go forward?</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Strikers</div>
+            <div class="principle-body">Push high immediately. Position for shots, headers, and second balls. Rebounds are not luck. They are positioning. Second ball mentality is an expectation, not a bonus.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Wingbacks</div>
+            <div class="principle-body">Wingbacks are midfielders who own the wide channels. Hold width and time the forward run into dangerous space as the ball arrives. Timing the run is the skill.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The 6 — Safety Valve</div>
+            <div class="principle-body">Holds deepest of the mids. Primary recycle target. First defensive position if possession is lost. The pivot the system rotates around when transition reverses.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Middle Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 6 — safety valve and transition anchor</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Decision Tree</div>
+            <div class="principle-body">Can we play forward or drive into space on the wide channels? Can we find the striker centrally? If not, find width. If not, hold possession and build up. Forward first, always.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Drive Into Space, Not Pressure</div>
+            <div class="principle-body">Midfielders who win the ball centrally should drive forward if space exists. Carrying 10–15 yards forces defensive decisions. Drive into space. Never drive into traffic.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Read What the Defense Gives You</div>
+            <div class="principle-body">A defender committing to you is a gift to your teammates. Scan before the drive. 1v1 is a test. 1v3 with open teammates is a decision failure.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Wingbacks as Wide Outlets</div>
+            <div class="principle-body">Wingbacks are the first wide option, already positioned slightly ahead of the ball and ready to receive. Wide outlets stretch the defense and create the central space for the striker run.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">5–3–2</div>
+            <div class="zone-label">Our Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">Center CB initiates — GK supports distribution</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Heavy Pressure — Clear It</div>
+            <div class="principle-body">Under heavy pressure in a danger zone, clear wide and long. If it goes out, the throw-in gives us time to reset. A clearance back to the opponent resets nothing.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Moderate Pressure — Find the Wide Lane</div>
+            <div class="principle-body">First look is whether a wingback can step out of the line into space immediately. If that lane is open, play them quickly and transition. This is the fastest way out of the low block.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Moderate Pressure — Find the 6 or 8</div>
+            <div class="principle-body">If the wide lane is covered, find the 6 or 8. They receive half-turned or facing forward, never with back to goal in our own third.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Light Pressure — Survey and Build</div>
+            <div class="principle-body">Survey the field. Decide which side to build on. Switch the ball across the CB line intentionally. Use the GK as an active field player to shift the point of attack.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 3: TRANSITION BALL LOST -->
+  <div class="moment-block open" id="m3">
+    <div class="moment-header" onclick="toggleMoment('m3')">
+      <div class="moment-num">03</div>
+      <div class="moment-title">Transition — Ball Lost</div>
+      <span class="moment-toggle">▾</span>
+    </div>
+    <div class="moment-body">
+      <div class="universal-principle">
+        <div class="universal-label">Universal Principle</div>
+        <div class="universal-text">The moment possession ends, the nearest player pressures immediately. Everyone else recovers their shape. <em>No ball watching, ever.</em> The transition from attack to defense is not a pause. It is an action.</div>
+      </div>
+      <div class="zones-grid">
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Their Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 10 — reads the loss and organizes the immediate response</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Immediate Pressure</div>
+            <div class="principle-body">Nearest player closes the ball carrier immediately, no hesitation. Force them to make a decision under pressure before they can transition.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The 6 Drops</div>
+            <div class="principle-body">The 6 reads the loss and drops toward the midfield line immediately to protect the central channel. This is the most important recovery movement in this zone.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Wingbacks Recover</div>
+            <div class="principle-body">Wingbacks sprint to recover their midfield position. They are not defenders yet, but the gap has to close fast. This is the most physically demanding read in the system and the wingbacks must be constantly aware of it.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Back Three Holds</div>
+            <div class="principle-body">The back three holds shape and does not step out to chase. Their job is to stay compact and be ready for what comes through the press.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Middle Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 6 — compacts the unit and holds the center</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Immediate Pressure</div>
+            <div class="principle-body">Nearest player applies pressure on the ball. Not a sprint past. A disciplined closing that delays the attack and forces the decision.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Unit Compacts</div>
+            <div class="principle-body">Midfield unit closes gaps and gets tight. Shape is already relatively intact in this zone. The response is about tightening, not recovering from distance.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Wingbacks Tuck In</div>
+            <div class="principle-body">Wingbacks tuck into the midfield line immediately. No lingering in advanced positions. The wide channels become defensive responsibilities first.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Back Three Holds</div>
+            <div class="principle-body">Back three maintains shape. Does not push forward. Provides the defensive foundation that the midfield recovery anchors against.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">5–3–2</div>
+            <div class="zone-label">Our Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">GK — takes immediate command</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Immediate Compactness</div>
+            <div class="principle-body">Everyone behind the ball gets compact immediately. The 5-3-2 low block triggers automatically. There is no decision to make. The shape is the response.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">GK Commands</div>
+            <div class="principle-body">GK takes full command, calling the line, directing shape, and communicating every action. This is the highest danger situation and the GK's voice is the anchor.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">No Panic</div>
+            <div class="principle-body">Losing the ball in our own third is rare if our build-up principles are working. When it happens, composure is the first requirement. Shape, compact, communicate, defend.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 4: IN POSSESSION -->
+  <div class="moment-block open" id="m4">
+    <div class="moment-header" onclick="toggleMoment('m4')">
+      <div class="moment-num">04</div>
+      <div class="moment-title">In Possession</div>
+      <span class="moment-toggle">▾</span>
+    </div>
+    <div class="moment-body">
+      <div class="universal-principle">
+        <div class="universal-label">Universal Principle</div>
+        <div class="universal-text">We possess the ball to create opportunity, not to count passes. Every circulation has a purpose: find the space to go forward, use the width to keep that space available, and commit to the attack when the moment is right. <em>Recycling is hunting for the better attack.</em></div>
+      </div>
+      <div class="zones-grid">
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–2–5</div>
+            <div class="zone-label">Their Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 10 — creative engine, final pass, timing</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Overload and Create</div>
+            <div class="principle-body">We have numbers in this zone by design. Use them. Every player without the ball is moving to pull a defender out of position. Movement creates the gaps, not individual skill alone.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Patience With Purpose</div>
+            <div class="principle-body">We have the ball in a dangerous area. Do not rush the final action, but do not recycle sideways forever either. We are looking for the right moment to commit, not the perfect moment.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Strikers</div>
+            <div class="principle-body">Create space for each other. If one striker drops, the other runs in behind. Movement is constant. Standing still gives the defender an easy job.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Wingbacks</div>
+            <div class="principle-body">Provide width and the crossing or cutback option. Time the run into the box as the ball arrives. The run timing is the skill. Too early and the ball is not yet there. Too late and the moment is gone.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The 6 — Insurance</div>
+            <div class="principle-body">Holds at the top of the attack. Does not commit into the box. If possession is lost, the 6 is already in position to protect. The system does not work without this discipline.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">3–5–2</div>
+            <div class="zone-label">Middle Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">The 6 and 10 jointly — 8 connects and arrives late</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The 6–8–10 Axis</div>
+            <div class="principle-body">The 6 provides the foundation and models patience. The 10 provides the vision and models ambition. The 8 connects them, the most physically demanding role, linking defensive stability to creative attack and arriving late into the box.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Two Reads</div>
+            <div class="principle-body">Is there a forward pass that puts us in a better position? Take it. No forward pass available? Recycle and create one. Both reads are correct. Recycling is hunting for the better attack, not a step backward.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Width Is Constant</div>
+            <div class="principle-body">The wide channels are always occupied. Wingbacks hold width at all times in this zone. Coming from smaller field formats, the space on a full field is real and available. Trust it and use it.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Verticality Is the Ambition</div>
+            <div class="principle-body">If there is a through ball for a runner, play it. If there is a combination to create a wide opportunity, play that. Find the space to move forward and use it. We circulate to find the forward pass, not to maintain possession for its own sake.</div>
+          </div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-header">
+            <div class="zone-formation">5–3–2</div>
+            <div class="zone-label">Our Defensive Third</div>
+          </div>
+          <div class="zone-leader">
+            <div>
+              <div class="zone-leader-label">Zone Leader</div>
+              <div class="zone-leader-name">Center CB organizes build-up — GK supports distribution</div>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">No Panic, No Aimless Long Balls</div>
+            <div class="principle-body">Build intentionally. The CB reads the pressure, calls the direction, and controls the tempo. Every pass out of the back has a purpose.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">GK as a Field Player</div>
+            <div class="principle-body">The GK is an active participant in build-up, providing the angle to switch sides, receiving under pressure, and redistributing with purpose. On turf this is a skill we develop and own.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Switch to Find the Better Side</div>
+            <div class="principle-body">Move the ball across the CB line intentionally to shift the opponent's pressure. Switching is a build-up tool, not a fallback. Find the side with space and attack from a position of control.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Get Forward When the Lane Opens</div>
+            <div class="principle-body">The wide lane is always the first look. If a wingback can step into space immediately, play them and transition quickly. If not, build through the backline until it opens.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-title">SGSC Strikers White · U13 · Game Model · 26/27</div>
+  <div class="footer-byline" style="margin-bottom:4px;">Coach Justin Whitaker | USSF National D | SGSC Technical Director</div>
+  <div style="margin-top:8px;opacity:0.4;font-size:11px;">Working Document · Internal Use · v1.2</div>
+</footer>
+
+<script>
+  function toggleMoment(id) {
+    const block = document.getElementById(id);
+    block.classList.toggle('open');
+  }
+  const sections = document.querySelectorAll('section[id], div[id^="m"]');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tabs.forEach(t => t.classList.remove('active'));
+        const active = document.querySelector(`.nav-tab[href="#${entry.target.id}"]`);
+        if (active) {
+          active.classList.add('active');
+          active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-54px 0px 0px 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
