@@ -581,6 +581,18 @@
   }
   .book-author { font-size: clamp(11px, 1.6vw, 13px); color: var(--gold); font-weight: 600; margin-bottom: 8px; }
   .book-desc { font-size: clamp(12px, 1.7vw, 13px); color: var(--text-light); line-height: 1.6; }
+  a.book-card {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  a.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1,66,138,0.14);
+  }
+  a.book-card .book-title { color: var(--navy); }
+  a.book-card:hover .book-title { color: var(--gold); }
   .book-badge {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
@@ -800,7 +812,11 @@
     <div style="background:var(--white);border-radius:8px;box-shadow:0 2px 12px rgba(1,66,138,0.08);padding:clamp(18px,2.5vw,28px);border-top:4px solid var(--gold);">
       <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(20px,3.5vw,28px);color:var(--navy);line-height:1;">1x</div>
       <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(13px,2vw,15px);color:var(--navy-dark);margin:4px 0 8px;">Per Week — June</div>
-      <p style="font-size:clamp(12px,1.7vw,13px);color:var(--text-light);line-height:1.6;">One training session per week as we get the season started. Day, time, and location to be confirmed.</p>
+      <div style="margin-bottom:8px;">
+        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;background:var(--navy);color:var(--gold-warm);padding:2px 8px;border-radius:20px;">Thursdays · 6:00–8:00 PM</span>
+      </div>
+      <p style="font-size:clamp(12px,1.7vw,13px);color:var(--text-light);line-height:1.6;margin-bottom:6px;">Herbert Green Middle School</p>
+      <p style="font-size:clamp(12px,1.7vw,13px);color:var(--text-light);line-height:1.6;">Light training, small-sided games, and scrimmages focused on getting to know each other, working on skills, and having fun. June training is not required, but if you're in town and available we'd love to see you out there.</p>
     </div>
     <div style="background:var(--white);border-radius:8px;box-shadow:0 2px 12px rgba(1,66,138,0.08);padding:clamp(18px,2.5vw,28px);border-top:4px solid var(--gold);">
       <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(20px,3.5vw,28px);color:var(--navy);line-height:1;">2x</div>
@@ -1025,7 +1041,7 @@
       <div class="staff-accent"></div>
       <div class="staff-body">
         <div class="staff-meta">
-          <div class="staff-name">Coach Paul Caggiola</div>
+          <div class="staff-name">Coach Paul Coggiola</div>
           <div class="staff-role">Assistant Coach</div>
         </div>
         <p class="staff-bio">Coach Paul comes to the Strikers White as the former head coach of the SGSC Gladiators, bringing years of experience and a sharp eye for technical development. His background developing players at the club level means he knows what good looks like and how to help players get there. We're glad to have him in our corner this fall.</p>
@@ -1036,10 +1052,11 @@
       <div class="staff-accent"></div>
       <div class="staff-body">
         <div class="staff-meta">
-          <div class="staff-name">Coach Dennis Karadis</div>
+          <div class="staff-name">Coach Dennis Karidis</div>
           <div class="staff-role">Assistant Coach</div>
         </div>
-        <p class="staff-bio">Coach Dennis arrives with a competitive pedigree, having served as head coach of the PSC Nightmare, a longtime rival and a genuine friend to our program. That rivalry came with a lot of mutual respect, and now we're thrilled to bring his knowledge and competitive edge to our side of the sideline. His experience coaching at a high level adds real depth to our staff this season.</p>
+        <p class="staff-bio">Coach Dennis brings a lifelong passion for soccer and player development to the Strikers. During his time with Prospector Soccer Club, he coached recreational soccer for two years, served as a competitive head coach for four years from U9 through U12, and worked as an assistant coach with another Prospector competitive team from U11 through U14. As a player, he competed in travel soccer through U16 and high school, and has continued playing in men's outdoor and indoor leagues throughout the Sacramento region for more than 25 years.</p>
+        <p class="staff-bio" style="margin-top:10px;">Dennis is passionate about creating opportunities for players in our rural foothill communities to experience a higher level of training and competition without losing the values that make local soccer special. He believes hardworking families deserve access to quality player development without having to buy into increasingly expensive youth sports models. His goal is to help build a program that raises the standard of play, develops technically sound and confident athletes, and provides local players with opportunities that have traditionally required leaving the area. Above all, he is committed to fostering a positive, family-oriented culture where players learn the value of hard work, teamwork, resilience, and a lifelong love of the game.</p>
       </div>
     </div>
 
@@ -1255,56 +1272,38 @@
   <!-- Nonfiction -->
   <div style="margin-bottom:32px;">
     <div class="subhead">Soccer Playing Books</div>
+    <p style="margin-bottom:14px;font-size:clamp(12px,1.7vw,14px);color:var(--text-light);">Tap any title to view on Goodreads — find it at your local bookstore, library, or wherever you buy books.</p>
     <div class="book-grid">
-      <div class="book-card">
+      <a class="book-card" href="https://www.goodreads.com/book/show/21451166-soccer-iq" target="_blank" rel="noopener">
         <div class="book-badge required">Required Reading</div>
         <div class="book-title">Soccer IQ</div>
         <div class="book-author">Dan Blank</div>
         <div class="book-desc">Our core team reading. Covers the decisions and habits of smart players. Come to practice ready to share a takeaway.</div>
-      </div>
-      <div class="book-card">
-        <div class="book-title">Possession</div>
-        <div class="book-author">Dan Blank</div>
-        <div class="book-desc">Learn how to control the flow of the game through smart, simple possession play.</div>
-      </div>
-      <div class="book-card">
+      </a>
+      <a class="book-card" href="https://www.goodreads.com/book/show/25933201-soccer-iq-presents-shutout-pizza" target="_blank" rel="noopener">
         <div class="book-title">Shutout Pizza</div>
         <div class="book-author">Dan Blank</div>
         <div class="book-desc">The defending principles that guided the SEC's best defenses. Excellent for players who want to defend more effectively.</div>
-      </div>
-      <div class="book-card">
+      </a>
+      <a class="book-card" href="https://www.goodreads.com/book/show/15865424-soccer-tough" target="_blank" rel="noopener">
         <div class="book-title">Soccer Tough</div>
         <div class="book-author">Dan Abrahams</div>
         <div class="book-desc">The mental side of soccer: how to stay focused, bounce back from mistakes, and play with confidence.</div>
-      </div>
+      </a>
     </div>
   </div>
 
   <!-- Fiction -->
   <div style="margin-bottom:32px;">
     <div class="subhead">Soccer Fiction</div>
+    <p style="margin-bottom:14px;font-size:clamp(12px,1.7vw,14px);color:var(--text-light);">Tap the title to view on Goodreads.</p>
     <div class="book-grid">
-      <div class="book-card fiction">
+      <a class="book-card fiction" href="https://www.goodreads.com/book/show/62133672-the-academy" target="_blank" rel="noopener">
         <div class="book-badge recommended">Highly Recommended</div>
         <div class="book-title">The Academy series</div>
         <div class="book-author">T.Z. Layton</div>
         <div class="book-desc">Follow Leo's journey through a youth academy filled with hard work, passion, and dreams. Fun, inspiring, and hard to put down.</div>
-      </div>
-      <div class="book-card fiction">
-        <div class="book-title">Goal! The Dream Begins</div>
-        <div class="book-author">Robert Rigby</div>
-        <div class="book-desc">Santiago's rise from playing in the streets to signing with a professional club. A classic underdog story about dreams and effort.</div>
-      </div>
-      <div class="book-card fiction">
-        <div class="book-title">Keeper</div>
-        <div class="book-author">Mal Peet</div>
-        <div class="book-desc">An award-winning story about a world-class goalkeeper and the secrets behind his success. A deeper read for players who love big questions.</div>
-      </div>
-      <div class="book-card fiction">
-        <div class="book-title">Booked</div>
-        <div class="book-author">Kwame Alexander</div>
-        <div class="book-desc">A powerful coming-of-age story told in free verse, centered around soccer, family, and finding your own path.</div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -1315,7 +1314,7 @@
     <div class="subhead-sm">Professional</div>
     <div class="teams-grid">
       <div class="team-card">
-        <div class="team-name">Sacramento Republic FC</div>
+        <div class="team-name"><a href="https://www.sacrepublicfc.com" target="_blank" rel="noopener" style="color:var(--navy-dark);text-decoration:none;border-bottom:2px solid var(--gold);">Sacramento Republic FC</a></div>
         <div class="team-league">USL Championship</div>
         <div class="team-detail">Heart Health Park · March – October<br>2014 USL Champions. Family-friendly atmosphere, passionate fans, strong community spirit. 2023 U.S. Open Cup runners-up.</div>
       </div>
@@ -1323,17 +1322,17 @@
     <div class="subhead-sm">Semi-Pro &amp; Pre-Pro</div>
     <div class="teams-grid">
       <div class="team-card">
-        <div class="team-name">California Storm</div>
+        <div class="team-name"><a href="https://www.calstormsoccer.com" target="_blank" rel="noopener" style="color:var(--navy-dark);text-decoration:none;border-bottom:2px solid var(--gold);">California Storm</a></div>
         <div class="team-league">WPSL &amp; USL W League</div>
         <div class="team-detail">Davis Legacy Soccer Fields · May – July<br>Historic women's club. Alumni include Alex Morgan and Brandi Chastain.</div>
       </div>
       <div class="team-card">
-        <div class="team-name">Iron Rose FC</div>
+        <div class="team-name"><a href="https://www.ironrosefc.com" target="_blank" rel="noopener" style="color:var(--navy-dark);text-decoration:none;border-bottom:2px solid var(--gold);">Iron Rose FC</a></div>
         <div class="team-league">The League for Clubs</div>
         <div class="team-detail">West Park High School, Roseville · May – July<br>Men's and women's teams focused on player development and community.</div>
       </div>
       <div class="team-card">
-        <div class="team-name">FC Folsom</div>
+        <div class="team-name"><a href="https://premier.upsl.com/teams/fc-folsom-637327/" target="_blank" rel="noopener" style="color:var(--navy-dark);text-decoration:none;border-bottom:2px solid var(--gold);">FC Folsom</a></div>
         <div class="team-league">UPSL</div>
         <div class="team-detail">Folsom · Spring and Fall<br>Local semi-pro club committed to growing soccer in the region. Placed 2nd in UPSL 2024.</div>
       </div>
