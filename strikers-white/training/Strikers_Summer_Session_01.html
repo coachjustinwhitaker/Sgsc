@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Summer Session — SGSC Strikers White + Blue</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#01428A;--navy-dark:#0d3668;--gold:#C89D3F;--gold-warm:#DFC477;
+    --white:#FFF;--gray-light:#F5F6FA;--gray-mid:#888;--gray-dark:#333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:14px;}
+  body{font-family:"Open Sans",Arial,sans-serif;background:var(--gray-light);color:var(--gray-dark);line-height:1.6;width:100%;}
+  .wrap{max-width:900px;margin:0 auto;}
+
+  .header{background:var(--navy);border-bottom:4px solid var(--gold);}
+  .header-inner{display:flex;align-items:stretch;}
+  .header-logo{background:var(--navy-dark);padding:14px 16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .header-logo-text{font-family:"Montserrat",Arial,sans-serif;font-size:22px;font-weight:800;color:var(--gold);letter-spacing:2px;}
+  .header-content{padding:16px clamp(14px,3vw,28px) 14px;flex:1;min-width:0;}
+  .club-label{font-family:"Montserrat",Arial,sans-serif;font-size:clamp(8px,1.2vw,9.5px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .session-title{font-family:"Montserrat",Arial,sans-serif;font-size:clamp(17px,3.5vw,24px);font-weight:800;color:white;line-height:1.15;margin-bottom:4px;}
+  .header-dateline{font-size:clamp(10px,1.5vw,12px);color:rgba(255,255,255,0.5);margin-bottom:8px;}
+  .header-chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .hchip{font-family:"Montserrat",Arial,sans-serif;font-size:clamp(8.5px,1.3vw,10px);font-weight:700;padding:3px 9px;border-radius:3px;background:rgba(200,157,63,0.18);border:1px solid rgba(200,157,63,0.38);color:var(--gold);}
+
+  .philosophy{background:var(--navy-dark);border-bottom:3px solid var(--gold);padding:clamp(14px,2.5vw,18px) clamp(14px,3vw,28px);}
+  .philosophy p{font-size:clamp(12px,1.8vw,14px);color:rgba(255,255,255,0.82);font-style:italic;line-height:1.65;}
+
+  .flow-section{background:white;border-bottom:2px solid #e0e4ef;padding:clamp(12px,2vw,20px) clamp(14px,3vw,28px);}
+  .section-eyebrow{font-family:"Montserrat",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .flow-table{width:100%;border-collapse:collapse;font-size:clamp(11px,1.6vw,13px);}
+  .flow-table th{background:var(--navy);color:white;font-family:"Montserrat",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 10px;text-align:left;}
+  .flow-table td{padding:8px 10px;border-bottom:1px solid #e8eaf0;vertical-align:top;}
+  .flow-table tr:last-child td{border-bottom:none;}
+  .flow-table tr:nth-child(even) td{background:#f8f9fc;}
+  .flow-table td:first-child{font-weight:700;color:var(--navy);white-space:nowrap;}
+  .flow-table td:nth-child(2){color:var(--gray-mid);text-align:center;white-space:nowrap;}
+  .flow-table a{color:var(--navy);text-decoration:none;border-bottom:1px dotted var(--gold);}
+  .flow-table a:hover{color:var(--gold);}
+
+  .activities{padding:clamp(12px,2vw,20px) clamp(14px,3vw,28px);display:flex;flex-direction:column;gap:20px;}
+  .card{background:white;border-radius:6px;box-shadow:0 1px 4px rgba(1,66,138,0.08);overflow:hidden;border:1px solid #e0e4ef;}
+  .card-header{background:var(--navy);padding:12px 16px;display:flex;align-items:center;gap:10px;}
+  .card-num{font-family:"Montserrat",Arial,sans-serif;font-size:11px;font-weight:800;color:var(--gold);background:rgba(200,157,63,0.18);border:1px solid rgba(200,157,63,0.4);border-radius:3px;padding:2px 8px;flex-shrink:0;}
+  .card-title{font-family:"Montserrat",Arial,sans-serif;font-size:clamp(13px,2vw,15px);font-weight:800;color:white;flex:1;}
+  .card-time{font-family:"Montserrat",Arial,sans-serif;font-size:10px;font-weight:700;color:rgba(255,255,255,0.5);flex-shrink:0;}
+  .card-body{padding:14px 16px;display:flex;flex-direction:column;gap:12px;}
+  .card-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:520px){.card-cols{grid-template-columns:1fr;}}
+  .card-block{}
+  .block-label{font-family:"Montserrat",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+  .block-list{list-style:none;padding:0;margin:0;font-size:clamp(11px,1.6vw,13px);}
+  .block-list li{padding:3px 0 3px 14px;position:relative;border-bottom:1px solid #f0f2f7;line-height:1.45;}
+  .block-list li:last-child{border-bottom:none;}
+  .block-list li::before{content:"•";position:absolute;left:0;color:var(--gold);font-weight:700;}
+  .note-box{background:#fffbf0;border-left:3px solid var(--gold);padding:9px 12px;border-radius:0 4px 4px 0;font-size:clamp(11px,1.6vw,12.5px);color:#5a4a1a;}
+  .note-box strong{color:var(--navy);}
+  .if-box{background:#f0f4fa;border-left:3px solid var(--navy);padding:9px 12px;border-radius:0 4px 4px 0;font-size:clamp(11px,1.6vw,12.5px);color:var(--gray-dark);}
+  .if-box strong{color:var(--navy);}
+  .run-it-badge{display:inline-block;font-family:"Montserrat",Arial,sans-serif;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--navy-dark);padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle;}
+
+  .cooldown{background:white;border-top:2px solid #e0e4ef;padding:clamp(12px,2vw,20px) clamp(14px,3vw,28px);}
+  .cooldown-title{font-family:"Montserrat",Arial,sans-serif;font-size:clamp(13px,2vw,15px);font-weight:800;color:var(--navy);margin-bottom:10px;}
+
+  .footer{background:var(--navy-dark);border-top:3px solid var(--gold);padding:14px clamp(14px,3vw,28px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .footer-brand{font-family:"Montserrat",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.5);text-transform:uppercase;}
+  .footer-tag{font-family:"Montserrat",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <span class="header-logo-text">SGSC</span>
+    </div>
+    <div class="header-content">
+      <div class="club-label">Sierra Gold Soccer Club &mdash; Summer Training</div>
+      <div class="session-title">First Session Together</div>
+      <div class="header-dateline">Strikers White + Blue &nbsp;|&nbsp; U13 &nbsp;|&nbsp; 2 Hours</div>
+      <div class="header-chips">
+        <span class="hchip">~16&ndash;17 Players</span>
+        <span class="hchip">Summer Mode</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="philosophy">
+  <p>First session post-tryouts. Half the room is new. The goal tonight is getting to know each other through the game. Let it be loud, let it be chaotic, let them figure things out. Read the room. Learn names.</p>
+</div>
+
+<div class="flow-section">
+  <div class="section-eyebrow">Session Flow</div>
+  <table class="flow-table">
+    <thead>
+      <tr><th>Activity</th><th>Time</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="#atw">Around the World</a></td><td>20 min</td><td>Activation opener</td></tr>
+      <tr><td><a href="#dyn">Dynamic Warm-Up + Passing Series</a></td><td>10 min</td><td>Coaches lead</td></tr>
+      <tr><td><a href="#rondo">Rondos / GK Wars</a></td><td>20 min</td><td>Split if keepers present</td></tr>
+      <tr><td><a href="#wc">World Cuppies</a></td><td>30 min</td><td>4v4, 4 teams, round robin + 3rd/4th + final</td></tr>
+      <tr><td><a href="#scrimmage">Flex Scrimmage</a></td><td>35 min</td><td>Time buffer</td></tr>
+      <tr><td><a href="#cooldown">Cool-Down / Talk</a></td><td>5 min</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="activities">
+
+  <!-- AROUND THE WORLD -->
+  <div class="card" id="atw">
+    <div class="card-header">
+      <span class="card-num">01</span>
+      <span class="card-title">Around the World</span>
+      <span class="card-time">20 min</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Setup</div>
+          <ul class="block-list">
+            <li>3 fields side by side, 23x30 each</li>
+            <li>Small goals or pugg goals on each field</li>
+            <li>3 balls in play simultaneously</li>
+            <li>Pink pinnies vs blue pinnies</li>
+            <li>No GKs</li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">The Rule</div>
+          <ul class="block-list">
+            <li>Score a goal and rotate to next field immediately</li>
+            <li>Blue rotates: Field 1 &rarr; 2 &rarr; 3 &rarr; 1</li>
+            <li>Pink rotates: Field 1 &rarr; 3 &rarr; 2 &rarr; 1</li>
+            <li>Teams will be overloaded and underloaded</li>
+            <li>No score kept</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        <strong>Hidden objective:</strong> Players who score on all three fields have gone Around the World. They will figure it out on their own mid-game.
+      </div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC WARM-UP -->
+  <div class="card" id="dyn">
+    <div class="card-header">
+      <span class="card-num">02</span>
+      <span class="card-title">Dynamic Warm-Up + Passing Series <span class="run-it-badge">RUN IT</span></span>
+      <span class="card-time">10 min</span>
+    </div>
+    <div class="card-body">
+      <div class="block-label">All players together &nbsp;&bull;&nbsp; Coaches lead</div>
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Mirrored Dynamic Warm-Up</div>
+          <ul class="block-list">
+            <li>High knees, butt kicks, side shuffles</li>
+            <li>Hip openers, leg swings</li>
+            <li>Lunges with rotation</li>
+
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">Passing Series</div>
+          <ul class="block-list">
+            <li>Progress into passing patterns with a ball</li>
+            <li>Keep it moving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RONDOS / GK WARS -->
+  <div class="card" id="rondo">
+    <div class="card-header">
+      <span class="card-num">03</span>
+      <span class="card-title">Rondos / GK Wars</span>
+      <span class="card-time">20 min</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Field Players &mdash; Rondo</div>
+          <ul class="block-list">
+            <li>4v1 or 5v2 depending on numbers</li>
+            <li>Defenders rotate in on turnover</li>
+            <li>Track passes before turnover</li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">Goalkeepers &mdash; GK Wars</div>
+          <ul class="block-list">
+            <li>Two small goals, tight space</li>
+            <li>GKs rotate through as keeper</li>
+            <li>High reps, track saves</li>
+          </ul>
+        </div>
+      </div>
+      <div class="if-box">
+        <strong>Game-time call:</strong> 2+ keepers present, split them off for GK Wars. Otherwise everyone stays in rondos.
+      </div>
+    </div>
+  </div>
+
+  <!-- WORLD CUPPIES -->
+  <div class="card" id="wc">
+    <div class="card-header">
+      <span class="card-num">04</span>
+      <span class="card-title">World Cuppies</span>
+      <span class="card-time">30 min</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Setup</div>
+          <ul class="block-list">
+            <li>4v4, four teams</li>
+            <li>Mix White + Blue on same teams</li>
+            <li>Teams pick country names</li>
+            <li>Two small pitches side by side</li>
+            <li>No GKs</li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">Format</div>
+          <ul class="block-list">
+            <li>Round robin: 3 games each</li>
+            <li>3rd/4th place game</li>
+            <li>Final: 1st vs 2nd</li>
+            <li>4-minute games, 1-minute rotation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Bracket</div>
+          <ul class="block-list">
+            <li>Game 1: A vs B &nbsp;/&nbsp; C vs D</li>
+            <li>Game 2: A vs C &nbsp;/&nbsp; B vs D</li>
+            <li>Game 3: A vs D &nbsp;/&nbsp; B vs C</li>
+            <li>3rd/4th: 3rd vs 4th</li>
+            <li>Final: 1st vs 2nd</li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">Timing</div>
+          <ul class="block-list">
+            <li>Round robin ~20 min</li>
+            <li>3rd/4th + Final ~10 min</li>
+          </ul>
+        </div>
+      </div>
+      <div class="if-box">
+        <strong>17 players:</strong> Three teams of 4, one team of 5. Rotate the extra player in or let the team self-manage.
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEX SCRIMMAGE -->
+  <div class="card" id="scrimmage">
+    <div class="card-header">
+      <span class="card-num">05</span>
+      <span class="card-title">Flex Scrimmage</span>
+      <span class="card-time">~35 min</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cols">
+        <div class="card-block">
+          <div class="block-label">Format</div>
+          <ul class="block-list">
+            <li>Full group, two even teams</li>
+            <li>Big field, full goals if available</li>
+            <li>GKs in goal</li>
+            <li>No constraints</li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <div class="block-label">Your Role</div>
+          <ul class="block-list">
+            <li>Minimal intervention</li>
+            <li>Keep learning names</li>
+            <li>Flex 10 minutes either direction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="cooldown" id="cooldown">
+  <div class="section-eyebrow">Close Out</div>
+  <div class="cooldown-title">Cool-Down &amp; Team Talk &mdash; 5 min</div>
+  <ul class="block-list" style="font-size:13px;">
+    <li>Static stretching: quads, hamstrings, hip flexors, calves</li>
+    <li>Quick circle: one word to describe tonight</li>
+    <li>See you on the pitch</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <span class="footer-brand">Coach Justin Whitaker &nbsp;&bull;&nbsp; SGSC</span>
+  <span class="footer-tag">Sierra Gold Soccer Club</span>
+</div>
+
+</div>
+</body>
+</html>
