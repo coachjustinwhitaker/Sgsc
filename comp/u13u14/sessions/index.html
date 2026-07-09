@@ -56,6 +56,24 @@
   .what-to-expect { margin-top: 2rem; }
   .section-head { font-family: "Montserrat", sans-serif; font-size: clamp(.8rem,1.6vw,.9rem); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: .4rem; margin-bottom: 1rem; margin-top: 2rem; }
 
+  .week-heading { font-family: "Montserrat", sans-serif; font-size: clamp(.78rem,1.5vw,.86rem); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); background: var(--white); box-shadow: var(--shadow); padding: .6rem 1.1rem; border-radius: var(--radius); margin-bottom: .85rem; margin-top: 1.5rem; border-left: 4px solid var(--green); }
+  .week-heading:first-of-type { margin-top: 0; }
+
+  .session-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+  @media (max-width: 700px) { .session-grid { grid-template-columns: 1fr; } }
+  .session-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); text-decoration: none; color: var(--gray-body); overflow: hidden; border: 1.5px solid transparent; transition: all .2s; display: flex; flex-direction: column; }
+  .session-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .session-card-band { height: 4px; background: var(--green); }
+  .session-card-body { padding: 1.1rem 1.25rem; flex: 1; }
+  .session-meta-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; flex-wrap: wrap; }
+  .session-tag { font-family: "Montserrat", sans-serif; font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .16rem .5rem; border-radius: 20px; }
+  .tag-week { background: var(--navy); color: var(--white); }
+  .tag-block { background: rgba(200,157,63,.15); color: var(--gold); border: 1px solid rgba(200,157,63,.35); }
+  .session-card h3 { font-family: "Montserrat", sans-serif; font-size: clamp(.95rem,1.9vw,1.05rem); font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+  .session-card .session-sub { font-size: clamp(.78rem,1.5vw,.85rem); color: var(--gray-mid); font-style: italic; margin-bottom: .5rem; }
+  .session-card-link { font-family: "Montserrat", sans-serif; font-size: .67rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: .6rem; display: block; }
+
+
   .expect-grid { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
   .expect-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.1rem 1.25rem; flex: 1; min-width: 200px; border-left: 3px solid var(--green); }
   .expect-card h4 { font-family: "Montserrat", sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--navy); margin-bottom: .4rem; }
@@ -100,11 +118,40 @@
     <p class="intro">Field-ready session plans for Strikers White practices. Each plan is designed for sideline use on a phone or tablet: block focus, organization, coaching cues, and progressions in one place.</p>
   </div>
 
+  <div class="week-heading">Week 1 &middot; First Touch &amp; Awareness</div>
+  <div class="session-grid">
+    <a href="SGSC_U13_W1S1_See_It_First" class="session-card">
+      <div class="session-card-band"></div>
+      <div class="session-card-body">
+        <div class="session-meta-row">
+          <span class="session-tag tag-week">Week 1 &middot; Session 1</span>
+          <span class="session-tag tag-block">B1 &middot; Introduction</span>
+        </div>
+        <h3>See It First</h3>
+        <div class="session-sub">Perception &amp; preparation, scanning before the ball arrives</div>
+        <span class="session-card-link">Open Session &rarr;</span>
+      </div>
+    </a>
+    <a href="SGSC_U13_W1S2_Play_It_Together.html" class="session-card">
+      <div class="session-card-band"></div>
+      <div class="session-card-body">
+        <div class="session-meta-row">
+          <span class="session-tag tag-week">Week 1 &middot; Session 2</span>
+          <span class="session-tag tag-block">B2 &middot; Introduction</span>
+        </div>
+        <h3>Play It Together</h3>
+        <div class="session-sub">Supporting the ball carrier, basic combination play</div>
+        <span class="session-card-link">Open Session &rarr;</span>
+      </div>
+    </a>
+  </div>
+
   <div class="coming-soon">
     <span class="icon">&#x1F4CB;</span>
-    <h3>Sessions coming soon</h3>
-    <p>Session plans will appear here as they are built. Each plan follows the block methodology and is organized by week and weekly theme from the season plan.</p>
+    <h3>More sessions coming soon</h3>
+    <p>Additional session plans will appear here as they are built, following the block sequence and weekly themes from the season plan.</p>
   </div>
+
 
   <div class="what-to-expect">
     <div class="section-head">What each session plan includes</div>
