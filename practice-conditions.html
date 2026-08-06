@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGSC Practice Conditions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:      #01428A;
+    --navy-dark: #0d3668;
+    --navy-deep: #0a2540;
+    --gold:      #C89D3F;
+    --gold-warm: #DFC477;
+    --gray-body: #333333;
+    --gray-mid:  #666666;
+    --gray-light:#F5F6FA;
+    --white:     #ffffff;
+    --radius:    8px;
+    --shadow:    0 2px 12px rgba(1,66,138,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Open Sans", sans-serif; font-size: clamp(14px, 1.8vw, 16px); color: var(--gray-body); background: var(--gray-light); line-height: 1.6; padding-bottom: 40px; }
+
+  /* Header, matches sierragoldsoccer.org */
+  .site-header {
+    background: var(--navy);
+    border-bottom: 4px solid var(--gold);
+    padding: clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem);
+  }
+  .site-header-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .site-header img {
+    width: clamp(52px,9vw,72px);
+    display: block;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+  .site-header-text h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.1rem,3vw,1.6rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: .2rem;
+  }
+  .site-header-text p {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(.65rem,1.4vw,.75rem);
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    opacity: .8;
+  }
+
+  .pull-quote {
+    background: var(--navy-dark);
+    border-left: 4px solid var(--gold);
+    padding: clamp(.85rem,2vw,1.1rem) clamp(1.25rem,5vw,3rem);
+  }
+  .pull-quote-inner { max-width: 980px; margin: 0 auto; }
+  .pull-quote p {
+    font-size: clamp(.8rem,1.7vw,.9rem);
+    color: var(--gold-warm);
+    line-height: 1.55;
+  }
+  .pull-quote a { color: var(--white); text-decoration: underline; }
+
+  .main { max-width: 980px; margin: 0 auto; padding: clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem); }
+
+  .nav-heading { font-family: "Montserrat", sans-serif; font-size: clamp(.75rem,1.5vw,.82rem); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 1rem; padding-bottom: .4rem; border-bottom: 2px solid var(--gold); display:flex; align-items:center; gap:8px; }
+
+  /* Policy summary box */
+  .policy-box { background: var(--white); border-radius: var(--radius); padding: clamp(1.1rem,3vw,1.5rem); margin-bottom: 2rem; box-shadow: var(--shadow); border-top: 3px solid var(--navy); }
+  .policy-box p { font-size: clamp(.85rem,1.6vw,.92rem); margin-bottom: .6rem; }
+  .policy-box p:last-child { margin-bottom: 0; }
+  .policy-box strong { color: var(--navy); }
+  .policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .85rem; margin-top: .9rem; }
+  .policy-rule { background: var(--gray-light); border-radius: 6px; padding: .75rem .9rem; border-left: 3px solid var(--gold); }
+  .policy-rule .rule-label { font-family:"Montserrat",sans-serif; font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color: var(--navy); display:block; margin-bottom:.25rem; }
+  .policy-rule .rule-text { font-size: .82rem; color: var(--gray-body); }
+  .policy-box .source-link { font-size: .78rem; color: var(--gray-mid); }
+  .policy-box .source-link a { color: var(--navy); font-weight: 600; }
+
+  /* Temperature strip */
+  .temp-strip{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: .85rem;
+    margin-bottom: 2rem;
+  }
+  .temp-tile{
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: .95rem 1rem;
+    display:flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--white);
+  }
+  .temp-tile .city{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .72rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .temp-tile .val{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--gray-body);
+    display:flex;
+    align-items:baseline;
+    gap: 6px;
+  }
+  .temp-tile .val small{
+    font-family:"Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: .72rem;
+    color: var(--gray-mid);
+  }
+  .temp-tile .station, .temp-tile .rule-hint{
+    font-size: .72rem;
+    color: var(--gray-mid);
+  }
+  .temp-tile.pending .val{
+    font-weight: 500;
+    font-size: .82rem;
+    color: var(--gray-mid);
+  }
+  .temp-tile.temp-green{ background:#e5f7e0; }
+  .temp-tile.temp-green .city, .temp-tile.temp-green .val{ color:#1e5c1a; }
+  .temp-tile.temp-green .station, .temp-tile.temp-green .rule-hint{ color:#2c7a1f; }
+  .temp-tile.temp-yellow{ background:#faf1d7; }
+  .temp-tile.temp-yellow .city, .temp-tile.temp-yellow .val{ color:#7a5c0e; }
+  .temp-tile.temp-yellow .station, .temp-tile.temp-yellow .rule-hint{ color:#96731f; }
+  .temp-tile.temp-orange{ background:#fce4cf; }
+  .temp-tile.temp-orange .city, .temp-tile.temp-orange .val{ color:#7a3d0f; }
+  .temp-tile.temp-orange .station, .temp-tile.temp-orange .rule-hint{ color:#a15318; }
+  .temp-tile.temp-red{ background:#fbdcda; }
+  .temp-tile.temp-red .city, .temp-tile.temp-red .val{ color:#7a1f17; }
+  .temp-tile.temp-red .station, .temp-tile.temp-red .rule-hint{ color:#a3231a; }
+
+  /* AQI strip */
+  .aqi-strip{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: .85rem;
+    margin-bottom: 2rem;
+  }
+  .aqi-tile{
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: .95rem 1rem;
+    display:flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--white);
+  }
+  .aqi-tile .site{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .72rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .aqi-tile .val{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    display:flex;
+    align-items:baseline;
+    gap: 6px;
+  }
+  .aqi-tile .val small{
+    font-family:"Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: .72rem;
+  }
+  .aqi-tile .category{
+    font-size: .78rem;
+    font-weight: 600;
+  }
+  .aqi-tile .meta{
+    font-size: .72rem;
+  }
+  .aqi-tile .meta a{
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .aqi-tile.pending .val{
+    font-weight: 500;
+    font-size: .82rem;
+    color: var(--gray-mid);
+  }
+  .aqi-tile.aqi-good{ background:#e5f7e0; }
+  .aqi-tile.aqi-good .site, .aqi-tile.aqi-good .val, .aqi-tile.aqi-good .category{ color:#1e5c1a; }
+  .aqi-tile.aqi-good .meta{ color:#2c7a1f; }
+  .aqi-tile.aqi-moderate{ background:#faf1d7; }
+  .aqi-tile.aqi-moderate .site, .aqi-tile.aqi-moderate .val, .aqi-tile.aqi-moderate .category{ color:#7a5c0e; }
+  .aqi-tile.aqi-moderate .meta{ color:#96731f; }
+  .aqi-tile.aqi-usg{ background:#fce4cf; }
+  .aqi-tile.aqi-usg .site, .aqi-tile.aqi-usg .val, .aqi-tile.aqi-usg .category{ color:#7a3d0f; }
+  .aqi-tile.aqi-usg .meta{ color:#a15318; }
+  .aqi-tile.aqi-unhealthy{ background:#fbdcda; }
+  .aqi-tile.aqi-unhealthy .site, .aqi-tile.aqi-unhealthy .val, .aqi-tile.aqi-unhealthy .category{ color:#7a1f17; }
+  .aqi-tile.aqi-unhealthy .meta{ color:#a3231a; }
+  .aqi-tile.aqi-very-unhealthy{ background:#eeddf2; }
+  .aqi-tile.aqi-very-unhealthy .site, .aqi-tile.aqi-very-unhealthy .val, .aqi-tile.aqi-very-unhealthy .category{ color:#4a1f50; }
+  .aqi-tile.aqi-very-unhealthy .meta{ color:#6b2d72; }
+  .aqi-tile.aqi-hazardous{ background:#e6d3d6; }
+  .aqi-tile.aqi-hazardous .site, .aqi-tile.aqi-hazardous .val, .aqi-tile.aqi-hazardous .category{ color:#5c001a; }
+  .aqi-tile.aqi-hazardous .meta{ color:#7e0023; }
+
+  code{
+    background: var(--gray-light);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: .78rem;
+    color: var(--navy);
+  }
+
+  .page-footer { background: var(--navy-deep); color: var(--gold-warm); padding: 1rem clamp(1.25rem,5vw,3rem); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; font-family: "Montserrat", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-top: 3px solid var(--gold); margin-top: 1rem; }
+  .footer-left { color: rgba(255,255,255,.55); }
+  .footer-right a { color: var(--gold-warm); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="assets/sgsc-logo.png" alt="Sierra Gold Soccer Club">
+    <div class="site-header-text">
+      <h1>Practice Conditions</h1>
+      <p>Sierra Gold Soccer Club</p>
+    </div>
+  </div>
+</header>
+
+<div class="pull-quote">
+  <div class="pull-quote-inner">
+    <p>Live temperature and air quality by practice site, checked against SGSC's <a href="https://www.sierragoldsoccer.org/resources/heat-air-quality-policy" target="_blank" rel="noopener noreferrer">Heat &amp; Air Quality Policy</a>. When in doubt, or when close to a limit, cancel, the sensors aren't right on the field.</p>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="nav-heading">Temperature</div>
+  <p style="font-size:.78rem;color:var(--gray-mid);margin-bottom:.85rem;">General area reading from the nearest NWS station, not the exact field. Check the site-specific link under Air Quality below for a real on-site number.</p>
+  <div class="temp-strip" id="tempStrip"></div>
+
+  <div class="nav-heading">Air Quality</div>
+  <div class="aqi-strip" id="aqiStrip"></div>
+
+  <div class="policy-box" style="margin-top:2rem;">
+    <p><strong>Temperature policy, summarized.</strong> Full policy: <a href="https://www.sierragoldsoccer.org/resources/heat-air-quality-policy" target="_blank" rel="noopener noreferrer">sierragoldsoccer.org</a>.</p>
+    <div class="policy-grid">
+      <div class="policy-rule">
+        <span class="rule-label">100&ndash;103&deg;F</span>
+        <span class="rule-text">Limited exertion encouraged. Frequent water breaks. Coach discretion to cancel.</span>
+      </div>
+      <div class="policy-rule">
+        <span class="rule-label">Above 103&deg;F</span>
+        <span class="rule-text">Practice and games MUST be cancelled.</span>
+      </div>
+      <div class="policy-rule">
+        <span class="rule-label">Turf fields, 100&deg;F+</span>
+        <span class="rule-text">Practice MUST be cancelled.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="policy-box" style="margin-top:1.25rem;">
+    <p><strong>Air quality policy, summarized.</strong> Full policy and AQI table: <a href="https://www.sierragoldsoccer.org/resources/heat-air-quality-policy" target="_blank" rel="noopener noreferrer">sierragoldsoccer.org</a>.</p>
+    <div class="policy-grid">
+      <div class="policy-rule">
+        <span class="rule-label">AQI 126&ndash;149</span>
+        <span class="rule-text">Games: hydration breaks, more subs. Practices: less intensity, more breaks, cancel at coach discretion.</span>
+      </div>
+      <div class="policy-rule">
+        <span class="rule-label">AQI 150+</span>
+        <span class="rule-text">Practice and games MUST be cancelled.</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Sierra Gold SC Technical Director</div>
+  <div class="footer-right"><a href="https://www.sierragoldsoccer.org/resources/heat-air-quality-policy" target="_blank" rel="noopener noreferrer">Full Heat &amp; AQI Policy</a></div>
+</footer>
+
+<script>
+  // ============================================================
+  // ADDING A NEW PRACTICE SITE
+  // Already-listed town: add an entry to LOCATIONS below with that cityKey.
+  // New town: add an entry to CITIES with a rough lat/lon for the town center,
+  // then reference it the same way in LOCATIONS.
+  // Better station than NWS auto-picks (e.g. a RAWS site): set stationId on
+  // that CITIES entry to pin it, same as goldHill below.
+  // ============================================================
+
+  // ---- TOWNS ----
+  // lat/lon are used to auto-find the nearest reporting station (api.weather.gov).
+  // stationId (optional) pins a specific known-good station instead of relying on
+  // auto-discovery, useful when the truly nearest station isn't in NWS's list or
+  // a better local one (like a RAWS site) is known.
+  const CITIES = {
+    placerville: { label: "Placerville", lat: 38.7296, lon: -120.7985 },
+    camino:      { label: "Camino",      lat: 38.7371, lon: -120.6693 },
+    goldHill:    { label: "Gold Hill / Gold Trail", stationId: "PLTC1" }
+  };
+
+  // ---- PRACTICE SITES ----
+  // cityKey must match a key in CITIES above, used for the temperature reading.
+  // purpleAir.sensorIndex: from the PurpleAir widget's div id, the number right after "PurpleAirWidget_".
+  // wundergroundStationId (optional): the club's known PWS for this exact site. Not
+  // pulled automatically (no free API for arbitrary stations), but linked as a quick
+  // manual cross-check since NWS town data can run several degrees off on a given day.
+  const LOCATIONS = [
+    {
+      name: "Herbert Green Middle School",
+      cityKey: "placerville",
+      purpleAir: { sensorIndex: 18691 },
+      wundergroundStationId: "KCAPLACE45"
+    },
+    {
+      name: "Sierra Elementary School",
+      cityKey: "placerville",
+      purpleAir: { sensorIndex: 53201 },
+      wundergroundStationId: "KCAPLACE170"
+    },
+    {
+      name: "Markham Middle School / EDHS",
+      cityKey: "placerville",
+      purpleAir: { sensorIndex: 118729 },
+      wundergroundStationId: "KCAPLACE299"
+    },
+    {
+      name: "Indian Creek Elementary",
+      cityKey: "placerville",
+      purpleAir: { sensorIndex: 130365 },
+      wundergroundStationId: "KCAPLACE34"
+    },
+    {
+      name: "Gold Trail",
+      cityKey: "goldHill",
+      purpleAir: { sensorIndex: 53107 },
+      wundergroundStationId: "KCAPLACE341"
+    },
+    {
+      name: "Camino",
+      cityKey: "camino",
+      purpleAir: { sensorIndex: 98071 },
+      wundergroundStationId: "KCACAMIN112"
+    },
+    {
+      name: "Charles Brown / Union Mine HS",
+      cityKey: "placerville",
+      purpleAir: { sensorIndex: 53115 },
+      wundergroundStationId: "KCADIAMO36"
+    }
+    // ,{
+    //   name: "Next Field Name",
+    //   cityKey: "camino",
+    //   purpleAir: { sensorIndex: 0 }
+    // }
+  ];
+
+  // Read-only key from develop.purpleair.com, host-restricted to this site's domain.
+  const PURPLEAIR_API_KEY = "76C66E92-911E-11F1-9E30-4201AC1DC129";
+
+  async function fetchStationTemp(stationId) {
+    const obsRes = await fetch(`https://api.weather.gov/stations/${stationId}/observations/latest`);
+    if (!obsRes.ok) throw new Error(`observation fetch failed: ${obsRes.status}`);
+    const obsJson = await obsRes.json();
+    const tempC = obsJson.properties.temperature.value;
+    if (typeof tempC !== "number") throw new Error(`no current temperature from ${stationId}`);
+    return {
+      tempF: (tempC * 9) / 5 + 32,
+      stationId,
+      timestamp: obsJson.properties.timestamp
+    };
+  }
+
+  async function fetchNWSTemp(lat, lon) {
+    const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
+    if (!pointRes.ok) throw new Error(`points lookup failed: ${pointRes.status}`);
+    const pointJson = await pointRes.json();
+    const stationsUrl = pointJson.properties.observationStations;
+
+    const stationsRes = await fetch(stationsUrl);
+    if (!stationsRes.ok) throw new Error(`stations lookup failed: ${stationsRes.status}`);
+    const stationsJson = await stationsRes.json();
+    const candidates = stationsJson.features.slice(0, 15);
+    if (candidates.length === 0) throw new Error("no nearby station found");
+
+    for (const station of candidates) {
+      const stationId = station.properties.stationIdentifier;
+      const stationUrl = station.id;
+      try {
+        const obsRes = await fetch(`${stationUrl}/observations/latest`);
+        if (!obsRes.ok) continue;
+        const obsJson = await obsRes.json();
+        const tempC = obsJson.properties.temperature.value;
+        if (typeof tempC !== "number") continue;
+        return {
+          tempF: (tempC * 9) / 5 + 32,
+          stationId,
+          timestamp: obsJson.properties.timestamp
+        };
+      } catch {
+        continue;
+      }
+    }
+    throw new Error(`no recent temperature from ${candidates.length} nearby stations`);
+  }
+
+  // EPA PM2.5 breakpoints (2024 revision). AQI number bands are unchanged, just the
+  // concentration cutoffs. [concLow, concHigh, aqiLow, aqiHigh]
+  const AQI_BREAKPOINTS = [
+    [0.0, 9.0, 0, 50],
+    [9.1, 35.4, 51, 100],
+    [35.5, 55.4, 101, 150],
+    [55.5, 125.4, 151, 200],
+    [125.5, 225.4, 201, 300],
+    [225.5, 325.4, 301, 500]
+  ];
+
+  function pm25ToAQI(pm) {
+    const clamped = Math.max(0, pm);
+    for (const [cLow, cHigh, aLow, aHigh] of AQI_BREAKPOINTS) {
+      if (clamped <= cHigh) {
+        return Math.round(((aHigh - aLow) / (cHigh - cLow)) * (clamped - cLow) + aLow);
+      }
+    }
+    return 500;
+  }
+
+  function aqiCategory(aqi) {
+    if (aqi <= 50) return { label: "Good", className: "aqi-good" };
+    if (aqi <= 100) return { label: "Moderate", className: "aqi-moderate" };
+    if (aqi <= 150) return { label: "Unhealthy (sensitive groups)", className: "aqi-usg" };
+    if (aqi <= 200) return { label: "Unhealthy", className: "aqi-unhealthy" };
+    if (aqi <= 300) return { label: "Very Unhealthy", className: "aqi-very-unhealthy" };
+    return { label: "Hazardous", className: "aqi-hazardous" };
+  }
+
+  async function fetchAQI(sensorIndex) {
+    const res = await fetch(`https://api.purpleair.com/v1/sensors/${sensorIndex}?fields=pm2.5_10minute,pm2.5,humidity,last_seen`, {
+      headers: { "X-API-Key": PURPLEAIR_API_KEY }
+    });
+    if (!res.ok) throw new Error(`PurpleAir API responded ${res.status}`);
+    const json = await res.json();
+    const sensor = json.sensor || {};
+
+    // Matches the widget's "US EPA / conversion=C0" setting: raw PM2.5 straight
+    // through EPA's breakpoint table, no separate humidity bias correction.
+    const tenMin = sensor.stats && sensor.stats["pm2.5_10minute"];
+    const pmValue = typeof tenMin === "number" ? tenMin : sensor["pm2.5"];
+    if (typeof pmValue !== "number") throw new Error(`no PM2.5 value available (fields: ${Object.keys(sensor).join(", ") || "none"})`);
+
+    const aqi = pm25ToAQI(pmValue);
+    return { aqi, ...aqiCategory(aqi), pmValue };
+  }
+
+  const tempStrip = document.getElementById('tempStrip');
+  const aqiStrip = document.getElementById('aqiStrip');
+
+  // Show a tile for every defined town, even before a practice site is added there.
+  const usedCityKeys = Object.keys(CITIES);
+
+  function fetchPromise(city) {
+    return city.stationId ? fetchStationTemp(city.stationId) : fetchNWSTemp(city.lat, city.lon);
+  }
+
+  // Four-tier temp scale: 95 and below is fine, 96-99 caution, 100-103 elevated caution,
+  // 104+ is the club's mandatory-cancel threshold.
+  function tempColorClass(tempF) {
+    if (tempF <= 95) return 'temp-green';
+    if (tempF <= 99) return 'temp-yellow';
+    if (tempF <= 103) return 'temp-orange';
+    return 'temp-red';
+  }
+
+  usedCityKeys.forEach(key => {
+    const city = CITIES[key];
+    const tile = document.createElement('div');
+    tile.className = 'temp-tile pending';
+    tile.innerHTML = `
+      <span class="city">${city.label}</span>
+      <span class="val">Loading…</span>
+    `;
+    tempStrip.appendChild(tile);
+
+    fetchPromise(city)
+      .then(({ tempF, stationId }) => {
+        tile.classList.remove('pending');
+        tile.classList.add(tempColorClass(tempF));
+        const hint = tempF > 103 ? "Cancel practice/games" : tempF >= 100 ? "Limited exertion" : "";
+
+        // Within 5° of the 100°F caution threshold: surface direct on-site links for
+        // every site in this town so a coach can verify the real number in one tap.
+        let siteLinks = '';
+        if (tempF >= 95) {
+          const sitesWithLinks = LOCATIONS.filter(l => l.cityKey === key && l.wundergroundStationId);
+          if (sitesWithLinks.length > 0) {
+            siteLinks = `
+              <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);">
+                <span style="display:block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;opacity:.75;margin-bottom:2px;">Check your field:</span>
+                ${sitesWithLinks.map(l => `<a class="station" style="display:block;text-decoration:underline;font-weight:600;" href="https://www.wunderground.com/dashboard/pws/${l.wundergroundStationId}" target="_blank" rel="noopener noreferrer">${l.name} &rarr;</a>`).join('')}
+              </div>
+            `;
+          }
+        }
+
+        tile.innerHTML = `
+          <span class="city">${city.label}</span>
+          <span class="val">${Math.round(tempF)}°<small>F</small></span>
+          <span class="station">Station ${stationId}</span>
+          ${hint ? `<span class="rule-hint">${hint}</span>` : ''}
+          ${siteLinks}
+        `;
+      })
+      .catch((err) => {
+        tile.innerHTML = `
+          <span class="city">${city.label}</span>
+          <span class="val">Unavailable</span>
+        `;
+        console.error(`NWS fetch failed for ${city.label}:`, err);
+      });
+  });
+
+  LOCATIONS.forEach(loc => {
+    const tile = document.createElement('div');
+    tile.className = 'aqi-tile pending';
+    tile.innerHTML = `
+      <span class="site">${loc.name}</span>
+      <span class="val">Loading…</span>
+    `;
+    aqiStrip.appendChild(tile);
+
+    fetchAQI(loc.purpleAir.sensorIndex)
+      .then(({ aqi, label, className }) => {
+        tile.classList.remove('pending');
+        tile.classList.add(className);
+        const hint = aqi >= 150 ? "Cancel practice/games"
+          : aqi >= 126 ? "Coach discretion, reduce intensity"
+          : "";
+        tile.innerHTML = `
+          <span class="site">${loc.name}</span>
+          <span class="val">${aqi}<small>AQI</small></span>
+          <span class="category">${label}</span>
+          <span class="meta">Sensor ${loc.purpleAir.sensorIndex}</span>
+          ${hint ? `<span class="meta" style="font-weight:700;">${hint}</span>` : ''}
+        `;
+      })
+      .catch((err) => {
+        tile.innerHTML = `
+          <span class="site">${loc.name}</span>
+          <span class="val">Unavailable</span>
+        `;
+        console.error(`AQI fetch failed for ${loc.name}:`, err);
+      });
+  });
+</script>
+
+</body>
+</html>
