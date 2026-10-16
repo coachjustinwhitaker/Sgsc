@@ -1,0 +1,365 @@
+<meta name="robots" content="noindex, nofollow">
+<title>SGSC Vision and Path Forward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p:first-of-type::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Our Plan for Sierra Gold</div>
+  </header>
+
+  <div class="lede-block">
+    <h1 class="title">Vision and Path Forward</h1>
+    <div class="byline">Standing behind this plan: <b>Justin Whitaker</b></div>
+  </div>
+
+  <div class="aside">
+    <p><strong>TLDR:</strong> Stay on our current path and we burn out volunteers, close off opportunities, and sell our players short of what they could become. This plan is how we avoid that: a clearer path for players, a professionalized club behind it, and a board that can actually run it. Read it, then join our board and help us build this plan out.</p>
+  </div>
+
+  <nav class="toc" aria-label="Jump to a section">
+    <a href="#outgrown">Outgrown</a><span class="sep">&middot;</span>
+    <a href="#vision">Vision</a><span class="sep">&middot;</span>
+    <a href="#player-pathway">Player Pathway</a><span class="sep">&middot;</span>
+    <a href="#coaching-pathway">Coaching Pathway</a><span class="sep">&middot;</span>
+    <a href="#ops-governance">Ops &amp; Governance</a><span class="sep">&middot;</span>
+    <a href="#staffing">Staffing</a><span class="sep">&middot;</span>
+    <a href="#governance">Governance</a><span class="sep">&middot;</span>
+    <a href="#ask">The Ask</a>
+  </nav>
+
+  <article>
+    <p>Our goal is kids playing soccer, falling in love with the game, and letting that game shape them into amazing people. Everything else in this plan, every policy, every org chart, every budget line, only exists in service of that.</p>
+
+    <p>This is our first attempt at writing the whole plan down in one place: not just the governance fixes, but the vision of where we could actually be headed. The player pathway, how we grow the coaches who teach them, what kind of organization runs underneath all of it, and the board structure that holds it all together. It's a draft, a proposed direction to move toward. Parts of it, especially the vision itself, are a starting point for whoever signs on to help build this. Together, we'll finalize it.</p>
+
+    <p>So take a read through this, understand why we're doing this, what we want it to feel like to play here, or to coach here, what it takes operationally to support that, and only then the board mechanics that make it durable.</p>
+
+    <h2 id="outgrown">We've outgrown how we're run</h2>
+
+    <p>Sierra Gold Soccer Club has grown to roughly 850 players without ever building the governance a club this size needs. Decisions have been made ad hoc, by whoever happened to be in the room.</p>
+
+    <p>That style of governance has cost us real people. A Director of Coaching and a Competitive Coordinator both resigned this year, and covering those gaps has stretched the organization thin. It's not ordinary turnover. It's what happens when good volunteers hit a structure that doesn't support them: no written policy, no shared vision, every leadership team reinventing the wheel because nothing was ever written down.</p>
+
+    <p>A club this size needs written policy and staff support no matter who's on the board. It starts with being honest about what we actually want this club to feel like for the people playing and coaching in it, then building the organization and the board structure that can actually deliver that experience.</p>
+
+    <h2 id="vision">What we're building toward</h2>
+
+    <p>Before the how, the why: what we actually want it to feel like to play or coach here.</p>
+
+    <blockquote class="pull">&ldquo;We're not coaching to just create better athletes. We're coaching to develop better humans.&rdquo;</blockquote>
+    <p class="attrib">A line one of our coaches carries from his own mentor.</p>
+
+    <p>Our underlying value is simple: fun leads to belonging, belonging leads to development, development leads to a kid who loves the game and is excited to come back next season. Every program, every practice plan, every coaching decision we make should be judged against whether it upholds those values of fun, belonging, development and excitement.</p>
+
+    <p>A five-year-old chasing a ball for the first time is just as important as a sixteen-year-old fighting for a competitive roster spot. Building a clear pathway gives each of those players a home in our club. And our goal as coaches is to build an environment safe enough for a kid to grow. A place where courage gets built on purpose, where trying the risky pass or the skill move is celebrated regardless of whether it was successful, and where a player knows that their teammates and coaches believe in them. That trust and courage aren't things you drill into a player, they grow out of feeling safe enough to take a chance and still belong, whatever happens next.</p>
+
+    <p>Coaches told us directly, through last year's surveys, what they want our club to be known for: character and effort valued as much as results, and a program strong enough that kids want to stay local instead of heading to bigger clubs down the hill. Holding both of those at once, character first and genuinely competitive, is the actual work.</p>
+
+    <p>This isn't just an idea, one coach is already doing it. His five-block training framework (ball control, possession, defending, the full game, the moment itself) builds a U12 team's training around game-realistic decisions instead of isolated drills. It's not a club standard, just one coach's attempt at the shared language the club's own Technical Roadmap calls for, and whether it becomes more than that is a question for the Director of Coaching to bring to the club on its own merits.</p>
+
+    <p>Families also need to feel our values: regular communication, dependable logistics, fields we can be proud of, and a fun celebratory environment. A family should feel our culture the moment they show up to a game.</p>
+
+    <h2 id="player-pathway">Player pathway</h2>
+
+    <p>Here's the pathway we're building toward, stage by stage.</p>
+
+    <div class="diagram-scroll">
+      <figure>
+        <svg viewBox="0 0 800 130" role="img" aria-label="Five stages side by side, Tiny Tykes, Rec, Step-Up, Copper/Bronze, and Silver/Gold, connected left to right with no stage ranked above another, followed by an open arrow trailing off, undefined.">
+          <defs>
+            <marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 Z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <g font-size="12" fill="currentColor">
+            <rect x="5" y="40" width="130" height="46" fill="none" stroke="currentColor"/><text x="70" y="67" text-anchor="middle">Tiny Tykes</text>
+            <rect x="155" y="40" width="130" height="46" fill="none" stroke="currentColor"/><text x="220" y="67" text-anchor="middle">Rec</text>
+            <rect x="305" y="40" width="130" height="46" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/><text x="370" y="67" text-anchor="middle">Step-Up</text>
+            <rect x="455" y="40" width="150" height="46" fill="none" stroke="currentColor"/><text x="530" y="67" text-anchor="middle" font-size="11">Copper/Bronze</text>
+            <rect x="625" y="40" width="110" height="46" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/><text x="680" y="67" text-anchor="middle" font-size="11">Silver/Gold</text>
+          </g>
+          <path d="M135,63 L155,63" stroke="currentColor" marker-end="url(#arrow3)"/>
+          <path d="M285,63 L305,63" stroke="currentColor" marker-end="url(#arrow3)"/>
+          <path d="M435,63 L455,63" stroke="currentColor" marker-end="url(#arrow3)"/>
+          <path d="M605,63 L625,63" stroke="currentColor" marker-end="url(#arrow3)"/>
+          <path d="M735,63 L795,63" stroke="var(--fg-muted)" opacity="0.55" marker-end="url(#arrow3)"/>
+        </svg>
+        <figcaption>Tiny Tykes, Rec, and Copper/Bronze are running today. Step-Up and Silver/Gold, outlined in gold, are where we're building next: Step-Up doesn't exist yet, and Silver/Gold is a proven experiment, not yet something the club formally supports.</figcaption>
+      </figure>
+    </div>
+
+    <p><strong class="stage">Tiny Tykes</strong> is about that first introduction, and like any introduction, the better the first impression, the more likely a kid is to come back.</p>
+
+    <p><strong class="stage">Rec</strong> is about continuing that relationship and deepening the fun, building a sense of community.</p>
+
+    <p><strong class="stage">Step-Up</strong> is about making a personal commitment to growth.</p>
+
+    <p><strong class="stage">Copper/Bronze</strong> is about commitment, to yourself and to your team.</p>
+
+    <p><strong class="stage">Silver/Gold</strong> is about finding out how far you can push yourself and your teammates.</p>
+
+    <p>Step-Up and Silver/Gold are important additions to our pathway. Splitting comp into Copper/Bronze and Silver/Gold gives players a home in both development and competition: the lower division lets a committed player and family focus on personal growth and learning team dynamics, while the upper division lets a player find out just how far that development and team can take them.</p>
+
+    <p>Underneath our pathway we can introduce new player experiences like winter futsal, camps and clinics, and off-season small-sided tournaments that would give our players more time on the ball between seasons. Each one is another touchpoint with the club through the year, and another chance for a player to keep growing.</p>
+
+    <p>Building a clearer pathway to high school soccer is another opportunity: camps with the high school teams, inviting their coaches to our trainings, and a clear line into their programs could all help deepen a player's commitment and passion for the game. Our club should help a committed player on their full soccer journey.</p>
+
+    <h2 id="coaching-pathway">Coaching pathway</h2>
+
+    <p>If the player pathway is the branches, reaching outward toward a player's growth, the coaching pathway is the roots underneath it, growing deeper and stronger. That arc starts with answering the call to coach their own kid's U6 team, and to have the same fun and community a new player feels on day one. Rec grows a coach's skills through mentorship and opportunities. Comp coaching asks for a deeper commitment, growing themselves to grow their team. And eventually, a committed coach becomes a Technical Director.</p>
+
+    <p>To support that growth, we need structure behind it. Our yearly coaches meeting is the foundation of our coaching community, but it's not enough on its own: last year's surveys showed coaches are motivated and positive, yet often feel isolated, under-resourced, and unsure if they're doing it right, especially first-time coaches. What they asked for directly points at what that structure should be: a preseason orientation that actually prepares new coaches for running practices and managing groups, age-appropriate practice plan frameworks, mentorship pairing, and a coach resource library instead of every team improvising alone. Coaching clinics, a mentorship program, and a community of practice are how we build toward that. As coaches grow we can support their growth through professional trainings and opportunities.</p>
+
+    <p>The club builds the structure and the resources, the coach commits to their own development arc, and together that turns isolated teams into a connected club. A coach who feels backed by the club is a coach who stays, and keeps growing roots here instead of somewhere else.</p>
+
+    <h2 id="ops-governance">Operations and governance</h2>
+
+    <p>Operations and governance aren't the same job, and most of what's gone wrong at Sierra Gold comes from running them as if they were. Operations is the day-to-day work of keeping the club running, field permits, scheduling, vendor coordination, admin. Governance is the board's job, setting the club's vision and policy, building the fundraising and community relationships behind it, and holding the Executive Director accountable for how well operations actually runs. In short, the board decides, staff carries it out.</p>
+
+    <p>Right now, board members do both. Volunteers who ran for a board seat to build vision and community ended up handling field permits, team scheduling, and communications instead. Separating staffing and governance, as outlined below, is how we fix that. Staffing builds the operations layer this club has never had. Governance gets to focus on the vision, fundraising, and community work it's actually built for.</p>
+
+    <h2 id="staffing">Staffing</h2>
+
+    <p>Coaches and players both depend on a fully functional organization. The fix is the club's first Executive Director, part-time to start, handling the operations work directly, permits, scheduling, equipment, and the rest of what's broken down below.</p>
+
+    <p>Some operations work gets contracted out, like the Technical Director and Registrar. Some stays volunteer-run, like Team Managers and our Age Group Coordinators. Field maintenance and scheduling move to the Executive Director too, since a relationship with the schools that stays with one person year after year is worth more than one that resets every time a new volunteer takes the title. The operations work needs one accountable owner so nothing drops.</p>
+
+    <div class="diagram-scroll">
+      <figure>
+        <svg viewBox="0 0 760 396" role="img" aria-label="Organizational chart showing the Board connecting to the Executive Director, who oversees three kinds of work: direct responsibilities including permits, scheduling, field maintenance coordination, equipment, compliance, financial records, communications, board prep, and event management; contracted work including the Technical Director, Registrar, field painting, and vendor contracts; and volunteer roles including Team Managers and five Age Group Coordinators. The Referee Assignor sits off to the side, independent, coordinating closely with the Executive Director without reporting to them.">
+          <defs>
+            <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 Z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect x="300" y="10" width="160" height="34" rx="2" fill="none" stroke="currentColor"/>
+          <text x="380" y="32" text-anchor="middle" font-size="12.5" fill="currentColor">BOARD</text>
+          <rect x="300" y="90" width="160" height="40" rx="2" fill="currentColor" opacity="0.08" stroke="currentColor"/>
+          <text x="380" y="112" text-anchor="middle" font-size="12.5" font-weight="600" fill="currentColor">EXEC. DIRECTOR</text>
+          <text x="380" y="124" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.65">staff, not a board seat</text>
+          <rect x="580" y="90" width="160" height="40" rx="2" fill="none" stroke="currentColor" opacity="0.6"/>
+          <text x="660" y="108" text-anchor="middle" font-size="11.5" fill="currentColor">REFEREE ASSIGNOR</text>
+          <text x="660" y="121" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.65">independent function</text>
+          <line x1="380" y1="44" x2="380" y2="90" stroke="currentColor" marker-end="url(#arrow2)"/>
+          <path d="M460,110 L580,110" fill="none" stroke="currentColor" opacity="0.5" stroke-dasharray="3 3"/>
+          <text x="470" y="103" font-size="9.5" fill="currentColor" opacity="0.65">coordinates with</text>
+          <line x1="380" y1="130" x2="130" y2="180" stroke="currentColor" marker-end="url(#arrow2)"/>
+          <line x1="380" y1="130" x2="380" y2="180" stroke="currentColor" marker-end="url(#arrow2)"/>
+          <line x1="380" y1="130" x2="630" y2="180" stroke="currentColor" marker-end="url(#arrow2)"/>
+          <rect x="20" y="180" width="220" height="176" rx="2" fill="none" stroke="currentColor"/>
+          <text x="35" y="202" font-size="12.5" font-weight="600" fill="currentColor">DIRECT</text>
+          <g font-size="11.5" fill="currentColor">
+            <text x="35" y="220">Permits &amp; scheduling</text>
+            <text x="35" y="236">Field maintenance</text>
+            <text x="35" y="252">Equipment</text>
+            <text x="35" y="268">Compliance</text>
+            <text x="35" y="284">Financial records</text>
+            <text x="35" y="300">Communications</text>
+            <text x="35" y="316">Board prep</text>
+            <text x="35" y="332">Event management</text>
+          </g>
+          <rect x="270" y="180" width="220" height="115" rx="2" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/>
+          <text x="285" y="202" font-size="12.5" font-weight="600" fill="var(--gold-strong)">CONTRACTED</text>
+          <g font-size="11.5" fill="currentColor">
+            <text x="285" y="220">Technical Director</text>
+            <text x="285" y="236">Registrar</text>
+            <text x="285" y="252">Field painting</text>
+            <text x="285" y="268">Vendor contracts</text>
+          </g>
+          <rect x="520" y="180" width="220" height="76" rx="2" fill="none" stroke="currentColor" opacity="0.6"/>
+          <text x="535" y="202" font-size="12.5" font-weight="600" fill="currentColor">VOLUNTEER</text>
+          <g font-size="11.5" fill="currentColor">
+            <text x="535" y="220">Team Managers</text>
+            <text x="535" y="236">Age Group Coordinators (5)</text>
+          </g>
+        </svg>
+        <figcaption>The Executive Director's work breaks into three kinds, handled directly, contracted out, and run by volunteers. Today's Field Maintenance Coordinator also covers scheduling, one volunteer carrying both jobs; under this plan both move to the ED, since the club coordinates with the schools that maintain our fields rather than maintaining them ourselves. The Referee Assignor stays independent, required by NorCal, coordinating closely with the ED without reporting to them.</figcaption>
+      </figure>
+    </div>
+
+    <h2 id="governance">Governance</h2>
+
+    <p>None of the above vision survives unless the board itself is reformed for governance. What we're building toward is a board that can actually do its job: set direction, approve budget, and hold the Executive Director accountable, in a meeting that doesn't run three hours just to get through the agenda. A smaller board gets us a quorum we can actually hit, shorter meetings, and faster decisions, so time in the room goes to direction and accountability instead of procedural traffic.</p>
+
+    <p>One thing worth being honest about before anyone signs up: the board described below is the target, not what you'd be joining this November. The board you'd actually join this cycle still runs closer to eighteen voting seats.</p>
+
+    <p>Here's today's roster, seat by seat, and where each one fits under this plan.</p>
+
+    <div class="diagram-scroll">
+      <figure>
+        <table class="roster">
+          <tr><th>Seat today</th><th>Under this plan</th><th>Why</th></tr>
+          <tr class="group-label"><td colspan="3">Seats that fit a smaller, governance-focused board</td></tr>
+          <tr class="stays"><td class="role">President</td><td>Board level</td><td>Governance, sets direction; runs board meetings</td></tr>
+          <tr class="stays"><td class="role">Vice President</td><td>Board level</td><td>Governance support, backs up the President</td></tr>
+          <tr class="stays"><td class="role">Treasurer</td><td>Board level</td><td>Fiduciary oversight of club finances; the ED may take on bookkeeping over time, this seat owns the oversight regardless</td></tr>
+          <tr class="stays"><td class="role">Secretary</td><td>Board level</td><td>Minutes and the official governance record are a bylaws function</td></tr>
+          <tr class="stays"><td class="role">Director of Coaching</td><td>Board level</td><td>Owns the player pathway end to end, sets standards and coach selection</td></tr>
+          <tr class="stays"><td class="role">Events, Sponsorship &amp; Concessions Director</td><td>Board level</td><td>Fundraising strategy and relationships; the ED runs event logistics</td></tr>
+          <tr class="group-label"><td colspan="3">Currently also voting, not all of it governance work</td></tr>
+          <tr class="moves"><td class="role">Communications Director</td><td><strong>ED responsibility</strong></td><td>Communications execution is an ED responsibility</td></tr>
+          <tr class="moves"><td class="role">Field Maintenance Coordinator</td><td><strong>ED management responsibility</strong></td><td>An ongoing working relationship with the school or field owner, official club business better managed by paid staff</td></tr>
+          <tr class="moves"><td class="role">Scheduling Manager</td><td><strong>ED responsibility</strong></td><td>Better suited to the ED's day-to-day function</td></tr>
+          <tr class="moves"><td class="role">Equipment Director</td><td><strong>ED responsibility</strong></td><td>Inventory and distribution, straightforward operational work</td></tr>
+          <tr class="moves"><td class="role">Registrar</td><td><strong>Contracted, managed by ED</strong></td><td>Registration operations need a specific system and skill set; contracted and supervised administratively by the ED</td></tr>
+          <tr class="moves"><td class="role">Technical Director</td><td><strong>Contracted, managed by ED</strong></td><td>Runs sessions and coach development; ED handles pay and contract, DOC keeps programmatic direction on standards</td></tr>
+          <tr class="moves"><td class="role">Referee Director</td><td><strong>Contractor, or board-level</strong></td><td>NorCal requires a credentialed, independent Referee Assignor who coordinates with the ED without reporting to them; whether that's a paid contractor or sits closer to the board is an open question</td></tr>
+          <tr class="moves"><td class="role">Age Group Coordinators (5: U5/U6, U8, U10, U12&ndash;U14, U16&ndash;U19)</td><td><strong>Could be volunteer</strong></td><td>Relationship-driven, age-group-specific work, a good fit for an experienced coach willing to mentor newer ones</td></tr>
+        </table>
+        <figcaption>A smaller, governance-focused board is the goal here, not a fixed number yet. Each seat on the governance list is a function the Executive Director shouldn't do: fundraising strategy, the fiduciary and legal record, setting direction. Everything else sorts into ED-managed work, contracted staff, or volunteer roles.</figcaption>
+      </figure>
+    </div>
+
+    <p>What stays with the board is everything that is governance: setting vision and strategic direction, budget and policy approval, fundraising, hiring, evaluating, and letting go of the one employee it directly hires, bylaws review, and PAD (Protests, Appeals, and Discipline) decisions. Fundraising becomes a focus that every board member is expected to help with. Decisions being made by written policy instead of by whoever's in the room that night is itself part of the culture this plan is trying to build.</p>
+
+    <p>Staying governance-focused doesn't mean staying remote. The board stays connected to the club membership through a set of advisory voices that don't need a vote to be heard: a parent representative who isn't already a coach, a schools representative, a sponsorship voice, and finance and medical advisors. A Player Advisory Committee, meeting twice a year, is a standing opportunity to hear directly from players themselves.</p>
+
+    <p>This vision doesn't all happen at once. The board spends the next year adopting policy, hiring the Executive Director, and building the restructuring amendment with legal counsel before bringing it to the membership for a vote at the November 2027 AGM. This is about building it right instead of fast, so the structure can actually carry this club into its next phase.</p>
+
+    <p>A board seat is a fiduciary role, not just a vote. Being a fiduciary means acting in the club's best interest, and that breaks down into three duties. Duty of care: show up, pay attention, and make an informed decision. Duty of loyalty: the club's interest ahead of your own. Duty of obedience: stay inside SGSC's bylaws, its stated mission, its policies, and the law. On top of all three, it costs time: meetings, prep, and whatever committee or liaison work comes with your specific seat.</p>
+
+    <h2 id="ask">The ask</h2>
+
+    <blockquote class="pull">
+      &ldquo;If you join us this November, you're not just taking a seat. You're committing to a club where a five-year-old's first touch grows into a competitive player fighting for a roster spot, where families who thought they were just watching soccer end up building our community, and where a club that's burned out its own volunteers becomes one players are proud to represent. That's the work. That's what comes next for SGSC.&rdquo;
+    </blockquote>
+
+    <p class="signoff">If someone shared this page with you, it's because they think you'd be good at this work. Let us know what you think, whether this aligns with your vision, and whether you're ready to help. <span class="mark">That's the actual ask.</span></p>
+  </article>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    SGSC Vision and Path Forward &middot; shared ahead of the November 18, 2026 AGM.
+  </div>
+</footer>
