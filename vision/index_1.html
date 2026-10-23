@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SGSC Vision and Policy Documents</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧭%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Vision and Policy Documents">
+<meta property="og:description" content="The vision, policy manuals and plans for Sierra Gold Soccer Club.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p:first-of-type::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  .docs{list-style:none;margin:10px 0 10px;padding:0;}
+  .docs li{border-top:1px solid var(--border);padding:22px 0;}
+  .docs li:last-child{border-bottom:1px solid var(--border);}
+  .docs .tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-strong);}
+  .docs h2{font-size:clamp(22px,4vw,26px);margin:4px 0 6px;}
+  .docs h2 a{color:var(--fg);text-decoration:none;}
+  .docs h2 a:hover{color:var(--pine);text-decoration:underline;}
+  .docs p{margin:0;color:var(--fg-muted);font-size:16px;}
+  .group{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--fg-muted);margin:34px 0 0;}
+</style>
+</head><body>
+<div class="wrap">
+<header><div class="kicker">Our Plan for Sierra Gold</div></header>
+<div class="lede-block"><h1 class="title">Vision and Policy Documents</h1>
+<div class="byline">Working documents for Sierra Gold Soccer Club, shared ahead of the November 18, 2026 AGM</div></div>
+
+<!--
+  To add a document: copy one <li> block below, paste it where it belongs,
+  and change the tag, link, title and description. Put the file in this folder.
+-->
+
+<div class="group">Vision</div>
+<ul class="docs">
+  <li>
+    <div class="tag">Draft &middot; October 2026</div>
+    <h2><a href="sgsc-vision.html">Vision and Path Forward</a></h2>
+    <p>Where the club is headed: the player and coaching pathways, staffing, and a board built to run it.</p>
+  </li>
+</ul>
+
+<div class="group">Policy manuals</div>
+<ul class="docs">
+  <li>
+    <div class="tag">Proposed &middot; October 2026</div>
+    <h2><a href="sgsc-board-policy-manual.html">Board Policy Manual</a></h2>
+    <p>The rules the Board adopts to run the club: governance, money, teams and players, discipline, safety and nonprofit compliance.</p>
+  </li>
+  <li>
+    <div class="tag">Proposed &middot; October 2026</div>
+    <h2><a href="sgsc-coaching-policy-manual.html">Coaching Policy Manual</a></h2>
+    <p>Everything an SGSC coach needs in one place: requirements, selection, running a team, conduct and safety on site.</p>
+  </li>
+  <li>
+    <div class="tag">Proposed &middot; October 2026</div>
+    <h2><a href="sgsc-family-handbook.html">Family Handbook</a></h2>
+    <p>What players and families need to know, from registration and tryouts to game day, fees and keeping players safe.</p>
+  </li>
+</ul>
+
+</div>
+<footer><div class="wrap">Sierra Gold Soccer Club &middot; Vision and policy documents</div></footer>
+</body></html>

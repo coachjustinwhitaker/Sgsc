@@ -1,0 +1,251 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SGSC Family Handbook</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📙%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Family Handbook"><meta property="og:description" content="What players and families need to know about Sierra Gold Soccer Club.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p:first-of-type::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:20px;margin:1.9em 0 .4em;line-height:1.25;color:var(--pine-strong);}
+  :root[data-theme="dark"] h3{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
+  p.owner{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 .9em;}
+  p.owner strong,p.owner em{font-weight:500;font-style:normal;color:var(--gold-strong);}
+  article ul,article ol{margin:0 0 1.3em;padding-left:1.3em;}
+  article li{margin:0 0 .45em;font-size:16.5px;}
+  article p{font-size:17px;}
+  nav.toc a{white-space:nowrap;}
+  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
+  h2,h3{scroll-margin-top:110px;}
+  .table-scroll{overflow-x:auto;margin:.6em 0 1.6em;}
+  table.roster td:first-child{font-weight:600;}
+  .nodrop article p:first-of-type::first-letter{all:unset;}
+  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
+  .series a{color:var(--fg-muted);}
+  .series b{color:var(--pine);font-weight:500;}
+  @media print{nav.toc{position:static;} body{background:#fff;}}
+</style></head><body class="">
+<div class="wrap">
+<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
+<div class="lede-block"><h1 class="title">Family Handbook</h1>
+<div class="byline">Proposed for adoption by the Board of Directors, October 2026</div><div class="series"><a href="index.html">All documents</a> <span class="sep">&middot;</span> <a href="sgsc-board-policy-manual.html">Board Policy Manual</a> <span class="sep">&middot;</span> <a href="sgsc-coaching-policy-manual.html">Coaching Policy Manual</a> <span class="sep">&middot;</span> <b>Family Handbook</b></div></div>
+<nav class="toc" aria-label="Jump to a section"><a href="#1-registration-and-age-groups">Registration</a><span class="sep">&middot;</span><a href="#2-tryouts-team-placement-and-playing-up">Tryouts</a><span class="sep">&middot;</span><a href="#3-fees-payments-refunds-aid-and-volunteering">Fees</a><span class="sep">&middot;</span><a href="#4-uniforms-and-gear">Gear</a><span class="sep">&middot;</span><a href="#5-playing-time-and-attendance">Playing time</a><span class="sep">&middot;</span><a href="#6-game-day">Game day</a><span class="sep">&middot;</span><a href="#7-player-and-parent-codes-of-conduct">Conduct</a><span class="sep">&middot;</span><a href="#8-bullying">Bullying</a><span class="sep">&middot;</span><a href="#9-talking-with-coaches-and-raising-concerns">Concerns</a><span class="sep">&middot;</span><a href="#10-social-media-and-public-comments">Social media</a><span class="sep">&middot;</span><a href="#11-alcohol-drugs-and-weapons">Alcohol</a><span class="sep">&middot;</span><a href="#12-keeping-players-safe">Safety</a><span class="sep">&middot;</span><a href="#13-medical-information">Medical</a><span class="sep">&middot;</span><a href="#14-concussion">Concussion</a><span class="sep">&middot;</span><a href="#15-heat-air-quality-and-weather">Weather</a><span class="sep">&middot;</span><a href="#16-photos-and-video">Photos</a><span class="sep">&middot;</span><a href="#17-everyone-is-welcome">Welcome</a><span class="sep">&middot;</span><a href="#18-leaving-the-club">Leaving</a></nav>
+<article>
+<p>Welcome to Sierra Gold Soccer Club. We want your player to love the game, feel like they belong, and grow into a good person along the way. This handbook explains how the club works and what we ask of players and families, whether you&#x27;re on a recreational or competitive team.</p>
+<p>At registration, each family confirms they&#x27;ve read this handbook and agrees to follow it. The full rules are in the Board Policy Manual and the Coaching Policy Manual, and if this handbook and a manual ever disagree, the manual controls. If something here isn&#x27;t clear, ask your coach or your Age Group Coordinator.</p>
+<h2 id="1-registration-and-age-groups">1. Registration and age groups</h2>
+<p>Register online each season by the deadline. Your registration is complete once fees are paid, or once a payment plan or financial aid is in place. Use registration to keep your contact, emergency and medical information current, since that&#x27;s what your coach will rely on.</p>
+<p>Age groups follow the rules of US Soccer and the organization your team registers through. The club website shows which age group your player is in.</p>
+<p>Recreational players are placed on teams by the club. Competitive teams are picked by tryout (section 2).</p>
+<h2 id="2-tryouts-team-placement-and-playing-up">2. Tryouts, team placement and playing up</h2>
+<p class="owner"><em>Full rule: Board manual 6.1 to 6.4 and 6.7.</em></p>
+<p>Every player has a place at SGSC. Most start in Tiny Tykes, move to Recreational for deeper fun and community, and some go on to Step-Up (coming soon) and then competitive soccer, starting with Copper and Bronze and, for players who want to test how far they can go, Silver and Gold. Players move up when they and their families are ready.</p>
+<p><strong>Recreational teams</strong> are formed by the club to be balanced. A coach&#x27;s child plays on that coach&#x27;s team. We consider other requests but can&#x27;t guarantee them.</p>
+<p><strong>Competitive teams</strong> are picked by tryout. Dates and places are posted at least 14 days ahead, and your player may try out for their own age group, an older team, or both. Offers come in writing. If your player isn&#x27;t offered a spot, you&#x27;ll hear within 15 days after tryouts end.</p>
+<p><strong>Playing up, competitive.</strong> If an older team&#x27;s coach wants your player, that coach first checks with the coach of your player&#x27;s own age group. You can always decline. If a play-up is turned down and you disagree, you can ask the Director of Coaching to review it, then the Board. Once placed, your player stays with that team. If size, maturity or skill becomes a concern later, the Director of Coaching will talk it through with you and may suggest moving back down.</p>
+<p><strong>Playing up, recreational.</strong> Rec players can play up for family needs, such as joining a sibling&#x27;s team, when the team has space and it&#x27;s safe. If your player is looking for more competitive soccer, the answer is tryouts.</p>
+<p><strong>Guest play</strong> for a single game or tournament is arranged between coaches.</p>
+<h2 id="3-fees-payments-refunds-aid-and-volunteering">3. Fees, payments, refunds, aid and volunteering</h2>
+<p class="owner"><em>Full rule: Board manual 4.1 to 4.6.</em></p>
+<p>SGSC works hard to keep soccer affordable. Fees are set each year in the fee schedule and published before registration and tryouts. You pay club fees once, at the start of the season. Competitive teams may also collect a team fee for tournaments and other team costs, and your coach will walk through that budget at the first team meeting. If paying all at once is hard, the Treasurer can set up a payment plan.</p>
+<p><strong>Financial aid.</strong> No child should miss out because of cost. Partial aid is available as funds allow. Apply confidentially to the Treasurer by the deadline in the fee schedule. Coaches are never told who receives aid.</p>
+<p><strong>Late accounts.</strong> If an account is 60 days past due with no plan in place, your player sits out until it&#x27;s current or a plan is agreed. A past balance needs to be settled, or on a plan, before you register for a new season.</p>
+<p><strong>Refunds</strong></p>
+<ul><li><strong>Recreational:</strong> full refund minus the processing fee before registration closes. After that and before the first game, minus the processing fee and uniform cost. After the first game, only for hardship the Board approves.</li><li><strong>Competitive:</strong> a roster spot is a full-season commitment. Prorated refunds are possible only for a move out of the area or a season-ending injury.</li><li><strong>No refunds</strong> for weather, playing time or coaching decisions, or removal for conduct.</li></ul>
+<p><strong>Injured players.</strong> A competitive player out 2 months or more, with a doctor&#x27;s note, may get a prorated credit or refund.</p>
+<p><strong>Volunteering.</strong> The club runs on volunteers. Each family serves the shifts listed in the fee schedule or pays the buyout.</p>
+<h2 id="4-uniforms-and-gear">4. Uniforms and gear</h2>
+<p class="owner"><em>Full rule: Coaching manual 2.2.</em></p>
+<p>Players wear the club uniform for league and cup games. Teams sometimes wear special kits at tournaments, such as Halloween events, and your coach will let you know. No added patches or sponsor logos unless the Board approves them.</p>
+<p>Bring to every practice and game: cleats, shin guards covered by socks, a labeled water bottle, layers for the weather, and any medication your player needs, such as an inhaler or EpiPen. No jewelry while playing, and no hard casts or braces with exposed hard parts. The referee has the final say.</p>
+<h2 id="5-playing-time-and-attendance">5. Playing time and attendance</h2>
+<p class="owner"><em>Full rule: Coaching manual 2.3.</em></p>
+<p><strong>Recreational.</strong> Every player who shows up ready to play plays at least half of each game.</p>
+<p><strong>Competitive.</strong> Minutes are earned, not guaranteed. Coaches decide based on attendance, effort, attitude, readiness, development and what the team needs. If attendance or behavior is costing your player minutes, the coach will tell you.</p>
+<p>Either way, let your coach know early about absences. Competitive players are expected at every practice and game, and a roster spot is a full-season commitment.</p>
+<h2 id="6-game-day">6. Game day</h2>
+<p class="owner"><em>Full rule: Coaching manual 3.2 and 4.7.</em></p>
+<p>Players arrive 15 minutes before kickoff, or earlier if the coach asks. Spectators stay on the spectator side, out of team areas, and not behind goals or along goal lines. Please don&#x27;t go onto the field unless the referee or coach asks you to. Questions about calls go to your coach after the game, never to the referee.</p>
+<p>Never let children climb or hang on goals. No pets at practices or games, though service animals are always welcome.</p>
+<p>Please pick up on time. Two team adults stay until every player is picked up.</p>
+<h2 id="7-player-and-parent-codes-of-conduct">7. Player and parent codes of conduct</h2>
+<p>Youth soccer works when everyone does their part. These codes describe what that looks like.</p>
+<p><strong>Players</strong></p>
+<ul><li>Show up on time and ready to play.</li><li>Respect teammates, opponents, referees and coaches. Win and lose with class.</li><li>No cheating, bullying, hazing or putting anyone down, on the field, in the group chat or anywhere else.</li><li>Tell an adult right away about pain, injury, illness, bullying or anything that feels unsafe.</li><li>Take care of club gear and the fields.</li><li>Remember you represent SGSC, in person and online.</li></ul>
+<p><strong>Parents and spectators</strong></p>
+<ul><li>Cheer for every player, on both teams.</li><li>Let coaches coach. No instructions from the sideline.</li><li>Let referees referee. Never argue with, yell at, follow or confront a referee. Many of ours are teenagers.</li><li>Treat coaches, staff, volunteers and other families with respect. No threats, harassment or abuse of anyone.</li><li>Wait 24 hours before raising a game-day concern (section 9).</li><li>Get your player there on time with their gear.</li><li>Keep your contact and medical information current.</li><li>Keep the financial and volunteer commitments you made at registration.</li></ul>
+<p><strong>If the code is broken.</strong> Under US Club Soccer rules, coaches and the club answer for their spectators, so one parent&#x27;s behavior can cost the whole team. Steps usually go in this order, though serious conduct can skip straight to the end:</p>
+<ol><li>A reminder from the coach or team manager.</li><li>A formal warning from the club.</li><li>Removal from the game or field, by the referee or a club official.</li><li>A required online sportsmanship course before returning.</li><li>Suspension from attending, or removal of the player or family from the club.</li></ol>
+<p>Suspensions and removals follow the club&#x27;s PAD procedure (Board manual 7.1), which includes written notice and a chance to be heard.</p>
+<h2 id="8-bullying">8. Bullying</h2>
+<p>Every player should feel safe at practice, at games and in team group chats. Bullying, hazing and cruelty aren&#x27;t allowed anywhere, including online.</p>
+<p>If your player is being bullied, or sees it happen, here&#x27;s what to do:</p>
+<ul><li><strong>Players:</strong> tell your coach, your parent or any adult you trust.</li><li><strong>Parents:</strong> tell the coach. If it involves the coach, or isn&#x27;t resolved, go to the Director of Coaching or the Recreational Program Director.</li></ul>
+<p>Coaches step in right away, tell the parents of the players involved, and report it to the program director. Serious or repeated bullying goes to the club&#x27;s PAD procedure (Board manual 7.1). Bullying that is abuse, or puts a child in danger, is reported as described in section 12.</p>
+<h2 id="9-talking-with-coaches-and-raising-concerns">9. Talking with coaches and raising concerns</h2>
+<p>Team news, schedules and cancellations go out through the club&#x27;s team app and email. Keep your contact information current, and check messages before you leave for practice or games.</p>
+<p><strong>Talking with your coach.</strong> Good conversations are about how your player is developing, attendance, and what to work on. Please don&#x27;t catch the coach right before, during or right after a practice or game. Set up a time instead. And follow the <strong>24-hour rule</strong>: wait at least 24 hours after a game before raising playing time, positions or coaching decisions. From U13 up, we encourage players to join the conversation.</p>
+<p><strong>If you have a concern,</strong> start close to the team and move up only if it isn&#x27;t resolved:</p>
+<ol><li><strong>Coach.</strong> Most things are solved here.</li><li><strong>Team manager,</strong> for schedules, fees and team logistics.</li><li><strong>Age Group Coordinator</strong> for your player&#x27;s age group.</li><li><strong>Director of Coaching</strong> (competitive) or <strong>Recreational Program Director</strong> (recreational).</li><li><strong>The Board,</strong> in writing to the President or Secretary.</li></ol>
+<p>We aim to respond within 7 days at each step. The club reviews whether a coach followed club policy, but it doesn&#x27;t overrule normal coaching decisions such as positions or lineups. A complaint that could lead to discipline must be in writing (Board manual 7.1). Safety concerns skip this chain entirely (section 12).</p>
+<p><strong>Who to contact.</strong> Current names and contact details are on the club website.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>For</th><th>Contact</th></tr></thead><tbody><tr><td>Practice, games, playing time</td><td>Your coach</td></tr><tr><td>Schedules, team fees, logistics</td><td>Your team manager</td></tr><tr><td>Questions about your age group</td><td>Your Age Group Coordinator</td></tr><tr><td>Registration and rosters</td><td>Registrar</td></tr><tr><td>Fees, payment plans, financial aid</td><td>Treasurer</td></tr><tr><td>Unresolved coaching concerns</td><td>Director of Coaching or Recreational Program Director</td></tr><tr><td>Safety concerns</td><td>Safety and risk coordinator</td></tr><tr><td>Concerns still unresolved</td><td>The Board, through the President or Secretary</td></tr><tr><td>Emergencies</td><td>911</td></tr></tbody></table></div>
+<h2 id="10-social-media-and-public-comments">10. Social media and public comments</h2>
+<p>Please don&#x27;t post negative comments about players (on any team), referees, coaches or other families, and ask before posting close-up photos of other people&#x27;s children. If you have a concern, raise it privately through section 9, not online. Breaking this rule is handled like any other code of conduct issue (section 7).</p>
+<h2 id="11-alcohol-drugs-and-weapons">11. Alcohol, drugs and weapons</h2>
+<p>No alcohol, drugs, tobacco or vaping at any SGSC youth practice, game or event, including the parking lot. No weapons, except as the law allows at that field, such as on-duty law enforcement.</p>
+<p>A player found with alcohol, drugs, tobacco or a vape at a club activity is removed from the activity, the parents are called, and the matter goes to the club&#x27;s PAD procedure.</p>
+<h2 id="12-keeping-players-safe">12. Keeping players safe</h2>
+<p class="owner"><em>Full rule: Board manual 8.1.</em></p>
+<p>Your player&#x27;s safety comes before everything else. Every coach, team staff member, board member and adult who travels with a team must pass a background check, complete California&#x27;s fingerprint check and mandated reporter training where required, and complete SafeSport training every year before working with players.</p>
+<p>Here&#x27;s what that means day to day:</p>
+<ul><li>No hidden one-on-one time between an adult and a player. Individual training needs your written permission each year, and you can always watch.</li><li>No adult drives your child alone without your written permission that year. SGSC does not arrange carpools between families.</li><li>Coaches&#x27; messages to players copy you or another adult, between 8 a.m. and 8 p.m. No private or disappearing messages, and no private social media connections.</li><li>You can ask in writing that coaches not contact your child electronically.</li><li>Starting in 2027, every coach is CPR and AED certified, and starting in 2028, AEDs will be at every official practice and match. Each year we send families our cardiac emergency plan and AED locations.</li></ul>
+<p><strong>If you suspect abuse,</strong> call law enforcement or child protective services right away, or 911 if a child is in danger. Then tell the safety and risk coordinator, or report to US Club Soccer at usclubsoccer.org/reportaconcern or to the U.S. Center for SafeSport. Reports can be anonymous.</p>
+<h2 id="13-medical-information">13. Medical information</h2>
+<p class="owner"><em>Full rule: Coaching manual 4.9 and 4.10.</em></p>
+<p>At the start of the season, tell your coach about allergies, asthma, diabetes, seizures or any other condition. It stays with the team staff who need to know. Send your player&#x27;s own medication, such as an inhaler or EpiPen, to every practice and game. Coaches won&#x27;t give any other medicine. Keep your emergency contacts current.</p>
+<p>If your player sees a doctor for an injury, send a doctor&#x27;s note clearing them before they come back. Concussions follow section 14.</p>
+<h2 id="14-concussion">14. Concussion</h2>
+<p class="owner"><em>Full rule: Coaching manual 4.1.</em></p>
+<p>Each year at registration, players and parents sign a concussion and head injury information sheet, as California law requires. A player with a suspected concussion comes out and does not return that day, and no one can overrule that. Coming back needs written clearance from a licensed health care provider, and at least a 7-day graduated return if a concussion is diagnosed. Please tell your coach about any concussion, including ones that happen outside soccer.</p>
+<h2 id="15-heat-air-quality-and-weather">15. Heat, air quality and weather</h2>
+<p class="owner"><em>Full rule: Coaching manual 4.3 to 4.5.</em></p>
+<p>Foothill summers and fire season mean we watch conditions closely. Outdoor practices and games are canceled above 103°F (100°F for practices on turf), or at an AirNow AQI above 150. Between 126 and 150 AQI, teams take more breaks and lower the intensity, and players with breathing conditions may sit out with no penalty. Play stops at the first lightning or thunder and resumes 30 minutes after the last.</p>
+<p>Cancellations go out through the team app and email. Unless you hear otherwise, assume it&#x27;s on. Tell your coach about any asthma or history of heat illness, and keep your player home when they&#x27;re sick.</p>
+<h2 id="16-photos-and-video">16. Photos and video</h2>
+<p class="owner"><em>Full rule: Board manual 3.2.</em></p>
+<p>SGSC may use team and game photos and video on its website, social media and newsletters, with first names only. To opt out, tell the Registrar in writing at registration or any time after. You&#x27;re welcome to take photos and video at games for personal use. Recording is never allowed in bathrooms, locker rooms or changing areas, and team game video is used for coaching and shared only with that team.</p>
+<h2 id="17-everyone-is-welcome">17. Everyone is welcome</h2>
+<p class="owner"><em>Full rule: Board manual 2.5.</em></p>
+<p>SGSC welcomes every player and family. We do not discriminate based on race, color, ethnicity, national origin, religion, sex, gender identity, sexual orientation, disability or family income. To ask for an accommodation for a disability, write to the Director of Coaching or the Recreational Program Director. Concerns go to the President.</p>
+<h2 id="18-leaving-the-club">18. Leaving the club</h2>
+<p class="owner"><em>Full rule: Board manual 6.6.</em></p>
+<p>We hope every player stays, but if you need to leave during the season, ask the Registrar in writing for a release. It&#x27;s processed within 5 business days. Any balance owed still stands after a player leaves. At the end of the seasonal year, every player is free to register with any club. NorCal Premier tryout windows limit when other clubs can recruit current players.</p>
+</article>
+</div>
+<footer><div class="wrap">SGSC Family Handbook &middot; Version 1.0, proposed October 2026 &middot; If this page and the Board Policy Manual ever disagree, the Board Policy Manual controls.</div></footer>
+</body></html>

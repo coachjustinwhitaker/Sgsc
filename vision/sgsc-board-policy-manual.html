@@ -1,0 +1,428 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SGSC Board Policy Manual</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📘%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Board Policy Manual"><meta property="og:description" content="The rules the Board adopts to run Sierra Gold Soccer Club.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p:first-of-type::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:20px;margin:1.9em 0 .4em;line-height:1.25;color:var(--pine-strong);}
+  :root[data-theme="dark"] h3{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
+  p.owner{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 .9em;}
+  p.owner strong,p.owner em{font-weight:500;font-style:normal;color:var(--gold-strong);}
+  article ul,article ol{margin:0 0 1.3em;padding-left:1.3em;}
+  article li{margin:0 0 .45em;font-size:16.5px;}
+  article p{font-size:17px;}
+  nav.toc a{white-space:nowrap;}
+  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
+  h2,h3{scroll-margin-top:110px;}
+  .table-scroll{overflow-x:auto;margin:.6em 0 1.6em;}
+  table.roster td:first-child{font-weight:600;}
+  .nodrop article p:first-of-type::first-letter{all:unset;}
+  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
+  .series a{color:var(--fg-muted);}
+  .series b{color:var(--pine);font-weight:500;}
+  @media print{nav.toc{position:static;} body{background:#fff;}}
+</style></head><body class="nodrop">
+<div class="wrap">
+<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
+<div class="lede-block"><h1 class="title">Board Policy Manual</h1>
+<div class="byline">Proposed for adoption by the Board of Directors, October 2026</div><div class="series"><a href="index.html">All documents</a> <span class="sep">&middot;</span> <b>Board Policy Manual</b> <span class="sep">&middot;</span> <a href="sgsc-coaching-policy-manual.html">Coaching Policy Manual</a> <span class="sep">&middot;</span> <a href="sgsc-family-handbook.html">Family Handbook</a></div></div>
+<nav class="toc" aria-label="Jump to a section"><a href="#1-foundations">Foundations</a><span class="sep">&middot;</span><a href="#2-board-and-governance">Governance</a><span class="sep">&middot;</span><a href="#3-records-and-information">Records</a><span class="sep">&middot;</span><a href="#4-money">Money</a><span class="sep">&middot;</span><a href="#5-coaches-and-staff">Staff</a><span class="sep">&middot;</span><a href="#6-teams-and-players">Teams</a><span class="sep">&middot;</span><a href="#7-discipline">Discipline</a><span class="sep">&middot;</span><a href="#8-safety">Safety</a><span class="sep">&middot;</span><a href="#9-nonprofit-compliance">Compliance</a><span class="sep">&middot;</span><a href="#appendices">Appendices</a><span class="sep">&middot;</span><a href="#adoption">Adoption</a></nav>
+<article>
+<h2 id="1-foundations">1. Foundations</h2>
+<h3 id="1-1-purpose-authority-and-precedence">1.1 Purpose, authority and precedence</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<p><strong>Purpose.</strong> This manual sets the policies the Board of Directors of Sierra Gold Soccer Club (SGSC) adopts to run the club. It covers foundations, governance, records, money and events, coaches and staff, teams and players, discipline, safety and nonprofit compliance.</p>
+<p><strong>Mission.</strong> Kids playing soccer, loving the game, and growing into good people.</p>
+<p><strong>Values</strong></p>
+<ul><li>Fun builds belonging. Belonging builds development. Development brings a kid back next season.</li><li>Players feel safe to take risks, try new skills and make mistakes, and feel believed in whatever the result.</li><li>Character and effort count as much as results, and the club stays genuinely competitive.</li><li>Families feel the culture from their first game: regular communication, dependable logistics, well-kept fields and a celebratory atmosphere.</li><li>Every policy in these manuals serves this mission.</li></ul>
+<p><strong>Who it covers.</strong> Directors, officers, committee members, coaches, staff, volunteers, players and families. It applies to recreational and competitive teams. Where a rule differs for recreational teams, the policy says so.</p>
+<p><strong>Order of authority.</strong> If two sources conflict, the higher one controls:</p>
+<ol><li>Applicable law.</li><li>Rules of US Soccer and of the organizations SGSC and its teams are registered with, including US Club Soccer, NorCal Premier Soccer and Cal North.</li><li>SGSC&#x27;s Articles of Incorporation and Bylaws.</li><li>This manual.</li><li>The Coaching Policy Manual and the Family Handbook.</li></ol>
+<p><strong>Gaps.</strong> Where this manual is silent, the rules in item 2 apply. Where they are silent too, the Board decides and records the decision in its minutes.</p>
+<p><strong>Interpretation.</strong> The Board decides what a policy means by majority vote, recorded in its minutes.</p>
+<h3 id="1-2-definitions-and-roles">1.2 Definitions and roles</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<p><strong>Definitions</strong></p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Board</td><td>SGSC&#x27;s Board of Directors.</td></tr><tr><td>Player</td><td>A child registered to play with SGSC.</td></tr><tr><td>Minor</td><td>A person under 18.</td></tr><tr><td>Family</td><td>A player&#x27;s parents or legal guardians.</td></tr><tr><td>Coach</td><td>Anyone the club assigns to lead training or matches for a team, paid or volunteer.</td></tr><tr><td>Team staff</td><td>Coaches, assistant coaches, team managers and trainers.</td></tr><tr><td>Adult participant</td><td>Any adult the club authorizes to have regular contact with, or authority over, minor players, paid or volunteer. Section 8.1 sets the rules.</td></tr><tr><td>Regular contact</td><td>Ongoing contact with minors over a 12-month period.</td></tr><tr><td>Competitive team</td><td>A team picked by tryout that plays outside the club.</td></tr><tr><td>Recreational team</td><td>Any other team. A recreational team that plays outside organizations, such as in an open tournament, counts as competitive under US Club Soccer rules.</td></tr><tr><td>Seasonal year</td><td>August 1 through July 31, the registration year used by US Club Soccer starting in 2026-27.</td></tr><tr><td>League rules</td><td>The rules of US Soccer, US Club Soccer, NorCal Premier, Cal North and any league an SGSC team plays in.</td></tr><tr><td>Immediate family</td><td>Spouse or domestic partner, parent, child, sibling, and the in-law and step versions of each.</td></tr><tr><td>Policy owner</td><td>The role a policy names as responsible for it.</td></tr></tbody></table></div>
+<p><strong>Roles.</strong> Each policy names an owner by role, not by person. If the Bylaws use a different title, the role that performs the function holds these duties. One person may hold more than one role.</p>
+<p><strong>Governance roles (Board seats).</strong> These set direction, policy and budget, and oversee the club (2.6).</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Role</th><th>Duties under these manuals</th></tr></thead><tbody><tr><td>President</td><td>Chairs the Board. Receives whistleblower reports (2.3). Owns partnerships (2.4), nondiscrimination (2.5), the Board role and expectations (2.6), the AGM and annual report (2.7), club metrics (2.8), club communications (3.3), supervision of the lead staff member (5.4) and political activity (9.4).</td></tr><tr><td>Vice President</td><td>Acts for the President, receives any report about the President, and runs the PAD procedure (7.1).</td></tr><tr><td>Secretary</td><td>Minutes, board meeting notices (2.1), conflict-of-interest statements (2.2), records (3.1), the policy adoption and version log (1.3), and public records (9.3).</td></tr><tr><td>Treasurer</td><td>Money policies (4.1 to 4.7 and 4.9 to 4.11), coach pay (5.1), gifts to coaches (5.2), insurance policies (8.2), the compliance calendar (9.1) and donations (9.2). Financial aid decisions with one other officer.</td></tr><tr><td>Director of Coaching</td><td>Coaching standards and the player program: private training (5.3), tryouts, team formation, playing up and guest play (6.1 to 6.4), the player pathway (6.7), and the Coaching Policy Manual. Supervises the Technical Director and Age Group Coordinators.</td></tr><tr><td>Events, Sponsorship and Concessions Director</td><td>Sponsorships and logo use (4.8), and club events and concessions (4.12).</td></tr></tbody></table></div>
+<p><strong>Operations roles (staff, contractors or volunteers).</strong> These carry out the Board&#x27;s decisions day to day. Until the Bylaws change, some are held by Board members, such as the Field Director and Equipment Director. When the club hires staff, the Board moves these duties to staff by updating this table.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Role</th><th>Duties under these manuals</th></tr></thead><tbody><tr><td>Registrar</td><td>Registration, player passes and rosters (6.5), releases (6.6), and the photo opt-out list (3.2).</td></tr><tr><td>Recreational Program Director</td><td>Recreational program, team formation and coach assignments for recreational teams, and rec play-ups (6.3).</td></tr><tr><td>Technical Director</td><td>Runs camps, clinics, specialty sessions and winter futsal (6.7), and helps with coach clinics (Coaching manual 1.4). Reports to the Director of Coaching.</td></tr><tr><td>Age Group Coordinators</td><td>One for each age band (U5/U6, U8, U10, U12 to U14, U16 to U19). First contact for coaches and families in that band, help place and support coaches, and pass concerns up. Work under the Director of Coaching.</td></tr><tr><td>Safety and risk coordinator</td><td>Background checks, SafeSport training, staff registration and safety reports (8.1). Injury claims (8.2). Coach CPR and AED certification and the cardiac emergency plan (Coaching manual 4.6).</td></tr><tr><td>Field Director</td><td>Field scheduling and maintenance, and facility rules (Coaching manual 4.7). Reports field closures to the Director of Coaching (Coaching manual 4.5).</td></tr><tr><td>Equipment Director</td><td>Equipment and goal safety (Coaching manual 4.8). AED purchase, maintenance and testing (Coaching manual 4.6).</td></tr><tr><td>Referee Assignor</td><td>Runs the referee program: recruits, trains and assigns referees for club games, handles referee pay, and supports young referees. Independent: coordinates with the club but assigns referees free of direction from the Board, staff or team staff.</td></tr><tr><td>Lead staff member (when hired)</td><td>Takes on operations roles in this table as the Board assigns them, and supervises other staff and contractors (5.4).</td></tr></tbody></table></div>
+<h3 id="1-3-how-policies-are-written-adopted-and-reviewed">1.3 How policies are written, adopted and reviewed</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<p><strong>Format.</strong> Every policy states its purpose, the rule, its owner and how violations are handled.</p>
+<p><strong>Violations.</strong> The owner receives a report, looks into it, recommends action to the Board, and follows up with the person who reported. The owner tells the Board within 10 business days. If the owner is the subject of the report, it goes to the President, or to the Vice President if it concerns the President. Knowingly false reports, and sharing a report with people not involved, are discipline matters.</p>
+<p><strong>Adoption.</strong> A policy takes effect when the Board adopts it by recorded vote at a meeting with a quorum, unless the Bylaws require more. The minutes record the effective date.</p>
+<p><strong>Amendment.</strong> Every director receives a proposed change in writing at least 7 days before the meeting where it is voted on.</p>
+<p><strong>Review.</strong> The Board reviews each manual at least once a year. Safety policies are also reviewed whenever US Club Soccer or US Soccer changes its rules. The Secretary keeps the review schedule and version log.</p>
+<p><strong>Exceptions.</strong> Only by recorded Board vote, with the reason in the minutes. No exception to the athlete safety policy (8.1) unless US Club Soccer grants one.</p>
+<p><strong>Acknowledgment.</strong> Directors sign each year. Coaches and team staff sign when they take an assignment and each season after. Families acknowledge the Family Handbook at registration.</p>
+<h3 id="1-4-bylaws">1.4 Bylaws</h3>
+<p>The Bylaws are a separate document, adopted and amended under their own terms. Nothing in these manuals amends them. Section 1.1 sets how they relate to these manuals.</p>
+<h2 id="2-board-and-governance">2. Board and governance</h2>
+<h3 id="2-1-board-meetings-and-member-participation">2.1 Board meetings and member participation</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<ul><li>Board meetings are open to club members, except closed sessions on personnel, discipline, safety or legal matters.</li><li>The Secretary sends notice of each regular meeting to team managers at least 7 days ahead.</li><li>Each regular meeting includes an open comment period for members.</li><li>Each team manager is the team&#x27;s contact for Board business and passes club notices to families.</li><li>Board meetings may be held in person, by video or phone, or a mix, as long as every director taking part can hear the others, as California law and the Bylaws allow.</li><li>The Board may act without a meeting by unanimous written consent, including by email, as California law and the Bylaws allow. The Secretary files the consents with the minutes.</li><li>Routine items, such as prior minutes, officer reports and event reports (4.12), go on a consent agenda approved in one vote. Any director may pull an item off the consent agenda for discussion.</li></ul>
+<h3 id="2-2-conflict-of-interest-and-annual-disclosure">2.2 Conflict of interest and annual disclosure</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<p><strong>Purpose.</strong> Club decisions must be made for the club, not for the private benefit of the people making them.</p>
+<p><strong>Who is covered.</strong> Directors, officers, committee members, paid staff and contractors, and team staff when acting for the club.</p>
+<p><strong>What counts as a conflict</strong></p>
+<ul><li>A financial interest, held directly or through immediate family, in any contract, purchase or payment the club is considering.</li><li>An interest in any decision about an immediate family member, including team selection, playing up, coach assignment, discipline, financial aid, or appointment to any paid or volunteer club role.</li></ul>
+<p><strong>Rules</strong></p>
+<ul><li>Disclose the interest to the Board or committee before the matter is discussed.</li><li>Leave the discussion and the vote. The remaining members decide whether a conflict exists and, if so, whether to proceed.</li><li>No one votes on, or takes part in deciding, their own pay or a family member&#x27;s pay.</li><li>No one votes to appoint an immediate family member to any club role.</li><li>The minutes record each disclosure, who left the room and how the vote went.</li><li>Any deal in which a covered person has a financial interest follows the self-dealing rules below.</li></ul>
+<p><strong>Self-dealing and related businesses</strong></p>
+<ul><li>The club does not contract with, buy from or pay a business that a director, officer, staff member or their immediate family owns, manages or works for, or in which any of them has a financial interest.</li><li>Rare exception: the Board may approve such a deal only before it happens, after full disclosure, with the interested person out of the room, by at least two-thirds of the disinterested directors, and after comparing at least two other quotes or recording why none exist. The Board must find the deal fair and reasonable to the club and the best option reasonably available, as California law requires. The minutes record the quotes and the finding.</li><li>Sponsorships and donations from a director&#x27;s business are allowed (4.8, 9.2), as long as the director gets nothing in return.</li><li>Anyone who learns of an unapproved related deal reports it to the President (2.3). The Board may void it and seek repayment.</li></ul>
+<p><strong>Annual statement.</strong> Each director and officer signs a statement each year confirming they have read this policy, will follow it, and listing any interests they hold.</p>
+<p><strong>Violations.</strong> A failure to disclose is reported to the Board. The person may explain. The Board may void the action and remove the person from a committee or role, as the Bylaws allow.</p>
+<h3 id="2-3-whistleblower-and-non-retaliation">2.3 Whistleblower and non-retaliation</h3>
+<p class="owner"><strong>Owner:</strong> President (Vice President when the report concerns the President)</p>
+<p><strong>Purpose.</strong> People who report wrongdoing in good faith are protected.</p>
+<p><strong>What to report.</strong> Suspected financial misconduct, misuse of club funds or property, false records, violations of law, and violations of these manuals. Abuse and safety concerns follow section 8.1 instead.</p>
+<p><strong>How.</strong> In writing or in person to the President or any officer. Reports may be anonymous.</p>
+<p><strong>Process.</strong> The President looks into the report, may bring in outside help, and reports to the Board within 10 business days. The person who reported is told the outcome, as far as privacy allows.</p>
+<p><strong>No retaliation.</strong> No one may be removed, disciplined, excluded or treated worse for a good-faith report. Retaliation is itself a discipline matter. Knowingly false reports are also a discipline matter.</p>
+<p><strong>Confidentiality.</strong> Reports and investigations are shared only with people who need them to act.</p>
+<h3 id="2-4-partnerships-and-joint-ventures">2.4 Partnerships and joint ventures</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<p><strong>Purpose.</strong> Agreements with other organizations must serve the club&#x27;s mission and protect its nonprofit status.</p>
+<p><strong>Rules</strong></p>
+<ul><li>Any agreement to jointly run a program, share fields or revenue, combine teams, affiliate, or merge with another organization needs Board approval.</li><li>Every such agreement is in writing and reviewed by the Treasurer before the vote.</li><li>The club keeps control over decisions about its players and its safety standards.</li><li>Terms must be fair to the club and at arm&#x27;s length. Conflict-of-interest rules (2.2) apply.</li><li>A merger, dissolution or transfer of substantially all club assets also follows the Bylaws and California law, and gets legal review before the vote.</li></ul>
+<h3 id="2-5-nondiscrimination-and-accommodation">2.5 Nondiscrimination and accommodation</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<ul><li>SGSC does not discriminate in registration, team placement, playing time, coaching or volunteer roles based on race, color, ethnicity, national origin, religion, sex, gender identity, sexual orientation, disability or family income.</li><li>Eligibility to play follows the rules of US Soccer and the organization each team registers through.</li><li>A family or volunteer may ask for a reasonable accommodation for a disability, in writing to the program director. The club works with them and grants reasonable requests.</li><li>Concerns go to the President. Retaliation for raising one is a discipline matter (2.3).</li></ul>
+<h3 id="2-6-board-role-and-member-expectations">2.6 Board role and member expectations</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<p><strong>Governance and operations</strong></p>
+<ul><li>The Board sets vision, policy and budget, raises funds, builds community relationships and oversees staff. Staff and volunteers carry out its decisions.</li><li>The Board acts through written policy and recorded votes. A director does not direct staff or volunteers outside the director&#x27;s own assigned role.</li><li>Day-to-day work, such as permits, scheduling, vendors and administration, sits with the role that owns it in 1.2. When the club hires staff, the Board moves those duties to staff by updating 1.2.</li><li>No more than 49% of directors may be interested persons, as California law sets: anyone the club paid for services in the past 12 months, other than reasonable pay as a director, and their close relatives. The Secretary checks this before each election or appointment.</li></ul>
+<p><strong>What each director owes the club</strong></p>
+<ul><li><strong>Care:</strong> come prepared, read the materials, attend meetings and make informed decisions.</li><li><strong>Loyalty:</strong> put the club ahead of personal, family or team interests, and follow 2.2.</li><li><strong>Obedience:</strong> act within the Bylaws, the mission, these policies and the law.</li><li><strong>Time:</strong> attend regular meetings and carry out the duties of the seat. Three missed regular meetings in a row without notice are reported to the Board.</li><li><strong>Fundraising:</strong> every director helps raise funds, by giving, asking or organizing, as they are able.</li><li>Directors sign these expectations each year with the conflict of interest statement (2.2).</li></ul>
+<p><strong>Advisory voices</strong></p>
+<ul><li>The Board may name non-voting advisors, such as a non-coach parent representative, a schools representative, and finance, medical and sponsorship advisors.</li><li>A Player Advisory Committee meets with the Board at least twice a year, in an open session with parents welcome.</li></ul>
+<p><strong>Onboarding and handoffs</strong></p>
+<ul><li>Each new director receives these manuals, the Bylaws, the current budget, the past year&#x27;s minutes and the annual report, and gets an orientation from the President or Secretary within 30 days of taking the seat.</li><li>A departing director or officer hands over records, bank access, logins and keys to their successor or the Secretary within 14 days. Bank signers are updated promptly.</li><li>Each year the Board does a short self-assessment of how it is working, and reviews the results at a regular meeting.</li></ul>
+<h3 id="2-7-annual-general-meeting-and-report-to-members">2.7 Annual general meeting and report to members</h3>
+<p class="owner"><strong>Owner:</strong> President (Secretary for notice and minutes)</p>
+<p><strong>Annual general meeting (AGM)</strong></p>
+<ul><li>The club holds an AGM each year, on the date and with the quorum, voting and elections the Bylaws set.</li><li>The Secretary sends notice to members through the club&#x27;s official channels at least 14 days ahead, or earlier if the Bylaws require. The notice includes the agenda, open Board seats and how to run for one.</li><li>Agenda: the annual report, Board elections, any Bylaw amendments, and member questions.</li><li>Minutes are posted for members within 30 days.</li></ul>
+<p><strong>Annual report</strong></p>
+<ul><li>The Board publishes a written annual report to members at least 7 days before the AGM.</li><li>It covers: income and spending against budget, and reserves; the annual review summary (4.10); financial aid given; registration by program; the club&#x27;s metrics (2.8); safety compliance (8.1); policy changes during the year; and the Board&#x27;s goals for the coming year.</li></ul>
+<h3 id="2-8-club-metrics">2.8 Club metrics</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<ul><li>The club tracks the measures below each year, collected the same way so years can be compared, and reports them in the annual report (2.7).</li><li>The Board sets targets for the coming year. Missing a target is a reason to act, not a policy violation.</li></ul>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Area</th><th>Measure</th></tr></thead><tbody><tr><td>Coming back</td><td>Share of players who re-register, by program and age group</td></tr><tr><td>Belonging and fun</td><td>Season-end family and player survey results, using the same questions each year</td></tr><tr><td>Moving up</td><td>Players moving from Recreational to Step-Up to competitive, and players playing up</td></tr><tr><td>Coaches</td><td>Coaches who return, coaches with their required course or license, and first-year coaches with a mentor</td></tr><tr><td>Safety</td><td>Share of adults fully cleared by the season deadline, and injury and incident counts</td></tr><tr><td>Access</td><td>Financial aid dollars and families helped</td></tr><tr><td>Money</td><td>Months of operating costs in reserve, and spending against budget</td></tr><tr><td>Referees</td><td>Referees who return</td></tr></tbody></table></div>
+<h2 id="3-records-and-information">3. Records and information</h2>
+<h3 id="3-1-document-retention">3.1 Document retention</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<p><strong>Purpose.</strong> The club keeps the records the law and its insurers require, and disposes of others safely.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Record</th><th>Keep for</th></tr></thead><tbody><tr><td>Articles, Bylaws, Board minutes, adopted policies</td><td>Permanently</td></tr><tr><td>Tax returns, annual financial reports and reviews</td><td>Permanently</td></tr><tr><td>Bank statements, receipts, invoices, payroll</td><td>7 years</td></tr><tr><td>Contracts and leases</td><td>7 years after they end</td></tr><tr><td>Player registration and medical consent forms</td><td>4 years after the seasonal year ends</td></tr><tr><td>Injury and incident reports</td><td>Until the injured player turns 21, or 5 years, whichever is later</td></tr><tr><td>Discipline and grievance files</td><td>7 years after the matter closes</td></tr><tr><td>Background screening and training records</td><td>As US Club Soccer and California law require</td></tr><tr><td>Email and messages</td><td>By subject, under the rows above</td></tr></tbody></table></div>
+<p><strong>Litigation hold.</strong> When a claim or lawsuit is threatened or filed, related records are kept until the President says the hold has ended.</p>
+<p><strong>Disposal.</strong> Records with personal, medical or financial information are shredded or securely deleted.</p>
+<h3 id="3-2-privacy-photo-and-video-consent">3.2 Privacy, photo and video consent</h3>
+<p class="owner"><strong>Owner:</strong> Registrar</p>
+<p><strong>Personal information</strong></p>
+<ul><li>The club collects only the information it needs to register players, run teams and meet league and insurance rules.</li><li>Access is limited to people who need it for their club role. Medical information goes only to the team staff who need it.</li><li>The club does not sell personal information. It shares it with leagues, US Club Soccer, insurers and authorities only as required.</li><li>Records are stored securely. If personal information is exposed, the Registrar tells the Board and affected families promptly.</li></ul>
+<p><strong>Photos and video</strong></p>
+<ul><li>The club may use team and game photos and video on its website, social media and newsletters.</li><li>The club uses first names only with photos of players.</li><li>Families may opt out in writing to the Registrar at registration or any time after. The Registrar keeps the opt-out list and shares it with anyone posting for the club.</li><li>Recording is never allowed in bathrooms, locker rooms or changing areas (8.1).</li><li>Team game video is used for coaching and shared only within that team.</li></ul>
+<h3 id="3-3-club-communications-and-social-media">3.3 Club communications and social media</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<ul><li>The club&#x27;s official channels are its website, its social media accounts, the team app and club email.</li><li>The Board names who may post on club accounts. At least two people hold each login. Logins belong to the club and pass on when someone leaves a role.</li><li>The President, or someone the President names, speaks for the club to the media, leagues and other clubs.</li><li>Club posts follow 3.2 (first names only, photo opt-outs) and 8.1.</li><li>Team social media pages are allowed when at least two adults run them and they follow the same rules.</li></ul>
+<h2 id="4-money">4. Money</h2>
+<h3 id="4-1-fees-and-annual-fee-schedule">4.1 Fees and annual fee schedule</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>The Board adopts an annual budget and fee schedule before registration and tryouts open each year.</li><li>The fee schedule lists: recreational fees; competitive club fees; uniform costs and replacement cycle; the refund processing fee; volunteer shifts and buyout amount; and the financial aid deadline.</li><li>Fees are set to cover program costs. They are not set to produce private benefit for anyone.</li><li>Competitive teams may also collect a team fee for tournament entries, travel and other team costs. The team manager and head coach prepare a team budget, the Director of Coaching approves it, and families receive it at the first team meeting.</li></ul>
+<h3 id="4-2-payment-delinquency-and-standing">4.2 Payment, delinquency and standing</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>Club fees are due once, at the start of the season, on the date in the fee schedule. Team fees are due on the dates in the team budget.</li><li>15 days late: the Registrar sends a reminder.</li><li>30 days late: the Treasurer contacts the family to set up a payment plan.</li><li>60 days late with no plan in place: the player sits out practices and games until the account is current or a plan is agreed.</li><li>A family may appeal to the Treasurer, then to the Board.</li><li>A player may not register for a new season until any past balance is paid or a plan is agreed.</li><li>A family more than 60 days past due may not serve as team manager.</li><li>The club sends a balance to collections only by Board vote.</li><li>Families facing hardship are directed to financial aid (4.5).</li></ul>
+<h3 id="4-3-refunds-and-withdrawal">4.3 Refunds and withdrawal</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<p><strong>Requests.</strong> In writing to the Registrar. The Treasurer decides within this policy. Exceptions go to the Board.</p>
+<p><strong>Recreational</strong></p>
+<ul><li>Withdraw before registration closes: full refund, minus the processing fee in the fee schedule ($25 unless the schedule says otherwise).</li><li>After registration closes and before the first game: refund minus the processing fee and the uniform cost.</li><li>After the first game: no refund, unless the Board approves one for documented hardship.</li></ul>
+<p><strong>Competitive</strong></p>
+<ul><li>Accepting a roster spot is a commitment for the full season. Club fees are not refunded after the season starts, except as below.</li><li>The Board may give a prorated refund only for a move out of the area or a season-ending injury (4.4).</li></ul>
+<p><strong>No refunds</strong> for weather or field cancellations, playing time or coaching decisions, or suspension or removal for conduct.</p>
+<h3 id="4-4-injured-player-fee-relief">4.4 Injured player fee relief</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>A competitive player injured and unable to play for 2 months or more may request relief, with a doctor&#x27;s note stating the expected time out.</li><li>Approved relief is a prorated credit toward next season&#x27;s club fees, or a refund, for the time missed.</li><li>Team fees already spent are not refunded.</li><li>The family provides the doctor&#x27;s clearance when the player returns.</li><li>Recreational players follow the refund rules in 4.3.</li></ul>
+<h3 id="4-5-financial-aid">4.5 Financial aid</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>The Board sets a financial aid amount in each annual budget, funded by fees, fundraising and donations.</li><li>Families apply confidentially to the Treasurer by the deadline in the fee schedule. Late applications are considered if funds remain.</li><li>Need may be shown by participation in a public assistance program, or by other reasonable evidence.</li><li>Awards are partial and depend on available funds. The Treasurer and one other officer decide.</li><li>Coaches and team staff are not told who receives aid.</li></ul>
+<h3 id="4-6-volunteer-and-fundraising-duty">4.6 Volunteer and fundraising duty</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<p><strong>Volunteering</strong></p>
+<ul><li>Each family serves the number of volunteer shifts set in the fee schedule, or pays the buyout listed there.</li><li>The team manager tracks shifts and reports them to the Treasurer at season&#x27;s end.</li></ul>
+<p><strong>Fundraising</strong></p>
+<ul><li>Team fundraisers need Treasurer approval before they start.</li><li>All funds raised go into club-controlled accounts (4.7) and are spent on team or club costs.</li><li>Funds raised are not credited to individual families&#x27; fees.</li><li>Teams do not run fundraisers that compete with club-wide fundraisers.</li></ul>
+<h3 id="4-7-team-accounts-and-annual-report">4.7 Team accounts and annual report</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>Team money belongs to the club. It is held in club-controlled accounts, never in a personal account.</li><li>The team manager keeps the team&#x27;s books. The team manager is not the head coach.</li><li>Every payment needs a receipt and approval from both the team manager and the club Treasurer.</li><li>Cash is counted by two people and deposited within 7 days.</li><li>The team manager gives families a statement of team income and spending at least every two months, and gives the club Treasurer a full annual report by June 30.</li><li>Money left at season&#x27;s end stays with the team for the next season, or returns to the club if the team disbands.</li></ul>
+<h3 id="4-8-sponsors-and-logo-use">4.8 Sponsors and logo use</h3>
+<p class="owner"><strong>Owner:</strong> Events, Sponsorship and Concessions Director</p>
+<ul><li>Teams may find their own sponsors. The club may also take club-wide sponsors.</li><li>Before a team signs, the team manager sends the sponsor and terms to the Treasurer, who checks them against this policy. Team sponsor money goes into the team&#x27;s club-controlled account (4.7).</li><li>Terms are in writing, and the Treasurer keeps a copy. The Board approves any sponsor mark on a uniform.</li><li>Sponsor marks and materials do not promote alcohol, tobacco, vaping, cannabis, gambling or adult entertainment. A business that sells any of these may sponsor under its general name or logo. Businesses whose main trade is tobacco, vaping, cannabis or adult entertainment are not accepted. The Board decides close calls.</li><li>Teams may use the club name and crest for team activities. Any vendor or merchandise deal using them needs a Board vote and a written agreement. Conflict-of-interest rules (2.2) apply.</li><li>Uniform and kit rules for teams are in Coaching manual 2.2.</li><li>Any business promotion saying part of its sales goes to the club, such as a restaurant night or round-up campaign, needs a written agreement first, approved by the Events, Sponsorship and Concessions Director and the Treasurer. The agreement states the share, the dates and when the money is paid, and the club approves how its name is used.</li><li>The Treasurer confirms the money from each promotion is received and records it.</li></ul>
+<h3 id="4-9-non-cash-gifts-to-the-club">4.9 Non-cash gifts to the club</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>The Treasurer may accept equipment, goods or services worth up to $1,000 that fit the club&#x27;s mission.</li><li>Gifts over $1,000, gifts with conditions, real property, securities and vehicles need Board approval.</li><li>All non-cash gifts are recorded at fair value. Donors get a written acknowledgment.</li></ul>
+<h3 id="4-10-club-finances-and-annual-review">4.10 Club finances and annual review</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<p><strong>Controls</strong></p>
+<ul><li>Club accounts are in the club&#x27;s name, with at least two Board signers who do not live in the same household.</li><li>The Treasurer reports to the Board at each regular meeting: balances, and income and spending against the budget.</li><li>Reimbursements need a receipt and the Treasurer&#x27;s approval. The President approves the Treasurer&#x27;s own reimbursements.</li><li>The Treasurer confirms to the Board each year that the club&#x27;s federal and state filings are done on time.</li></ul>
+<p><strong>Annual review</strong></p>
+<ul><li>Within 90 days after the fiscal year ends, a review committee checks the books. It has two or three club members who are not account signers and do not live with the Treasurer.</li><li>The committee checks that bank statements reconcile with the books, a sample of payments have receipts and approvals, team account statements match the bank, fees collected match registrations, and financial aid stayed within budget.</li><li>The committee reports to the Board in writing. The Board shares a summary with members.</li><li>The Board hires an independent accountant for a review or audit when California law requires one, or when the Board decides it is needed.</li></ul>
+<h3 id="4-11-budget-process-and-reserves">4.11 Budget process and reserves</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<p><strong>Budget</strong></p>
+<ul><li>The Treasurer drafts the annual budget with the officers and the Director of Coaching.</li><li>Directors receive the draft at least 30 days before the vote. The Board adopts it before the fee schedule is published (4.1).</li><li>At mid-year, the Board reviews actual income and spending against the budget and may amend it by vote.</li><li>Spending outside the adopted budget needs Board approval.</li><li>The budget includes a coach education line for course reimbursements and clinics (Coaching manual 1.4).</li></ul>
+<p><strong>Reserves</strong></p>
+<ul><li>The club keeps an operating reserve of at least 6 months of operating costs.</li><li>The reserve is used only for unexpected shortfalls, emergencies or one-time needs, by Board vote.</li><li>When the reserve falls below 6 months, the Board adopts a plan to rebuild it.</li><li>The reserve level is reported in the club metrics (2.8).</li><li>Each year, with the budget, the Board reviews any funds above 12 months of operating costs and designates them by vote for mission uses, such as hiring lead staff (5.4), AEDs and safety equipment, field improvements, financial aid or coach development. Designated funds are tracked separately and reported in the annual report (2.7).</li></ul>
+<h3 id="4-12-club-events-and-concessions">4.12 Club events and concessions</h3>
+<p class="owner"><strong>Owner:</strong> Events, Sponsorship and Concessions Director</p>
+<p>Before any club event, such as a tournament, fundraiser, camp or social, the Events, Sponsorship and Concessions Director checks and clears:</p>
+<ul><li>Permission or a permit for the venue, and the venue&#x27;s rules.</li><li>Supplemental or special event liability insurance where needed, and certificates of insurance naming the venue or others if required.</li><li>Certificates of insurance and written agreements from vendors.</li><li>County health permits for any food sold or served.</li><li>A seller&#x27;s permit and sales tax for food or merchandise sales, where required.</li><li>Raffle registration for any raffle or 50/50 (9.1).</li><li>No alcohol at youth events.</li><li>A safety plan: first aid, AED access, emergency vehicle access, and heat, smoke and weather rules (Coaching manual 4).</li><li>Screening for any adult who will have contact with players (8.1).</li><li>Restrooms, parking and cleanup.</li><li>A budget approved by the Treasurer.</li></ul>
+<p><strong>After the event.</strong> For every fundraiser, tournament, camp, and any other event with a budget over $1,000, the event lead submits a short written report to the agenda of the next regular Board meeting as a consent item. Any director may pull it for discussion. It covers:</p>
+<ul><li>Attendance or participation.</li><li>Income, costs and net result, against the approved budget.</li><li>Volunteer hours and who helped.</li><li>Any injuries, incidents or complaints.</li><li>What went well.</li><li>What to fix next time.</li><li>Whether to run it again, and any changes.</li></ul>
+<p>The Secretary files each report so the next event lead starts from it. Event results are summarized in the annual report (2.7).</p>
+<h2 id="5-coaches-and-staff">5. Coaches and staff</h2>
+<h3 id="5-1-coach-compensation">5.1 Coach compensation</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<p><strong>Applies to</strong> any coach, trainer or director the club pays.</p>
+<ul><li>Pay for each role is set in the annual budget.</li><li>The Director of Coaching recommends pay for coaching roles. The Board approves it, without any member who has a conflict under 2.2.</li><li>Pay is not tied to wins, standings or trophies.</li><li>Every paid role has a written agreement that states duties, pay, term and how it ends, and requires compliance with these manuals.</li><li>Pay is discussed in closed session. Individual agreements are confidential, but total coaching pay appears in the club&#x27;s financial reports.</li><li>The Board reviews pay each year against comparable clubs in the region.</li></ul>
+<h3 id="5-2-gifts-to-coaches">5.2 Gifts to coaches</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>Families do not give individual gifts to coaches, other than small tokens worth under $25.</li><li>A team may give one gift per coach per season, worth up to $100, from the team as a whole. Contribution is voluntary, and the gift is not tied to who contributed.</li><li>Payment for approved private training under 5.3 is not a gift.</li></ul>
+<h3 id="5-3-private-training">5.3 Private training</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>A coach may not charge a player on any team that coach coaches or evaluates for private training.</li><li>A coach may offer free extra training to their own team, open to every player on it.</li><li>Private training on club-permitted fields needs Field Director approval.</li><li>All private training follows 8.1, including being observable and interruptible, and the parent&#x27;s written permission each year.</li><li>Coaches who do paid private training for SGSC players disclose it to the Director of Coaching each season.</li></ul>
+<h3 id="5-4-lead-staff-member">5.4 Lead staff member</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<ul><li>The club&#x27;s lead staff member may be an Executive Director, club manager or contracted administrator, as the Board decides and the budget allows.</li><li>The Board hires, evaluates and may dismiss the lead staff member. The President supervises day to day on the Board&#x27;s behalf.</li><li>The role has a written job description and contract, and a yearly evaluation by the Board.</li><li>The lead staff member takes on operations roles in 1.2 as the Board assigns them, and hires and supervises other staff and contractors within the budget. The Referee Assignor stays independent.</li><li>Spending limits are set by the Board.</li><li>No director, or a director&#x27;s immediate family member, holds the role except through the conflict process in 2.2.</li><li>The Board reviews and approves the lead staff member&#x27;s pay as just and reasonable when it is set, renewed or changed, using pay data from comparable organizations, as California law requires. The comparison is recorded in the minutes.</li></ul>
+<h2 id="6-teams-and-players">6. Teams and players</h2>
+<h3 id="6-1-tryouts-and-league-windows">6.1 Tryouts and league windows</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>Tryouts follow NorCal Premier&#x27;s tryout windows.</li><li>Dates and locations are posted publicly at least 14 days ahead.</li><li>Age groups follow the rules of US Soccer and the organization each team registers through.</li><li>The Director of Coaching sets the tryout format each year, club-wide or by team. A player may try out for their own age group, an older team, or both. Placement on an older team follows 6.3.</li><li>An injured or absent returning player may be evaluated on their coach&#x27;s report.</li><li>Any tryout fee is listed in the fee schedule.</li></ul>
+<h3 id="6-2-team-formation-and-selection">6.2 Team formation and selection</h3>
+<p class="owner"><strong>Owners:</strong> Director of Coaching (competitive), Recreational Program Director (recreational)</p>
+<p><strong>Recreational</strong></p>
+<ul><li>Teams are formed to be balanced, considering age, ability, location and coach availability.</li><li>A coach&#x27;s child plays on that coach&#x27;s team. Other requests are considered but not guaranteed.</li></ul>
+<p><strong>Competitive</strong></p>
+<ul><li>Players are selected through tryouts (6.1) by at least two evaluators.</li><li>Evaluators consider technical skill, game understanding, physical readiness, attitude and commitment.</li><li>Where an age group has more than one team, the first team is formed from the highest-rated players.</li><li>The Director of Coaching makes final placements.</li><li>A coach may evaluate their own child, but that child&#x27;s placement needs agreement from a second evaluator with no family tie. Directors and officers do not use their board role to influence a family member&#x27;s placement (2.2).</li><li>Offers are made in writing. Players not offered a spot are told within 15 days after tryouts end.</li></ul>
+<h3 id="6-3-playing-up">6.3 Playing up</h3>
+<p class="owner"><strong>Owners:</strong> Director of Coaching (competitive), Recreational Program Director (recreational)</p>
+<p><strong>Competitive</strong></p>
+<ul><li>Players play in their own age group by default.</li><li>An older team&#x27;s coach who wants to offer a younger player a spot first checks with the coach of the player&#x27;s own age group. The own-age coach has 7 days to object, and no answer counts as agreement. An objection must name one of the criteria below. Losing the player or roster numbers alone is not a valid reason; the Director of Coaching helps fill the spot instead. If there is no valid objection, the play-up is approved, and the Director of Coaching is told. A family may always decline an offer to play up. If there is a valid objection, or the family disputes a decision not to play their child up, the Director of Coaching decides, in writing with a reason. That decision may be appealed to the Board within 7 days.</li><li>Either way, the player must be able to compete physically and tactically in the older group, mature enough socially and emotionally, and likely to benefit long term.</li><li>Once placed, a player who plays up stays with that team in later years. If size, maturity or skill becomes a concern, the Director of Coaching meets with the family and may encourage a move back to the player&#x27;s own age group.</li><li>Under US Club Soccer rules, a player&#x27;s pass allows them to play up within the club for a single game or event. That use follows the guest play policy (6.4).</li></ul>
+<p><strong>Recreational</strong></p>
+<ul><li>A rec player may play up for family needs, such as joining a sibling&#x27;s team or sharing a schedule or carpool, or another good reason.</li><li>The Recreational Program Director approves it, if the team has space and the player can play safely at that age.</li><li>Rec play-up is not a route to a higher level of play. Players looking for more competitive soccer try out for a competitive team (6.1).</li></ul>
+<h3 id="6-4-guest-play">6.4 Guest play</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>A team needing a guest player looks within SGSC first.</li><li>A team missing a goalkeeper may use a guest goalkeeper from within SGSC even when it has enough field players.</li><li>A guest from outside SGSC needs Director of Coaching approval and any loan form the league requires.</li><li>An SGSC player guest playing for another club needs approval from the head coach and the Director of Coaching.</li><li>Guests do not take minutes from rostered players, except as goalkeeper.</li></ul>
+<h3 id="6-5-player-passes-and-rosters">6.5 Player passes and rosters</h3>
+<p class="owner"><strong>Owner:</strong> Registrar</p>
+<ul><li>Player passes belong to the club. The team manager holds them during the season and returns them at season&#x27;s end.</li><li>Only players on the official roster may play. Using an ineligible player can forfeit a game.</li><li>Permanent roster changes go through the Registrar. Coaches may add SGSC players for a single game or tournament themselves, under 6.4.</li><li>The coach or team manager has each player&#x27;s emergency contacts at every practice and game.</li></ul>
+<h3 id="6-6-player-release-transfer-and-recruiting">6.6 Player release, transfer and recruiting</h3>
+<p class="owner"><strong>Owner:</strong> Registrar</p>
+<p><strong>Release on request</strong></p>
+<ul><li>A family may ask for a release at any time, in writing to the Registrar.</li><li>The Registrar processes it within 5 business days, as US Club Soccer rules require.</li><li>Any balance owed under 4.2 and 4.3 stands after the release.</li></ul>
+<p><strong>Release by the club.</strong> The club may release a player, with written notice, after a discipline decision under 7.1, under 4.2, or when a team disbands.</p>
+<p><strong>Season&#x27;s end.</strong> Registrations expire at the end of the seasonal year. Every player is then free to register with any club.</p>
+<p><strong>Recruiting</strong></p>
+<ul><li>SGSC coaches and staff follow NorCal Premier recruiting rules.</li><li>They do not recruit players from other NorCal clubs outside the open tryout window.</li></ul>
+<h3 id="6-7-player-pathway">6.7 Player pathway</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Each stage has its own purpose. Players move up when they and their families are ready.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Stage</th><th>Purpose</th><th>How players join</th></tr></thead><tbody><tr><td>Tiny Tykes</td><td>First introduction to the game</td><td>Registration</td></tr><tr><td>Recreational</td><td>Deeper fun and community</td><td>Registration</td></tr><tr><td>Step-Up</td><td>A personal commitment to growth, between rec and competitive</td><td>By invitation or sign-up, once built</td></tr><tr><td>Copper and Bronze</td><td>Commitment to self and team</td><td>Tryout</td></tr><tr><td>Silver and Gold</td><td>Testing how far a player can go</td><td>Tryout</td></tr></tbody></table></div>
+<ul><li>Step-Up is being built. The Director of Coaching proposes its format, and the Board approves it before launch.</li><li>Silver and Gold teams are part of the club&#x27;s competitive program, with the same support as other competitive teams. Any added costs are in the fee schedule or the team budget.</li><li>Year-round touchpoints, such as winter futsal, camps, clinics and off-season small-sided tournaments, are run by the Technical Director.</li><li>The Director of Coaching builds ties with local high school programs, such as joint camps and inviting their coaches to trainings, so players have a clear route into high school soccer.</li></ul>
+<h2 id="7-discipline">7. Discipline</h2>
+<h3 id="7-1-protests-appeals-and-discipline-pad">7.1 Protests, appeals and discipline (PAD)</h3>
+<p class="owner"><strong>Owner:</strong> Vice President</p>
+<p><strong>Scope.</strong> Discipline of players, families, coaches, team staff and volunteers for violating these manuals. League matters, such as red cards, referee abuse and incidents between clubs, go through the league&#x27;s PAD process: NorCal Premier&#x27;s PAD Committee for NorCal competitions (NorCal Handbook, Section 3), and Cal North&#x27;s protest, appeal and discipline procedures for teams registered through Cal North. The President or Director of Coaching files the club&#x27;s reports and appeals with those bodies. A league decision does not stop the club from acting under this policy, and the club follows any league suspension. Safety matters also follow 8.1.</p>
+<p><strong>Club PAD Committee</strong></p>
+<ul><li>Three members appointed by the Board for each matter, from directors and members in good standing.</li><li>No one with a conflict serves. That includes an immediate family member of anyone involved, anyone on the same team, anyone who coached a player involved in the current or previous seasonal year, a witness, and anyone with a personal or financial stake in the outcome. Members confirm in writing that they have no conflict.</li><li>If a conflict is found after the hearing, the decision is void and a new committee hears the matter.</li></ul>
+<p><strong>Steps</strong></p>
+<ol><li><strong>Complaint.</strong> Must be in writing, with the facts and the rule broken. An oral report alone does not start a hearing.</li><li><strong>Notice.</strong> Within 5 business days, the respondent receives the complaint in writing, the possible penalties, and the hearing date.</li><li><strong>Response.</strong> The respondent may answer in writing and at the hearing. Both sides exchange witness lists and documents at least 3 days before the hearing.</li><li><strong>Hearing.</strong> Within 30 days of the complaint. Both sides may present their case and question witnesses. Each may bring one advisor who does not speak for them. A minor attends with a parent. No one contacts committee members privately about the matter.</li><li><strong>Decision.</strong> In writing within 5 business days, with the reasons and the appeal steps.</li><li><strong>Appeal.</strong> To the Board within 10 days, in writing. Board members with a conflict do not take part. An appeal reviews the record. It is not a new hearing.</li></ol>
+<p><strong>Penalties.</strong> Warning, required course, probation, suspension from activities or events, or removal from the club.</p>
+<p><strong>Interim action.</strong> When safety is at risk, the President, with the Vice President, may suspend a person from club activities until the hearing. This is not a finding.</p>
+<p><strong>Records.</strong> Kept confidential under 3.1. Interfering with a witness, or failing to appear when properly notified, is itself a violation.</p>
+<h2 id="8-safety">8. Safety</h2>
+<h3 id="8-1-athlete-safety-and-abuse-prevention">8.1 Athlete safety and abuse prevention</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<p><strong>Purpose.</strong> SGSC has zero tolerance for abuse and misconduct. This policy sets who may work with players, what those adults complete first, how adults interact with players, and how concerns are reported.</p>
+<p><strong>Basis.</strong> This policy follows, in order: federal and California law; US Soccer&#x27;s Safe Soccer requirements; the safety policies of the organization each team registers through (US Club Soccer&#x27;s Participant Safety/Risk Management Policies, or Cal North&#x27;s risk management rules); and the rules of each league a team plays in, including NorCal Premier. Each applies as amended. Where this policy and any of these differ, the strictest applies. This policy covers every SGSC team, recreational and competitive.</p>
+<p><strong>Who is covered.</strong> Every adult participant: directors and officers, coaches, team managers, trainers, anyone who travels with a team, and players 18 or older on a team with minors.</p>
+<p><strong>Before working with minors.</strong> No adult participant has contact with players until each item is done. The coordinator records each one.</p>
+<ol><li><strong>Registration</strong> with the club, and with US Club Soccer as staff where required. Unregistered adults may not take part and are not covered by insurance.</li><li><strong>Background screening</strong> before regular contact begins, and no later than 45 days after taking the role. Repeated every other year.</li><li><strong>SafeSport training,</strong> the U.S. Center for SafeSport Core or Refresher course, every year, by the same deadline.</li><li><strong>California requirements:</strong> fingerprint (Live Scan) background check and mandated reporter training as state law requires of youth service organizations, completed through the club&#x27;s league organization or the club&#x27;s own Department of Justice account.</li><li><strong>Signed acknowledgment</strong> of this policy.</li></ol>
+<p>The coordinator also checks third-party adults, such as contracted athletic trainers, and players 18 or older with no other role, against the state sex offender registry, the U.S. Center for SafeSport disciplinary database, and the US Soccer and US Club Soccer disqualification and suspension lists.</p>
+<p><strong>Prohibited conduct.</strong> Sexual abuse and misconduct, emotional misconduct, physical misconduct, bullying, hazing, and harassment or discrimination, as US Club Soccer&#x27;s Prohibited Conduct Policy defines them. Any sexual interaction between a player and an adult with authority over that player is prohibited, including when the player is 18 or older.</p>
+<p><strong>Prevention rules</strong></p>
+<ul><li><strong>One-on-one contact</strong> between an adult and a minor who is not the adult&#x27;s own child must be observable and interruptible by another adult. Isolated one-on-one contact is prohibited except in an emergency.</li><li><strong>Individual training</strong> is observable and interruptible, with the parent&#x27;s written permission at least once a year. Parents may always watch.</li><li><strong>Rides.</strong> An adult does not drive a minor alone unless the parent has given written consent within the past year. Otherwise a second adult or at least two minors are in the car. SGSC does not arrange carpools between families. When SGSC arranges transport, parents consent in writing.</li><li><strong>Electronic messages</strong> are professional and open. Messages to a minor copy the parent or another adult. Team messages copy another adult. No private, direct or disappearing messages. Messages go out between 8 a.m. and 8 p.m. unless safety or a match requires otherwise.</li><li><strong>Social media.</strong> Adults do not keep private social media connections with minors.</li><li><strong>Parent opt-out.</strong> A parent may ask in writing that their child receive no electronic contact from the club or its adults. The club honors it except in an emergency.</li><li><strong>Changing areas.</strong> No adult alone with a minor. No recording of any kind. Adults never undress or shower in front of minors.</li><li><strong>Massage and rubdowns</strong>. Coaches and team staff do not give massages or rubdowns.</li><li><strong>Overnight travel.</strong> Players stay with their own families. No adult shares a room with another family&#x27;s child. Team meetings are never held in hotel rooms.</li></ul>
+<p><strong>Exceptions.</strong> Only those US Club Soccer allows: a parent&#x27;s written consent, at least yearly, where the adult also has a family or similar relationship with the player; an adult with no authority over the player who is no more than four years older; and a personal care assistant authorized in writing by the parent.</p>
+<p><strong>Reporting</strong></p>
+<ul><li><strong>Suspected child abuse:</strong> every adult participant reports within 24 hours to law enforcement or child protective services. Do not wait for a club review.</li><li><strong>Other concerns:</strong> report to the coordinator, and to US Club Soccer and the U.S. Center for SafeSport where applicable. This includes arrests for a felony or a crime of physical misconduct, offenses against a child, sexual misconduct, and violations of this policy.</li><li>Reports may be anonymous. No retaliation against anyone who reports in good faith.</li><li>Anyone disqualified or suspended by another sports organization tells the club and US Club Soccer immediately.</li></ul>
+<p><strong>Interim action.</strong> When a report raises a safety concern, the President and the coordinator may remove an adult from all contact with players immediately while the matter is reviewed. If the report concerns the President, the Vice President acts instead. This is not a finding. The club follows any US Club Soccer or SafeSport decision.</p>
+<p><strong>Records and compliance</strong></p>
+<ul><li>The coordinator keeps each adult&#x27;s registration, screening and training dates, and reports to the Board each year how many adults are cleared, expiring and outstanding.</li><li>An adult who has not completed these requirements cannot be on a roster or have contact with players.</li><li>Reports and results are shared only with people who need them to act. The club cooperates with any US Club Soccer audit.</li></ul>
+<p><strong>Violations.</strong> Suspected abuse goes to authorities first, and a club review never delays it. Discipline follows 7.1 and any US Club Soccer or SafeSport decision.</p>
+<h3 id="8-2-insurance-and-injury-claims">8.2 Insurance and injury claims</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<ul><li>Registered players and staff are covered by the insurance of the organization their team registers through. Unregistered players and adults are not covered.</li><li>The Treasurer keeps the club&#x27;s own policies current, including general liability insurance at least at the level California law requires to protect volunteer directors and officers (currently $1 million for a budget of $50,000 or more) and directors and officers (D&amp;O) insurance, provides certificates of insurance for field permits, and reports coverage to the Board each year.</li><li>Coaches report injuries within 24 hours (Coaching manual 4.6).</li><li>The safety and risk coordinator files each claim with the right insurer before its deadline and helps the family with the paperwork.</li></ul>
+<h2 id="9-nonprofit-compliance">9. Nonprofit compliance</h2>
+<h3 id="9-1-annual-compliance-calendar">9.1 Annual compliance calendar</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Filing</th><th>Agency</th><th>When</th></tr></thead><tbody><tr><td>Form 990, 990-EZ or 990-N, by revenue</td><td>IRS</td><td>By the 15th day of the 5th month after the fiscal year ends</td></tr><tr><td>Form 199 or 199N</td><td>California Franchise Tax Board</td><td>Same deadline as the 990</td></tr><tr><td>Annual registration renewal (RRF-1)</td><td>California Attorney General, Registry of Charities</td><td>Within 4 months and 15 days after the fiscal year ends</td></tr><tr><td>Statement of Information</td><td>California Secretary of State</td><td>Every two years</td></tr><tr><td>Raffle registration and raffle report</td><td>California Attorney General, Registry of Charities</td><td>Registration before the club&#x27;s first raffle of each raffle year, and the report after</td></tr></tbody></table></div>
+<ul><li>The Treasurer keeps the calendar, reports filing status at each regular meeting during filing season, and confirms completion each year (4.10).</li><li>A late or missed filing is reported to the Board right away, with a plan to fix it.</li><li>No raffle, 50/50 or similar drawing is held until the raffle registration is current and the Treasurer approves it.</li></ul>
+<h3 id="9-2-donations-and-restricted-gifts">9.2 Donations and restricted gifts</h3>
+<p class="owner"><strong>Owner:</strong> Treasurer</p>
+<ul><li>The club accepts cash and online donations that fit its mission. Non-cash gifts follow 4.9, and sponsorships follow 4.8.</li><li>Every gift of $250 or more gets a prompt written acknowledgment stating the amount, the date, and whether the donor received anything in return.</li><li>When a donor pays more than $75 and receives goods or services in return, such as a fundraiser dinner, the club gives a written statement of the deductible amount.</li><li>A gift given for a specific purpose is recorded as restricted and spent only on that purpose, unless the donor agrees in writing to a change.</li><li>The Treasurer reports restricted balances in each financial report to the Board.</li></ul>
+<h3 id="9-3-transparency-and-public-records">9.3 Transparency and public records</h3>
+<p class="owner"><strong>Owner:</strong> Secretary</p>
+<ul><li>The club provides its last three Form 990s and its federal exemption application to anyone who asks, as federal law requires.</li><li>Members may see, on request: the Articles, Bylaws, adopted policies, approved Board minutes other than closed sessions, the annual report and the annual review summary.</li><li>The club posts the Bylaws, these manuals and the annual report on its website.</li><li>Personal information and closed-session records stay confidential (3.1, 3.2).</li></ul>
+<h3 id="9-4-political-activity-and-lobbying">9.4 Political activity and lobbying</h3>
+<p class="owner"><strong>Owner:</strong> President</p>
+<ul><li>The club does not support or oppose candidates for public office, and its name, channels, funds, fields and events are not used to do so.</li><li>Lobbying stays within the limits federal tax law sets for public charities, and needs Board approval. Advocacy on youth sports issues, such as field access, is allowed within those limits.</li><li>Directors, coaches and members may take part in politics as individuals, not on behalf of the club.</li></ul>
+<hr class="rule"><h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a-fee-schedule">Appendix A: Fee schedule</h3>
+<p>Adopted by the Board each year under Board manual 4.1 and published before registration and tryouts. It is not part of this adoption.</p>
+<h3 id="appendix-b-forms">Appendix B: Forms</h3>
+<p>The Registrar maintains these forms and posts them on the club website:</p>
+<ul><li>Policy acknowledgment (directors, coaches and team staff)</li><li>Annual conflict-of-interest statement and director expectations sign-off</li><li>Withdrawal and refund request</li><li>Injured player fee relief request</li><li>Financial aid application</li><li>Guest and loan player request</li><li>Incident and injury report</li><li>Parent consents under Board manual 8.1: individual training, transportation</li><li>Photo and video opt-out</li><li>Sponsorship agreement and business promotion (restaurant night) agreement</li><li>Donation acknowledgment letter</li><li>Event checklist and event report</li><li>Play-up decision record</li></ul>
+<h3 id="appendix-c-league-rules-referenced">Appendix C: League rules referenced</h3>
+<ul><li>US Club Soccer Policy Manual and Participant Safety/Risk Management Policies: usclubsoccer.org/bylaws-policies-guidelines</li><li>NorCal Premier Soccer handbook, PAD process and tryout window rules: norcalpremier.com</li><li>Cal North governance, risk management and protest, appeal and discipline procedures: calnorth.org</li><li>US Soccer Recognize to Recover (emergency action, heat, cardiac): recognizetorecover.org</li><li>AirNow air quality: airnow.gov</li><li>California Attorney General, Registry of Charities (annual registration and raffles): oag.ca.gov/charities</li></ul>
+<h3 id="version-log">Version log</h3>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead><tbody><tr><td>1.0</td><td>October 2026</td><td>First complete set, proposed for Board adoption</td></tr></tbody></table></div>
+<hr class="rule"><h2 id="adoption">Adoption and transition</h2>
+<p><strong>Resolved,</strong> that the Board of Directors of Sierra Gold Soccer Club adopts the Board Policy Manual, the Coaching Policy Manual and the Family Handbook, Version 1.0, as presented, effective on the date below. These manuals replace any earlier club policy that conflicts with them.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Item</th><th>Entry</th></tr></thead><tbody><tr><td>Moved by</td><td></td></tr><tr><td>Seconded by</td><td></td></tr><tr><td>Vote (for / against / abstain)</td><td></td></tr><tr><td>Date adopted</td><td></td></tr><tr><td>Effective date</td><td></td></tr><tr><td>Secretary&#x27;s signature</td><td></td></tr></tbody></table></div>
+<p><strong>How the set fits together.</strong> The Board Policy Manual holds the club-wide rules. The Coaching Policy Manual covers how coaches and team staff apply them on the field. The Family Handbook tells players and families what the rules mean for them. The Coaching Policy Manual stands on its own, so coaches never need the Board manual. If any two documents disagree, the Board Policy Manual controls. Each manual is numbered on its own. A reference to another manual names it, for example &quot;Board manual 8.1.&quot;</p>
+<p><strong>Transition.</strong> These manuals take effect on the effective date above, with these exceptions:</p>
+<ul><li>Competitive head coaches already serving without a Grassroots license have until Fall 2027 to earn one. Other coaches already serving have until the start of the 2027-28 seasonal year (August 1, 2027) to complete the introductory course (Coaching manual 1.1). Safety requirements (8.1) and legal deadlines, such as CPR and AED certification by January 1, 2027, are not delayed.</li><li>Each team names a team manager (Coaching manual 2.1) by the start of its next season.</li><li>Contracts, sponsorships and other agreements in place on the effective date continue under their current terms until they end or renew. After that, they follow these manuals.</li><li>Discipline matters, appeals and complaints already open finish under the rules in place when they started.</li><li>Roles named in these manuals that are not yet filled, such as the safety and risk coordinator, Age Group Coordinators, Technical Director and lead staff member, are filled as the Board appoints them. Until then, the President assigns their duties to an existing officer or role.</li><li>Club metrics (2.8), the reserve designation (4.11) and the annual report (2.7) begin with the first full fiscal year after adoption.</li><li>These manuals replace the Competitive Coach Selection Policy and the Coaching Licensure and Education Policy (February 2026). Their content is carried forward in Coaching manual 1.1, 1.2 and 1.4.</li></ul>
+</article>
+</div>
+<footer><div class="wrap">SGSC Board Policy Manual &middot; Version 1.0, proposed October 2026 &middot; If this page and the Board Policy Manual ever disagree, the Board Policy Manual controls.</div></footer>
+</body></html>

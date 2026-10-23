@@ -1,0 +1,302 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SGSC Coaching Policy Manual</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📗%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Coaching Policy Manual"><meta property="og:description" content="Everything an SGSC coach needs, in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p:first-of-type::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:20px;margin:1.9em 0 .4em;line-height:1.25;color:var(--pine-strong);}
+  :root[data-theme="dark"] h3{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
+  p.owner{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 .9em;}
+  p.owner strong,p.owner em{font-weight:500;font-style:normal;color:var(--gold-strong);}
+  article ul,article ol{margin:0 0 1.3em;padding-left:1.3em;}
+  article li{margin:0 0 .45em;font-size:16.5px;}
+  article p{font-size:17px;}
+  nav.toc a{white-space:nowrap;}
+  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
+  h2,h3{scroll-margin-top:110px;}
+  .table-scroll{overflow-x:auto;margin:.6em 0 1.6em;}
+  table.roster td:first-child{font-weight:600;}
+  .nodrop article p:first-of-type::first-letter{all:unset;}
+  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
+  .series a{color:var(--fg-muted);}
+  .series b{color:var(--pine);font-weight:500;}
+  @media print{nav.toc{position:static;} body{background:#fff;}}
+</style></head><body class="">
+<div class="wrap">
+<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
+<div class="lede-block"><h1 class="title">Coaching Policy Manual</h1>
+<div class="byline">Proposed for adoption by the Board of Directors, October 2026</div><div class="series"><a href="index.html">All documents</a> <span class="sep">&middot;</span> <a href="sgsc-board-policy-manual.html">Board Policy Manual</a> <span class="sep">&middot;</span> <b>Coaching Policy Manual</b> <span class="sep">&middot;</span> <a href="sgsc-family-handbook.html">Family Handbook</a></div></div>
+<nav class="toc" aria-label="Jump to a section"><a href="#1-coaches">Coaches</a><span class="sep">&middot;</span><a href="#2-running-a-team">Running a team</a><span class="sep">&middot;</span><a href="#3-conduct">Conduct</a><span class="sep">&middot;</span><a href="#4-safety-on-site">Safety</a></nav>
+<article>
+<p>This manual is for every coach and team staff member at SGSC, paid or volunteer, recreational or competitive. It covers how we run teams, training, game days and safety on site, and it is written so you have everything you need in one place. The Director of Coaching owns it. You sign an acknowledgment of it each season.</p>
+<p>SGSC&#x27;s mission is kids playing soccer, loving the game, and growing into good people. Most of what follows comes back to that.</p>
+<h2 id="1-coaches">1. Coaches</h2>
+<h3 id="1-1-coach-requirements">1.1 Coach requirements</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching (competitive), Recreational Program Director (recreational)</p>
+<p>Before you work with players, you need to be cleared. These requirements come from state law and our leagues, and there are no exceptions. The safety and risk coordinator tracks them and will tell you what&#x27;s due.</p>
+<p><strong>Before any contact with players</strong></p>
+<ul><li>Register with the club and the league as staff.</li><li>Pass a background check, renewed every other year.</li><li>Complete California&#x27;s fingerprint (Live Scan) check and mandated reporter training.</li><li>Complete SafeSport training, every year.</li></ul>
+<p><strong>Every season</strong></p>
+<ul><li>Complete concussion and sudden cardiac arrest training as California law and the league require.</li><li>From January 1, 2027, hold current CPR and AED certification (4.6).</li><li>Sign this manual&#x27;s acknowledgment.</li></ul>
+<p><strong>Coaching education.</strong> We want every coach to have a foundation, and the courses below are free or low cost.</p>
+<ul><li>Recreational coaches complete US Soccer&#x27;s free Introduction to Grassroots Coaching before their first practice.</li><li>Competitive head coaches hold a US Soccer Grassroots license, earned within 12 months of appointment. The module for your team&#x27;s format (7v7, 9v9 or 11v11) is strongly encouraged.</li><li>Competitive assistant coaches complete the introductory course, and are strongly encouraged to earn a Grassroots license.</li><li>Head coaches are 18 or older. Younger assistants coach only with an adult coach present.</li></ul>
+<h3 id="1-2-competitive-coach-selection">1.2 Competitive coach selection</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>We pick competitive coaches through an open, fair process. The Director of Coaching makes the appointments, and this section sets how.</p>
+<p><strong>Applying.</strong> Every competitive head coach and assistant coach position needs an application, due in mid-March each year. The application covers:</p>
+<ul><li>Coaching experience and qualifications.</li><li>License status, or your timeline to complete it (1.1).</li><li>Availability and commitment.</li><li>Your coaching philosophy and approach to player development.</li><li>Preferred age groups, and the name of your child if they play in one, so conflicts can be screened.</li></ul>
+<p><strong>How coaches are chosen.</strong> The Director of Coaching reviews every application and considers:</p>
+<ul><li>Experience and licensing, or commitment to get licensed.</li><li>Fit with the club&#x27;s player development philosophy and values (2.5).</li><li>Availability and commitment.</li><li>Communication and organization.</li><li>Past performance as an SGSC coach, if any.</li><li>Ability to work with other coaches.</li></ul>
+<p>Assignments to age groups weigh each coach&#x27;s qualifications, each age group&#x27;s needs and team structure, and overall program balance. Assignments go out in early April, before tryouts, so coaching staffs have time to prepare. Every assignment depends on completing the safety requirements in 1.1.</p>
+<p><strong>More than one team in an age group.</strong> The Director of Coaching works with the coaches to set team assignments, considering qualifications, development approach, team needs and program balance. Most of the time coaches agree. If they don&#x27;t, the Director of Coaching decides. The goal is qualified staff and the right level of play for every team.</p>
+<p><strong>Conflicts of interest.</strong> Anyone with a child in the affected age group, or a personal relationship with an applicant that would compromise objectivity, steps out of that decision. If the Director of Coaching has a conflict, a three-person panel decides instead: the Technical Director, the Age Group Coordinator for that age band, and a Board member with no child in the age group. If any of them has a conflict, the Board appoints a replacement who doesn&#x27;t. The panel may interview applicants.</p>
+<p><strong>Decisions are final.</strong> Assignment decisions by the Director of Coaching, or by the panel, are final. A coach who believes the process wasn&#x27;t followed, or that an undisclosed conflict affected the decision, may raise it in writing with the Board. Coaches not selected for their preferred position may be offered other coaching roles in the club.</p>
+<p><strong>Timeline</strong></p>
+<ul><li>Applications due: mid-March.</li><li>Assignments communicated: early April.</li><li>Tryouts: within NorCal Premier&#x27;s tryout window.</li></ul>
+<h3 id="1-3-onboarding-evaluation-and-removal">1.3 Onboarding, evaluation and removal</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching (competitive), Recreational Program Director (recreational)</p>
+<p>Competitive coaches are selected under 1.2. The Recreational Program Director assigns recreational coaches. The Board is told, and assignments are reviewed each year.</p>
+<p>Before your first season, you&#x27;ll meet with your program director to go through this manual, the club curriculum and our safety procedures.</p>
+<p><strong>How you&#x27;ll be evaluated.</strong> Evaluation is about helping you grow, not about wins and losses. We look at player development, session quality, communication and conduct.</p>
+<ul><li>A mid-season check-in and an end-of-season evaluation.</li><li>At least one session or game observed by the program director each season.</li><li>A family survey at season&#x27;s end.</li></ul>
+<p><strong>If there are concerns.</strong> Performance concerns come with a written support plan, with clear goals and a timeline. A coach may be removed for not meeting the plan, or for a serious breach of this manual, by the program director with Board approval. You may respond in writing before the Board decides. A coach named in a safety report may be removed from all contact with players right away while it is reviewed. Volunteer coaches serve at the club&#x27;s discretion.</p>
+<h3 id="1-4-coach-development">1.4 Coach development</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Coaches tell us coaching can feel isolating, especially in the first year. You shouldn&#x27;t have to figure it out alone.</p>
+<p>Most of our coaches follow a path: parent coach (U6), then recreational coach with a mentor, then competitive coach, and for some, club roles such as Technical Director or Director of Coaching.</p>
+<p><strong>What every coach gets</strong></p>
+<ul><li>A preseason orientation for new coaches (1.3).</li><li>Age-appropriate practice plan frameworks and a club resource library.</li><li>A mentor. Each first-year coach is paired with an experienced coach.</li><li>Coaching clinics during the year, run by the Director of Coaching or the Technical Director.</li><li>A community of practice where coaches meet to share sessions and problems.</li><li>Help with licenses and other professional development, as the budget allows.</li><li>The yearly coaches meeting.</li></ul>
+<p><strong>Paying for courses</strong></p>
+<ul><li>The club pays 100% of course fees for a US Soccer Grassroots license for any coach, competitive or recreational, head or assistant.</li><li>Higher licenses, such as the US Soccer D License, and age-specific or specialty courses, such as goalkeeping, sports psychology or injury prevention, may be reimbursed with Director of Coaching approval.</li><li>For a D License or other higher-cost course, the coach agrees to coach at SGSC for at least one full seasonal year after finishing it. A coach who leaves sooner repays a prorated share of the reimbursement.</li></ul>
+<p><strong>How to get reimbursed</strong></p>
+<ol><li>Get the Director of Coaching&#x27;s approval before you enroll.</li><li>When you finish, send your certificate and receipt to the Director of Coaching.</li><li>The Director of Coaching processes the reimbursement within 30 days.</li><li>Reimbursements come from the coach education budget. If it runs out, the Director of Coaching may ask the Board for more.</li></ol>
+<h2 id="2-running-a-team">2. Running a team</h2>
+<h3 id="2-1-team-manager">2.1 Team manager</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Every team, recreational and competitive, has a team manager. A good team manager takes logistics off your plate so you can coach.</p>
+<ul><li>You select your team manager, and the Director of Coaching (or Recreational Program Director) approves.</li><li>The team manager is not the head coach.</li><li>The team manager&#x27;s family must be current on fees or on a payment plan, and the team manager completes the same safety requirements as coaches (1.1).</li><li>The team manager handles schedules, communication, passes and rosters, volunteer tracking and logistics.</li><li>The team manager keeps team money in a club-controlled account, never a personal one, keeps a receipt for every payment, and gives families a statement at least every two months.</li></ul>
+<h3 id="2-2-uniform-and-kit">2.2 Uniform and kit</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>Teams wear the club-issued uniform for league and cup games. Special kits are fine at tournaments, such as Halloween events, where the tournament allows. Sponsor logos on any kit need Board approval.</li><li>Goalkeepers wear colors distinct from both teams and the referee.</li><li>At games, coaches wear club gear or neat, professional-looking clothes.</li><li>Check that shin guards are worn and covered by socks, and that no jewelry is worn.</li></ul>
+<h3 id="2-3-playing-time-and-attendance">2.3 Playing time and attendance</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Playing time is one of the biggest sources of friction with families. Clear rules and early conversations prevent most of it.</p>
+<p><strong>Recreational.</strong> Every player who attends and is ready plays at least half of each game. Less only for injury, illness, safety, discipline, arriving late or leaving early. At U12 and younger, rotate players through positions over the season, including goalkeeper for those willing.</p>
+<p><strong>Competitive.</strong> Minutes are not guaranteed. You decide based on attendance, effort, attitude, readiness, development, position needs and the game. When attendance or behavior is costing a player minutes, tell the player and family. Don&#x27;t let them find out from the bench. Players are expected at every practice and game unless excused, and you track attendance.</p>
+<h3 id="2-4-weekly-practice-and-game-cap">2.4 Weekly practice and game cap</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Rest matters for young players, and burnout is a real reason kids quit.</p>
+<ul><li>No more than 5 club soccer events per player per week, counting practices and games. Tournament weekends are excluded.</li><li>At U12 and younger, no more than 3 practices per week.</li><li>At least one full day off each week.</li><li>Competitive teams enter no more than 4 tournaments per seasonal year, not counting league play, State Cup or league playoffs, unless the Director of Coaching approves more. Out-of-state tournaments need Director of Coaching approval.</li></ul>
+<h3 id="2-5-philosophy-and-curriculum">2.5 Philosophy and curriculum</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Fun builds belonging, and belonging builds development. A kid who feels that comes back next season. Every session should feel safe enough for players to take risks, try new things and make mistakes, and every player should feel believed in, whatever the result. Character and effort count as much as results, and we still compete.</p>
+<ul><li>Player development comes ahead of results.</li><li>Teams play the age-appropriate small-sided formats set by US Soccer and the league.</li><li>The Director of Coaching maintains a club coaching curriculum. Plan your sessions in line with it.</li><li>The club does not mandate a formation. Choose systems that fit your players and the curriculum&#x27;s principles.</li></ul>
+<h3 id="2-6-season-opening-parent-meeting">2.6 Season-opening parent meeting</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>The first meeting sets the tone for the whole season. Within the first two weeks, hold a parent meeting, in person or by video, and cover:</p>
+<ul><li>Who the coaching staff are and how to reach them.</li><li>How team messages go out, and the 24-hour rule.</li><li>The practice and game schedule, and how cancellations are announced.</li><li>How playing time works (2.3).</li><li>For competitive teams, the team fee and team budget.</li><li>The team manager, and the volunteer help the team needs.</li><li>Uniforms and gear.</li><li>Codes of conduct and sideline rules.</li><li>Safety rules (3.3), and how heat, smoke and weather are handled.</li><li>Where to find the Family Handbook.</li></ul>
+<h3 id="2-7-player-feedback">2.7 Player feedback</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Players should always know what they&#x27;re doing well and what to work on next.</p>
+<ul><li>Give feedback regularly through the season, about the player&#x27;s own development, not comparison with teammates.</li><li>At season&#x27;s end, each player gets a short written evaluation or a conversation with you, held in the open (3.3). From U13 up, players take part. For younger players, a parent joins.</li><li>Before tryouts, give competitive players an honest picture of where they stand.</li></ul>
+<h2 id="3-conduct">3. Conduct</h2>
+<h3 id="3-1-coach-code-of-conduct">3.1 Coach code of conduct</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Players learn as much from how you act as from what you teach. As a coach or team staff member, you:</p>
+<ul><li>Put player safety and development ahead of winning.</li><li>Teach and correct with respect. No yelling at, belittling or shaming players.</li><li>Plan sessions that are organized, age-appropriate and fun.</li><li>Treat referees, opponents and families with respect, and model the behavior you expect.</li><li>Follow every rule in 3.3, with no exceptions.</li><li>Use no profanity around players, and no alcohol, tobacco or drugs at club activities.</li><li>Give honest, private feedback to players and families.</li><li>Follow the club&#x27;s policies, and raise disagreements through the club, not in front of players or families.</li><li>Report incidents, injuries and safety concerns promptly.</li></ul>
+<p>The player and parent codes are in the Family Handbook, section 7. Breaches by coaches are handled under 1.3 and the club&#x27;s PAD procedure.</p>
+<h3 id="3-2-referee-respect-and-sideline-rules">3.2 Referee respect and sideline rules</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Many of our referees are teenagers, and we can&#x27;t play without them. You set the tone for your whole sideline.</p>
+<ul><li>You&#x27;re responsible for your bench and your team&#x27;s spectators. Under US Club Soccer rules, the club answers for its supporters.</li><li>Only the head coach speaks to the referee, calmly, at stoppages or after the game.</li><li>No dissent by words or gestures. Concerns about officiating go through the league&#x27;s process after the game.</li><li>Stop abusive spectators, or ask the referee or a club official to remove them.</li><li>Abuse of a referee is reported under US Soccer and league rules and handled under the club&#x27;s PAD procedure.</li><li>Stay in your technical area and keep the field clear.</li></ul>
+<h3 id="3-3-working-with-players">3.3 Working with players</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<p>These rules protect players, and they protect you. They come from US Soccer, US Club Soccer and Cal North safety requirements, and they apply to every coach and team staff member, paid or volunteer.</p>
+<p><strong>Never allowed</strong></p>
+<ul><li>Sexual, physical or emotional abuse or misconduct, bullying, hazing or harassment of any player.</li><li>Any romantic or sexual contact with a player, including a player 18 or older on a team you coach.</li></ul>
+<p><strong>Day to day</strong></p>
+<ul><li><strong>One-on-one.</strong> Any time alone with a player who is not your own child must be in the open, where another adult can see and walk in. No isolated one-on-one time.</li><li><strong>Individual training.</strong> Same rule, plus the parent&#x27;s written permission each year. Parents can always watch.</li><li><strong>Rides.</strong> Don&#x27;t drive another family&#x27;s child alone unless the parent gave written permission this year. Otherwise have another adult or at least two players in the car.</li><li><strong>Messages.</strong> Copy the parent or another adult on every message to a player, and another adult on team messages. No private, direct or disappearing messages. Send between 8 a.m. and 8 p.m. unless it&#x27;s urgent or about a match.</li><li><strong>Social media.</strong> No private social media connections with players.</li><li><strong>Parent opt-out.</strong> If a parent asks in writing that you not contact their child electronically, don&#x27;t, except in an emergency.</li><li><strong>Changing areas.</strong> Never alone with a player. No photos or recording of any kind. Never undress or shower in front of players.</li><li><strong>Massage.</strong> Don&#x27;t give massages or rubdowns.</li><li><strong>Overnight travel.</strong> Players stay with their own families. Don&#x27;t share a room with another family&#x27;s child. No team meetings in hotel rooms.</li></ul>
+<p><strong>Reporting.</strong> You are a mandated reporter. If you suspect child abuse, report it to law enforcement or child protective services within 24 hours, or call 911 if a child is in danger. Don&#x27;t wait for the club. Then tell the safety and risk coordinator. You can also report to US Club Soccer or the U.S. Center for SafeSport, and reports can be anonymous. Report any breach of these rules you see, and tell the club right away if you are arrested or suspended by another sports organization. No one may retaliate against you for a good-faith report.</p>
+<p>If a report names you, you may be removed from all contact with players right away while it is reviewed.</p>
+<h3 id="3-4-red-cards-and-suspensions">3.4 Red cards and suspensions</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>A player or coach sent off follows the referee&#x27;s instruction and league rules. A coach who is sent off leaves the technical area.</li><li>Report every red card as the league requires, within its deadline, and tell the Director of Coaching within 24 hours.</li><li>Suspensions are served as the league sets them. A suspended player does not play for another SGSC team until the suspension is served.</li><li>A suspended coach follows league rules on contact with the team on game day.</li><li>Serious or repeated incidents may also go to the club&#x27;s PAD procedure.</li></ul>
+<h2 id="4-safety-on-site">4. Safety on site</h2>
+<h3 id="4-1-concussion">4.1 Concussion</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<p>When in doubt, sit them out. A player with a suspected concussion comes out right away and does not return that day, and no one can overrule that.</p>
+<ul><li>Complete approved concussion training as required (1.1).</li><li>Any loss of consciousness, or worsening symptoms, means calling 911.</li><li>Tell the parent right away and file an incident report (4.6).</li><li>The player returns only with written clearance from a licensed health care provider. A player diagnosed with a concussion completes a graduated return to play of at least 7 days under a licensed health care provider.</li><li>Players and parents sign the concussion and head injury information sheet each year at registration.</li></ul>
+<h3 id="4-2-heading-limits">4.2 Heading limits</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<ul><li>SGSC follows US Soccer&#x27;s heading guidelines and the rules of each team&#x27;s league.</li><li>No heading in practice for U11 and younger.</li><li>For U12 and U13, heading practice is limited to 30 minutes per week, with no more than 15 to 20 headers per player per week.</li><li>Heading in games follows league rules for each age group.</li></ul>
+<h3 id="4-3-heat">4.3 Heat</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Foothill summers get hot. Use weather.gov, or a nearby field-level weather station, for the temperature at the time and place of the activity.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>Temperature</th><th>Games</th><th>Practices</th></tr></thead><tbody><tr><td>100 to 103°F</td><td>Monitor players, rotate and rest them, and ask the referee for extra hydration breaks before kickoff</td><td>Hold a limited-exertion practice, with frequent water breaks, or cancel</td></tr><tr><td>Above 103°F</td><td>Canceled</td><td>Canceled</td></tr><tr><td>Turf, 100°F and up</td><td></td><td>Canceled</td></tr></tbody></table></div>
+<p><strong>Humidity.</strong> Also check the wet bulb globe temperature (WBGT) using the club&#x27;s Category 3 chart, and cancel when the limit is reached. When close to a limit, cancel.</p>
+<p><strong>Who decides.</strong> You can cancel or modify your own practice. The Director of Coaching cancels games, may cancel practices club-wide, and notifies families. Parents may always keep their child home.</p>
+<p><strong>Every session</strong></p>
+<ul><li>Water before, during and after, with unlimited access to water and shade.</li><li>Acclimatize players gradually early in the season.</li><li>Encourage sunscreen.</li><li>Know the warning signs: dizziness, nausea, headache, cramps, confusion and unusual fatigue. Remove the player, cool them, and give fluids if alert. Call 911 for confusion, collapse or hot skin with altered behavior.</li></ul>
+<h3 id="4-4-air-quality-and-smoke">4.4 Air quality and smoke</h3>
+<p class="owner"><strong>Owner:</strong> Director of Coaching</p>
+<p>Fire season means smoke. Check the AirNow reading for the monitor nearest the field within 2 hours before activity, and again if conditions change. During wildfire smoke, also check the AirNow fire and smoke map.</p>
+<div class="table-scroll"><table class="roster"><thead><tr><th>AQI (AirNow)</th><th>Games</th><th>Practices</th></tr></thead><tbody><tr><td>125 or below</td><td>Play</td><td>Play</td></tr><tr><td>126 to 150</td><td>Increase breaks and substitutions</td><td>Increase breaks, decrease training intensity, or cancel at coach discretion</td></tr><tr><td>151 and above</td><td>Cancel</td><td>Cancel</td></tr></tbody></table></div>
+<p>At 126 and above, players with asthma or breathing conditions may sit out with no penalty.</p>
+<p>The Director of Coaching announces club-wide cancellations (4.5).</p>
+<h3 id="4-5-lightning-weather-and-field-closure">4.5 Lightning, weather and field closure</h3>
+<p class="owner"><strong>Owner:</strong> Field Director</p>
+<ul><li>Activity stops at the first lightning or thunder. Everyone goes to cars or buildings, not under trees or open shelters.</li><li>Activity resumes 30 minutes after the last lightning or thunder.</li><li>Field owners&#x27; closures always apply.</li><li>The Director of Coaching announces club-wide cancellations, by 2 hours before weekday practices and 6 p.m. the day before weekend games when possible.</li><li>Check fields for holes, standing water, debris and unsecured goals before use, and don&#x27;t use unsafe areas.</li></ul>
+<h3 id="4-6-emergency-action-and-incident-reporting">4.6 Emergency action and incident reporting</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<p><strong>Every team carries</strong></p>
+<ul><li>A first aid kit and ice.</li><li>Each player&#x27;s emergency contacts, on paper or in the team app.</li><li>The field&#x27;s street address for 911, and where the nearest AED is.</li></ul>
+<p><strong>In an emergency</strong></p>
+<ol><li>Stop play and check the player.</li><li>Call 911 for anything life-threatening, and send someone to meet the ambulance.</li><li>If a player collapses without contact or is unresponsive, call 911, start CPR and get the AED.</li><li>Give first aid within your training.</li><li>Call the parent, and keep an adult with the player until a parent or responders take over.</li></ol>
+<p><strong>Training.</strong> Starting January 1, 2027, every coach holds current CPR and AED certification from an accredited provider, renewed at least every two years, as California law requires.</p>
+<p><strong>Cardiac emergency plan.</strong> Starting January 1, 2027, the safety and risk coordinator keeps a written cardiac emergency response plan covering AED locations, what to do in a sudden cardiac arrest, and who does what. It is reviewed with coaches and sent to families each year.</p>
+<p><strong>AED access.</strong> Starting January 1, 2028, an AED is available at every official practice and match, maintained and tested to the manufacturer&#x27;s guidelines.</p>
+<p><strong>Reporting.</strong> Report every injury that needs medical care, every emergency response, and every suspected concussion to the safety and risk coordinator within 24 hours. The coordinator handles any insurance claim.</p>
+<h3 id="4-7-facility-and-spectator-rules">4.7 Facility and spectator rules</h3>
+<p class="owner"><strong>Owner:</strong> Field Director</p>
+<ul><li>Follow each field owner&#x27;s rules. No pets at club practices or games. Service animals are allowed.</li><li>Spectators stay on the spectator side, out of team areas, and not behind goals or along goal lines.</li><li>Leave fields and benches clean.</li><li>Two team adults stay until every player is picked up. If only one adult remains, wait with the player in an open, public spot near other people.</li></ul>
+<h3 id="4-8-movable-goal-safety">4.8 Movable goal safety</h3>
+<p class="owner"><strong>Owner:</strong> Equipment Director</p>
+<p>Falling goals have killed children. Treat every movable goal as dangerous until it&#x27;s secured.</p>
+<ul><li>Anchor or weight movable goals whenever they are upright, including during practice.</li><li>No one climbs on, hangs from or sits on a goal.</li><li>Check goals for damage before use. Take damaged goals out of use and report them to the Equipment Director.</li><li>Move goals only with enough adults to control them. Store them chained or laid face down.</li><li>SGSC follows US Club Soccer&#x27;s goal safety guidelines.</li></ul>
+<h3 id="4-9-medications-and-allergies">4.9 Medications and allergies</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<ul><li>At the start of the season, ask families about allergies, asthma, diabetes, seizures or other conditions. Share it only with team staff who need it.</li><li>Players bring their own medication, such as an inhaler or EpiPen, to every practice and game.</li><li>In an emergency, help a player use their own prescribed emergency medication, and call 911. Call 911 any time an EpiPen is used.</li><li>Don&#x27;t give players any other medicine, including over-the-counter pain relievers.</li></ul>
+<h3 id="4-10-return-after-injury">4.10 Return after injury</h3>
+<p class="owner"><strong>Owner:</strong> Safety and risk coordinator</p>
+<ul><li>A player who saw a doctor for an injury returns with a doctor&#x27;s note clearing them to play.</li><li>Concussions follow 4.1.</li><li>Don&#x27;t play a player who is limping, can&#x27;t run normally or is in clear pain. When in doubt, sit them out.</li><li>Ease returning players back in with reduced time in the first sessions.</li></ul>
+</article>
+</div>
+<footer><div class="wrap">SGSC Coaching Policy Manual &middot; Version 1.0, proposed October 2026 &middot; If this page and the Board Policy Manual ever disagree, the Board Policy Manual controls.</div></footer>
+</body></html>
