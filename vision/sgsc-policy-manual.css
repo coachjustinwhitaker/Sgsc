@@ -64,7 +64,7 @@
      .attrib .stage .signoff  vision letter details"
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap");
 
 /* ---------- Tokens ---------- */
 :root {
@@ -81,6 +81,9 @@
   --warn-bg: #fff4e8;
   --ok: #166534;
   --ok-bg: #e8f6ee;
+
+  --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 
   --measure: 760px;
   --radius: 4px;
@@ -100,9 +103,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.62;
   counter-reset: article;
   text-rendering: optimizeLegibility;
 }
@@ -124,34 +128,34 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 hr { border: 0; border-top: 1px solid var(--divider); margin: var(--space-4) 0; }
 
 /* ---------- Headings ---------- */
-h1, h2, h3, h4 { font-family: inherit; color: var(--blue); font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; scroll-margin-top: 1.5rem; }
+h1, h2, h3, h4 { font-family: var(--font-sans); color: var(--blue); font-weight: 700; letter-spacing: -0.015em; text-wrap: balance; scroll-margin-top: 1.5rem; }
 p, li { text-wrap: pretty; }
 
-h1 { font-size: 3rem; line-height: 1.05; margin: 0 0 var(--space-2); }
+h1 { font-size: 2.6rem; line-height: 1.05; margin: 0 0 var(--space-2); }
 
 h2 {
-  font-size: 2.1rem;
-  line-height: 1.12;
+  font-size: 1.85rem;
+  line-height: 1.15;
   margin: var(--space-5) 0 var(--space-2);
   padding-top: var(--space-3);
-  border-top: 4px solid var(--gold);
+  border-top: 3px solid var(--gold);
   counter-increment: article;
   counter-reset: section;
 }
 h2::before {
   content: "Article " counter(article);
   display: block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-soft);
   margin-bottom: 0.4rem;
 }
 
 h3 {
-  font-size: 1.4rem;
-  line-height: 1.2;
+  font-size: 1.3rem;
+  line-height: 1.25;
   margin: var(--space-4) 0 var(--space-1);
   counter-increment: section;
   counter-reset: subsection;
@@ -178,8 +182,8 @@ h3.no-num::before, h4.no-num::before { content: none; }
 
 .eyebrow {
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--blue);
   margin: 0 0 var(--space-1);
@@ -197,14 +201,14 @@ h3.no-num::before, h4.no-num::before { content: none; }
 }
 .cover .eyebrow { color: var(--gold); }
 .cover h1 { color: #fff; max-width: 20ch; }
-.cover .lead { color: #e3eaf6; max-width: 36rem; }
+.cover .lead { color: #e3eaf6; max-width: 36rem; font-size: 1.2rem; }
 .cover-meta {
   display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4);
   margin-top: var(--space-4); padding-top: var(--space-3);
   border-top: 1px solid rgba(255,255,255,0.25);
   font-size: 0.9rem; color: #e3eaf6;
 }
-.cover-meta strong { display: block; color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.cover-meta strong { display: block; color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* ---------- Table of contents ---------- */
 .toc { background: var(--band); padding: var(--space-3) var(--space-3) var(--space-2); border-left: 4px solid var(--gold); margin-bottom: var(--space-4); }
@@ -213,7 +217,7 @@ h3.no-num::before, h4.no-num::before { content: none; }
 .toc li { margin: 0; padding: 0.15rem 0; break-inside: avoid; }
 .toc ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--space-4); }
 .toc-extra { margin: var(--space-2) 0 0; padding-top: var(--space-1); border-top: 1px solid var(--divider); }
-.toc a { text-decoration: none; font-weight: 600; }
+.toc a { text-decoration: none; font-weight: 500; }
 .toc a:hover { text-decoration: underline; }
 
 /* ---------- Policy metadata ---------- */
@@ -222,7 +226,8 @@ h3.no-num::before, h4.no-num::before { content: none; }
   margin: 0 0 var(--space-2); padding: 0;
 }
 .policy-meta > div { display: flex; align-items: baseline; gap: 0.5rem; }
-.policy-meta dt { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft); }
+.policy-meta dt { font-size: 0.85rem; font-weight: 500; color: var(--ink-soft); }
+.policy-meta dt::after { content: ":"; }
 .policy-meta dd { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--ink); }
 
 /* ---------- Status badges ---------- */
@@ -245,7 +250,7 @@ li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0; }
   padding: 0.2rem 0 0.2rem 3rem;
   margin-bottom: var(--space-2);
 }
-.steps > li::before {
+.steps > li::before { font-family: var(--font-sans);
   content: counter(step);
   position: absolute; left: 0; top: 0;
   width: 2.1rem; height: 2.1rem; border-radius: 50%;
@@ -269,7 +274,7 @@ li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0; }
 .callout > :last-child { margin-bottom: 0; }
 .callout::before {
   display: block; margin-bottom: 0.25rem;
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue);
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
   content: "Note";
 }
 .callout-note::before     { content: "Note"; }
@@ -283,7 +288,7 @@ li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0; }
 /* ---------- Definitions ---------- */
 .definitions { margin: var(--space-3) 0; border-top: 1px solid var(--divider); }
 .definitions > div { display: grid; grid-template-columns: 12rem 1fr; gap: var(--space-2); padding: 0.75rem 0; border-bottom: 1px solid var(--divider); }
-.definitions dt { font-weight: 800; color: var(--blue); }
+.definitions dt { font-weight: 700; color: var(--blue); }
 .definitions dd { margin: 0; }
 
 /* ---------- Roles grid ---------- */
@@ -298,14 +303,14 @@ li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0; }
 table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 caption { text-align: left; font-weight: 700; color: var(--blue); padding: 0.6rem 0.9rem; caption-side: top; }
 th, td { padding: 0.65rem 0.9rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--divider); }
-thead th { background: var(--blue); color: #fff; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 3px solid var(--gold); }
+thead th { background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 3px solid var(--gold); }
 tbody tr:nth-child(even) { background: var(--band); }
 tbody th { font-weight: 700; color: var(--blue); }
 tbody td:first-child { min-width: 9.5rem; font-weight: 600; color: var(--blue); }
 td { line-height: 1.5; }
 
 /* ---------- Quotes and code ---------- */
-blockquote { margin: var(--space-3) 0; padding: 0 0 0 var(--space-3); border-left: 4px solid var(--gold); font-size: 1.15rem; font-weight: 600; color: var(--blue); }
+blockquote { margin: var(--space-3) 0; padding: 0 0 0 var(--space-3); border-left: 3px solid var(--gold); font-size: 1.2rem; font-style: italic; font-weight: 600; line-height: 1.5; color: var(--blue); }
 code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: var(--band); padding: 0.1em 0.35em; border-radius: 3px; }
 
 /* ---------- Signature block ---------- */
@@ -345,7 +350,7 @@ body.home .cover .lead { font-size: 1.1rem; max-width: 34rem; margin-bottom: 0; 
 }
 .doc-card:hover { color: var(--ink); border-color: var(--blue); border-top-color: var(--gold); box-shadow: 0 6px 18px rgba(1, 47, 99, 0.10); transform: translateY(-2px); }
 .doc-card .status { align-self: flex-start; }
-.doc-card strong { font-size: 1.15rem; font-weight: 800; color: var(--blue); line-height: 1.25; }
+.doc-card strong { font-size: 1.15rem; font-weight: 700; color: var(--blue); line-height: 1.25; }
 .doc-card .desc { flex: 1; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); }
 .doc-card .go { font-size: 0.85rem; font-weight: 700; color: var(--blue); }
 .doc-card:hover .go { color: var(--gold-dark); }
@@ -361,7 +366,7 @@ body.home .cover .lead { font-size: 1.1rem; max-width: 34rem; margin-bottom: 0; 
 .doc-feature img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
 .doc-feature .body { display: flex; flex-direction: column; gap: 0.6rem; padding: var(--space-3); }
 .doc-feature .eyebrow { margin: 0; color: var(--gold); }
-.doc-feature strong { font-size: 1.6rem; font-weight: 800; line-height: 1.15; }
+.doc-feature strong { font-size: 1.6rem; font-weight: 700; line-height: 1.15; }
 .doc-feature .desc { flex: 1; color: #e3eaf6; line-height: 1.55; }
 .doc-feature .go { font-weight: 700; color: var(--gold); }
 
@@ -378,7 +383,7 @@ figcaption { margin-top: 0.6rem; font-size: 0.9rem; font-style: italic; color: v
 .attrib { margin: -0.75rem 0 var(--space-3) var(--space-3); font-size: 0.9rem; color: var(--ink-soft); }
 .stage { color: var(--blue); }
 .signoff { margin-top: var(--space-4); font-size: 1.1rem; }
-.signoff .mark { font-weight: 800; color: var(--blue); }
+.signoff .mark { font-weight: 600; font-style: italic; color: var(--blue); }
 .signoff-name { margin-top: var(--space-2); font-weight: 700; color: var(--blue); line-height: 1.4; }
 .callout-plain::before { content: none; }
 tr.group-label td { padding-top: 1.1rem; background: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); min-width: 0; }
@@ -386,13 +391,21 @@ tr.stays td.seat { color: var(--blue); }
 tr.moves td.seat { color: var(--gold-dark); }
 
 /* ---------- Document navigation ---------- */
-.doc-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0 0 var(--space-3); font-size: 0.9rem; font-weight: 600; }
+.doc-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0 0 var(--space-3); font-size: 0.9rem; font-weight: 500; }
 .doc-nav a { text-decoration: none; }
 .doc-nav a:hover { text-decoration: underline; }
 .doc-nav [aria-current] { color: var(--ink-soft); }
 .back-to-top { margin: var(--space-3) 0 0; font-size: 0.85rem; font-weight: 600; }
 .back-to-top a { text-decoration: none; color: var(--ink-soft); }
 .back-to-top a:hover { color: var(--blue); }
+
+/* ---------- Type roles ----------
+   Reading text is serif (body). Headings, labels, navigation, tables, cards
+   and checklists are Figtree, so pages people scan stay sans. */
+.eyebrow, .cover-meta, .toc, .doc-nav, .policy-meta, table, caption, .status, .callout::before,
+.button, .back-to-top, .manual-footer, figcaption, .tasks, .season, .doc-cards, .doc-feature,
+.group-intro, .definitions dt, .signature-block, .toc-extra, figure svg text { font-family: var(--font-sans); }
+h4.no-num { font-weight: 700; }
 
 /* ---------- Utilities ---------- */
 .page-break { break-before: page; page-break-before: always; }
@@ -440,5 +453,6 @@ tr.moves td.seat { color: var(--gold-dark); }
   .toc a::after { content: leader(".") " " target-counter(attr(href), page); font-weight: 400; color: #4a5568; }
   .table-wrap { overflow: visible; }
   .no-print, .doc-nav, .back-to-top, .button { display: none !important; }
+  body { font-size: 11pt; }
   .tasks input { print-color-adjust: exact; }
 }
