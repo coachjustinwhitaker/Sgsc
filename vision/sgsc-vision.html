@@ -1,174 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>SGSC Vision and Path Forward</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧭%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="SGSC Vision and Path Forward">
 <meta property="og:description" content="A vision and path forward for Sierra Gold Soccer Club.">
 <meta property="og:image" content="sgsc-vision-thumb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="sgsc-vision-thumb.jpg">
-<meta property="og:title" content="SGSC Vision and Path Forward">
-<meta property="og:description" content="A vision and path forward for Sierra Gold Soccer Club.">
-<meta property="og:image" content="/_blob/42f0177b890fcb99096b8370c902c309">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="/_blob/42f0177b890fcb99096b8370c902c309">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  /* A letter, read in order: diagnosis, vision, player pathway, coach
-     pathway, staffing, governance, then the ask. Two drawn diagrams where
-     prose alone would make the reader assemble a structure themselves. */
-  :root{
-    --bg:#f3f4ee;
-    --paper:#fbfcf7;
-    --fg:#20231c;
-    --fg-muted:#565a4d;
-    --border:#d9dbc9;
-    --pine:#1f4433;
-    --pine-strong:#163226;
-    --gold:#8a6d1a;
-    --gold-strong:#6e5512;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
-      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
-      --gold:#d9b23e; --gold-strong:#f0cb5a;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
-    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
-    --gold:#d9b23e; --gold-strong:#f0cb5a;
-    color-scheme: dark;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
-    font-size:17px; line-height:1.68;
-  }
-  img{max-width:100%;}
-  [hidden]{display:none!important;}
-  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
-  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
-  p{margin:0 0 1.3em 0;}
-  a{color:var(--pine);}
+<link rel="stylesheet" href="sgsc-policy-manual.css">
+</head>
+<body class="plain">
+<main class="manual">
+<header class="cover">
+<p class="eyebrow">Our Plan for Sierra Gold</p>
+<h1>Vision and Path Forward</h1>
+<p class="lead">A vision and path forward for Sierra Gold Soccer Club: the player and coaching pathways, the staff behind them, and a board built to run it.</p>
 
-  header{padding:34px 0 0;}
-  .kicker{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
-    color:var(--gold-strong);
-  }
-  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
-  .byline{
-    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
-    font-style:italic;
-  }
-  .byline b{font-style:normal;color:var(--fg);}
+</header>
+<nav class="doc-nav" aria-label="Documents"><a href="index.html">All documents</a></nav>
+<div class="callout callout-plain"><p><strong>TLDR:</strong> Stay on our current path and we burn out volunteers, close off opportunities, and sell our players short of what they could become. This plan is how we avoid that: a clearer path for players, a professionalized club behind it, and a board that can actually run it. Read it, then join our board and help us build this plan out.</p></div>
 
-  nav.toc{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
-    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
-    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-    padding:10px 0;
-    position:sticky;top:0;z-index:10;background:var(--bg);
-  }
-  nav.toc a{color:var(--fg-muted);text-decoration:none;}
-  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
-  nav.toc .sep{margin:0 7px;opacity:.5;}
-
-  article{padding:6px 0 10px;}
-  article p{font-size:17.5px;}
-  article p:first-of-type::first-letter{
-    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
-    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
-  }
-  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
-  strong.stage{color:var(--pine-strong);}
-  :root[data-theme="dark"] strong.stage{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
-  article > p:first-of-type{margin-top:0;}
-
-  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
-
-  blockquote.pull{
-    margin:1.6em 0 1.8em;padding-left:20px;
-    border-left:3px solid var(--gold-strong);
-    font-family:"Fraunces",Georgia,serif;font-style:italic;
-    font-size:21px;line-height:1.4;color:var(--pine-strong);
-  }
-  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
-  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
-
-  .aside{
-    background:var(--paper);border:1px solid var(--border);
-    border-left:3px solid var(--gold-strong);border-radius:2px;
-    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
-  }
-  .aside p{margin-bottom:.6em;font-size:15.5px;}
-  .aside p:last-child{margin-bottom:0;}
-  .aside strong{color:var(--fg);}
-
-  figure{margin:1.8em 0 2.4em;}
-  figure svg{width:100%;height:auto;display:block;overflow:visible;}
-  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
-  .diagram-scroll{overflow-x:auto;}
-  svg text{font-family:"IBM Plex Mono",monospace;}
-
-  .signoff{margin-top:2.6em;font-size:17px;}
-  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
-
-  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
-
-  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
-  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
-  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
-  table.roster tr:last-child td{border-bottom:none;}
-  table.roster td.role{font-weight:600;color:var(--fg);}
-  table.roster tr.stays td.role{color:var(--pine-strong);}
-  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
-  table.roster tr.moves td.role{color:var(--gold-strong);}
-  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
-  @media (max-width:480px){
-    table.roster{font-size:13px;}
-  }
-</style>
-
-<div class="wrap">
-
-  <header>
-    <div class="kicker"><a href="index.html" style="color:inherit;text-decoration:none">Our Plan for Sierra Gold</a></div>
-  </header>
-
-  <div class="lede-block">
-    <h1 class="title">Vision and Path Forward</h1>
-    <div class="byline">Standing behind this plan: <b>Justin Whitaker</b> and <b>Scott Gorrido</b></div>
-  </div>
-
-  <div class="aside">
-    <p><strong>TLDR:</strong> Stay on our current path and we burn out volunteers, close off opportunities, and sell our players short of what they could become. This plan is how we avoid that: a clearer path for players, a professionalized club behind it, and a board that can actually run it. Read it, then join our board and help us build this plan out.</p>
-  </div>
-
-  <nav class="toc" aria-label="Jump to a section">
-    <a href="#outgrown">Outgrown</a><span class="sep">&middot;</span>
-    <a href="#vision">Vision</a><span class="sep">&middot;</span>
-    <a href="#player-pathway">Player Pathway</a><span class="sep">&middot;</span>
-    <a href="#coaching-pathway">Coaching Pathway</a><span class="sep">&middot;</span>
-    <a href="#ops-governance">Ops &amp; Governance</a><span class="sep">&middot;</span>
-    <a href="#staffing">Staffing</a><span class="sep">&middot;</span>
-    <a href="#governance">Governance</a><span class="sep">&middot;</span>
-    <a href="#ask">The Ask</a>
-  </nav>
-
-  <article>
-    <p>Our goal is kids playing soccer, falling in love with the game, and letting that game shape them into amazing people. Everything else in this plan, every policy, every org chart, every budget line, only exists in service of that.</p>
+<nav class="toc" id="contents"><h2 class="no-num">Contents</h2><ul><li><a href="#outgrown">Outgrown</a></li><li><a href="#vision">Vision</a></li><li><a href="#player-pathway">Player Pathway</a></li><li><a href="#coaching-pathway">Coaching Pathway</a></li><li><a href="#ops-governance">Ops &amp; Governance</a></li><li><a href="#staffing">Staffing</a></li><li><a href="#governance">Governance</a></li><li><a href="#ask">The Ask</a></li></ul></nav>
+<p>Our goal is kids playing soccer, falling in love with the game, and letting that game shape them into amazing people. Everything else in this plan, every policy, every org chart, every budget line, only exists in service of that.</p>
 
     <p>This is our first attempt at writing the whole plan down in one place: not just the governance fixes, but the vision of where we could actually be headed. The player pathway, how we grow the coaches who teach them, what kind of organization runs underneath all of it, and the board structure that holds it all together. It's a draft, a proposed direction to move toward. Parts of it, especially the vision itself, are a starting point for whoever signs on to help build this. Together, we'll finalize it.</p>
 
@@ -186,7 +42,7 @@
 
     <p>Before the how, the why: what we actually want it to feel like to play or coach here.</p>
 
-    <blockquote class="pull">&ldquo;We're not coaching to just create better athletes. We're coaching to develop better humans.&rdquo;</blockquote>
+    <blockquote>&ldquo;We're not coaching to just create better athletes. We're coaching to develop better humans.&rdquo;</blockquote>
     <p class="attrib">A line one of our coaches carries from his own mentor.</p>
 
     <p>Our underlying value is simple: fun leads to belonging, belonging leads to development, development leads to a kid who loves the game and is excited to come back next season. Every program, every practice plan, every coaching decision we make should be judged against whether it upholds those values of fun, belonging, development and excitement.</p>
@@ -214,15 +70,15 @@
           <g font-size="12" fill="currentColor">
             <rect x="5" y="40" width="130" height="46" fill="none" stroke="currentColor"/><text x="70" y="67" text-anchor="middle">Tiny Tykes</text>
             <rect x="155" y="40" width="130" height="46" fill="none" stroke="currentColor"/><text x="220" y="67" text-anchor="middle">Rec</text>
-            <rect x="305" y="40" width="130" height="46" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/><text x="370" y="67" text-anchor="middle">Step-Up</text>
+            <rect x="305" y="40" width="130" height="46" fill="none" stroke="var(--gold-dark)" stroke-dasharray="4 3"/><text x="370" y="67" text-anchor="middle">Step-Up</text>
             <rect x="455" y="40" width="150" height="46" fill="none" stroke="currentColor"/><text x="530" y="67" text-anchor="middle" font-size="11">Copper/Bronze</text>
-            <rect x="625" y="40" width="110" height="46" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/><text x="680" y="67" text-anchor="middle" font-size="11">Silver/Gold</text>
+            <rect x="625" y="40" width="110" height="46" fill="none" stroke="var(--gold-dark)" stroke-dasharray="4 3"/><text x="680" y="67" text-anchor="middle" font-size="11">Silver/Gold</text>
           </g>
           <path d="M135,63 L155,63" stroke="currentColor" marker-end="url(#arrow3)"/>
           <path d="M285,63 L305,63" stroke="currentColor" marker-end="url(#arrow3)"/>
           <path d="M435,63 L455,63" stroke="currentColor" marker-end="url(#arrow3)"/>
           <path d="M605,63 L625,63" stroke="currentColor" marker-end="url(#arrow3)"/>
-          <path d="M735,63 L795,63" stroke="var(--fg-muted)" opacity="0.55" marker-end="url(#arrow3)"/>
+          <path d="M735,63 L795,63" stroke="var(--ink-soft)" opacity="0.55" marker-end="url(#arrow3)"/>
         </svg>
         <figcaption>Tiny Tykes, Rec, and Copper/Bronze are running today. Step-Up and Silver/Gold, outlined in gold, are where we're building next: Step-Up doesn't exist yet, and Silver/Gold is a proven experiment, not yet something the club formally supports.</figcaption>
       </figure>
@@ -298,8 +154,8 @@
             <text x="35" y="316">Board prep</text>
             <text x="35" y="332">Event management</text>
           </g>
-          <rect x="270" y="180" width="220" height="115" rx="2" fill="none" stroke="var(--gold-strong)" stroke-dasharray="4 3"/>
-          <text x="285" y="202" font-size="12.5" font-weight="600" fill="var(--gold-strong)">CONTRACTED</text>
+          <rect x="270" y="180" width="220" height="115" rx="2" fill="none" stroke="var(--gold-dark)" stroke-dasharray="4 3"/>
+          <text x="285" y="202" font-size="12.5" font-weight="600" fill="var(--gold-dark)">CONTRACTED</text>
           <g font-size="11.5" fill="currentColor">
             <text x="285" y="220">Technical Director</text>
             <text x="285" y="236">Registrar</text>
@@ -327,25 +183,24 @@
 
     <div class="diagram-scroll">
       <figure>
-        <table class="roster">
-          <tr><th>Seat today</th><th>Under this plan</th><th>Why</th></tr>
+        <div class="table-wrap"><table><thead><tr><th>Seat today</th><th>Under this plan</th><th>Why</th></tr></thead><tbody>
           <tr class="group-label"><td colspan="3">Seats that fit a smaller, governance-focused board</td></tr>
-          <tr class="stays"><td class="role">President</td><td>Board level</td><td>Governance, sets direction; runs board meetings</td></tr>
-          <tr class="stays"><td class="role">Vice President</td><td>Board level</td><td>Governance support, backs up the President</td></tr>
-          <tr class="stays"><td class="role">Treasurer</td><td>Board level</td><td>Fiduciary oversight of club finances; the ED may take on bookkeeping over time, this seat owns the oversight regardless</td></tr>
-          <tr class="stays"><td class="role">Secretary</td><td>Board level</td><td>Minutes and the official governance record are a bylaws function</td></tr>
-          <tr class="stays"><td class="role">Director of Coaching</td><td>Board level</td><td>Owns the player pathway end to end, sets standards and coach selection</td></tr>
-          <tr class="stays"><td class="role">Events, Sponsorship &amp; Concessions Director</td><td>Board level</td><td>Fundraising strategy and relationships; the ED runs event logistics</td></tr>
+          <tr class="stays"><td class="seat">President</td><td>Board level</td><td>Governance, sets direction; runs board meetings</td></tr>
+          <tr class="stays"><td class="seat">Vice President</td><td>Board level</td><td>Governance support, backs up the President</td></tr>
+          <tr class="stays"><td class="seat">Treasurer</td><td>Board level</td><td>Fiduciary oversight of club finances; the ED may take on bookkeeping over time, this seat owns the oversight regardless</td></tr>
+          <tr class="stays"><td class="seat">Secretary</td><td>Board level</td><td>Minutes and the official governance record are a bylaws function</td></tr>
+          <tr class="stays"><td class="seat">Director of Coaching</td><td>Board level</td><td>Owns the player pathway end to end, sets standards and coach selection</td></tr>
+          <tr class="stays"><td class="seat">Events, Sponsorship &amp; Concessions Director</td><td>Board level</td><td>Fundraising strategy and relationships; the ED runs event logistics</td></tr>
           <tr class="group-label"><td colspan="3">Currently also voting, not all of it governance work</td></tr>
-          <tr class="moves"><td class="role">Communications Director</td><td><strong>ED responsibility</strong></td><td>Communications execution is an ED responsibility</td></tr>
-          <tr class="moves"><td class="role">Field Maintenance Coordinator</td><td><strong>ED management responsibility</strong></td><td>An ongoing working relationship with the school or field owner, official club business better managed by paid staff</td></tr>
-          <tr class="moves"><td class="role">Scheduling Manager</td><td><strong>ED responsibility</strong></td><td>Better suited to the ED's day-to-day function</td></tr>
-          <tr class="moves"><td class="role">Equipment Director</td><td><strong>ED responsibility</strong></td><td>Inventory and distribution, straightforward operational work</td></tr>
-          <tr class="moves"><td class="role">Registrar</td><td><strong>Contracted, managed by ED</strong></td><td>Registration operations need a specific system and skill set; contracted and supervised administratively by the ED</td></tr>
-          <tr class="moves"><td class="role">Technical Director</td><td><strong>Contracted, managed by ED</strong></td><td>Runs sessions and coach development; ED handles pay and contract, DOC keeps programmatic direction on standards</td></tr>
-          <tr class="moves"><td class="role">Referee Director</td><td><strong>Contractor, or board-level</strong></td><td>NorCal requires a credentialed, independent Referee Assignor who coordinates with the ED without reporting to them; whether that's a paid contractor or sits closer to the board is an open question</td></tr>
-          <tr class="moves"><td class="role">Age Group Coordinators (5: U5/U6, U8, U10, U12&ndash;U14, U16&ndash;U19)</td><td><strong>Could be volunteer</strong></td><td>Relationship-driven, age-group-specific work, a good fit for an experienced coach willing to mentor newer ones</td></tr>
-        </table>
+          <tr class="moves"><td class="seat">Communications Director</td><td><strong>ED responsibility</strong></td><td>Communications execution is an ED responsibility</td></tr>
+          <tr class="moves"><td class="seat">Field Maintenance Coordinator</td><td><strong>ED management responsibility</strong></td><td>An ongoing working relationship with the school or field owner, official club business better managed by paid staff</td></tr>
+          <tr class="moves"><td class="seat">Scheduling Manager</td><td><strong>ED responsibility</strong></td><td>Better suited to the ED's day-to-day function</td></tr>
+          <tr class="moves"><td class="seat">Equipment Director</td><td><strong>ED responsibility</strong></td><td>Inventory and distribution, straightforward operational work</td></tr>
+          <tr class="moves"><td class="seat">Registrar</td><td><strong>Contracted, managed by ED</strong></td><td>Registration operations need a specific system and skill set; contracted and supervised administratively by the ED</td></tr>
+          <tr class="moves"><td class="seat">Technical Director</td><td><strong>Contracted, managed by ED</strong></td><td>Runs sessions and coach development; ED handles pay and contract, DOC keeps programmatic direction on standards</td></tr>
+          <tr class="moves"><td class="seat">Referee Director</td><td><strong>Contractor, or board-level</strong></td><td>NorCal requires a credentialed, independent Referee Assignor who coordinates with the ED without reporting to them; whether that's a paid contractor or sits closer to the board is an open question</td></tr>
+          <tr class="moves"><td class="seat">Age Group Coordinators (5: U5/U6, U8, U10, U12&ndash;U14, U16&ndash;U19)</td><td><strong>Could be volunteer</strong></td><td>Relationship-driven, age-group-specific work, a good fit for an experienced coach willing to mentor newer ones</td></tr>
+        </tbody></table></div>
         <figcaption>A smaller, governance-focused board is the goal here, not a fixed number yet. Each seat on the governance list is a function the Executive Director shouldn't do: fundraising strategy, the fiduciary and legal record, setting direction. Everything else sorts into ED-managed work, contracted staff, or volunteer roles.</figcaption>
       </figure>
     </div>
@@ -360,17 +215,13 @@
 
     <h2 id="ask">The ask</h2>
 
-    <blockquote class="pull">
+    <blockquote>
       &ldquo;If you join us this November, you're not just taking a seat. You're committing to a club where a five-year-old's first touch grows into a competitive player fighting for a roster spot, where families who thought they were just watching soccer end up building our community, and where a club that's burned out its own volunteers becomes one players are proud to represent. That's the work. That's what comes next for SGSC.&rdquo;
     </blockquote>
 
     <p class="signoff">If someone shared this page with you, it's because they think you'd be good at this work. Let us know what you think, whether this aligns with your vision, and whether you're ready to help. <span class="mark">That's the actual ask.</span></p>
-  </article>
+<footer class="manual-footer">SGSC Vision and Path Forward &middot; shared ahead of the November 18, 2026 AGM.</footer>
+</main>
 
-</div>
-
-<footer>
-  <div class="wrap">
-    SGSC Vision and Path Forward &middot; shared ahead of the November 18, 2026 AGM. &middot; <a href="index.html">All documents</a>
-  </div>
-</footer>
+</body>
+</html>
