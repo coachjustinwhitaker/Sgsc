@@ -58,6 +58,7 @@
      .doc-cards        grid of document links: <div class="doc-cards"><a class="doc-card"><span class="status ...">
                        <strong>Title</strong><span class="desc">...</span><span class="go">Open</span></a>
      .doc-feature      large featured link with a photo (index)
+     body.home         tighter cover for the index page
      .group-title      unruled section heading for index groups, with optional .group-intro
      figure            diagrams and wide tables with a <figcaption>
      .attrib .stage .signoff  vision letter details"
@@ -326,6 +327,11 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
 .button { font: inherit; font-size: 0.85rem; font-weight: 700; color: var(--blue); background: #fff; border: 2px solid var(--blue); border-radius: var(--radius); padding: 0.4rem 0.9rem; cursor: pointer; }
 .button:hover { background: var(--blue); color: #fff; }
 
+/* ---------- Home page (index) ---------- */
+body.home .cover { padding: var(--space-4) 1.5rem var(--space-3); }
+body.home .cover h1 { font-size: 2.6rem; max-width: none; margin-bottom: 0.6rem; }
+body.home .cover .lead { font-size: 1.1rem; max-width: 34rem; margin-bottom: 0; }
+
 /* ---------- Document cards (index) ---------- */
 .group-title { margin: var(--space-4) 0 0.25rem; padding-top: 0; border-top: 0; font-size: 1.45rem; }
 .group-intro { margin: 0 0 var(--space-2); color: var(--ink-soft); font-size: 0.95rem; }
@@ -398,6 +404,7 @@ tr.moves td.seat { color: var(--gold-dark); }
   h2 { font-size: 1.7rem; }
   .toc ol, .toc ul { columns: 1; }
   .season { margin: 0.4rem 0 0; display: table; }
+  body.home .cover h1 { font-size: 2.1rem; }
   .doc-feature { grid-template-columns: 1fr; }
   .doc-feature img { min-height: 0; aspect-ratio: 16 / 9; }
   .doc-feature .body { padding: var(--space-2); }
