@@ -1,171 +1,29 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>SGSC Monthly Governance</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%9B%EF%B8%8F%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="SGSC Monthly Governance"><meta property="og:description" content="The Board meeting cycle and what lands on each month&#x27;s agenda.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  /* A letter, read in order: diagnosis, vision, player pathway, coach
-     pathway, staffing, governance, then the ask. Two drawn diagrams where
-     prose alone would make the reader assemble a structure themselves. */
-  :root{
-    --bg:#f3f4ee;
-    --paper:#fbfcf7;
-    --fg:#20231c;
-    --fg-muted:#565a4d;
-    --border:#d9dbc9;
-    --pine:#1f4433;
-    --pine-strong:#163226;
-    --gold:#8a6d1a;
-    --gold-strong:#6e5512;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
-      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
-      --gold:#d9b23e; --gold-strong:#f0cb5a;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
-    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
-    --gold:#d9b23e; --gold-strong:#f0cb5a;
-    color-scheme: dark;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
-    font-size:17px; line-height:1.68;
-  }
-  img{max-width:100%;}
-  [hidden]{display:none!important;}
-  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
-  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
-  p{margin:0 0 1.3em 0;}
-  a{color:var(--pine);}
-
-  header{padding:34px 0 0;}
-  .kicker{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
-    color:var(--gold-strong);
-  }
-  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
-  .byline{
-    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
-    font-style:italic;
-  }
-  .byline b{font-style:normal;color:var(--fg);}
-
-  nav.toc{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
-    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
-    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-    padding:10px 0;
-    position:sticky;top:0;z-index:10;background:var(--bg);
-  }
-  nav.toc a{color:var(--fg-muted);text-decoration:none;}
-  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
-  nav.toc .sep{margin:0 7px;opacity:.5;}
-
-  article{padding:6px 0 10px;}
-  article p{font-size:17.5px;}
-  article p.nodropx::first-letter{
-    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
-    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
-  }
-  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
-  strong.stage{color:var(--pine-strong);}
-  :root[data-theme="dark"] strong.stage{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
-  article > p:first-of-type{margin-top:0;}
-
-  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
-
-  blockquote.pull{
-    margin:1.6em 0 1.8em;padding-left:20px;
-    border-left:3px solid var(--gold-strong);
-    font-family:"Fraunces",Georgia,serif;font-style:italic;
-    font-size:21px;line-height:1.4;color:var(--pine-strong);
-  }
-  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
-  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
-
-  .aside{
-    background:var(--paper);border:1px solid var(--border);
-    border-left:3px solid var(--gold-strong);border-radius:2px;
-    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
-  }
-  .aside p{margin-bottom:.6em;font-size:15.5px;}
-  .aside p:last-child{margin-bottom:0;}
-  .aside strong{color:var(--fg);}
-
-  figure{margin:1.8em 0 2.4em;}
-  figure svg{width:100%;height:auto;display:block;overflow:visible;}
-  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
-  .diagram-scroll{overflow-x:auto;}
-  svg text{font-family:"IBM Plex Mono",monospace;}
-
-  .signoff{margin-top:2.6em;font-size:17px;}
-  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
-
-  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
-
-  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
-  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
-  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
-  table.roster tr:last-child td{border-bottom:none;}
-  table.roster td.role{font-weight:600;color:var(--fg);}
-  table.roster tr.stays td.role{color:var(--pine-strong);}
-  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
-  table.roster tr.moves td.role{color:var(--gold-strong);}
-  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
-  @media (max-width:480px){
-    table.roster{font-size:13px;}
-  }
-
-  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;margin:1.6em 0 .3em;color:var(--pine-strong);}
-  :root[data-theme="dark"] h3{color:var(--pine);}
-  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
-  h2,h3{scroll-margin-top:110px;}
-  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
-  nav.toc a{white-space:nowrap;}
-  h2 .season{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-strong);font-weight:500;vertical-align:middle;margin-left:8px;}
-  ul.check{list-style:none;margin:0 0 1em;padding:0;}
-  ul.check li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);}
-  ul.check li:last-child{border-bottom:none;}
-  ul.check input{margin-top:6px;width:17px;height:17px;accent-color:var(--pine);flex:none;}
-  ul.check label{flex:1;font-size:16px;line-height:1.5;cursor:pointer;}
-  ul.check .who{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-strong);margin-right:6px;}
-  ul.check .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--fg-muted);margin-left:4px;white-space:nowrap;}
-  ul.check li.done label{color:var(--fg-muted);text-decoration:line-through;}
-  .tools{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 0;}
-  .tools button{font:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:1px solid var(--border);color:var(--fg-muted);padding:6px 10px;border-radius:2px;cursor:pointer;}
-  .tools button:hover{color:var(--pine);border-color:var(--pine);}
-  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
-  .series a{color:var(--fg-muted);}
-  @media print{nav.toc{position:static;} .tools{display:none;} body{background:#fff;}}
-</style>
-</head><body class="nodrop">
-<div class="wrap">
-<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
-<div class="lede-block"><h1 class="title">Monthly Governance</h1>
-<div class="byline">How each Board meeting runs, before, during and after</div>
-<div class="series"><a href="index.html">All documents</a> &middot; <a href="sgsc-annual-calendar.html">Annual calendar</a> &middot; <a href="sgsc-monthly-governance.html">Governance</a> &middot; <a href="sgsc-operations.html">Operations</a></div></div>
-<div class="aside"><p><strong>How to use it:</strong> run this list for every regular Board meeting, then clear the checkmarks for the next one. The Board governs through policy, budget and recorded votes (Board manual 2.6). Day-to-day work runs through the <a href="sgsc-operations.html">operations cycle</a>: a weekly call and a monthly operations report that comes in here. Items without a reference are working practice, not policy.</p></div>
-<div class="tools"><button id="reset" type="button">Clear my checkmarks</button></div>
-<nav class="toc" aria-label="Jump to a section"><a href="#before">Before</a><span class="sep">&middot;</span><a href="#agenda">Meeting</a><span class="sep">&middot;</span><a href="#after">After</a><span class="sep">&middot;</span><a href="#between">Between meetings</a><span class="sep">&middot;</span><a href="#annual">By month</a></nav>
-<article>
-<h2 id="before">Before the meeting</h2>
+<meta property="og:title" content="SGSC Monthly Governance">
+<meta property="og:description" content="The Board meeting cycle and what lands on each month&#x27;s agenda.">
+<link rel="stylesheet" href="sgsc-policy-manual.css">
+</head>
+<body class="plain">
+<main class="manual">
+<header class="cover">
+<p class="eyebrow">Sierra Gold Soccer Club</p>
+<h1>Monthly Governance</h1>
+<p class="lead">How each Board meeting runs, before, during and after, and what lands on each month&#x27;s agenda.</p>
+<div class="cover-meta"><div><strong>Cycle</strong>Every regular Board meeting</div><div><strong>Status</strong>Working draft</div></div>
+</header>
+<nav class="doc-nav" aria-label="Documents"><a href="index.html">All documents</a><a href="sgsc-annual-calendar.html">Annual calendar</a><span aria-current="page">Monthly governance</span><a href="sgsc-operations.html">Operations</a></nav>
+<div class="callout callout-note"><p><strong>How to use it:</strong> run this list for every regular Board meeting, then clear the checkmarks for the next one. The Board governs through policy, budget and recorded votes (Board manual 2.6). Day-to-day work runs through the <a href="sgsc-operations.html">operations cycle</a>: a weekly call and a monthly operations report that comes in here. Items without a reference are working practice, not policy.</p></div>
+<p class="no-print"><button id="reset" type="button" class="button">Clear my checkmarks</button></p>
+<nav class="toc" id="contents"><h2 class="no-num">Contents</h2><ul><li><a href="#before">Before</a></li><li><a href="#agenda">At the meeting</a></li><li><a href="#after">After</a></li><li><a href="#between">Between meetings</a></li><li><a href="#annual">By month</a></li></ul></nav>
+<section id="before"><h2>Before the meeting</h2>
 <p>Work back from the meeting date. Every regular meeting follows the same cycle.</p>
-<ul class="check">
+<ul class="tasks">
 <li><input type="checkbox" id="before-0"><label for="before-0"><span class="who">President</span>Call for agenda items; requests come in on the Agenda Item Submission Form</label></li>
 <li><input type="checkbox" id="before-1"><label for="before-1"><span class="who">President</span>Agenda item requests due 10 days before the meeting</label></li>
 <li><input type="checkbox" id="before-2"><label for="before-2"><span class="who">Board</span>Every director sends a written report to the Secretary 5 days ahead: done, coming up, needs from the Board. Nothing new means &quot;no report&quot;<span class="ref">B 2.1</span></label></li>
@@ -177,9 +35,10 @@
 <li><input type="checkbox" id="before-8"><label for="before-8"><span class="who">Secretary</span>Packet to directors at least 3 days ahead: agenda, draft minutes, written reports, Treasurer and operations reports, event reports, submitted items. Late reports are not added<span class="ref">B 2.1</span></label></li>
 <li><input type="checkbox" id="before-9"><label for="before-9"><span class="who">Board</span>Directors read the packet before the meeting and send questions ahead. No discussion or decisions by email<span class="ref">B 2.1, 2.6</span></label></li>
 </ul>
-<h2 id="agenda">At the meeting</h2>
+<p class="back-to-top"><a href="#contents">Back to contents</a></p></section>
+<section id="agenda"><h2>At the meeting</h2>
 <p>Standard agenda, in order.</p>
-<ul class="check">
+<ul class="tasks">
 <li><input type="checkbox" id="agenda-0"><label for="agenda-0"><span class="who">President</span>Call to order and quorum; remote attendance only if every director can hear the others<span class="ref">B 2.1</span></label></li>
 <li><input type="checkbox" id="agenda-1"><label for="agenda-1"><span class="who">President</span>Conflict disclosures before any item where a director has an interest; disclosure, who left and the vote go in the minutes<span class="ref">B 2.2</span></label></li>
 <li><input type="checkbox" id="agenda-2"><label for="agenda-2"><span class="who">President</span>Open comment period for members<span class="ref">B 2.1</span></label></li>
@@ -191,8 +50,9 @@
 <li><input type="checkbox" id="agenda-8"><label for="agenda-8"><span class="who">Board</span>Closed session only for personnel, discipline, safety or legal matters<span class="ref">B 2.1</span></label></li>
 <li><input type="checkbox" id="agenda-9"><label for="agenda-9"><span class="who">President</span>Confirm action items, owners and due dates; adjourn</label></li>
 </ul>
-<h2 id="after">After the meeting</h2>
-<ul class="check">
+<p class="back-to-top"><a href="#contents">Back to contents</a></p></section>
+<section id="after"><h2>After the meeting</h2>
+<ul class="tasks">
 <li><input type="checkbox" id="after-0"><label for="after-0"><span class="who">Secretary</span>Draft minutes to directors within 7 days: votes, disclosures, effective dates of adopted policies<span class="ref">B 1.3, 2.2</span></label></li>
 <li><input type="checkbox" id="after-1"><label for="after-1"><span class="who">Secretary</span>Action item list to owners</label></li>
 <li><input type="checkbox" id="after-2"><label for="after-2"><span class="who">Secretary</span>File any written consents with the minutes, and attach the written reports for members<span class="ref">B 2.1</span></label></li>
@@ -200,24 +60,28 @@
 <li><input type="checkbox" id="after-4"><label for="after-4"><span class="who">Secretary</span>Update the policy version log if a policy changed<span class="ref">B 1.3</span></label></li>
 <li><input type="checkbox" id="after-5"><label for="after-5"><span class="who">Secretary</span>Track attendance; three missed regular meetings in a row without notice go to the Board<span class="ref">B 2.6</span></label></li>
 </ul>
-<h2 id="between">Between meetings</h2>
-<ul class="check">
+<p class="back-to-top"><a href="#contents">Back to contents</a></p></section>
+<section id="between"><h2>Between meetings</h2>
+<ul class="tasks">
 <li><input type="checkbox" id="between-0"><label for="between-0"><span class="who">Board</span>Urgent action by unanimous written consent, including email. Not a substitute for discussion<span class="ref">B 2.1</span></label></li>
 <li><input type="checkbox" id="between-1"><label for="between-1"><span class="who">Board</span>No director manages or directs staff; requests go through lead staff. Directors in operations roles direct volunteers only within that role<span class="ref">B 2.6, 5.4</span></label></li>
 <li><input type="checkbox" id="between-2"><label for="between-2"><span class="who">President</span>Whistleblower reports to the Board within 10 business days<span class="ref">B 2.3</span></label></li>
 <li><input type="checkbox" id="between-3"><label for="between-3"><span class="who">All roles</span>Policy violations reported to the Board by the owner within 10 business days<span class="ref">B 1.3</span></label></li>
 </ul>
-<h2 id="annual">On the agenda by month</h2>
+<p class="back-to-top"><a href="#contents">Back to contents</a></p></section>
+<section id="annual"><h2>On the agenda by month</h2>
 <p>The annual items that land on each month&#x27;s agenda. The full list, with operations items, is in the annual calendar.</p>
-<table class="roster"><thead><tr><th>Month</th><th>Add to the agenda</th><th>Ref</th></tr></thead><tbody><tr><td>June</td><td>Start the annual manual review; team annual reports received; metrics data collection; key-role backup check; operations role reviews; lead staff evaluation (closed session); operating plan received</td><td>B 1.3, 4.7, 2.8, 3.4, 2.6, 5.4, 2.10</td></tr><tr><td>July</td><td>Insurance coverage and renewals; adult clearance report; fiscal year close; safety committee report</td><td>B 8.2, 8.1, 4.7, 2.9</td></tr><tr><td>August</td><td>Name the annual financial review committee</td><td>B 4.10</td></tr><tr><td>September</td><td>Open Board seats for the AGM</td><td>B 2.7</td></tr><tr><td>October</td><td>Review committee report; 49% interested-person check; AGM notice with candidates from the nominating committee; annual report draft; Player Advisory Committee</td><td>B 4.10, 2.6, 2.7, 2.9</td></tr><tr><td>November</td><td>AGM; new director orientation; conflict-of-interest statements and director expectations signed; officer handovers; name key-role backups and appoint committees</td><td>B 2.7, 2.6, 2.2, 3.4, 2.9</td></tr><tr><td>December</td><td>Federal and state filings confirmed; AGM minutes posted</td><td>B 4.10, 9.1, 2.7</td></tr><tr><td>January</td><td>Mid-year budget review and progress on annual goals; Board self-assessment; safety committee report</td><td>B 4.11, 2.10, 2.6, 2.9</td></tr><tr><td>February</td><td>Statement of Information check</td><td>B 9.1</td></tr><tr><td>March</td><td>Budget draft to directors, at least 30 days before the vote</td><td>B 4.11</td></tr><tr><td>April</td><td>Adopt the budget, fee schedule and annual goals; set lead staff goals; designate funds above 12 months of operating costs; Player Advisory Committee</td><td>B 4.11, 4.1, 2.10, 5.4, 2.6</td></tr><tr><td>May</td><td>Fee schedule published before registration and tryouts open</td><td>B 4.1</td></tr></tbody></table>
-</article>
-</div>
-<footer><div class="wrap">SGSC Monthly Governance &middot; based on the policy manuals proposed October 2026.</div></footer>
+<div class="table-wrap"><table><thead><tr><th>Month</th><th>Add to the agenda</th><th>Ref</th></tr></thead><tbody><tr><td>June</td><td>Start the annual manual review; team annual reports received; metrics data collection; key-role backup check; operations role reviews; lead staff evaluation (closed session); operating plan received</td><td>B 1.3, 4.7, 2.8, 3.4, 2.6, 5.4, 2.10</td></tr><tr><td>July</td><td>Insurance coverage and renewals; adult clearance report; fiscal year close; safety committee report</td><td>B 8.2, 8.1, 4.7, 2.9</td></tr><tr><td>August</td><td>Name the annual financial review committee</td><td>B 4.10</td></tr><tr><td>September</td><td>Open Board seats for the AGM</td><td>B 2.7</td></tr><tr><td>October</td><td>Review committee report; 49% interested-person check; AGM notice with candidates from the nominating committee; annual report draft; Player Advisory Committee</td><td>B 4.10, 2.6, 2.7, 2.9</td></tr><tr><td>November</td><td>AGM; new director orientation; conflict-of-interest statements and director expectations signed; officer handovers; name key-role backups and appoint committees</td><td>B 2.7, 2.6, 2.2, 3.4, 2.9</td></tr><tr><td>December</td><td>Federal and state filings confirmed; AGM minutes posted</td><td>B 4.10, 9.1, 2.7</td></tr><tr><td>January</td><td>Mid-year budget review and progress on annual goals; Board self-assessment; safety committee report</td><td>B 4.11, 2.10, 2.6, 2.9</td></tr><tr><td>February</td><td>Statement of Information check</td><td>B 9.1</td></tr><tr><td>March</td><td>Budget draft to directors, at least 30 days before the vote</td><td>B 4.11</td></tr><tr><td>April</td><td>Adopt the budget, fee schedule and annual goals; set lead staff goals; designate funds above 12 months of operating costs; Player Advisory Committee</td><td>B 4.11, 4.1, 2.10, 5.4, 2.6</td></tr><tr><td>May</td><td>Fee schedule published before registration and tryouts open</td><td>B 4.1</td></tr></tbody></table></div>
+<p class="back-to-top"><a href="#contents">Back to contents</a></p></section>
+<footer class="manual-footer">SGSC Monthly Governance &middot; based on the policy manuals proposed October 2026.</footer>
+</main>
 <script>
 (function(){var K='sgsc-gov-v1',s={};try{s=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
-document.querySelectorAll('ul.check input').forEach(function(b){b.checked=!!s[b.id];b.closest('li').classList.toggle('done',b.checked);
+var boxes=document.querySelectorAll('ul.tasks input');
+boxes.forEach(function(b){b.checked=!!s[b.id];b.closest('li').classList.toggle('done',b.checked);
 b.addEventListener('change',function(){s[b.id]=b.checked;b.closest('li').classList.toggle('done',b.checked);try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}})});
-var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}document.querySelectorAll('ul.check input').forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
+var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
 })();
 </script>
-</body></html>
+</body>
+</html>
