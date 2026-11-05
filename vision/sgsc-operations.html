@@ -1,0 +1,231 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SGSC Operations</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Operations"><meta property="og:description" content="Weekly operations call, weekly and monthly checklists, and the operations report.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p.nodropx::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;margin:1.6em 0 .3em;color:var(--pine-strong);}
+  :root[data-theme="dark"] h3{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
+  h2,h3{scroll-margin-top:110px;}
+  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
+  nav.toc a{white-space:nowrap;}
+  h2 .season{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-strong);font-weight:500;vertical-align:middle;margin-left:8px;}
+  ul.check{list-style:none;margin:0 0 1em;padding:0;}
+  ul.check li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);}
+  ul.check li:last-child{border-bottom:none;}
+  ul.check input{margin-top:6px;width:17px;height:17px;accent-color:var(--pine);flex:none;}
+  ul.check label{flex:1;font-size:16px;line-height:1.5;cursor:pointer;}
+  ul.check .who{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-strong);margin-right:6px;}
+  ul.check .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--fg-muted);margin-left:4px;white-space:nowrap;}
+  ul.check li.done label{color:var(--fg-muted);text-decoration:line-through;}
+  .tools{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 0;}
+  .tools button{font:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:1px solid var(--border);color:var(--fg-muted);padding:6px 10px;border-radius:2px;cursor:pointer;}
+  .tools button:hover{color:var(--pine);border-color:var(--pine);}
+  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
+  .series a{color:var(--fg-muted);}
+  @media print{nav.toc{position:static;} .tools{display:none;} body{background:#fff;}}
+</style>
+</head><body class="nodrop">
+<div class="wrap">
+<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
+<div class="lede-block"><h1 class="title">Operations</h1>
+<div class="byline">How the club runs week to week and month to month, and reports to the Board</div>
+<div class="series"><a href="index.html">All documents</a> &middot; <a href="sgsc-annual-calendar.html">Annual calendar</a> &middot; <a href="sgsc-monthly-governance.html">Governance</a> &middot; <a href="sgsc-operations.html">Operations</a></div></div>
+<div class="aside"><p><strong>How to use it:</strong> run the weekly lists every week of the season and the monthly lists once a month, then clear the checkmarks. The operations report feeds the <a href="sgsc-monthly-governance.html">Board meeting cycle</a>. Seasonal items are in the <a href="sgsc-annual-calendar.html">annual calendar</a>. Items without a reference are working practice, not policy.</p></div>
+<div class="tools"><button id="reset" type="button">Clear my checkmarks</button></div>
+<nav class="toc" aria-label="Jump to a section"><a href="#how">How it works</a><span class="sep">&middot;</span><a href="#weekly-call">Weekly call</a><span class="sep">&middot;</span><a href="#weekly">Weekly by role</a><span class="sep">&middot;</span><a href="#elevate">Elevating</a><span class="sep">&middot;</span><a href="#monthly">Monthly</a><span class="sep">&middot;</span><a href="#roles">Monthly by role</a><span class="sep">&middot;</span><a href="#report">Ops report</a></nav>
+<article>
+<h2 id="how">How operations work</h2>
+<ul><li>The Board sets policy and budget. Operations roles carry them out (Board manual 1.2, 2.6).</li><li>Lead staff runs operations day to day. Until the club hires a lead staff member (Board manual 5.4), the Director of Coaching fills this role.</li><li>Each role owns its work and decides within policy and budget.</li><li>Problems surface on the weekly call. Most get solved there. Big ones go to the Board.</li><li>The monthly operations report sums up the weekly calls for the Board.</li></ul>
+<h2 id="weekly-call">Weekly operations call</h2>
+<p>Early each week, after the weekend&#x27;s games. Phone or video, 30 minutes. Lead staff runs it. Age Group Coordinators attend. Team managers are welcome to call in.</p>
+<ul class="check">
+<li><input type="checkbox" id="weekly-call-0"><label for="weekly-call-0"><span class="who">Lead staff</span>Run the call at the same day and time each week during the season; post the call-in details for team managers</label></li>
+<li><input type="checkbox" id="weekly-call-1"><label for="weekly-call-1"><span class="who">Age Group Coordinators</span>Weekend recap by age band: games played, results reported, anything that went wrong<span class="ref">B 1.2</span></label></li>
+<li><input type="checkbox" id="weekly-call-2"><label for="weekly-call-2"><span class="who">Age Group Coordinators</span>Referee issues: no-shows, late assignments, abuse of a referee<span class="ref">C 3.2</span></label></li>
+<li><input type="checkbox" id="weekly-call-3"><label for="weekly-call-3"><span class="who">Age Group Coordinators</span>Sideline and conduct issues, red cards and send-off reports<span class="ref">C 3.4</span></label></li>
+<li><input type="checkbox" id="weekly-call-4"><label for="weekly-call-4"><span class="who">Age Group Coordinators</span>Injuries, incidents and suspected concussions: confirm each was reported to the safety coordinator within 24 hours<span class="ref">C 4.6</span></label></li>
+<li><input type="checkbox" id="weekly-call-5"><label for="weekly-call-5"><span class="who">Age Group Coordinators</span>Field problems: condition, closures, goals, permits<span class="ref">C 4.7, 4.8</span></label></li>
+<li><input type="checkbox" id="weekly-call-6"><label for="weekly-call-6"><span class="who">Team managers</span>Team issues: schedules, rescheduled games, family concerns, roster or pass problems</label></li>
+<li><input type="checkbox" id="weekly-call-7"><label for="weekly-call-7"><span class="who">Lead staff</span>The week ahead: schedule changes, weather and smoke outlook, events, deadlines from the annual calendar</label></li>
+<li><input type="checkbox" id="weekly-call-8"><label for="weekly-call-8"><span class="who">Lead staff</span>Each issue gets one outcome: solved on the call, assigned to an owner with a due date, or elevated to the Board</label></li>
+<li><input type="checkbox" id="weekly-call-9"><label for="weekly-call-9"><span class="who">Lead staff</span>Short notes within 24 hours: issues raised, owner, outcome, anything elevated</label></li>
+</ul>
+<h2 id="weekly">Each week, by role</h2>
+<ul class="check">
+<li><input type="checkbox" id="weekly-0"><label for="weekly-0"><span class="who">Lead staff</span>Follow up on open items from last week&#x27;s call</label></li>
+<li><input type="checkbox" id="weekly-1"><label for="weekly-1"><span class="who">Referee Assignor</span>Referees confirmed for every home game this weekend; gaps filled<span class="ref">B 1.2</span></label></li>
+<li><input type="checkbox" id="weekly-2"><label for="weekly-2"><span class="who">Field Director</span>Field schedule confirmed for the week and the weekend; closures announced on time<span class="ref">C 4.5, 4.7</span></label></li>
+<li><input type="checkbox" id="weekly-3"><label for="weekly-3"><span class="who">Registrar</span>Roster changes and player passes processed for this weekend&#x27;s games<span class="ref">B 6.5</span></label></li>
+<li><input type="checkbox" id="weekly-4"><label for="weekly-4"><span class="who">Safety coordinator</span>Incident and injury reports from the weekend logged; claims started<span class="ref">C 4.6, B 8.2</span></label></li>
+<li><input type="checkbox" id="weekly-5"><label for="weekly-5"><span class="who">Safety coordinator</span>Any new adult cleared before contact with players<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="weekly-6"><label for="weekly-6"><span class="who">Equipment Director</span>Damaged goals or equipment reported over the weekend taken out of use<span class="ref">C 4.8</span></label></li>
+<li><input type="checkbox" id="weekly-7"><label for="weekly-7"><span class="who">Lead staff</span>Heat, smoke and weather forecast checked before the weekend<span class="ref">C 4.3, 4.4, 4.5</span></label></li>
+</ul>
+<h2 id="elevate">What gets elevated to the Board</h2>
+<p><strong>Right away, not at the next call:</strong> any abuse or safety concern goes straight to law enforcement or CPS and the safety coordinator (Board manual 8.1). Lead staff tells the President within 24 hours.</p><p><strong>To the President within 48 hours, for the Board:</strong></p><ul><li>A matter that could lead to discipline or a PAD case (7.1).</li><li>A league fine, sanction or forfeit.</li><li>A coach who may need a support plan or removal (Coaching manual 1.3).</li><li>Spending outside the budget, or a contract or agreement (4.11, 2.4).</li><li>A request for an exception to any policy (1.3).</li><li>A legal, insurance or media issue.</li><li>The same problem coming up three weeks running.</li></ul><p>Everything else is handled by the role that owns it and shows up in the operations report.</p>
+<h2 id="monthly">Monthly</h2>
+<p>About a week before each Board meeting.</p>
+<ul class="check">
+<li><input type="checkbox" id="monthly-0"><label for="monthly-0"><span class="who">Lead staff</span>Write the operations report from the month&#x27;s weekly call notes</label></li>
+<li><input type="checkbox" id="monthly-1"><label for="monthly-1"><span class="who">Lead staff</span>Check the next 60 days of the annual calendar; confirm owners and dates</label></li>
+<li><input type="checkbox" id="monthly-2"><label for="monthly-2"><span class="who">Lead staff</span>Send the operations report to the Secretary at least 5 days before the Board meeting, for the consent agenda<span class="ref">B 2.1, 2.6</span></label></li>
+<li><input type="checkbox" id="monthly-3"><label for="monthly-3"><span class="who">Lead staff</span>Decisions for the Board go in on the Agenda Item Submission Form, with a recommendation</label></li>
+<li><input type="checkbox" id="monthly-4"><label for="monthly-4"><span class="who">Events director</span>Event reports from the past month go to the Secretary as consent items<span class="ref">B 4.12</span></label></li>
+</ul>
+<h2 id="roles">Each month, by role</h2>
+<ul class="check">
+<li><input type="checkbox" id="roles-0"><label for="roles-0"><span class="who">Lead staff</span>Coach concerns and support plans in progress<span class="ref">C 1.3</span></label></li>
+<li><input type="checkbox" id="roles-1"><label for="roles-1"><span class="who">Lead staff</span>Cancellation log: heat, smoke, weather and field closures<span class="ref">C 4.3, 4.4, 4.5</span></label></li>
+<li><input type="checkbox" id="roles-2"><label for="roles-2"><span class="who">Rec director</span>Rec team status, coach openings and rec play-ups<span class="ref">B 6.3</span></label></li>
+<li><input type="checkbox" id="roles-3"><label for="roles-3"><span class="who">Technical Director</span>Camps, clinics, specialty sessions and futsal: dates, sign-ups, staffing<span class="ref">B 6.7</span></label></li>
+<li><input type="checkbox" id="roles-4"><label for="roles-4"><span class="who">Registrar</span>Registration counts, releases within 5 business days, photo opt-out list current<span class="ref">B 6.5, 6.6, 3.2</span></label></li>
+<li><input type="checkbox" id="roles-5"><label for="roles-5"><span class="who">Safety coordinator</span>Adults cleared, expiring and outstanding; follow up on gaps<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="roles-6"><label for="roles-6"><span class="who">Field Director</span>Permit status and maintenance; certificates of insurance on file<span class="ref">C 4.7, B 8.2</span></label></li>
+<li><input type="checkbox" id="roles-7"><label for="roles-7"><span class="who">Equipment Director</span>AEDs checked, pads and batteries in date<span class="ref">C 4.6</span></label></li>
+<li><input type="checkbox" id="roles-8"><label for="roles-8"><span class="who">Referee Assignor</span>Referee pay, referee retention, abuse reports<span class="ref">B 1.2</span></label></li>
+<li><input type="checkbox" id="roles-9"><label for="roles-9"><span class="who">Events director</span>Upcoming events, sponsor agreements and logo requests<span class="ref">B 4.8, 4.12</span></label></li>
+<li><input type="checkbox" id="roles-10"><label for="roles-10"><span class="who">Treasurer</span>Payables, reimbursements with receipts, and late accounts<span class="ref">B 4.2, 4.10</span></label></li>
+</ul>
+<h2 id="report">Operations report</h2>
+<p>A synopsis of the month&#x27;s weekly calls plus anything else coming up. One to two pages, same headings every month.</p>
+<table class="roster"><thead><tr><th>Section</th><th>What goes in it</th></tr></thead><tbody><tr><td>Weekly call summary</td><td>Issues raised each week, by age band, and how each was resolved</td></tr><tr><td>Open items</td><td>Still being worked, with owner and due date</td></tr><tr><td>Elevated</td><td>What went to the President and why</td></tr><tr><td>Numbers</td><td>Registrations by program; adults cleared (%); incidents; red cards; games without a referee; cancellations</td></tr><tr><td>Next 60 days</td><td>Annual calendar items coming up, with owners</td></tr><tr><td>Decisions for the Board</td><td>Each with a recommendation, cost and any attachment</td></tr></tbody></table>
+</article>
+</div>
+<footer><div class="wrap">SGSC Operations &middot; based on the policy manuals proposed October 2026.</div></footer>
+<script>
+(function(){var K='sgsc-ops-v1',s={};try{s=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+document.querySelectorAll('ul.check input').forEach(function(b){b.checked=!!s[b.id];b.closest('li').classList.toggle('done',b.checked);
+b.addEventListener('change',function(){s[b.id]=b.checked;b.closest('li').classList.toggle('done',b.checked);try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}})});
+var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}document.querySelectorAll('ul.check input').forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
+})();
+</script>
+</body></html>

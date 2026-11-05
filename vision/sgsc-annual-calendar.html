@@ -1,0 +1,357 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SGSC Annual Calendar</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🗓️%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="SGSC Annual Calendar"><meta property="og:description" content="Month-by-month checklist of what the club does every year.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* A letter, read in order: diagnosis, vision, player pathway, coach
+     pathway, staffing, governance, then the ask. Two drawn diagrams where
+     prose alone would make the reader assemble a structure themselves. */
+  :root{
+    --bg:#f3f4ee;
+    --paper:#fbfcf7;
+    --fg:#20231c;
+    --fg-muted:#565a4d;
+    --border:#d9dbc9;
+    --pine:#1f4433;
+    --pine-strong:#163226;
+    --gold:#8a6d1a;
+    --gold-strong:#6e5512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+      --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+      --gold:#d9b23e; --gold-strong:#f0cb5a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14160f; --paper:#1a1d15; --fg:#e9ead9; --fg-muted:#aeb098;
+    --border:#343823; --pine:#5fa385; --pine-strong:#3f6e59;
+    --gold:#d9b23e; --gold-strong:#f0cb5a;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.68;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  .wrap{max-width:640px;margin:0 auto;padding-inline:22px;}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--pine);}
+
+  header{padding:34px 0 0;}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--gold-strong);
+  }
+  h1.title{font-size:clamp(32px,6.5vw,48px);line-height:1.05;margin-top:8px;}
+  .byline{
+    font-size:14.5px;color:var(--fg-muted);margin-top:12px;
+    font-style:italic;
+  }
+  .byline b{font-style:normal;color:var(--fg);}
+
+  nav.toc{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--fg-muted);margin:22px 0 4px;line-height:1.9;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px 0;
+    position:sticky;top:0;z-index:10;background:var(--bg);
+  }
+  nav.toc a{color:var(--fg-muted);text-decoration:none;}
+  nav.toc a:hover{color:var(--pine);text-decoration:underline;}
+  nav.toc .sep{margin:0 7px;opacity:.5;}
+
+  article{padding:6px 0 10px;}
+  article p{font-size:17.5px;}
+  article p.nodropx::first-letter{
+    font-family:"Fraunces",Georgia,serif;font-size:3.3em;line-height:.78;
+    float:left;padding:.04em .07em 0 0;color:var(--pine);font-weight:600;
+  }
+  h2{font-size:clamp(23px,4vw,28px);margin:2.3em 0 .75em;line-height:1.15;}
+  strong.stage{color:var(--pine-strong);}
+  :root[data-theme="dark"] strong.stage{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) strong.stage{color:var(--pine);} }
+  article > p:first-of-type{margin-top:0;}
+
+  .rule{border:none;border-top:1px solid var(--border);margin:3em 0;}
+
+  blockquote.pull{
+    margin:1.6em 0 1.8em;padding-left:20px;
+    border-left:3px solid var(--gold-strong);
+    font-family:"Fraunces",Georgia,serif;font-style:italic;
+    font-size:21px;line-height:1.4;color:var(--pine-strong);
+  }
+  :root[data-theme="dark"] blockquote.pull{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) blockquote.pull{color:var(--pine);} }
+  p.attrib{font-size:13.5px;color:var(--fg-muted);margin:-6px 0 1.8em 23px;font-style:normal;}
+
+  .aside{
+    background:var(--paper);border:1px solid var(--border);
+    border-left:3px solid var(--gold-strong);border-radius:2px;
+    padding:18px 20px;margin:1.8em 0;font-size:15.5px;
+  }
+  .aside p{margin-bottom:.6em;font-size:15.5px;}
+  .aside p:last-child{margin-bottom:0;}
+  .aside strong{color:var(--fg);}
+
+  figure{margin:1.8em 0 2.4em;}
+  figure svg{width:100%;height:auto;display:block;overflow:visible;}
+  figcaption{font-size:14.5px;color:var(--fg-muted);margin-top:10px;font-style:italic;}
+  .diagram-scroll{overflow-x:auto;}
+  svg text{font-family:"IBM Plex Mono",monospace;}
+
+  .signoff{margin-top:2.6em;font-size:17px;}
+  .signoff .mark{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;color:var(--pine-strong);}
+
+  footer{padding:30px 0 56px;font-size:13px;color:var(--fg-muted);border-top:1px solid var(--border);margin-top:1em;}
+
+  table.roster{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px;}
+  table.roster th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-muted);font-weight:500;padding:6px 10px 6px 0;border-bottom:1px solid var(--border);}
+  table.roster td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;font-size:14px;}
+  table.roster tr:last-child td{border-bottom:none;}
+  table.roster td.role{font-weight:600;color:var(--fg);}
+  table.roster tr.stays td.role{color:var(--pine-strong);}
+  :root[data-theme="dark"] table.roster tr.stays td.role{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) table.roster tr.stays td.role{color:var(--pine);} }
+  table.roster tr.moves td.role{color:var(--gold-strong);}
+  table.roster tr.group-label td{padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-muted);border-bottom:none;}
+  @media (max-width:480px){
+    table.roster{font-size:13px;}
+  }
+
+  h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;margin:1.6em 0 .3em;color:var(--pine-strong);}
+  :root[data-theme="dark"] h3{color:var(--pine);}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h3{color:var(--pine);} }
+  h2,h3{scroll-margin-top:110px;}
+  nav.toc{display:flex;flex-wrap:wrap;align-items:baseline;}
+  nav.toc a{white-space:nowrap;}
+  h2 .season{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-strong);font-weight:500;vertical-align:middle;margin-left:8px;}
+  ul.check{list-style:none;margin:0 0 1em;padding:0;}
+  ul.check li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);}
+  ul.check li:last-child{border-bottom:none;}
+  ul.check input{margin-top:6px;width:17px;height:17px;accent-color:var(--pine);flex:none;}
+  ul.check label{flex:1;font-size:16px;line-height:1.5;cursor:pointer;}
+  ul.check .who{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-strong);margin-right:6px;}
+  ul.check .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--fg-muted);margin-left:4px;white-space:nowrap;}
+  ul.check li.done label{color:var(--fg-muted);text-decoration:line-through;}
+  .tools{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin:14px 0 0;}
+  .tools button{font:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:1px solid var(--border);color:var(--fg-muted);padding:6px 10px;border-radius:2px;cursor:pointer;}
+  .tools button:hover{color:var(--pine);border-color:var(--pine);}
+  .series{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-top:14px;color:var(--fg-muted);}
+  .series a{color:var(--fg-muted);}
+  @media print{nav.toc{position:static;} .tools{display:none;} body{background:#fff;}}
+</style>
+</head><body class="nodrop">
+<div class="wrap">
+<header><div class="kicker">Sierra Gold Soccer Club &middot; Policy Manuals v1.0</div></header>
+<div class="lede-block"><h1 class="title">Annual Calendar</h1>
+<div class="byline">What the club does every year, month by month, and who owns it</div>
+<div class="series"><a href="index.html">All documents</a> &middot; <a href="sgsc-annual-calendar.html">Annual calendar</a> &middot; <a href="sgsc-monthly-governance.html">Governance</a> &middot; <a href="sgsc-operations.html">Operations</a></div></div>
+<div class="aside"><p><strong>How to use it:</strong> what happens at every Board meeting is on the <a href="sgsc-monthly-governance.html">monthly governance</a> page, and the weekly and monthly operations cycle is on the <a href="sgsc-operations.html">operations</a> page. the calendar runs June to May, the club's planning year: it starts after tryouts, when fall planning goes into action. The seasonal year still runs August 1 to July 31. Competitive teams play it as one season in two halves, so competitive coaches carry over from fall to spring. Filing dates assume the fiscal year ends July 31; if it doesn't, the Treasurer moves them. References point to the manuals: <strong>B</strong> is the Board Policy Manual and <strong>C</strong> is the Coaching Policy Manual. Checkmarks save in your own browser only, so they're a personal tracker, not a shared one.</p></div>
+<div class="tools"><button id="reset" type="button">Clear my checkmarks</button></div>
+<nav class="toc" aria-label="Jump to a section"><a href="#jun">Jun</a><span class="sep">&middot;</span><a href="#jul">Jul</a><span class="sep">&middot;</span><a href="#aug">Aug</a><span class="sep">&middot;</span><a href="#sep">Sep</a><span class="sep">&middot;</span><a href="#oct">Oct</a><span class="sep">&middot;</span><a href="#nov">Nov</a><span class="sep">&middot;</span><a href="#dec">Dec</a><span class="sep">&middot;</span><a href="#jan">Jan</a><span class="sep">&middot;</span><a href="#feb">Feb</a><span class="sep">&middot;</span><a href="#mar">Mar</a><span class="sep">&middot;</span><a href="#apr">Apr</a><span class="sep">&middot;</span><a href="#may">May</a><span class="sep">&middot;</span><a href="#as-needed">As needed</a></nav>
+<article>
+<h2 id="jun">June <span class="season">Off season</span></h2>
+<p>Fall planning goes into action. The planning year starts here.</p>
+<ul class="check">
+<li><input type="checkbox" id="jun-0"><label for="jun-0"><span class="who">Coaches</span>Team managers give the Treasurer a full annual report by June 30<span class="ref">B 4.7</span></label></li>
+<li><input type="checkbox" id="jun-1"><label for="jun-1"><span class="who">Director of Coaching</span>Spring season-end coach evaluations, family survey and player feedback<span class="ref">C 1.3, 2.7</span></label></li>
+<li><input type="checkbox" id="jun-2"><label for="jun-2"><span class="who">President</span>Collect metrics data: re-registration, surveys, coach and referee retention<span class="ref">B 2.8</span></label></li>
+<li><input type="checkbox" id="jun-3"><label for="jun-3"><span class="who">Secretary</span>Annual review of all three manuals<span class="ref">B 1.3</span></label></li>
+<li><input type="checkbox" id="jun-4"><label for="jun-4"><span class="who">Rec director</span>Recruit recreational coaches and team managers for fall<span class="ref">C 1.3, 2.1</span></label></li>
+<li><input type="checkbox" id="jun-5"><label for="jun-5"><span class="who">Director of Coaching</span>Set dates for the yearly coaches meeting and coaching clinics<span class="ref">C 1.4</span></label></li>
+<li><input type="checkbox" id="jun-6"><label for="jun-6"><span class="who">Director of Coaching</span>Submit NorCal Premier fall league team applications and payment before the early July deadline (July 8 in 2025)</label></li>
+<li><input type="checkbox" id="jun-7"><label for="jun-7"><span class="who">Treasurer</span>Confirm club memberships with US Club Soccer, NorCal Premier and Cal North for the seasonal year starting August 1</label></li>
+<li><input type="checkbox" id="jun-8"><label for="jun-8"><span class="who">Treasurer</span>Review vendor contracts and renewal dates: registration platform, uniform vendor, field services</label></li>
+<li><input type="checkbox" id="jun-9"><label for="jun-9"><span class="who">Technical Director</span>Run summer camps: staff cleared, medical information collected, venue certificate of insurance on file<span class="ref">B 8.1, 8.2</span></label></li>
+<li><input type="checkbox" id="jun-10"><label for="jun-10"><span class="who">Secretary</span>Confirm every key role has a backup, a current procedures file and account access; report to the Board<span class="ref">B 3.4</span></label></li>
+<li><input type="checkbox" id="jun-11"><label for="jun-11"><span class="who">Lead staff</span>Review each operations role against its description; report to the Board<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="jun-12"><label for="jun-12"><span class="who">Board</span>Lead staff evaluation in closed session; the President shares it in writing<span class="ref">B 5.4</span></label></li>
+<li><input type="checkbox" id="jun-13"><label for="jun-13"><span class="who">Lead staff</span>Write the operating plan for this year&#x27;s annual goals<span class="ref">B 2.10</span></label></li>
+<li><input type="checkbox" id="jun-14"><label for="jun-14"><span class="who">Board</span>Every third year: review the long-range plan (the SGSC Vision)<span class="ref">B 2.10</span></label></li>
+</ul>
+<h2 id="jul">July <span class="season">Summer preseason</span></h2>
+<p>Fiscal year ends July 31 (adjust if different). Rec practices start late July. Everything coaches need is done before rosters are released.</p>
+<ul class="check">
+<li><input type="checkbox" id="jul-0"><label for="jul-0"><span class="who">Safety coordinator</span>Every adult cleared before contact with players: registration, background check, Live Scan, mandated reporter, SafeSport, before practices start<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="jul-1"><label for="jul-1"><span class="who">Coaches</span>Concussion and cardiac arrest training as required, and CPR and AED current, before rosters are released<span class="ref">C 1.1</span></label></li>
+<li><input type="checkbox" id="jul-2"><label for="jul-2"><span class="who">Coaches</span>Coaches and team staff sign the Coaching manual acknowledgment, as the final sign-off before rosters are released<span class="ref">B 1.3</span></label></li>
+<li><input type="checkbox" id="jul-3"><label for="jul-3"><span class="who">Treasurer</span>Report insurance coverage to the Board; renew policies and field-permit certificates<span class="ref">B 8.2</span></label></li>
+<li><input type="checkbox" id="jul-4"><label for="jul-4"><span class="who">Safety coordinator</span>Report to the Board how many adults are cleared, expiring and outstanding<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="jul-5"><label for="jul-5"><span class="who">Safety coordinator</span>Chase background check and SafeSport renewals before August 1<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="jul-6"><label for="jul-6"><span class="who">Director of Coaching</span>Schedule preseason orientation, coaching clinics and mentor pairings for new coaches<span class="ref">C 1.3, 1.4</span></label></li>
+<li><input type="checkbox" id="jul-7"><label for="jul-7"><span class="who">Treasurer</span>Close the books; team balances roll over or return to the club<span class="ref">B 4.7</span></label></li>
+<li><input type="checkbox" id="jul-8"><label for="jul-8"><span class="who">Equipment Director</span>Check goals, AEDs and any other equipment needed for the fall season<span class="ref">C 4.8, 4.6</span></label></li>
+<li><input type="checkbox" id="jul-9"><label for="jul-9"><span class="who">Rec director</span>Form recreational teams and assign coaches before practices start in late July<span class="ref">B 6.2</span></label></li>
+<li><input type="checkbox" id="jul-10"><label for="jul-10"><span class="who">Registrar</span>Close fall registration and finalize rosters<span class="ref">B 6.5</span></label></li>
+<li><input type="checkbox" id="jul-11"><label for="jul-11"><span class="who">Events director</span>Plan and set dates for fall events: Jamboree, All Stars and the end-of-season thank-you dinner<span class="ref">B 4.12</span></label></li>
+<li><input type="checkbox" id="jul-12"><label for="jul-12"><span class="who">Referee Assignor</span>Enter new referees into the assigning system and assign the first fall games</label></li>
+<li><input type="checkbox" id="jul-13"><label for="jul-13"><span class="who">Treasurer</span>Confirm every fall field and venue has a current certificate of insurance on file<span class="ref">B 8.2</span></label></li>
+<li><input type="checkbox" id="jul-14"><label for="jul-14"><span class="who">Events director</span>Schedule fall photo day with the photographer and send the date to team managers</label></li>
+<li><input type="checkbox" id="jul-15"><label for="jul-15"><span class="who">Safety coordinator</span>Safety committee report to the Board<span class="ref">B 2.9</span></label></li>
+</ul>
+<h2 id="aug">August <span class="season">Fall season</span></h2>
+<p>The seasonal year starts August 1.</p>
+<ul class="check">
+<li><input type="checkbox" id="aug-0"><label for="aug-0"><span class="who">Coaches</span>Season-opening parent meeting within the first two weeks<span class="ref">C 2.6</span></label></li>
+<li><input type="checkbox" id="aug-1"><label for="aug-1"><span class="who">Coaches</span>Collect allergy, asthma and medical information from families<span class="ref">C 4.9</span></label></li>
+<li><input type="checkbox" id="aug-2"><label for="aug-2"><span class="who">Coaches</span>Competitive team budgets and team fees shared at the first team meeting<span class="ref">B 4.1</span></label></li>
+<li><input type="checkbox" id="aug-3"><label for="aug-3"><span class="who">Treasurer</span>Club fees due; reminders at 15 days, payment plans at 30, sit-out at 60<span class="ref">B 4.2</span></label></li>
+<li><input type="checkbox" id="aug-4"><label for="aug-4"><span class="who">Safety coordinator</span>Send families the cardiac emergency plan and AED locations; review it with coaches<span class="ref">C 4.6</span></label></li>
+<li><input type="checkbox" id="aug-5"><label for="aug-5"><span class="who">Director of Coaching</span>Heat and smoke season: remind coaches of the heat and air quality rules<span class="ref">C 4.3, 4.4</span></label></li>
+<li><input type="checkbox" id="aug-6"><label for="aug-6"><span class="who">Treasurer</span>Name the annual financial review committee: two or three members, not account signers, who check last year&#x27;s books<span class="ref">B 4.10</span></label></li>
+</ul>
+<h2 id="sep">September <span class="season">Fall season</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="sep-0"><label for="sep-0"><span class="who">Director of Coaching</span>Mid-season check-ins with coaches, in late September<span class="ref">C 1.3</span></label></li>
+<li><input type="checkbox" id="sep-1"><label for="sep-1"><span class="who">Secretary</span>Identify open Board seats for the AGM<span class="ref">B 2.7</span></label></li>
+<li><input type="checkbox" id="sep-2"><label for="sep-2"><span class="who">Treasurer</span>Follow up on late accounts<span class="ref">B 4.2</span></label></li>
+</ul>
+<h2 id="oct">October <span class="season">Fall season</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="oct-0"><label for="oct-0"><span class="who">Treasurer</span>Annual review committee reports in writing (within 90 days after fiscal year end)<span class="ref">B 4.10</span></label></li>
+<li><input type="checkbox" id="oct-1"><label for="oct-1"><span class="who">President</span>Draft the annual report, with metrics and event results<span class="ref">B 2.7, 2.8</span></label></li>
+<li><input type="checkbox" id="oct-2"><label for="oct-2"><span class="who">Secretary</span>Check the 49% interested-person limit for candidates<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="oct-3"><label for="oct-3"><span class="who">Secretary</span>AGM notice to members at least 30 days ahead, with agenda and open seats<span class="ref">B 2.7</span></label></li>
+<li><input type="checkbox" id="oct-4"><label for="oct-4"><span class="who">Director of Coaching</span>Late-season training plan for competitive teams: the fall finish, the gap to spring, and high school players leaving November to February</label></li>
+<li><input type="checkbox" id="oct-5"><label for="oct-5"><span class="who">Technical Director</span>Plan futsal and winter programs: dates, gyms, coaches and registration</label></li>
+<li><input type="checkbox" id="oct-6"><label for="oct-6"><span class="who">Board</span>Player advisory group meets (fall)<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="oct-7"><label for="oct-7"><span class="who">Field Director</span>Confirm lights and practice times before daylight saving time ends in early November</label></li>
+<li><input type="checkbox" id="oct-8"><label for="oct-8"><span class="who">Nominating committee</span>Candidates for open seats go out with the AGM notice<span class="ref">B 2.9</span></label></li>
+</ul>
+<h2 id="nov">November <span class="season">End of fall season</span></h2>
+<p>AGM month.</p>
+<ul class="check">
+<li><input type="checkbox" id="nov-0"><label for="nov-0"><span class="who">President</span>Publish the annual report at least 7 days before the AGM<span class="ref">B 2.7</span></label></li>
+<li><input type="checkbox" id="nov-1"><label for="nov-1"><span class="who">Board</span>Hold the AGM<span class="ref">B 2.7</span></label></li>
+<li><input type="checkbox" id="nov-2"><label for="nov-2"><span class="who">President</span>Orient new directors within 30 days<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="nov-3"><label for="nov-3"><span class="who">Secretary</span>Departing officers hand over records, bank access, logins and keys within 14 days; update bank signers<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="nov-4"><label for="nov-4"><span class="who">Secretary</span>Directors sign the conflict-of-interest statement and director expectations<span class="ref">B 2.2, 2.6</span></label></li>
+<li><input type="checkbox" id="nov-5"><label for="nov-5"><span class="who">Director of Coaching</span>Fall season-end coach evaluations, family survey and player feedback<span class="ref">C 1.3, 2.7</span></label></li>
+<li><input type="checkbox" id="nov-6"><label for="nov-6"><span class="who">Coaches</span>Team managers report fall volunteer shift totals<span class="ref">B 4.6</span></label></li>
+<li><input type="checkbox" id="nov-7"><label for="nov-7"><span class="who">Treasurer</span>Spring financial aid deadline, before spring registration opens<span class="ref">B 4.5</span></label></li>
+<li><input type="checkbox" id="nov-8"><label for="nov-8"><span class="who">Secretary</span>Website check before spring registration: registration pages, fee schedule, dates, contacts and policies current<span class="ref">B 3.3</span></label></li>
+<li><input type="checkbox" id="nov-9"><label for="nov-9"><span class="who">Secretary</span>Review who has access to club systems and accounts; remove departing officers with the handover</label></li>
+<li><input type="checkbox" id="nov-10"><label for="nov-10"><span class="who">Board</span>After the AGM: name backups for each key role and appoint committee members<span class="ref">B 3.4, 2.9</span></label></li>
+</ul>
+<h2 id="dec">December <span class="season">Off season</span></h2>
+<p>Off season. Spring planning happens now, while things are quiet. Anything not finished carries into January.</p>
+<ul class="check">
+<li><input type="checkbox" id="dec-0"><label for="dec-0"><span class="who">Registrar</span>Open spring registration: Family Handbook acknowledgment, concussion information sheet, photo opt-out and medical information<span class="ref">B 1.3, 3.2</span></label></li>
+<li><input type="checkbox" id="dec-1"><label for="dec-1"><span class="who">Rec director</span>Recruit recreational coaches and team managers for spring. Competitive staff carry over from fall<span class="ref">C 1.3, 2.1</span></label></li>
+<li><input type="checkbox" id="dec-2"><label for="dec-2"><span class="who">Director of Coaching</span>Set spring dates for coaching clinics and new-coach orientation, and the competitive coach application window for next season<span class="ref">C 1.2, 1.4</span></label></li>
+<li><input type="checkbox" id="dec-3"><label for="dec-3"><span class="who">Director of Coaching</span>Set tryout dates within NorCal Premier&#x27;s window<span class="ref">B 6.1</span></label></li>
+<li><input type="checkbox" id="dec-4"><label for="dec-4"><span class="who">Safety coordinator</span>Flag adults whose clearances or training expire before spring ends, and start renewals<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="dec-5"><label for="dec-5"><span class="who">Field Director</span>Request spring field permits and build the field schedule<span class="ref">B 1.2</span></label></li>
+<li><input type="checkbox" id="dec-6"><label for="dec-6"><span class="who">Equipment Director</span>Inventory equipment and order what spring needs<span class="ref">C 4.8</span></label></li>
+<li><input type="checkbox" id="dec-7"><label for="dec-7"><span class="who">Events director</span>Plan and set dates for spring events and fundraisers<span class="ref">B 4.12</span></label></li>
+<li><input type="checkbox" id="dec-8"><label for="dec-8"><span class="who">Secretary</span>Post AGM minutes within 30 days<span class="ref">B 2.7</span></label></li>
+<li><input type="checkbox" id="dec-9"><label for="dec-9"><span class="who">Treasurer</span>File IRS Form 990 and California Form 199 (December 15, for a July 31 year end)<span class="ref">B 9.1</span></label></li>
+<li><input type="checkbox" id="dec-10"><label for="dec-10"><span class="who">Treasurer</span>File the Attorney General annual registration, RRF-1 (December 15, for a July 31 year end)<span class="ref">B 9.1</span></label></li>
+<li><input type="checkbox" id="dec-11"><label for="dec-11"><span class="who">Treasurer</span>Request certificates of insurance for spring field permits and file one with each permit<span class="ref">B 8.2</span></label></li>
+<li><input type="checkbox" id="dec-12"><label for="dec-12"><span class="who">Director of Coaching</span>Confirm NorCal Premier spring league and State Cup dates and entry deadlines</label></li>
+<li><input type="checkbox" id="dec-13"><label for="dec-13"><span class="who">Referee Assignor</span>Returning referees renew certification for the next calendar year</label></li>
+<li><input type="checkbox" id="dec-14"><label for="dec-14"><span class="who">Equipment Director</span>Verify the uniform vendor, pricing and sponsor logos; individual order process ready for new spring players<span class="ref">B 4.1, 4.8</span></label></li>
+<li><input type="checkbox" id="dec-15"><label for="dec-15"><span class="who">Director of Coaching</span>Rain and lightning season: remind coaches of the weather and field closure rules<span class="ref">C 4.5</span></label></li>
+</ul>
+<h2 id="jan">January <span class="season">Off season</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="jan-0"><label for="jan-0"><span class="who">Treasurer</span>Send written acknowledgments for year-end gifts of $250 or more<span class="ref">B 9.2</span></label></li>
+<li><input type="checkbox" id="jan-1"><label for="jan-1"><span class="who">Board</span>Mid-year budget review<span class="ref">B 4.11</span></label></li>
+<li><input type="checkbox" id="jan-2"><label for="jan-2"><span class="who">Board</span>Board self-assessment<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="jan-3"><label for="jan-3"><span class="who">Director of Coaching</span>Announce competitive coach applications<span class="ref">C 1.2</span></label></li>
+<li><input type="checkbox" id="jan-4"><label for="jan-4"><span class="who">Board</span>Mid-year progress check on the annual goals<span class="ref">B 2.10</span></label></li>
+<li><input type="checkbox" id="jan-5"><label for="jan-5"><span class="who">Safety coordinator</span>Safety committee report to the Board<span class="ref">B 2.9</span></label></li>
+</ul>
+<h2 id="feb">February <span class="season">Spring preseason</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="feb-0"><label for="feb-0"><span class="who">Safety coordinator</span>Every adult cleared before spring practices start<span class="ref">B 8.1</span></label></li>
+<li><input type="checkbox" id="feb-1"><label for="feb-1"><span class="who">Coaches</span>New spring coaches have training current and the Coaching manual acknowledgment signed before rosters are released. Competitive coaches carry over from fall<span class="ref">C 1.1, B 1.3</span></label></li>
+<li><input type="checkbox" id="feb-2"><label for="feb-2"><span class="who">Rec director</span>Form spring recreational teams and assign coaches<span class="ref">B 6.2</span></label></li>
+<li><input type="checkbox" id="feb-3"><label for="feb-3"><span class="who">Registrar</span>Close spring registration and finalize rosters<span class="ref">B 6.5</span></label></li>
+<li><input type="checkbox" id="feb-4"><label for="feb-4"><span class="who">Treasurer</span>Check whether the Statement of Information is due this year (every two years)<span class="ref">B 9.1</span></label></li>
+<li><input type="checkbox" id="feb-5"><label for="feb-5"><span class="who">Director of Coaching</span>Collect competitive coach applications<span class="ref">C 1.2</span></label></li>
+<li><input type="checkbox" id="feb-6"><label for="feb-6"><span class="who">Technical Director</span>Plan Step-Up clinics: dates, coaches and sign-ups, ahead of tryouts</label></li>
+<li><input type="checkbox" id="feb-7"><label for="feb-7"><span class="who">Rec director</span>Submit the Cal North affiliation agreement for next season before March 1 (fines after)</label></li>
+<li><input type="checkbox" id="feb-8"><label for="feb-8"><span class="who">Technical Director</span>Set summer camp dates, venues, staff and pricing</label></li>
+</ul>
+<h2 id="mar">March <span class="season">Spring season</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="mar-0"><label for="mar-0"><span class="who">Coaches</span>Recreational teams hold a season-opening parent meeting within the first two weeks of spring<span class="ref">C 2.6</span></label></li>
+<li><input type="checkbox" id="mar-1"><label for="mar-1"><span class="who">Coaches</span>Collect allergy, asthma and medical information from new families<span class="ref">C 4.9</span></label></li>
+<li><input type="checkbox" id="mar-2"><label for="mar-2"><span class="who">Director of Coaching</span>Competitive coach applications due mid-March<span class="ref">C 1.2</span></label></li>
+<li><input type="checkbox" id="mar-3"><label for="mar-3"><span class="who">Treasurer</span>Draft next year&#x27;s budget, with a coach education line, and send it to directors at least 30 days before the April vote<span class="ref">B 4.11</span></label></li>
+<li><input type="checkbox" id="mar-4"><label for="mar-4"><span class="who">Events director</span>Plan and set dates for summer events<span class="ref">B 4.12</span></label></li>
+</ul>
+<h2 id="apr">April <span class="season">Spring season</span></h2>
+<ul class="check">
+<li><input type="checkbox" id="apr-0"><label for="apr-0"><span class="who">Director of Coaching</span>Communicate competitive coach assignments in early April<span class="ref">C 1.2</span></label></li>
+<li><input type="checkbox" id="apr-1"><label for="apr-1"><span class="who">Board</span>Adopt the budget and fee schedule before registration and tryouts open<span class="ref">B 4.1, 4.11</span></label></li>
+<li><input type="checkbox" id="apr-2"><label for="apr-2"><span class="who">Board</span>Review funds above 12 months of operating costs and designate them<span class="ref">B 4.11</span></label></li>
+<li><input type="checkbox" id="apr-3"><label for="apr-3"><span class="who">Director of Coaching</span>Post tryout dates at least 14 days ahead<span class="ref">B 6.1</span></label></li>
+<li><input type="checkbox" id="apr-4"><label for="apr-4"><span class="who">Coaches</span>Give competitive players an honest picture of where they stand before tryouts<span class="ref">C 2.7</span></label></li>
+<li><input type="checkbox" id="apr-5"><label for="apr-5"><span class="who">Field Director</span>Request fall field permits<span class="ref">B 1.2</span></label></li>
+<li><input type="checkbox" id="apr-6"><label for="apr-6"><span class="who">Treasurer</span>Request certificates of insurance for fall field permits and file one with each permit<span class="ref">B 8.2</span></label></li>
+<li><input type="checkbox" id="apr-7"><label for="apr-7"><span class="who">Treasurer</span>Fall financial aid deadline, before fall registration opens in May<span class="ref">B 4.5</span></label></li>
+<li><input type="checkbox" id="apr-8"><label for="apr-8"><span class="who">Board</span>Player advisory group meets (spring)<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="apr-9"><label for="apr-9"><span class="who">Referee Assignor</span>Recruit new referees and schedule entry-level courses for late spring</label></li>
+<li><input type="checkbox" id="apr-10"><label for="apr-10"><span class="who">Secretary</span>Website check before fall registration: registration pages, fee schedule, dates, contacts and policies current<span class="ref">B 3.3</span></label></li>
+<li><input type="checkbox" id="apr-11"><label for="apr-11"><span class="who">Technical Director</span>Open summer camp registration</label></li>
+<li><input type="checkbox" id="apr-12"><label for="apr-12"><span class="who">Board</span>Adopt three to five annual goals with the budget; set the lead staff member&#x27;s goals from them<span class="ref">B 2.10, 5.4</span></label></li>
+</ul>
+<h2 id="may">May <span class="season">Spring season</span></h2>
+<p>Tryouts, within NorCal Premier&#x27;s window. The planning year ends here.</p>
+<ul class="check">
+<li><input type="checkbox" id="may-0"><label for="may-0"><span class="who">Director of Coaching</span>Run tryouts; offers in writing<span class="ref">B 6.1, 6.2</span></label></li>
+<li><input type="checkbox" id="may-1"><label for="may-1"><span class="who">Director of Coaching</span>Tell players not offered a spot within 15 days after tryouts end<span class="ref">B 6.2</span></label></li>
+<li><input type="checkbox" id="may-2"><label for="may-2"><span class="who">Coaches</span>Play-up requests: 7-day objection window for the own-age coach<span class="ref">B 6.3</span></label></li>
+<li><input type="checkbox" id="may-3"><label for="may-3"><span class="who">Registrar</span>Open fall registration: Family Handbook acknowledgment, concussion information sheet, photo opt-out and medical information<span class="ref">B 1.3, 3.2</span></label></li>
+<li><input type="checkbox" id="may-4"><label for="may-4"><span class="who">Referee Assignor</span>New-referee training, so new referees are certified for fall</label></li>
+<li><input type="checkbox" id="may-5"><label for="may-5"><span class="who">Director of Coaching</span>NorCal Premier fall league applications open (May 1 in 2025): plan team entries</label></li>
+<li><input type="checkbox" id="may-6"><label for="may-6"><span class="who">Registrar</span>Fall registration flyers out through the schools before the school year ends</label></li>
+<li><input type="checkbox" id="may-7"><label for="may-7"><span class="who">Field Director</span>Confirm summer field access: school fields close or go into maintenance when school is out</label></li>
+<li><input type="checkbox" id="may-8"><label for="may-8"><span class="who">Equipment Director</span>Verify the uniform vendor, pricing and sponsor logos; individual order process ready before fall teams form<span class="ref">B 4.1, 4.8</span></label></li>
+<li><input type="checkbox" id="may-9"><label for="may-9"><span class="who">Coaches</span>Team managers report spring volunteer shift totals<span class="ref">B 4.6</span></label></li>
+</ul>
+<h2 id="as-needed">As needed</h2>
+<p>Triggered by an event, not a date.</p>
+<ul class="check">
+<li><input type="checkbox" id="as-needed-0"><label for="as-needed-0"><span class="who">Coaches</span>Suspected child abuse: report to law enforcement or CPS within 24 hours<span class="ref">C 3.3</span></label></li>
+<li><input type="checkbox" id="as-needed-1"><label for="as-needed-1"><span class="who">Coaches</span>Injuries, emergencies and suspected concussions to the safety coordinator within 24 hours<span class="ref">C 4.6</span></label></li>
+<li><input type="checkbox" id="as-needed-2"><label for="as-needed-2"><span class="who">Coaches</span>Red cards: report as the league requires, and to the Director of Coaching within 24 hours<span class="ref">C 3.4</span></label></li>
+<li><input type="checkbox" id="as-needed-3"><label for="as-needed-3"><span class="who">Events director</span>Before an event: venue, insurance, permits, raffle, safety plan, screening, budget<span class="ref">B 4.12</span></label></li>
+<li><input type="checkbox" id="as-needed-4"><label for="as-needed-4"><span class="who">Events director</span>After an event: report to the next Board meeting as a consent item<span class="ref">B 4.12</span></label></li>
+<li><input type="checkbox" id="as-needed-5"><label for="as-needed-5"><span class="who">Events director</span>Business promotions and sponsorships: written agreement first<span class="ref">B 4.8</span></label></li>
+<li><input type="checkbox" id="as-needed-6"><label for="as-needed-6"><span class="who">Treasurer</span>Gifts of $250 or more: written acknowledgment<span class="ref">B 9.2</span></label></li>
+<li><input type="checkbox" id="as-needed-7"><label for="as-needed-7"><span class="who">Registrar</span>Release requests processed within 5 business days<span class="ref">B 6.6</span></label></li>
+<li><input type="checkbox" id="as-needed-8"><label for="as-needed-8"><span class="who">Board</span>PAD case: notice in 5 business days, hearing within 30 days, decision in 5 business days, appeal within 10 days<span class="ref">B 7.1</span></label></li>
+<li><input type="checkbox" id="as-needed-9"><label for="as-needed-9"><span class="who">President</span>Whistleblower report: report to the Board within 10 business days<span class="ref">B 2.3</span></label></li>
+<li><input type="checkbox" id="as-needed-10"><label for="as-needed-10"><span class="who">Board</span>Related-party deal: two-thirds of disinterested directors, before the deal, with quotes<span class="ref">B 2.2</span></label></li>
+<li><input type="checkbox" id="as-needed-11"><label for="as-needed-11"><span class="who">Board</span>Lead staff pay set, renewed or changed: approve against comparable pay data<span class="ref">B 5.4</span></label></li>
+<li><input type="checkbox" id="as-needed-12"><label for="as-needed-12"><span class="who">Secretary</span>Officer leaves: handover within 14 days<span class="ref">B 2.6</span></label></li>
+<li><input type="checkbox" id="as-needed-13"><label for="as-needed-13"><span class="who">Director of Coaching</span>Coach course reimbursement: approve before enrollment, pay within 30 days of completion<span class="ref">C 1.4</span></label></li>
+<li><input type="checkbox" id="as-needed-14"><label for="as-needed-14"><span class="who">Treasurer</span>Event, tournament or new venue needs proof of insurance: request a certificate of insurance<span class="ref">B 8.2</span></label></li>
+</ul>
+</article>
+</div>
+<footer><div class="wrap">SGSC Annual Calendar &middot; based on the policy manuals proposed October 2026.</div></footer>
+<script>
+(function(){var K='sgsc-cal-v1',s={};try{s=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+document.querySelectorAll('ul.check input').forEach(function(b){b.checked=!!s[b.id];b.closest('li').classList.toggle('done',b.checked);
+b.addEventListener('change',function(){s[b.id]=b.checked;b.closest('li').classList.toggle('done',b.checked);try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}})});
+var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}document.querySelectorAll('ul.check input').forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
+})();
+</script>
+</body></html>
