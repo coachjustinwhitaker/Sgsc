@@ -379,6 +379,7 @@ figcaption { margin-top: 0.6rem; font-size: 0.9rem; font-style: italic; color: v
 .stage { color: var(--blue); }
 .signoff { margin-top: var(--space-4); font-size: 1.1rem; }
 .signoff .mark { font-weight: 800; color: var(--blue); }
+.signoff-name { margin-top: var(--space-2); font-weight: 700; color: var(--blue); line-height: 1.4; }
 .callout-plain::before { content: none; }
 tr.group-label td { padding-top: 1.1rem; background: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); min-width: 0; }
 tr.stays td.seat { color: var(--blue); }
