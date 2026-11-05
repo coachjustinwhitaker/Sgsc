@@ -55,7 +55,10 @@
                        <label for="x"><span class="who">Owner</span>Task<span class="ref">B 2.1</span></label></li>
      .season           small label inside a heading, e.g. <span class="season">Fall season</span>
      .button           plain outlined button
-     .doc-cards        grid of document links (<div class="doc-cards"><a class="doc-card">...)
+     .doc-cards        grid of document links: <div class="doc-cards"><a class="doc-card"><span class="status ...">
+                       <strong>Title</strong><span class="desc">...</span><span class="go">Open</span></a>
+     .doc-feature      large featured link with a photo (index)
+     .group-title      unruled section heading for index groups, with optional .group-intro
      figure            diagrams and wide tables with a <figcaption>
      .attrib .stage .signoff  vision letter details"
    ========================================================================== */
@@ -192,7 +195,7 @@ h3.no-num::before, h4.no-num::before { content: none; }
   border-bottom: 6px solid var(--gold);
 }
 .cover .eyebrow { color: var(--gold); }
-.cover h1 { color: #fff; max-width: 16ch; }
+.cover h1 { color: #fff; max-width: 20ch; }
 .cover .lead { color: #e3eaf6; max-width: 36rem; }
 .cover-meta {
   display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4);
@@ -323,13 +326,42 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
 .button { font: inherit; font-size: 0.85rem; font-weight: 700; color: var(--blue); background: #fff; border: 2px solid var(--blue); border-radius: var(--radius); padding: 0.4rem 0.9rem; cursor: pointer; }
 .button:hover { background: var(--blue); color: #fff; }
 
-/* ---------- Document cards ---------- */
-.doc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-2); margin: var(--space-2) 0 var(--space-3); }
-.doc-card { display: block; padding: var(--space-2) var(--space-2) var(--space-2); background: var(--band); border-top: 3px solid var(--gold); color: var(--ink); text-decoration: none; }
-.doc-card:hover { background: #e3eaf6; color: var(--ink); }
-.doc-card .eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.12em; line-height: 1.4; color: var(--ink-soft); margin-bottom: 0.4rem; }
-.doc-card strong { display: block; font-size: 1.15rem; font-weight: 800; color: var(--blue); line-height: 1.25; margin-bottom: 0.35rem; }
-.doc-card span:last-child { display: block; font-size: 0.92rem; line-height: 1.5; }
+/* ---------- Document cards (index) ---------- */
+.group-title { margin: var(--space-4) 0 0.25rem; padding-top: 0; border-top: 0; font-size: 1.45rem; }
+.group-intro { margin: 0 0 var(--space-2); color: var(--ink-soft); font-size: 0.95rem; }
+.doc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-2); margin: 0 0 var(--space-3); }
+.doc-card {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  padding: var(--space-2) var(--space-2) 1.1rem;
+  background: var(--paper); border: 1px solid var(--divider); border-top: 3px solid var(--gold); border-radius: 0 0 var(--radius) var(--radius);
+  color: var(--ink); text-decoration: none;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.doc-card:hover { color: var(--ink); border-color: var(--blue); border-top-color: var(--gold); box-shadow: 0 6px 18px rgba(1, 47, 99, 0.10); transform: translateY(-2px); }
+.doc-card .status { align-self: flex-start; }
+.doc-card strong { font-size: 1.15rem; font-weight: 800; color: var(--blue); line-height: 1.25; }
+.doc-card .desc { flex: 1; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); }
+.doc-card .go { font-size: 0.85rem; font-weight: 700; color: var(--blue); }
+.doc-card:hover .go { color: var(--gold-dark); }
+
+.doc-feature {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  margin: 0 0 var(--space-3); overflow: hidden;
+  background: var(--blue); border-bottom: 4px solid var(--gold); border-radius: var(--radius);
+  color: #fff; text-decoration: none;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.doc-feature:hover { color: #fff; box-shadow: 0 10px 24px rgba(1, 47, 99, 0.22); transform: translateY(-2px); }
+.doc-feature img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
+.doc-feature .body { display: flex; flex-direction: column; gap: 0.6rem; padding: var(--space-3); }
+.doc-feature .eyebrow { margin: 0; color: var(--gold); }
+.doc-feature strong { font-size: 1.6rem; font-weight: 800; line-height: 1.15; }
+.doc-feature .desc { flex: 1; color: #e3eaf6; line-height: 1.55; }
+.doc-feature .go { font-weight: 700; color: var(--gold); }
+
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; }
+.site-footer a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
+.site-footer a:hover { color: var(--blue); }
 
 /* ---------- Figures and letter details ---------- */
 figure { margin: var(--space-3) 0 var(--space-4); }
@@ -366,6 +398,9 @@ tr.moves td.seat { color: var(--gold-dark); }
   h2 { font-size: 1.7rem; }
   .toc ol, .toc ul { columns: 1; }
   .season { margin: 0.4rem 0 0; display: table; }
+  .doc-feature { grid-template-columns: 1fr; }
+  .doc-feature img { min-height: 0; aspect-ratio: 16 / 9; }
+  .doc-feature .body { padding: var(--space-2); }
   .cover { padding-top: var(--space-4); }
   .cover-meta { gap: var(--space-2) var(--space-3); }
   .definitions > div { grid-template-columns: 1fr; gap: 0.15rem; }
