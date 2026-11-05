@@ -46,6 +46,10 @@
      .signature-block  signature lines for approval pages
      .page-break       force a print page break before an element
      .no-print         hide when printing
+     .doc-nav          row of links between documents, under the cover
+     .toc-extra        unnumbered contents links (appendices) under the list
+     .back-to-top      small "Back to contents" link at the end of an article
+     body.handbook     labels top-level headings "Section" instead of "Article"
    ========================================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap");
@@ -88,6 +92,7 @@ body {
   font-weight: 400;
   line-height: 1.65;
   counter-reset: article;
+  text-rendering: optimizeLegibility;
 }
 
 .manual {
@@ -107,7 +112,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 hr { border: 0; border-top: 1px solid var(--divider); margin: var(--space-4) 0; }
 
 /* ---------- Headings ---------- */
-h1, h2, h3, h4 { font-family: inherit; color: var(--blue); font-weight: 800; letter-spacing: -0.01em; }
+h1, h2, h3, h4 { font-family: inherit; color: var(--blue); font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; scroll-margin-top: 1.5rem; }
+p, li { text-wrap: pretty; }
 
 h1 { font-size: 3rem; line-height: 1.05; margin: 0 0 var(--space-2); }
 
@@ -148,7 +154,11 @@ h4 {
 }
 h4::before { content: counter(article) "." counter(section) "." counter(subsection) "  "; color: var(--gold-dark); font-weight: 700; }
 
+body.handbook h2::before { content: "Section " counter(article); }
+
 h2.no-num, h3.no-num, h4.no-num { counter-increment: none; }
+h4.no-num { margin-top: var(--space-4); padding-bottom: 0.3rem; border-bottom: 1px solid var(--divider); color: var(--blue); }
+h3 + h4.no-num, .policy-meta + h4.no-num { margin-top: var(--space-2); }
 h2.no-num::before { content: none; }
 h3.no-num::before, h4.no-num::before { content: none; }
 
@@ -186,19 +196,19 @@ h3.no-num::before, h4.no-num::before { content: none; }
 .toc { background: var(--band); padding: var(--space-3) var(--space-3) var(--space-2); border-left: 4px solid var(--gold); margin-bottom: var(--space-4); }
 .toc h2 { margin-top: 0; border-top: 0; padding-top: 0; font-size: 1.4rem; }
 .toc ol { margin: 0; padding-left: 1.25rem; columns: 2; column-gap: var(--space-4); }
-.toc li { margin: 0 0 0.35rem; break-inside: avoid; }
+.toc li { margin: 0; padding: 0.15rem 0; break-inside: avoid; }
+.toc-extra { margin: var(--space-2) 0 0; padding-top: var(--space-1); border-top: 1px solid var(--divider); }
 .toc a { text-decoration: none; font-weight: 600; }
 .toc a:hover { text-decoration: underline; }
 
 /* ---------- Policy metadata ---------- */
 .policy-meta {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1px; margin: 0 0 var(--space-3);
-  background: var(--divider); border: 1px solid var(--divider);
+  display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem;
+  margin: 0 0 var(--space-2); padding: 0;
 }
-.policy-meta > div { background: var(--band); padding: 0.7rem 0.9rem; }
+.policy-meta > div { display: flex; align-items: baseline; gap: 0.5rem; }
 .policy-meta dt { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft); }
-.policy-meta dd { margin: 0.15rem 0 0; font-weight: 600; }
+.policy-meta dd { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--ink); }
 
 /* ---------- Status badges ---------- */
 .status { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -276,6 +286,8 @@ th, td { padding: 0.65rem 0.9rem; text-align: left; vertical-align: top; border-
 thead th { background: var(--blue); color: #fff; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 3px solid var(--gold); }
 tbody tr:nth-child(even) { background: var(--band); }
 tbody th { font-weight: 700; color: var(--blue); }
+tbody td:first-child { min-width: 9.5rem; font-weight: 600; color: var(--blue); }
+td { line-height: 1.5; }
 
 /* ---------- Quotes and code ---------- */
 blockquote { margin: var(--space-3) 0; padding: 0 0 0 var(--space-3); border-left: 4px solid var(--gold); font-size: 1.15rem; font-weight: 600; color: var(--blue); }
@@ -288,6 +300,15 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
 /* ---------- Document footer ---------- */
 .manual-footer { margin-top: var(--space-5); padding-top: var(--space-2); border-top: 1px solid var(--divider); font-size: 0.85rem; color: var(--ink-soft); }
 
+/* ---------- Document navigation ---------- */
+.doc-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0 0 var(--space-3); font-size: 0.9rem; font-weight: 600; }
+.doc-nav a { text-decoration: none; }
+.doc-nav a:hover { text-decoration: underline; }
+.doc-nav [aria-current] { color: var(--ink-soft); }
+.back-to-top { margin: var(--space-3) 0 0; font-size: 0.85rem; font-weight: 600; }
+.back-to-top a { text-decoration: none; color: var(--ink-soft); }
+.back-to-top a:hover { color: var(--blue); }
+
 /* ---------- Utilities ---------- */
 .page-break { break-before: page; page-break-before: always; }
 .center { text-align: center; }
@@ -298,7 +319,11 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.7rem; }
   .toc ol { columns: 1; }
+  .cover { padding-top: var(--space-4); }
+  .cover-meta { gap: var(--space-2) var(--space-3); }
   .definitions > div { grid-template-columns: 1fr; gap: 0.15rem; }
+  tbody td:first-child { min-width: 7.5rem; }
+  th, td { padding: 0.55rem 0.7rem; }
 }
 
 /* ---------- Print ---------- */
@@ -324,5 +349,5 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #4a5568; }
   .toc a::after { content: leader(".") " " target-counter(attr(href), page); font-weight: 400; color: #4a5568; }
   .table-wrap { overflow: visible; }
-  .no-print { display: none !important; }
+  .no-print, .doc-nav, .back-to-top { display: none !important; }
 }
