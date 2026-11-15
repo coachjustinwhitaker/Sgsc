@@ -1,0 +1,30 @@
+id: 1v1-to-endlines-goals
+order: 3
+name: 1v1 to Endlines & Goals
+block: B1
+skills:
+- Dribbling
+- Defending
+- Control
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 2
+  max: 14
+space: small
+minutes: 15
+setup: '1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s
+  distance. Progress to 1v1 to Small Goals: add cone goals at each end, score below knee height. Pairs
+  run simultaneously. Fast rotations. Keep multiple pairs active at once.'
+look_for: 'At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot?
+  When is each the right answer? Players who look up to check for the goal before driving are already
+  thinking ahead. Works well as an anchor because every player is active simultaneously.'
+question: When you got past your opponent, what made you decide to shoot rather than keep dribbling?
+pairs_with:
+- gates-passing
+- 2v2-to-endlines-attacking
+equipment: 1 ball per pair · 4 cones per game · Pinnies · Small goals optional

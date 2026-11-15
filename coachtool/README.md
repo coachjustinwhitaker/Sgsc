@@ -1,0 +1,14 @@
+# Coach tool (prototype)
+
+Brand-free records in, pages out.
+
+- `data/activities/`: one file per activity. The library.
+- `data/plans/`: one file per age and track. Weeks refer to activities by id.
+- `data/blocks.yaml`: block names and group headings.
+- `rules/ladder.yaml`: which blocks and levels each age and track uses.
+- `theme/<brand>/`: name, logo and wording for one brand. Nothing else mentions a brand.
+- `templates/`: page shells with `{{tokens}}`.
+- `tools/check.py`: validates the records. `tools/build.py <plan> <brand>`: writes `build/<plan>.<brand>.html`.
+- `tools/import_u10.py`: one-time import from the old U10 page, kept for provenance.
+
+Run: `python3 tools/check.py` then `python3 tools/build.py u10-rec sgsc`.
