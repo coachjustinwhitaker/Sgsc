@@ -51,6 +51,35 @@ def check(root=ROOT):
                 if len(full) == 2 and full[0] == full[1]: errs.append(f'{f.name} wk{w["week"]} session {i}: A and B are the same activity')
                 if ids and not any(acts[x]['block'] == w['block'] for x in ids):
                     errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {w["block"]} activity')
+
+    # skills, goals and age configs
+    vocab = load(root / 'data' / 'vocab' / 'skills.yaml')
+    seen_b = {}
+    for f in sorted((root / 'data' / 'skills').glob('*.yaml')):
+        recs = load(f)['skills']; areas = {}
+        for r in recs:
+            if r['block'] not in BLOCKS: errs.append(f'{r["id"]}: bad block {r["block"]}')
+            if not r.get('bullets'): errs.append(f'{r["id"]}: no bullets')
+            for tr in r['tracks']:
+                if r['level'] not in ladder['levels'][tr]: errs.append(f'{r["id"]}: level {r["level"]} not used in {tr}')
+                if r['age'] in ladder[tr] and r['block'] not in ladder[tr][r['age']]: errs.append(f'{r["id"]}: block {r["block"]} not part of {tr} {r["age"]}')
+            areas.setdefault((r['block'], r['area']), set()).add(r['level'])
+            for b in r['bullets']:
+                key = (r['age'], re.sub(r'\W+', ' ', b.lower()).strip())
+                if key in seen_b: errs.append(f'{r["id"]}: bullet repeats {seen_b[key]}: "{b[:50]}"')
+                seen_b[key] = r['id']
+        for (b, a), lv in areas.items():
+            if 'intro' not in lv: errs.append(f'{f.name}: {b} {a} has no intro level')
+    for f in sorted((root / 'data' / 'goals').glob('*.yaml')):
+        g = load(f)
+        for x in g['goals']:
+            for b in x['blocks']:
+                if b not in BLOCKS: errs.append(f'goal {x["id"]}: bad block {b}')
+    for f in sorted((root / 'data' / 'ages').glob('*.yaml')):
+        a = load(f)
+        for pid in a['pills']:
+            if pid not in vocab: errs.append(f'{f.name}: pill {pid} is not in the skill vocabulary')
+        if not (root / 'data' / 'goals' / (a['goals'] + '.yaml')).exists(): errs.append(f'{f.name}: goals file {a["goals"]} missing')
     return errs, acts
 if __name__ == '__main__':
     errs, acts = check()

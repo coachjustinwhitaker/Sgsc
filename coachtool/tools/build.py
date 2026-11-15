@@ -73,7 +73,13 @@ def build(plan_id, brand_id, out=None):
     plan = load(ROOT / 'data' / 'plans' / f'{plan_id}.yaml'); blocks = load(ROOT / 'data' / 'blocks.yaml')
     brand = load(ROOT / 'theme' / brand_id / 'brand.yaml')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand['logo_file']).read_bytes()).decode()
+    age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); vocab = load(ROOT / 'data' / 'vocab' / 'skills.yaml')
+    goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
+    pills = '\n    '.join(f'<span class="pill {vocab[p]["kind"]}">{esc(vocab[p]["label"])}</span>' for p in age['pills'])
+    note = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', esc(age['pills_note']))
+    gl = '\n'.join(f'      <div class="profile-item">{esc(g["text"])}</div>' for g in goals)
     page = (ROOT / 'templates' / 'companion-rec.html').read_text(encoding='utf-8')
+    page = page.replace('{{PILLS}}', pills).replace('{{PILLS_NOTE}}', note).replace('{{NEXT_AGE}}', age['next_age']).replace('{{GOALS}}', gl)
     page = page.replace('{{ACTIVITIES}}', activities_html(plan, acts, blocks)).replace('{{ROTATION}}', rotation_html(plan, acts))
     for k, v in brand.items(): page = page.replace('{{brand.%s}}' % k, v)
     page = page.replace('{{brand.logo_src}}', logo)
