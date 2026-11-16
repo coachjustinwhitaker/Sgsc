@@ -62,7 +62,7 @@ ul.plain{list-style:none;padding:0;margin:4px 0}ul.plain li{position:relative;pa
 details p{margin:4px 0}
 ol.steps{list-style:none;counter-reset:s;padding:0;margin:6px 0}ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px solid var(--line)}ol.steps li:first-child{border-top:0}
 ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:12px;text-align:center;line-height:24px}
-ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
+ol.steps .cue{display:block;font-style:normal;font-size:13px;color:var(--mute);margin-top:2px}ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
 .coachbox{background:var(--navy-dark);color:#fff;border-radius:12px;padding:12px 16px;margin:14px 0 6px}.coachbox .eb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .coachbox ul{list-style:none;margin:0;padding:0}.coachbox li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12)}.coachbox li:first-child{border-top:0}.coachbox em{display:block;color:#dfc477;font-size:15px;margin-top:3px}
 .lsearch{width:100%;padding:11px 12px;font-size:16px;border:1px solid #c9d0db;border-radius:10px;background:#fff;margin:2px 0 8px;-webkit-appearance:none;appearance:none}
@@ -184,8 +184,16 @@ function viewTour(n){
 }
 const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`;
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
-const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false};
+const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false, view: 'activities'};
 function viewLibrary(){
+  const rbase = (DATA.routines || []).filter(r => r.tracks.includes(T.track) && (lib.all && T.track === 'comp' ? true : r.ages.includes(T.age)));
+  if(lib.view === 'routines' && !rbase.length) lib.view = 'activities';
+  if(lib.view === 'routines'){
+    app.innerHTML = tabs('library') + `<h1>Activity library</h1><div class="toggles"><button class="pillbtn" id="vact">Activities</button><button class="pillbtn on">Routines</button></div><p class="lead">Repeatable sequences, not games. Tap one to see the moves.</p><div id="liblist"></div>`;
+    $('#liblist').innerHTML = rbase.map(r => `<div class="card"><div class="nm">${r.name}</div><div class="note">${[RK(r.kind), r.minutes ? r.minutes + ' min' : '', r.steps.length + ' moves'].filter(Boolean).join(' · ')}</div><p class="desc">${r.objective}</p><details><summary>How to run it</summary>${runRoutine(r)}</details></div>`).join('');
+    $('#vact').onclick = () => { lib.view = 'activities'; viewLibrary(); };
+    return;
+  }
   const comp = T.track === 'comp', base = DATA.activities.filter(a => a.tracks.includes(T.track) && (lib.all && comp ? true : a.ages.includes(T.age)));
   const skills = [...new Set(base.flatMap(a => a.skills))].sort(), types = (DATA.types || []).filter(t => base.some(a => a.type === t.id)), blocks = Object.keys(DATA.blocks).filter(b => base.some(a => a.block === b));
   const opt = (v, cur, l) => `<option value="${v}"${cur === v ? ' selected' : ''}>${l}</option>`;
@@ -193,7 +201,7 @@ function viewLibrary(){
     <input type="search" id="lq" placeholder="Search" value="${lib.q.replace(/"/g, '&quot;')}" class="lsearch">
     <div class="filters"><select id="lt">${opt('', lib.type, 'Any type')}${types.map(t => opt(t.id, lib.type, t.label)).join('')}</select><select id="lb">${opt('', lib.block, 'Any block')}${blocks.map(b => opt(b, lib.block, DATA.blocks[b].name)).join('')}</select><select id="ls">${opt('', lib.skill, 'Any skill')}${skills.map(x => opt(x, lib.skill, x)).join('')}</select></div>
     <div class="toggles"><button class="pillbtn${lib.fit ? ' on' : ''}" id="lfit">Fits my numbers and space</button>${comp ? `<button class="pillbtn${lib.all ? ' on' : ''}" id="lall">All ages</button>` : ''}</div>
-    <p class="note" id="lcount"></p><div id="liblist"></div>`;
+    ${rbase.length ? `<div class="toggles"><button class="pillbtn on" id="vact">Activities</button><button class="pillbtn" id="vrt">Routines (${rbase.length})</button></div>` : ''}<p class="note" id="lcount"></p><div id="liblist"></div>`;
   const draw = () => {
     const q = lib.q.trim().toLowerCase(), list = base.filter(a => (!q || a.name.toLowerCase().includes(q) || (a.objective || '').toLowerCase().includes(q)) && (!lib.type || a.type === lib.type) && (!lib.block || a.block === lib.block) && (!lib.skill || a.skills.includes(lib.skill)) && (!lib.fit || fits(a)))
       .sort((x, y) => x.block.localeCompare(y.block) || x.order - y.order);
@@ -204,6 +212,7 @@ function viewLibrary(){
   $('#lq').oninput = e => { lib.q = e.target.value; draw(); };
   $('#lt').onchange = e => { lib.type = e.target.value; draw(); }; $('#lb').onchange = e => { lib.block = e.target.value; draw(); }; $('#ls').onchange = e => { lib.skill = e.target.value; draw(); };
   $('#lfit').onclick = () => { lib.fit = !lib.fit; viewLibrary(); }; if($('#lall')) $('#lall').onclick = () => { lib.all = !lib.all; lib.type = lib.block = lib.skill = ''; viewLibrary(); };
+  if($('#vrt')) $('#vrt').onclick = () => { lib.view = 'routines'; viewLibrary(); };
   draw();
 }
 function viewMore(){
@@ -224,6 +233,7 @@ function weekText(n){
   if(w.coach_choice){ L.push(w.note); return L.join('\n'); }
   const one = plan.sessions_per_week === 1;
   if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
+  { const r = w.routine && R(w.routine); if(r) L.push(`Start with: ${r.name}${r.dosage ? ' (' + r.dosage + ')' : ''}`, ...r.steps.map((x, i) => `  ${i + 1}. ${x.name}: ${x.how}`), ''); }
   w.sessions.forEach((ses, si) => { L.push(one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A'));
     slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...(a.coach_note ? ['  Coach note:', ...ls(a.coach_note)] : []), ...(a.video ? ['  Video: ' + a.video] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
@@ -245,6 +255,13 @@ function figHtml(a){
 }
 function videoHtml(a){ return a.video ? `<a class="vid" href="${a.video}" target="_blank" rel="noopener">&#9654; Watch an example</a>` : ''; }
 document.addEventListener('scroll', e => { const t = e.target; if(!t.classList || !t.classList.contains('track')) return; const n = Math.round(t.scrollLeft / t.clientWidth), c = t.parentElement; c.querySelectorAll('.dots i').forEach((d, i) => d.classList.toggle('on', i === n)); const el = c.querySelector('.carn'); if(el) el.textContent = `${n + 1} of ${t.children.length}`; }, true);
+const RK = id => ((DATA.routine_kinds || []).find(k => k.id === id) || {}).label || id;
+const R = id => (DATA.routines || []).find(r => r.id === id);
+function runRoutine(r){
+  return (r.video ? videoHtml(r) : '') + `<div class="chips">${[r.minutes ? r.minutes + ' min' : '', r.dosage].filter(Boolean).map(x => `<span>${x}</span>`).join('')}</div>`
+   + `<div class="lbl">Moves, in order</div><ol class="steps">${r.steps.map(x => `<li><b>${x.name}</b> ${x.how}${x.cue ? `<em class="cue">${x.cue}</em>` : ''}</li>`).join('')}</ol>`
+   + (r.coach_note ? `<div class="cnote"><b>Coach note</b>${bul(r.coach_note)}</div>` : '') + `<div class="lbl">Equipment</div><p>${r.equipment}</p>` + (r.source ? `<div class="lbl">Source</div><p>${r.source}</p>` : '');
+}
 function runIt(a){
   const pl = a.players ? (a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`) : '', sec = (t, v) => v ? `<div class="lbl">${t}</div>${bul(v)}` : '';
   return figHtml(a) + videoHtml(a)
@@ -256,6 +273,7 @@ function runIt(a){
    + `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul>${a.coach.map(c => `<li>${c.cue}<em>${c.ask}</em></li>`).join('')}</ul></div>`
    + `<div class="lbl">Equipment</div><p>${a.equipment}</p>` + (a.source ? `<div class="lbl">Source</div><p>${a.source}</p>` : '');
 }
+function routineCard(w){ const r = w.routine && R(w.routine); return r ? `<div class="card"><div class="lab">Start with</div><div class="nm">${r.name}</div><div class="note">${[RK(r.kind), r.minutes ? r.minutes + ' min' : '', r.dosage].filter(Boolean).join(' · ')}</div><details><summary>How to run it</summary>${runRoutine(r)}</details></div>` : ''; }
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
   if(!state.start){ state.week = n; save(); }
@@ -277,7 +295,7 @@ function viewWeek(n){
   }).join('') + '</div>').join('');
   const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
   const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note"><a href="#" data-nav="why/${w.block}">Why this block: ${DATA.blocks[w.block].name}</a> · <a href="#" data-nav="guide">Coach guide</a></p></div>`;
-  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
+  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + routineCard(w) + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }

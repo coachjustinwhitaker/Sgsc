@@ -51,6 +51,24 @@ def check(root=ROOT):
     for a in acts.values():
         for ag, o in (a.get('for_age') or {}).items():
             if ag not in a['ages']: errs.append(f'{a["id"]}: for_age {ag} is not one of its ages')
+    kinds = {k['id'] for k in load(root / 'data' / 'vocab' / 'routine-kinds.yaml')['kinds']} if (root / 'data' / 'vocab' / 'routine-kinds.yaml').exists() else set()
+    for f in sorted((root / 'data' / 'routines').glob('*.yaml')) if (root / 'data' / 'routines').exists() else []:
+        r = load(f)
+        for k in ['id', 'name', 'kind', 'objective', 'ages', 'tracks', 'steps', 'equipment']:
+            if r.get(k) in (None, '', []): errs.append(f'routine {f.name}: missing {k}')
+        if r.get('id') != f.stem: errs.append(f'routine {f.name}: id does not match file name')
+        if r.get('kind') not in kinds: errs.append(f'routine {f.name}: kind {r.get("kind")} is not in data/vocab/routine-kinds.yaml')
+        for i, st in enumerate(r.get('steps') or []):
+            if not (isinstance(st, dict) and (st.get('name') or '').strip() and (st.get('how') or '').strip()): errs.append(f'routine {f.name}: step {i+1} needs a name and how')
+        for tr in r.get('tracks') or []:
+            for ag in r.get('ages') or []:
+                if ag not in ladder.get(tr, {}): errs.append(f'routine {f.name}: {ag} is not an age in {tr}')
+        v = r.get('video')
+        if v and not (isinstance(v, str) and v.startswith(('http://', 'https://'))): errs.append(f'routine {f.name}: video must be a web link starting with http')
+    rids = {f.stem for f in (root / 'data' / 'routines').glob('*.yaml')} if (root / 'data' / 'routines').exists() else set()
+    for pf in sorted((root / 'data' / 'plans').glob('*.yaml')):
+        for w in load(pf).get('weeks', []):
+            if w.get('routine') and w['routine'] not in rids: errs.append(f'plan {pf.name} week {w.get("week")}: routine {w["routine"]} does not exist')
     seen = {}
     for a in acts.values():
         _flat = lambda v: ' '.join(v) if isinstance(v, list) else str(v)
