@@ -19,4 +19,10 @@ Run: `python3 tools/check.py` then `python3 tools/build.py u10-rec sgsc`.
 - Diagrams: export a PNG, JPG, WebP or SVG, put it in `data/diagrams/`, and put the file name in the `diagram` column (or the `diagram:` field of the record). Keep them brand-free. The app embeds them at up to 720px wide.
 
 ## Core and club layers
-Core records (`data/`) are brand-free. Club-specific content lives in `theme/<club>/`: `brand.yaml` for names, colors and logo, and `overlay/<age>.yaml` for things like game format, pathway text and contacts. Test: would another club change it? Yes means overlay. Delete the overlay folder and the app shows core content only.
+Core records (`data/`) are brand-free. Club-specific content lives in `theme/<club>/`: `club.yaml` for names, colors, logo, contact and feedback links, and `overlay/<age>.yaml` for things like game format, local rules and pathway text. Test: would another club change it? Yes means overlay. Delete the overlay folder and the app shows core content only.
+
+## Adding a club
+1. `python3 tools/new_club.py <id>` writes a labeled blank `theme/<id>/club.yaml`.
+2. Fill it in and add the two logo files. Every field is described in `rules/club-fields.yaml`.
+3. `python3 tools/club_check.py <id>` lists what is missing. Required fields stop the build. Recommended ones only warn, and the feature is hidden or generic.
+4. Add `overlay/<age>.yaml` for any age where your game format, rules or pathway differ from the core.

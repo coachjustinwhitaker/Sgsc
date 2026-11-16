@@ -2,6 +2,7 @@
 import sys, re, html, base64, pathlib, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from check import check, load, ROOT
+from club_check import club_report
 def esc(t):
     t = html.escape(t, quote=False)
     for ch, ent in {'’': '&rsquo;', '‘': '&lsquo;', '“': '&ldquo;', '”': '&rdquo;', '—': '&mdash;', '–': '&ndash;'}.items():
@@ -73,7 +74,7 @@ def build(plan_id, brand_id, out=None):
     errs, acts = check()
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
     plan = load(ROOT / 'data' / 'plans' / f'{plan_id}.yaml'); blocks = load(ROOT / 'data' / 'blocks.yaml')
-    brand = load(ROOT / 'theme' / brand_id / 'brand.yaml')
+    brand = load(ROOT / 'theme' / brand_id / 'club.yaml')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand['logo_file']).read_bytes()).decode()
     age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); vocab = load(ROOT / 'data' / 'vocab' / 'skills.yaml')
     goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
@@ -99,6 +100,9 @@ def merge_rules(age, club, track):
         else: out[at] = r
     return out
 def build_app(plan_id, brand_id):
+    cerrs, cwarns = club_report(brand_id)
+    if cerrs: sys.exit('Fix the club file first:\n' + '\n'.join('  ' + e for e in cerrs))
+    for w in cwarns: print('club setup, blank:', w)
     import json
     errs, acts = check()
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
@@ -115,7 +119,7 @@ def build_app(plan_id, brand_id):
             else: im.convert('RGB').save(buf, 'JPEG', quality=82, optimize=True); mime = 'image/jpeg'
             raw = buf.getvalue()
         a['diagram_src'] = f'data:{mime};base64,' + base64.b64encode(raw).decode()
-    blocks = load(ROOT / 'data' / 'blocks.yaml'); brand = load(ROOT / 'theme' / brand_id / 'brand.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
+    blocks = load(ROOT / 'data' / 'blocks.yaml'); brand = load(ROOT / 'theme' / brand_id / 'club.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     teams = []
     for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: int(re.sub(r'\D', '', load(f)['age']))):
         plan = load(pf); age = load(ROOT / 'data' / 'ages' / f"{plan['id']}.yaml"); fid = age['goals']
@@ -125,7 +129,7 @@ def build_app(plan_id, brand_id):
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,
                       'goals': load(ROOT / 'data' / 'goals' / f"{fid}.yaml")['goals'], 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"),
                       'framework': load(ROOT / 'data' / 'framework' / f"{age['framework']}.yaml"), 'skills': skills, 'club': club, 'rules': merge_rules(plan['age'], club, plan['track']), 'ladder': ladder[plan['track']][plan['age']]})
-    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder}
+    data = {'help': {'email': (brand.get('help_email') or '').strip(), 'form': (brand.get('suggest_form_url') or '').strip(), 'support': (brand.get('support_line') or '').strip()}, 'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
