@@ -20,10 +20,9 @@ players:
   max: 15
 space: quarter
 minutes: 15
-setup: 'Square grid, one defender in the center, four attackers on the outside. This is called a rondo.
+setup: Square grid, one defender in the center, four attackers on the outside. This is called a rondo.
   Attackers keep the ball away from the defender. When the defender wins it or the ball goes out, the
-  attacker who last touched it swaps into the middle. Keep track of consecutive passes. Progress: add
-  a second defender (4v2) if passing is excellent, or drop to 3v1 to force attackers to move more.'
+  attacker who last touched it swaps into the middle. Keep track of consecutive passes.
 coach:
 - cue: Look for attackers spreading out to give the player with the ball multiple options. Players who
     bunch together make the defender's job easy. The player with the ball should always have at least
@@ -36,3 +35,7 @@ pairs_with:
 equipment: 1 ball per group · 4 cones per square · Pinnies for defenders
 aliases:
 - 4v2 Keep-Away
+progression:
+- title: 4v2 or 3v1
+  text: Add a second defender (4v2) if passing is excellent, or drop to 3v1 to force attackers to move
+    more.

@@ -22,7 +22,7 @@ space: quarter
 minutes: 15
 setup: Square of cones. Five attackers in a circle, two defenders in the center. Attackers keep the ball
   away. Track consecutive passes. Attacker who last touched an interception or ball out of bounds swaps
-  with a defender. Rotate defenders every few minutes. Limit to 1–2 touches for extra challenge.
+  with a defender. Rotate defenders every few minutes.
 coach:
 - cue: 'Where the Rondo (4v1) is a small tight game, this is the bigger version: more players, two defenders,
     faster decisions required. Quick touches and spreading the space are the two things to reinforce.
@@ -34,3 +34,6 @@ pairs_with:
 - flying-numbers
 - shrinking-field
 equipment: 1 ball · 4 cones for square · Pinnies for defenders
+progression:
+- title: Limit the touches
+  text: Limit to 1–2 touches for extra challenge.
