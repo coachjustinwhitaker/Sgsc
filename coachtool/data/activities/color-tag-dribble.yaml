@@ -3,6 +3,7 @@ order: 25
 name: Color Tag Dribble
 block: B1
 type: ball-mastery
+objective: Dribble freely, then race to touch the cone color you call. Heads up while the ball stays close.
 skills:
 - Scanning
 - Driving

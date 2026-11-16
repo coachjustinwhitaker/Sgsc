@@ -3,6 +3,8 @@ order: 9
 name: 3v2 to Goal
 block: B2
 type: small-sided
+objective: Three attackers against two defenders. Players find out how spacing and passing create the
+  extra attacker.
 skills:
 - Numerical Advantage
 - Combination Play

@@ -3,6 +3,8 @@ order: 11
 name: Barcelona
 block: B2
 type: small-sided
+objective: Goals count for the number of passes made first. Teams learn to be patient and combine before
+  they shoot.
 skills:
 - Possession
 - Passing

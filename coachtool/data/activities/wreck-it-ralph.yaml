@@ -3,6 +3,8 @@ order: 19
 name: Wreck-It Ralph
 block: B1
 type: ball-mastery
+objective: Dribble through corner goals while Wreck-It Ralph tries to knock balls away. Heads up to find
+  an open goal.
 skills:
 - Dribbling
 - Scanning

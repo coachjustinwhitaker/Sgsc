@@ -11,6 +11,7 @@
    "name": "Flying Numbers",
    "block": "B1",
    "type": "small-sided",
+   "objective": "Call a number and each side sends that many in to play. Even or uneven numbers keep the game fast and adaptable.",
    "skills": [
     "Decision-Making"
    ],
@@ -71,6 +72,7 @@
    "name": "Shrinking Field",
    "block": "B1",
    "type": "small-sided",
+   "objective": "The field narrows every minute. Decisions have to come faster as the space disappears.",
    "skills": [
     "Controlling",
     "Body Shape"
@@ -109,6 +111,7 @@
    "name": "1v1 to Endlines & Goals",
    "block": "B1",
    "type": "small-sided",
+   "objective": "1v1 duels where the attacker tries to dribble past the defender. At U10, decide between dribbling and shooting.",
    "skills": [
     "Dribbling",
     "Pressing",
@@ -160,6 +163,7 @@
    "name": "Rondo",
    "block": "B1",
    "type": "rondo",
+   "objective": "Four attackers keep the ball from one defender. Spread out, show for the ball, and keep a count of passes.",
    "skills": [
     "Possession",
     "Body Shape",
@@ -202,6 +206,7 @@
    "name": "Gates Passing",
    "block": "B2",
    "type": "pattern",
+   "objective": "Pairs pass through gates, then move to a new one. Pass and move together.",
    "skills": [
     "Passing",
     "Supporting",
@@ -248,6 +253,7 @@
    "name": "End Zone Passing",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Score by passing to a teammate who has run into the end zone. Moving off the ball is the point.",
    "skills": [
     "Supporting",
     "Combination Play"
@@ -286,6 +292,7 @@
    "name": "Numbers Passing",
    "block": "B2",
    "type": "pattern",
+   "objective": "Pass in number order around a grid with open hips and a soft first touch. Add a second ball when it flows.",
    "skills": [
     "Passing",
     "Body Shape",
@@ -325,6 +332,7 @@
    "name": "2v2 to Endlines — Attacking",
    "block": "B2",
    "type": "small-sided",
+   "objective": "2v2 to the end line. Drive at one defender to commit them while the second attacker finds space.",
    "skills": [
     "Supporting",
     "Numerical Advantage"
@@ -363,6 +371,7 @@
    "name": "3v2 to Goal",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Three attackers against two defenders. Players find out how spacing and passing create the extra attacker.",
    "skills": [
     "Numerical Advantage",
     "Combination Play"
@@ -401,6 +410,7 @@
    "name": "Five Goal Game",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Score through any of five goals. Attackers read the whole picture and defenders protect all five.",
    "skills": [
     "Decision-Making"
    ],
@@ -450,6 +460,7 @@
    "name": "Barcelona",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Goals count for the number of passes made first. Teams learn to be patient and combine before they shoot.",
    "skills": [
     "Possession",
     "Passing",
@@ -511,6 +522,7 @@
    "name": "Rondo 5v2",
    "block": "B2",
    "type": "rondo",
+   "objective": "Five keep the ball from two defenders. A bigger rondo with faster decisions, and an optional touch limit.",
    "skills": [
     "Passing",
     "Body Shape",
@@ -550,6 +562,7 @@
    "name": "Approach & Delay",
    "block": "B3",
    "type": "small-sided",
+   "objective": "1v1 defending. Close the ball down fast, then slow down as you arrive so the attacker cannot get by.",
    "skills": [
     "Pressing",
     "Delaying"
@@ -588,6 +601,7 @@
    "name": "Pressure & Cover 3v3",
    "block": "B3",
    "type": "small-sided",
+   "objective": "3v3 where defenders name first, second and third. The second defender covers behind the first.",
    "skills": [
     "Covering",
     "Communication"
@@ -626,6 +640,7 @@
    "name": "Shadow Marking",
    "block": "B3",
    "type": "small-sided",
+   "objective": "4v4 where each defender stays with one attacker. Marked goals count double, and interceptions score.",
    "skills": [
     "Marking"
    ],
@@ -663,6 +678,7 @@
    "name": "Squeeze the Space",
    "block": "B3",
    "type": "positional",
+   "objective": "Five attackers against four defenders. Defenders start narrow and shift together toward the ball when you call \"squeeze\".",
    "skills": [
     "Compact Shape"
    ],
@@ -700,6 +716,7 @@
    "name": "Red Light Green Light",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Dribble fast on green, small touches on yellow, stop with a foot on the ball at red.",
    "skills": [
     "Driving",
     "Controlling"
@@ -750,6 +767,7 @@
    "name": "101 Dalmatians",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Everyone dribbles through cone triangles to score. Close touches and heads up, all together toward a team goal of 101.",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -800,6 +818,7 @@
    "name": "Wreck-It Ralph",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Dribble through corner goals while Wreck-It Ralph tries to knock balls away. Heads up to find an open goal.",
    "skills": [
     "Dribbling",
     "Scanning",
@@ -851,6 +870,7 @@
    "name": "Duck Tails",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Dribble and protect the ball while stealing a teammate's tail. Shield with your body and face the pressure.",
    "skills": [
     "Dribbling",
     "Protecting"
@@ -889,6 +909,7 @@
    "name": "Knockout",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Keep your own ball in while knocking others out. Shield with your body and track the ball and the other players.",
    "skills": [
     "Protecting",
     "Dribbling"
@@ -927,6 +948,7 @@
    "name": "Dinosaur Tag",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Pairs dribble around a cone triangle, one chasing and one escaping. Quick changes of direction with the ball close.",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -977,6 +999,7 @@
    "name": "Gates Dribbling",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Dribble through as many gates as you can in 60 seconds. Heads up to find the next gate.",
    "skills": [
     "Driving",
     "Scanning"
@@ -1015,6 +1038,7 @@
    "name": "Shadow Dribbling",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Pairs, one leads and one shadows every move, both with a ball. Heads up to follow, then switch roles.",
    "skills": [
     "Scanning",
     "Dribbling"
@@ -1053,6 +1077,7 @@
    "name": "Color Tag Dribble",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Dribble freely, then race to touch the cone color you call. Heads up while the ball stays close.",
    "skills": [
     "Scanning",
     "Driving"
@@ -1091,6 +1116,7 @@
    "name": "Shooting Gallery",
    "block": "B1",
    "type": "ball-mastery",
+   "objective": "Everyone dribbles and shoots at any of four goals. Lots of shots, with heads up to find an open goal.",
    "skills": [
     "Shooting",
     "Decision-Making"
@@ -1129,6 +1155,7 @@
    "name": "2v1 to Goal",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Two attackers against one defender at a small goal. Players discover that a teammate makes it easier.",
    "skills": [
     "Passing",
     "Numerical Advantage",
@@ -1167,6 +1194,7 @@
    "name": "Half and Half",
    "block": "B2",
    "type": "small-sided",
+   "objective": "A goal only counts if a player is in each half. Teams learn to use the length of the field and keep a player back.",
    "skills": [
     "Supporting",
     "Combination Play"
@@ -1205,6 +1233,7 @@
    "name": "3v3+1 Keep-Away",
    "block": "B2",
    "type": "rondo",
+   "objective": "3v3 keep-away with a neutral player who always joins the team with the ball. Switch sides instantly when it turns over.",
    "skills": [
     "Possession",
     "Body Shape"
@@ -1242,6 +1271,7 @@
    "name": "2v2v2 Keep-Away",
    "block": "B3",
    "type": "rondo",
+   "objective": "Two pairs keep the ball from a defending pair. Defenders talk to press and cover, and swap roles right away.",
    "skills": [
     "Pressing",
     "Covering"
@@ -1280,6 +1310,7 @@
    "name": "Half Court Soccer",
    "block": "B3",
    "type": "small-sided",
+   "objective": "Both teams attack the same goal. After winning it, clear it over the check line first. Defenders get compact.",
    "skills": [
     "Compact Shape",
     "Marking"
@@ -1318,6 +1349,7 @@
    "name": "Shrinking Field: Defending Focus",
    "block": "B3",
    "type": "small-sided",
+   "objective": "The field narrows every minute. Watch the defending team get compact as the space shrinks.",
    "skills": [
     "Compact Shape",
     "Pressing"
@@ -1368,6 +1400,7 @@
    "name": "Flying Numbers: Transition Focus",
    "block": "B4",
    "type": "small-sided",
+   "objective": "Flying Numbers with a focus on transition. Sprint on and off, and react the moment the ball turns over.",
    "skills": [
     "Decision-Making",
     "Communication"
@@ -1406,6 +1439,7 @@
    "name": "Crisscross",
    "block": "B4",
    "type": "small-sided",
+   "objective": "Two teams attack different goals on a four-goal grid. When you win it, find your goal right away.",
    "skills": [
     "Decision-Making",
     "Scanning"
@@ -1456,6 +1490,7 @@
    "name": "Hawaii",
    "block": "B4",
    "type": "small-sided",
+   "objective": "Continuous play with a goal on each end line. Switch from attack to defense the instant it changes hands.",
    "skills": [
     "Decision-Making",
     "Pressing"
@@ -1494,6 +1529,7 @@
    "name": "Hotbox",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Goals at each end and a no-go box in the middle. When the box blocks the way, switch the ball to the other side.",
    "skills": [
     "Combination Play",
     "Decision-Making"
@@ -1544,6 +1580,7 @@
    "name": "Team Handball",
    "block": "B2",
    "type": "small-sided",
+   "objective": "Pass and catch with hands, score with feet. Heads up and teammates seen, with movement off the ball.",
    "skills": [
     "Combination Play",
     "Supporting"
@@ -1582,6 +1619,7 @@
    "name": "Sharks and Minnows",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "Dribble across the ocean without losing your ball to the shark. Lose it and you become a shark.",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -1620,6 +1658,7 @@
    "name": "Octopus",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "Dribble across the ocean without being tagged by the octopus. Small touches to dodge, bigger touches to escape.",
    "skills": [
     "Dribbling",
     "Driving"
@@ -1657,6 +1696,7 @@
    "name": "Kangaroo Jacks",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "Dribble across the grid without being tagged by hopping Kangaroo Jacks. Tagged players become Kangaroos too.",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1695,6 +1735,7 @@
    "name": "Snake",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "The snake tags players and grows with every tag. Dribble away from the snake and keep the ball close.",
    "skills": [
     "Communication",
     "Scanning"
@@ -1732,6 +1773,7 @@
    "name": "Bunny Trail",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "Dribble or hop around a circle of cones. Close touches and coordination, with a change on your call.",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1769,6 +1811,7 @@
    "name": "Mosquitoes",
    "block": "D",
    "type": "ball-mastery",
+   "objective": "Mosquitoes dribble and try to hit campers below the knee with the ball. Close dribbling and looking around.",
    "skills": [
     "Dribbling",
     "Shooting",
@@ -1807,6 +1850,7 @@
    "name": "Duels to Goal",
    "block": "B5",
    "type": "small-sided",
+   "objective": "Attacker and defender race to a played ball and finish the 1v1 on goal. Commit and decide quickly.",
    "skills": [
     "Shooting",
     "Decision-Making"
@@ -1845,6 +1889,7 @@
    "name": "Waves",
    "block": "B5",
    "type": "small-sided",
+   "objective": "Three attackers against two defenders in waves toward a full goal. Numbers-up decisions: carry, pass or shoot.",
    "skills": [
     "Numerical Advantage",
     "Passing",
@@ -1884,6 +1929,7 @@
    "name": "Wide Service Finishing",
    "block": "B5",
    "type": "pattern",
+   "objective": "Wide players serve into the box while attackers time their runs to finish. Add a defender once it is clean.",
    "skills": [
     "Shooting",
     "Supporting"

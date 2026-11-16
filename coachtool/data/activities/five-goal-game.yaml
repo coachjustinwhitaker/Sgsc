@@ -3,6 +3,8 @@ order: 10
 name: Five Goal Game
 block: B2
 type: small-sided
+objective: Score through any of five goals. Attackers read the whole picture and defenders protect all
+  five.
 skills:
 - Decision-Making
 ages:

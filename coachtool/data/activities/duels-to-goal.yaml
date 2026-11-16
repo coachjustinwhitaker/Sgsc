@@ -3,6 +3,7 @@ order: 44
 name: Duels to Goal
 block: B5
 type: small-sided
+objective: Attacker and defender race to a played ball and finish the 1v1 on goal. Commit and decide quickly.
 skills:
 - Shooting
 - Decision-Making

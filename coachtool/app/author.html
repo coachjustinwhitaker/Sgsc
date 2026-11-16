@@ -30,7 +30,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
-<label class="t">Objective <small>(one line: what is this for?)</small></label><input type="text" id="objective">
+<label class="t">Objective <small>(one or two short sentences. It shows in the library, so say what the game is and what it is for)</small></label><input type="text" id="objective">
 <label class="t">Setup <small>(one line per bullet: layout, who starts where, how it restarts)</small></label><textarea id="setup"></textarea>
 <label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
 <label class="t">Rules <small>(optional, one line per rule)</small></label><textarea id="rules" style="min-height:60px"></textarea>
@@ -96,7 +96,7 @@ $('#add').onclick = () => {
   const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), coach_note: $('#coach_note').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
     setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
-  const miss = []; [['name','Name'],['type','Type'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+  const miss = []; [['name','Name'],['type','Type'],['objective','Objective'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
   if(a.coach.some(c => !c.cue || !c.ask)) miss.push('Each cue needs its question');
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }

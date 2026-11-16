@@ -3,6 +3,8 @@ order: 12
 name: Rondo 5v2
 block: B2
 type: rondo
+objective: Five keep the ball from two defenders. A bigger rondo with faster decisions, and an optional
+  touch limit.
 skills:
 - Passing
 - Body Shape

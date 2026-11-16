@@ -3,6 +3,7 @@ order: 32
 name: 'Shrinking Field: Defending Focus'
 block: B3
 type: small-sided
+objective: The field narrows every minute. Watch the defending team get compact as the space shrinks.
 skills:
 - Compact Shape
 - Pressing

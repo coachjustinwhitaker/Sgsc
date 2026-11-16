@@ -3,6 +3,8 @@ order: 22
 name: Dinosaur Tag
 block: B1
 type: ball-mastery
+objective: Pairs dribble around a cone triangle, one chasing and one escaping. Quick changes of direction
+  with the ball close.
 skills:
 - Dribbling
 - Controlling

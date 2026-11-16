@@ -3,6 +3,8 @@ order: 41
 name: Snake
 block: D
 type: ball-mastery
+objective: The snake tags players and grows with every tag. Dribble away from the snake and keep the ball
+  close.
 skills:
 - Communication
 - Scanning

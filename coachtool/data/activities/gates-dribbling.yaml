@@ -3,6 +3,7 @@ order: 23
 name: Gates Dribbling
 block: B1
 type: ball-mastery
+objective: Dribble through as many gates as you can in 60 seconds. Heads up to find the next gate.
 skills:
 - Driving
 - Scanning

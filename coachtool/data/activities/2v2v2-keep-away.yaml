@@ -3,6 +3,8 @@ order: 30
 name: 2v2v2 Keep-Away
 block: B3
 type: rondo
+objective: Two pairs keep the ball from a defending pair. Defenders talk to press and cover, and swap
+  roles right away.
 skills:
 - Pressing
 - Covering

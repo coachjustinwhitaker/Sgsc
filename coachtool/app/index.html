@@ -68,6 +68,7 @@ ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
 .toggles{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}.pillbtn{width:auto;margin:0;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:#fff;color:var(--navy);border:1px solid #c5cfe0;box-shadow:none}.pillbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
 .cnote{background:#eef2f9;border-radius:10px;padding:10px 14px;margin-top:14px}.cnote b{color:var(--navy);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.cnote p,.cnote ul{margin:4px 0 0}
+.desc{margin:6px 0 2px!important}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
@@ -182,16 +183,16 @@ function viewLibrary(){
   const skills = [...new Set(base.flatMap(a => a.skills))].sort(), types = (DATA.types || []).filter(t => base.some(a => a.type === t.id)), blocks = Object.keys(DATA.blocks).filter(b => base.some(a => a.block === b));
   const opt = (v, cur, l) => `<option value="${v}"${cur === v ? ' selected' : ''}>${l}</option>`;
   app.innerHTML = tabs('library') + `<h1>Activity library</h1><p class="lead">${lib.all && comp ? 'Every comp activity.' : 'Activities that suit ' + T.label + ' ' + (comp ? 'comp' : 'rec') + '.'} Tap one to see how to run it.</p>
-    <input type="search" id="lq" placeholder="Search by name" value="${lib.q.replace(/"/g, '&quot;')}" class="lsearch">
+    <input type="search" id="lq" placeholder="Search" value="${lib.q.replace(/"/g, '&quot;')}" class="lsearch">
     <div class="filters"><select id="lt">${opt('', lib.type, 'Any type')}${types.map(t => opt(t.id, lib.type, t.label)).join('')}</select><select id="lb">${opt('', lib.block, 'Any block')}${blocks.map(b => opt(b, lib.block, DATA.blocks[b].name)).join('')}</select><select id="ls">${opt('', lib.skill, 'Any skill')}${skills.map(x => opt(x, lib.skill, x)).join('')}</select></div>
     <div class="toggles"><button class="pillbtn${lib.fit ? ' on' : ''}" id="lfit">Fits my numbers and space</button>${comp ? `<button class="pillbtn${lib.all ? ' on' : ''}" id="lall">All ages</button>` : ''}</div>
     <p class="note" id="lcount"></p><div id="liblist"></div>`;
   const draw = () => {
-    const q = lib.q.trim().toLowerCase(), list = base.filter(a => (!q || a.name.toLowerCase().includes(q)) && (!lib.type || a.type === lib.type) && (!lib.block || a.block === lib.block) && (!lib.skill || a.skills.includes(lib.skill)) && (!lib.fit || fits(a)))
+    const q = lib.q.trim().toLowerCase(), list = base.filter(a => (!q || a.name.toLowerCase().includes(q) || (a.objective || '').toLowerCase().includes(q)) && (!lib.type || a.type === lib.type) && (!lib.block || a.block === lib.block) && (!lib.skill || a.skills.includes(lib.skill)) && (!lib.fit || fits(a)))
       .sort((x, y) => x.block.localeCompare(y.block) || x.order - y.order);
     $('#lcount').textContent = `${list.length} ${list.length === 1 ? 'activity' : 'activities'}`;
     $('#liblist').innerHTML = list.map(x => { const a = A(x.id), pl = a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`;
-      return `<div class="card"><div class="nm">${a.name}</div><div class="note">${[TYPE(a.type), DATA.blocks[a.block].name, pl, SPACE_LABEL[a.space]].filter(Boolean).join(' · ')}</div><details><summary>How to run it</summary>${runIt(a)}</details></div>`; }).join('') || '<p class="note">Nothing matches. Clear a filter or the search.</p>';
+      return `<div class="card"><div class="nm">${a.name}</div><div class="note">${[TYPE(a.type), DATA.blocks[a.block].name, pl, SPACE_LABEL[a.space]].filter(Boolean).join(' · ')}</div>${a.objective ? `<p class="desc">${a.objective}</p>` : ''}<details><summary>How to run it</summary>${runIt(a)}</details></div>`; }).join('') || '<p class="note">Nothing matches. Clear a filter or the search.</p>';
   };
   $('#lq').oninput = e => { lib.q = e.target.value; draw(); };
   $('#lt').onchange = e => { lib.type = e.target.value; draw(); }; $('#lb').onchange = e => { lib.block = e.target.value; draw(); }; $('#ls').onchange = e => { lib.skill = e.target.value; draw(); };

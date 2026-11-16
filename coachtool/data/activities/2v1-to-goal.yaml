@@ -3,6 +3,8 @@ order: 27
 name: 2v1 to Goal
 block: B2
 type: small-sided
+objective: Two attackers against one defender at a small goal. Players discover that a teammate makes
+  it easier.
 skills:
 - Passing
 - Numerical Advantage

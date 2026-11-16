@@ -3,6 +3,8 @@ order: 40
 name: Kangaroo Jacks
 block: D
 type: ball-mastery
+objective: Dribble across the grid without being tagged by hopping Kangaroo Jacks. Tagged players become
+  Kangaroos too.
 skills:
 - Dribbling
 - Controlling

@@ -3,6 +3,8 @@ order: 43
 name: Mosquitoes
 block: D
 type: ball-mastery
+objective: Mosquitoes dribble and try to hit campers below the knee with the ball. Close dribbling and
+  looking around.
 skills:
 - Dribbling
 - Shooting

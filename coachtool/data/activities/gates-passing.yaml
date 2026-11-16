@@ -3,6 +3,7 @@ order: 5
 name: Gates Passing
 block: B2
 type: pattern
+objective: Pairs pass through gates, then move to a new one. Pass and move together.
 skills:
 - Passing
 - Supporting

@@ -3,6 +3,8 @@ order: 7
 name: Numbers Passing
 block: B2
 type: pattern
+objective: Pass in number order around a grid with open hips and a soft first touch. Add a second ball
+  when it flows.
 skills:
 - Passing
 - Body Shape

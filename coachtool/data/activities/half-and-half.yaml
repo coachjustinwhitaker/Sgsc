@@ -3,6 +3,8 @@ order: 28
 name: Half and Half
 block: B2
 type: small-sided
+objective: A goal only counts if a player is in each half. Teams learn to use the length of the field
+  and keep a player back.
 skills:
 - Supporting
 - Combination Play

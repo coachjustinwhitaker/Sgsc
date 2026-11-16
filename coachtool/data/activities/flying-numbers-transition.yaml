@@ -3,6 +3,8 @@ order: 33
 name: 'Flying Numbers: Transition Focus'
 block: B4
 type: small-sided
+objective: Flying Numbers with a focus on transition. Sprint on and off, and react the moment the ball
+  turns over.
 skills:
 - Decision-Making
 - Communication

@@ -3,6 +3,8 @@ order: 35
 name: Hawaii
 block: B4
 type: small-sided
+objective: Continuous play with a goal on each end line. Switch from attack to defense the instant it
+  changes hands.
 skills:
 - Decision-Making
 - Pressing

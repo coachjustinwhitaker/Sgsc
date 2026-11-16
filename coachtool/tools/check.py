@@ -25,7 +25,7 @@ def check(root=ROOT):
             if not (isinstance(p, list) and p and all(isinstance(x, dict) and (x.get('title') or '').strip() and (x.get('text') or '').strip() and (x.get('minutes') is None or isinstance(x['minutes'], int)) for x in p)):
                 errs.append(f'{f.name}: progression must be a list of steps with a title and text (minutes optional)')
         if 'source' in a and not (isinstance(a['source'], str) and a['source'].strip()): errs.append(f'{f.name}: source must be a non-empty string')
-        for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'coach', 'equipment']:
+        for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'coach', 'equipment', 'objective']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')
         if a.get('space') not in ('quarter', 'half', 'full'): errs.append(f'{f.name}: space must be quarter, half or full, not {a.get("space")}')

@@ -3,6 +3,8 @@ order: 26
 name: Shooting Gallery
 block: B1
 type: ball-mastery
+objective: Everyone dribbles and shoots at any of four goals. Lots of shots, with heads up to find an
+  open goal.
 skills:
 - Shooting
 - Decision-Making
