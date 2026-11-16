@@ -3,6 +3,8 @@ order: 36
 name: Hotbox
 block: B2
 type: small-sided
+objective: Goals at each end and a no-go box in the middle. When the box blocks the way, switch the ball
+  to the other side.
 skills:
 - Combination Play
 - Decision-Making

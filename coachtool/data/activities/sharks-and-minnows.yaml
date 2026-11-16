@@ -3,6 +3,7 @@ order: 38
 name: Sharks and Minnows
 block: D
 type: ball-mastery
+objective: Dribble across the ocean without losing your ball to the shark. Lose it and you become a shark.
 skills:
 - Dribbling
 - Scanning

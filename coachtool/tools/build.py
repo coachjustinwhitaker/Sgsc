@@ -32,7 +32,7 @@ def card(a, acts):
       </div>
       <div class="act-body">
         {opt('What it is for', a.get('objective'))}<div class="a-label">Setup</div><div class="a-text">{txt(a["setup"])}</div>
-        {opt('Rules', a.get('rules'))}{opt('Scoring', a.get('scoring'))}
+        {opt('Rules', a.get('rules'))}{opt('Scoring', a.get('scoring'))}{opt('Coach note', a.get('coach_note'))}
         {progression_html(a)}<div class="a-label">What to Look For</div><div class="a-text">{" ".join(esc(c["cue"]) for c in a["coach"])}</div>
         {"".join(f'<div class="a-question">&ldquo;{esc(c["ask"])}&rdquo;</div>' for c in a["coach"])}
         <span class="pairs-tag">&#8594; Pairs well with: {esc(names_list(a["pairs_with"], acts))}</span>

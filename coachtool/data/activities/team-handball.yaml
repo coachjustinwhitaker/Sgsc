@@ -3,6 +3,8 @@ order: 37
 name: Team Handball
 block: B2
 type: small-sided
+objective: Pass and catch with hands, score with feet. Heads up and teammates seen, with movement off
+  the ball.
 skills:
 - Combination Play
 - Supporting

@@ -3,6 +3,8 @@ order: 16
 name: Squeeze the Space
 block: B3
 type: positional
+objective: Five attackers against four defenders. Defenders start narrow and shift together toward the
+  ball when you call "squeeze".
 skills:
 - Compact Shape
 ages:

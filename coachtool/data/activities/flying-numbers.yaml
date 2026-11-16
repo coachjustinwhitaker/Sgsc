@@ -3,6 +3,8 @@ order: 1
 name: Flying Numbers
 block: B1
 type: small-sided
+objective: Call a number and each side sends that many in to play. Even or uneven numbers keep the game
+  fast and adaptable.
 skills:
 - Decision-Making
 ages:

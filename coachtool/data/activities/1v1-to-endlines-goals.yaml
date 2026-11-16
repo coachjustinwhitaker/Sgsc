@@ -3,6 +3,8 @@ order: 3
 name: 1v1 to Endlines & Goals
 block: B1
 type: small-sided
+objective: 1v1 duels where the attacker tries to dribble past the defender. At U10, decide between dribbling
+  and shooting.
 skills:
 - Dribbling
 - Pressing

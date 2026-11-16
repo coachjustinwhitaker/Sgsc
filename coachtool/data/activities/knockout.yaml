@@ -3,6 +3,8 @@ order: 21
 name: Knockout
 block: B1
 type: ball-mastery
+objective: Keep your own ball in while knocking others out. Shield with your body and track the ball and
+  the other players.
 skills:
 - Protecting
 - Dribbling

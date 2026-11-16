@@ -3,6 +3,8 @@ order: 31
 name: Half Court Soccer
 block: B3
 type: small-sided
+objective: Both teams attack the same goal. After winning it, clear it over the check line first. Defenders
+  get compact.
 skills:
 - Compact Shape
 - Marking

@@ -3,6 +3,8 @@ order: 24
 name: Shadow Dribbling
 block: B1
 type: ball-mastery
+objective: Pairs, one leads and one shadows every move, both with a ball. Heads up to follow, then switch
+  roles.
 skills:
 - Scanning
 - Dribbling

@@ -3,6 +3,8 @@ order: 34
 name: Crisscross
 block: B4
 type: small-sided
+objective: Two teams attack different goals on a four-goal grid. When you win it, find your goal right
+  away.
 skills:
 - Decision-Making
 - Scanning

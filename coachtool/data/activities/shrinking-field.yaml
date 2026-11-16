@@ -3,6 +3,7 @@ order: 2
 name: Shrinking Field
 block: B1
 type: small-sided
+objective: The field narrows every minute. Decisions have to come faster as the space disappears.
 skills:
 - Controlling
 - Body Shape

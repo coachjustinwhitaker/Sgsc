@@ -30,11 +30,12 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
-<label class="t">Objective <small>(one line: what is this for?)</small></label><input type="text" id="objective">
+<label class="t">Objective <small>(one or two short sentences. It shows in the library, so say what the game is and what it is for)</small></label><input type="text" id="objective">
 <label class="t">Setup <small>(one line per bullet: layout, who starts where, how it restarts)</small></label><textarea id="setup"></textarea>
 <label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
 <label class="t">Rules <small>(optional, one line per rule)</small></label><textarea id="rules" style="min-height:60px"></textarea>
 <label class="t">Progressions <small>(optional, one per line: Title (minutes) :: what changes. Say what you would see that tells you to use it.)</small></label><textarea id="progression" style="min-height:80px" placeholder="Two touches (7 min) :: Play with a two touch limit past the midline."></textarea>
+<label class="t">Coach note <small>(optional: how to coach it, one line per note. For example: do not dictate the choice, ask what they saw.)</small></label><textarea id="coach_note" style="min-height:60px"></textarea>
 <label class="t">Coach it <small>(2 to 4 pairs. A cue, then the question that goes with it)</small></label><div id="coachrows"></div>
 <label class="t">Diagram caption <small>(optional: say in plain words what the diagram shows)</small></label><input type="text" id="diagram_caption">
 <label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
@@ -84,7 +85,7 @@ function fill(a){
   $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#objective').value = a && a.objective ? a.objective : '';
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
-  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && a.diagram_caption ? a.diagram_caption : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
+  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring','coach_note'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && a.diagram_caption ? a.diagram_caption : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
   $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
   $('#msg').innerHTML = ''; syncLevels(); fit();
 }
@@ -92,10 +93,10 @@ $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value))
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('#add').onclick = () => {
-  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
+  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), coach_note: $('#coach_note').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
     setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
-  const miss = []; [['name','Name'],['type','Type'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+  const miss = []; [['name','Name'],['type','Type'],['objective','Objective'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
   if(a.coach.some(c => !c.cue || !c.ask)) miss.push('Each cue needs its question');
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }

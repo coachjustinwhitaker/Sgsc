@@ -3,6 +3,7 @@ order: 14
 name: Pressure & Cover 3v3
 block: B3
 type: small-sided
+objective: 3v3 where defenders name first, second and third. The second defender covers behind the first.
 skills:
 - Covering
 - Communication

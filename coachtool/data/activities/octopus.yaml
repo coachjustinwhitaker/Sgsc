@@ -3,6 +3,8 @@ order: 39
 name: Octopus
 block: D
 type: ball-mastery
+objective: Dribble across the ocean without being tagged by the octopus. Small touches to dodge, bigger
+  touches to escape.
 skills:
 - Dribbling
 - Driving

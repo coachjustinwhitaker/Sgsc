@@ -3,6 +3,8 @@ order: 20
 name: Duck Tails
 block: B1
 type: ball-mastery
+objective: Dribble and protect the ball while stealing a teammate's tail. Shield with your body and face
+  the pressure.
 skills:
 - Dribbling
 - Protecting

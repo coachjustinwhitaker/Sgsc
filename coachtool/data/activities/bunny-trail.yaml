@@ -3,6 +3,8 @@ order: 42
 name: Bunny Trail
 block: D
 type: ball-mastery
+objective: Dribble or hop around a circle of cones. Close touches and coordination, with a change on your
+  call.
 skills:
 - Dribbling
 - Controlling

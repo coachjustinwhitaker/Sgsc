@@ -3,6 +3,8 @@ order: 18
 name: 101 Dalmatians
 block: B1
 type: ball-mastery
+objective: Everyone dribbles through cone triangles to score. Close touches and heads up, all together
+  toward a team goal of 101.
 skills:
 - Dribbling
 - Scanning

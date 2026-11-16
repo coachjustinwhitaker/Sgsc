@@ -3,6 +3,8 @@ order: 46
 name: Wide Service Finishing
 block: B5
 type: pattern
+objective: Wide players serve into the box while attackers time their runs to finish. Add a defender once
+  it is clean.
 skills:
 - Shooting
 - Supporting

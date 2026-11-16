@@ -3,6 +3,8 @@ order: 45
 name: Waves
 block: B5
 type: small-sided
+objective: 'Three attackers against two defenders in waves toward a full goal. Numbers-up decisions: carry,
+  pass or shoot.'
 skills:
 - Numerical Advantage
 - Passing

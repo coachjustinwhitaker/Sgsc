@@ -3,6 +3,8 @@ order: 4
 name: Rondo
 block: B1
 type: rondo
+objective: Four attackers keep the ball from one defender. Spread out, show for the ball, and keep a count
+  of passes.
 skills:
 - Possession
 - Body Shape
