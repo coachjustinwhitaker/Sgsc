@@ -6,6 +6,7 @@ skills:
 - Decision-Making
 ages:
 - u10
+- u12
 tracks:
 - rec
 levels:
@@ -26,3 +27,14 @@ pairs_with:
 - flying-numbers
 - 3v2-to-goal
 equipment: 1 ball · 5 goal pairs (4 corners + 1 center) · Pinnies
+for_age:
+  u12:
+    setup: Rectangular grid with a cone goal in each corner plus one in the center, 5 goals total. 3v3
+      or 4v4. Players try to pass the ball through any goal to a teammate to score in any direction. Defenders
+      protect all 5 goals and can only gain possession by intercepting or stealing.
+    look_for: 'At U12 this game requires players to read the whole picture: all five goals, where teammates
+      are, where defenders are. Watch for players who signal to a teammate where they are switching before
+      the ball arrives. That anticipation is team play at its most sophisticated. Also watch for immediate
+      transition reactions on every turnover.'
+    question: When you changed which goal you were going for, did your teammate know before you passed,
+      or after?

@@ -6,6 +6,7 @@ skills:
 - Decision-Making
 ages:
 - u10
+- u12
 tracks:
 - rec
 levels:
@@ -27,3 +28,13 @@ pairs_with:
 - rondo
 - 1v1-to-endlines-goals
 equipment: 1 ball · 2 goals · Disc cones · Pinnies
+for_age:
+  u12:
+    setup: 'Mark space with cones, goals on both sides. Two teams along the touchline either side of you.
+      Call a number combo and each side sends in that number to scrimmage. New players rotate in after
+      every goal or ball out. Frame the transition explicitly: outgoing players sprint off, incoming players
+      sprint on. No walking at any point.'
+    look_for: The most adaptable game in the toolkit and the best anchor activity at U12. Works as pure
+      anchor (high energy, familiar) or as a transition focus when you emphasize the urgency of sprinting
+      in and out. If one player is dominating, play them 1v2.
+    question: When you had more players than the other team, what did you do with that extra person?

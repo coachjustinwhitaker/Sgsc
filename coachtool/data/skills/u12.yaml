@@ -1,0 +1,188 @@
+skills:
+- id: u12-b1-scanning-and-body-shape-intro
+  age: u12
+  block: B1
+  area: Scanning and Body Shape
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Scan before the ball arrives and again as pressure closes in
+  - Open the hips and shoulders toward the attacking goal when receiving
+  - Keep the head up while dribbling in a busy space
+- id: u12-b1-controlling-intro
+  age: u12
+  block: B1
+  area: Controlling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Control passes that arrive in the air, on the bounce or on the turn
+  - Take the first touch away from the nearest opponent
+  - Play one touch when the pass is right there
+- id: u12-b1-protecting-intro
+  age: u12
+  block: B1
+  area: Protecting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Hold off a closing opponent with the body and the arm out for balance
+  - Keep the ball on the far foot from the defender
+  - Release the ball at the right moment
+- id: u12-b1-driving-and-dribbling-intro
+  age: u12
+  block: B1
+  area: Driving and Dribbling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Drive into open space at speed
+  - Accelerate past a defender after a change of direction
+  - Choose between taking on a defender and passing
+- id: u12-b1-passing-intro
+  age: u12
+  block: B1
+  area: Passing
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Play the pass at the right speed and at the right time
+  - Lead a teammate with the pass into space
+  - Play a longer pass in the air when the field allows
+- id: u12-b1-shooting-intro
+  age: u12
+  block: B1
+  area: Shooting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Read the goalkeeper before shooting
+  - Shoot to the far side from an angle
+  - Take one touch when an opponent is closing
+- id: u12-b2-supporting-intro
+  age: u12
+  block: B2
+  area: Supporting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Create height, width and depth around the ball
+  - Offer a vertical or diagonal option to the player on the ball
+  - Move off a teammate so two players are not in the same space
+- id: u12-b2-switching-and-wall-passes-intro
+  age: u12
+  block: B2
+  area: Switching and Wall Passes
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Switch the ball to the far side when the near side is closed
+  - Play a wall pass (give and go) in a small space
+  - Recognize when a teammate on the other side is free
+- id: u12-b2-combining-in-threes-intro
+  age: u12
+  block: B2
+  area: Combining in Threes
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Find the free player between or behind the opposition
+  - Make a third-player run when two teammates are combining
+  - Engage a defender 1v1 or 2v1 to create the space
+- id: u12-b2-decision-making-intro
+  age: u12
+  block: B2
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Choose the quick pass or the dribble based on the pressure
+  - Talk to teammates with calls that help
+  - Stay involved in the next play after passing
+- id: u12-b3-pressure,-cover-and-support-intro
+  age: u12
+  block: B3
+  area: Pressure, Cover and Support
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - The nearest player pressures the ball
+  - The second player covers behind the presser at a distance that lets them step in
+  - The rest of the team supports to cut off space
+- id: u12-b3-compact-shape-intro
+  age: u12
+  block: B3
+  area: Compact Shape
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Stay close to teammates so the space between lines is small
+  - Move together toward the ball side
+  - Close the middle of the field first
+- id: u12-b3-marking-and-intercepting-intro
+  age: u12
+  block: B3
+  area: Marking and Intercepting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Stay between the opponent and the goal
+  - Mark a specific opponent and deny them the ball in a good position
+  - Step in to intercept when the pass is on
+- id: u12-b3-recovery-and-preventing-the-switch-intro
+  age: u12
+  block: B3
+  area: Recovery and Preventing the Switch
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Recover goal-side when pressure is broken
+  - Cut off the pass to the far side
+  - Re-apply pressure as soon as the shape is back
+- id: u12-b4-reacting-when-we-lose-it-intro
+  age: u12
+  block: B4
+  area: Reacting When We Lose It
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - React in the first second after losing the ball
+  - Press at once if teammates are close, delay if they are not
+  - Sprint back into shape when pressure is broken
+- id: u12-b4-reacting-when-we-win-it-intro
+  age: u12
+  block: B4
+  area: Reacting When We Win It
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Look up for the first pass forward on winning the ball
+  - Join the attack with speed
+  - Play forward when it is on and keep it when it is not
+- id: u12-b4-urgency-in-the-moment-intro
+  age: u12
+  block: B4
+  area: Urgency in the Moment
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Recognize at once that possession has changed
+  - Accelerate toward the ball or space
+  - Keep the intensity through repeated turnovers
