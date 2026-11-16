@@ -70,13 +70,15 @@ function viewSetup(){
 }
 function viewPlayers(){
   const P = T.players;
-  app.innerHTML = tabs('players') + `<h1>Who is in front of you</h1><p class="lead">Understanding your ${T.label} players.</p>
+  app.innerHTML = tabs('players') + `<h1>Who is in front of you</h1><p class="lead">Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.</p>
   <div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>
   <h2>What a great session looks like</h2>
   <div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>
   <h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>
   <h2>The parents on the sideline</h2><div class="card"><p>${P.parents.intro}</p><p><i>&ldquo;${P.parents.script}&rdquo;</i></p><p>${P.parents.outro}</p></div>
   ${P.cues ? `<h2>Coaching cues</h2><div class="card">${P.cues.map(c => `<p><b>${c.when}</b><br>${c.say}</p>`).join('')}</div>` : ''}
+  ${T.club.pathway ? `<h2>A player ready for more</h2><div class="card"><ul>${T.club.pathway.map(x => `<li>${x}</li>`).join('')}</ul></div>` : ''}
+  ${T.club.contact ? `<h2>Questions?</h2><div class="card"><p>${T.club.contact}</p></div>` : ''}
   <button data-nav="goals">Next: player goals</button>`;
 }
 function viewGoals(){
