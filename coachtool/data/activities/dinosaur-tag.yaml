@@ -6,6 +6,7 @@ skills:
 - Dribbling
 - Controlling
 ages:
+- u6
 - u8
 tracks:
 - rec
@@ -28,3 +29,14 @@ pairs_with:
 - duck-tails
 - shadow-dribbling
 equipment: 1 ball per pair · 3 cones per pair to form a triangle
+for_age:
+  u6:
+    setup: Each pair sets up a triangle of three cones with sides about 5 yards long. One player is the
+      dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur tries to tag
+      the park ranger. The park ranger can go any direction around the triangle but cannot leave the ball
+      behind. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.
+    look_for: Some players will struggle to turn the ball around the triangle corners. That is fine. The
+      skill develops with time on the ball. Focus on the competition and the fun, not the technique. The
+      pairs format means everyone is active simultaneously and no one is waiting. Watch for players using
+      both feet.
+    question: What did you do when the dinosaur was catching up to you?
