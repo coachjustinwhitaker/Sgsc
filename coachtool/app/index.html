@@ -31,6 +31,11 @@ nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:cen
 .row{display:block;color:inherit;text-decoration:none}.row b{color:var(--navy)}
 @media print{header,nav.tabs,.strip a,.noprint,button,summary{display:none!important}body{background:#fff}main{max-width:none;padding:0}.card{break-inside:avoid;border-color:#bbb}details>*{display:block}}
 .share{display:flex;gap:8px;margin:14px 0}.share button{margin:0;flex:1}
+nav.tabs{gap:0!important;margin:0 0 12px!important;border-bottom:1px solid var(--line)}nav.tabs a{flex:1;background:none!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;padding:10px 4px!important;font-size:15px!important;color:var(--mute)!important}nav.tabs a.on{color:var(--navy)!important;border-bottom-color:var(--gold)!important}
+.card>p:first-child{margin-top:0}.card>p:last-child{margin-bottom:0}.card.game{background:#f0f3f9;border-style:dashed}
+.swap summary{font-size:14px;color:var(--mute);font-weight:500}.bar{height:4px;border-radius:2px;background:var(--line);margin:4px 0 8px}.bar i{display:block;height:100%;border-radius:2px;background:var(--gold)}
+input[type=date]{width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
+.reset a{color:var(--mute)}select:invalid{color:var(--mute)}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Planner</b><small>{{brand.short_name}} · prototype</small></div></header>
@@ -69,17 +74,17 @@ function curWeek(){ const N = plan.weeks.length; if(!state.start) return Math.mi
 function needTour(){ const o = state.onb; if(!o || o.team !== T.id) return true; return !state.start || !o.start || Math.abs(parse(state.start) - parse(o.start)) > 90*DAY; }
 function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
-function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
+function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewSetup(){
   const first = !state.players;
   app.innerHTML = (first ? '' : tabs('setup')) + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
-  <div class="card"><label>Age group</label><select id="ag">${DATA.teams.map(t => `<option value="${t.id}" ${T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
+  <div class="card"><label>Age group</label><select id="ag" required>${first ? '<option value="" disabled selected>Choose your age group</option>' : ''}${DATA.teams.map(t => `<option value="${t.id}" ${!first && T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
   <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
   <label>First week of your season</label><input id="st" type="date" value="${state.start || iso(todayD())}"><p class="note" style="margin:6px 0 0">The app opens on the week you are in. Not sure yet? Leave it as today.</p>
   <button id="ok">${first ? 'Next: your players' : 'Save'}</button></div>
   <p class="reset"><a href="#" id="rs">Start over</a></p>`;
-  $('#ok').onclick = () => { if($('#ag').value !== T.id){ state.swaps = {}; setTeam($('#ag').value); } state.players = +$('#pl').value; state.space = $('#sp').value; state.start = $('#st').value || iso(todayD()); save(); go(needTour() ? 'onb/1' : 'now'); };
+  $('#ok').onclick = () => { if(!$('#ag').value){ $('#ag').focus(); return; } if($('#ag').value !== T.id){ state.swaps = {}; setTeam($('#ag').value); } state.players = +$('#pl').value; state.space = $('#sp').value; state.start = $('#st').value || iso(todayD()); save(); go(needTour() ? 'onb/1' : 'now'); };
   $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); setTeam(DATA.teams[0].id); go('setup'); };
 }
 const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
@@ -104,16 +109,30 @@ function viewGuide(key){
   app.innerHTML = `<a class="back" href="#" data-nav="guide">&larr; Guide</a><h1>${sec[1]}</h1><p class="lead">${sec[2]}</p>` + sec[3]();
 }
 function finishTour(to){ state.onb = {team: T.id, start: state.start || null}; save(); go(to || 'now'); }
+const chunk = (arr, k) => { const o = []; for(let i = 0; i < arr.length; i += k) o.push(arr.slice(i, i + k)); return o; };
+function tourSteps(){
+  const P = T.players, sh = P.shape, steps = [], add = (title, sub, pages) => pages.forEach((html, i) => steps.push({title, sub: i === 0 ? sub : '', part: pages.length > 1 ? `${i+1} of ${pages.length}` : '', html}));
+  add('Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, chunk(P.who, 2).map(g => `<div class="card">${g.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`));
+  add('What a great session looks like', 'What to watch for, whatever the score.', chunk(P.great_session, 3).map(g => `<div class="card">${g.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`));
+  const org = [];
+  if(sh){ org.push(`<p class="note">${sh.note}</p>${gameCard(sh.opening)}`); org.push(`<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The main activity' : 'Two main activities'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'The first is familiar and physical. The second carries the week\'s idea.'}</p></div>`); org.push(gameCard(sh.closing)); }
+  org.push(`<div class="card"><p>${P.prepared}</p></div>`);
+  add('How a session is organized', 'The shape, and how to get ready.', org);
+  if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', chunk(T.rules, 4).map(g => `<div class="card">${g.map(r => `<p class="rule"><b>${r.label}</b>${r.origin === 'club' ? ' <span class="club">Local</span>' : ''}<br>${r.text}${r.source ? `<br><span class="src">${r.source}</span>` : ''}</p>`).join('')}</div>`));
+  add('Player goals', `By the end of the season, a ${T.label} should be showing these.`, chunk(T.goals, 4).map(g => `<div class="card">${g.map(x => `<div class="goal"><span>${x.text}<br>${x.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`));
+  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. Each week has one focus.`, chunk(plan.weeks, 4).map(g => g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
+  return steps;
+}
 function viewTour(n){
-  const S = SECTIONS(), steps = S.filter(x => ['who','great','organized','rules'].includes(x[0])).map(x => ({title: x[1], sub: x[2], html: x[3]})).concat([{title: 'Player goals', sub: `By the end of the season, a ${T.label} should be showing these.`, html: goalsHtml}, {title: 'Your season', sub: `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. Each week has one focus.`, html: seasonHtml}]);
-  const last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
-  app.innerHTML = `<div class="dots">${steps.map((_, k) => `<i class="${k < i ? 'on' : ''}"></i>`).join('')}</div><p class="note" style="margin:0">Step ${i} of ${last}</p><h1>${st.title}</h1><p class="lead">${st.sub}</p>${st.html()}
+  const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
+  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><p class="note" style="margin:0">Step ${i} of ${last}</p><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
     <button id="nx">${i === last ? 'Start with this week' : 'Next'}</button>${i > 1 ? `<button class="ghost" data-nav="onb/${i-1}">Back</button>` : ''}<a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
 }
 const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`;
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
+function viewMore(){ app.innerHTML = tabs('more') + `<h1>More</h1><a class="card row" href="#" data-nav="goals"><b>Player goals</b><div class="note">What your players should be showing by the end of the season.</div></a><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`; }
 function viewGoals(){
   app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>` + goalsHtml();
 }
@@ -121,7 +140,7 @@ function viewPlan(){
   const n = plan.sessions_per_week, cw = curWeek();
   app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">${plan.weeks.length} weeks, ${n === 1 ? 'one practice' : 'two practices'} a week. Tap a week to see the session${n === 1 ? '' : 's'}.</p>` + plan.weeks.map(w => `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}${w.week === cw ? ' · this week' : ''}</b><div class="f">${w.focus}</div></a>`).join('');
 }
-function gameCard(g){ return `<div class="card"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
+function gameCard(g){ return `<div class="card game"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
   <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
 function weekText(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, L = [`${T.label} · Week ${n} of ${plan.weeks.length}`, w.focus, ''];
@@ -153,10 +172,10 @@ function viewWeek(n){
     const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]), note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
     const alts = alternatives(w, si, slot);
-    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? 'Activity ' + slot.toUpperCase() + (slot==='a' ? ' · anchor' : ' · focus') : 'Practice activity')}</div><div class="nm">${actName(ref)}</div>
+    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${swapped ? 'Swapped in' : note}</div>
       <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}${a.source ? `<div class="lbl">Source</div>${a.source}` : ''}</details>
-      <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
+      <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');
   const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
@@ -175,7 +194,7 @@ function viewWhy(b){
 function render(){
   let h = route || (!state.players ? 'setup' : needTour() ? 'onb/1' : 'now');
   if(!state.players && h !== 'setup'){ route = 'setup'; return render(); }
-  if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
+  if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'more') viewMore(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
   window.scrollTo(0,0);
 }
 render();

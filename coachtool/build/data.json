@@ -1893,7 +1893,7 @@
      "title": "The session",
      "note": "About 45 to 50 minutes. Arrive 15 minutes early. Opening game, two activities of about 10 minutes, closing game.",
      "opening": {
-      "label": "Opening game",
+      "label": "Warm-up game",
       "minutes": "8 to 10 min",
       "title": "Small-sided game, free play",
       "setup": "Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise. Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age. Split however many players you have into two roughly equal teams. No goalkeeper, no offside, no rules beyond kick-in restarts. Keep the field small enough that every player is near the action most of the time. When in doubt, go smaller. Mark the space, put the ball down, and step back. Restart quickly after every goal and celebrate each one.",
@@ -1902,7 +1902,7 @@
       "kit": "1 ball per team · Mini or pop-up goals (cone goals as fallback) · Disc cones for boundaries · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Closing game",
+      "label": "Final game",
       "minutes": "10 min",
       "title": "Back to play",
       "setup": "Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without interruption. Your job is to restart quickly after goals and keep the energy up. Bring everyone in at the end. High-fives all around, then one very simple question to close the loop. End while they still want more.",
@@ -2312,7 +2312,7 @@
      "title": "The session",
      "note": "About 55 to 60 minutes. Arrive 15 minutes early.",
      "opening": {
-      "label": "Opening game",
+      "label": "Warm-up game",
       "minutes": "10 to 12 min",
       "title": "Free small-sided game",
       "setup": "Same setup every week, so players know this game before they arrive. Mini goals or cone goals at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline. Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper throughout the season so every player gets time in the position.",
@@ -2326,7 +2326,7 @@
       "note": "Pick one activity based on what you saw in the opening game and run it for 20 to 25 minutes. Rotate through the toolkit across the season."
      },
      "closing": {
-      "label": "Closing game",
+      "label": "Final game",
       "minutes": "10 to 12 min",
       "title": "Back to the game",
       "setup": "Same format as the opening. The space can be slightly larger to give players more room. Let it run without stopping and step all the way back. Alternative: one large goal at one end with two cone goals at the halfway line. One team defends the large goal, the other scores through the halfway cones. It gives players a taste of a more directional game.",
@@ -3916,7 +3916,7 @@
      "title": "The session",
      "note": "Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.",
      "opening": {
-      "label": "Opening game",
+      "label": "Warm-up game",
       "minutes": "12 min",
       "title": "5v5 or 6v6 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches and cleaner decisions. Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch specifically for whether the concept from Practice A earlier in the week shows up.",
@@ -3925,7 +3925,7 @@
       "kit": "1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Closing game",
+      "label": "Final game",
       "minutes": "25 min",
       "title": "Full game",
       "setup": "The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate it so every player experiences the position across the season. No offside until players are genuinely ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked for: a compact defensive shape, or a player who sprints to press the instant possession is lost. On Practice B days, notice whether anything from the first session carried over.",
@@ -4688,7 +4688,7 @@
      "title": "The session",
      "note": "Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.",
      "opening": {
-      "label": "Opening game",
+      "label": "Warm-up game",
       "minutes": "12 min",
       "title": "6v6 or 7v7 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.",
@@ -4697,7 +4697,7 @@
       "kit": "1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Closing game",
+      "label": "Final game",
       "minutes": "25 min",
       "title": "Full game",
       "setup": "The biggest game of the session. Full field, full-size goals, goalkeepers. Play 11v11 if you have the numbers. Short of players? Play 9v9 or 10v10 on a narrower field rather than leaving gaps. Alternatively, put a full-size goal with a keeper at one end and two small goals at the halfway line for the other team to attack. Offside applies, so introduce it early in the season and be patient with it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked: a team that stays compact across three lines, a player who sprints to press the instant possession is lost, a forward who shoots when the chance comes.",
