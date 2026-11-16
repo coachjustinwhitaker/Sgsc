@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{brand.short_name}} Coach Planner</title>
+<style>
+:root{--navy:{{brand.navy}};--navy-dark:{{brand.navy_dark}};--gold:{{brand.gold}};--ink:#222;--mute:#6b7280;--line:#e3e7ee;--bg:#f6f7fa}
+*{box-sizing:border-box}body{margin:0;font:16px/1.45 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--navy-dark);color:#fff;padding:12px 16px;border-bottom:3px solid var(--gold);display:flex;align-items:center;gap:10px}
+header img{height:34px}header b{font-size:15px}header small{display:block;opacity:.7;font-size:12px}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:6px 0 4px}h2{font-size:17px;margin:20px 0 8px}p.lead{color:var(--mute);margin:0 0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}select,input[type=number]{width:100%;padding:10px;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff}
+button,.btn{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-size:16px;font-weight:600;cursor:pointer;width:100%;margin-top:14px;text-align:center;text-decoration:none;display:block}
+button.ghost,.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}button.small{width:auto;padding:7px 12px;font-size:14px;margin:0}
+.goal{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.goal:first-child{border-top:0}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#e8eef8;border-radius:999px;padding:2px 8px;margin-right:4px}
+.wk{display:block;color:inherit;text-decoration:none}.wk b{color:var(--navy)}.wk .f{font-size:14px;color:var(--mute)}
+.slot{border-top:1px solid var(--line);padding:12px 0}.slot:first-child{border-top:0}.slot .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em}
+.slot .nm{font-size:18px;font-weight:700;color:var(--navy)}.slot .note{font-size:14px;color:var(--mute)}
+details summary{cursor:pointer;color:var(--navy);font-weight:600;margin-top:8px}
+.alt{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.alt span{font-size:15px}
+.lbl{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;margin-top:10px}
+.back{display:inline-block;margin:4px 0 8px;color:var(--navy);text-decoration:none;font-weight:600}
+nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:center;padding:8px;border-radius:8px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;font-size:14px;font-weight:600}nav.tabs a.on{background:var(--navy);color:#fff}
+.reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
+</style></head><body>
+<header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Planner</b><small>{{brand.short_name}} · prototype</small></div></header>
+<main id="app"></main>
+<script>
+const DATA = /*DATA*/;
+const KEY = 'coachplanner.v1';
+const SPACE = {quarter: 1, half: 2, full: 3};
+const SPACE_LABEL = {quarter: '1/4 field', half: '1/2 field', full: 'Full field'};
+let state = load();
+if(state.space && !SPACE[state.space]) state.space = 'half';
+let route = '';
+try { route = location.hash.slice(1); } catch(e){}
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+const $ = s => document.querySelector(s), app = $('#app');
+const acts = Object.fromEntries(DATA.activities.map(a => [a.id, a]));
+const plan = DATA.plans[0];
+function actName(ref){ const [b, v] = ref.split('#'); const a = acts[b]; if(!v) return a.name; return (a.variants||[]).find(x => x.id === v).name; }
+function slotRef(w, si, slot){ const k = `${w.week}-${si}-${slot}`; return (state.swaps||{})[k] || w.sessions[si][slot].activity; }
+function fits(a){ return (!state.players || (a.players.min <= state.players && state.players <= a.players.max)) && (!state.space || SPACE[a.space] <= SPACE[state.space]); }
+function alternatives(w, si, slot){
+  const cur = slotRef(w, si, slot).split('#')[0], other = slotRef(w, si, slot === 'a' ? 'b' : 'a').split('#')[0];
+  const ok = DATA.ladder.rec.u10;
+  return DATA.activities.filter(a => a.id !== cur && a.id !== other && fits(a) && (slot === 'b' ? a.block === w.block : ok.indexOf(a.block) <= ok.indexOf(w.block)));
+}
+function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
+document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
+function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
+function viewSetup(){
+  app.innerHTML = `<h1>Set up your team</h1><p class="lead">U10 recreational. Two minutes, and you can change it any time.</p>
+  <div class="card"><label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
+  <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
+  <button id="ok">${state.players ? 'Save' : 'Next: player goals'}</button></div>
+  <p class="reset"><a href="#" id="rs">Start over</a></p>`;
+  $('#ok').onclick = () => { const first = !state.players; state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'goals' : 'plan'); };
+  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); go('setup'); };
+}
+function viewGoals(){
+  const goals = DATA.goals;
+  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a U10 should be showing these. The plan on the next screen builds toward them.</p>
+  <div class="card">${goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<span class="tag">${DATA.blocks[b].name}</span>`).join('')}</span></div>`).join('')}</div>
+  <button data-nav="plan">Next: your season</button>`;
+}
+function viewPlan(){
+  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">8 weeks, two practices a week. Tap a week to see the sessions.</p>` + plan.weeks.map(w => `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}</b><div class="f">${w.focus}</div></a>`).join('');
+}
+function viewWeek(n){
+  const w = plan.weeks.find(x => x.week === n);
+  if(w.coach_choice){ app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
+  const sessions = [0,1].map(si => `<div class="card"><b>Practice ${si ? 'B' : 'A'}</b>` + ['a','b'].map(slot => {
+    const ref = slotRef(w, si, slot), a = acts[ref.split('#')[0]], note = (w.sessions[si][slot].note);
+    const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
+    const alts = alternatives(w, si, slot);
+    return `<div class="slot"><div class="lab">Activity ${slot.toUpperCase()}${slot==='a'?' · anchor':' · focus'}</div><div class="nm">${actName(ref)}</div>
+      <div class="note">${swapped ? 'Swapped in' : note}</div>
+      <details><summary>How to run it</summary><div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}</details>
+      <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
+      ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
+  }).join('') + '</div>').join('');
+  app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><p class="lead">${w.focus}</p>` + sessions;
+  app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
+}
+function render(){
+  const h = route || (state.players ? 'plan' : 'setup');
+  if(!state.players && h !== 'setup'){ route = 'setup'; return render(); }
+  if(h === 'setup') viewSetup(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else viewPlan();
+  window.scrollTo(0,0);
+}
+render();
+</script></body></html>

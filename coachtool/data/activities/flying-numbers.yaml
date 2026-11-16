@@ -1,0 +1,30 @@
+id: flying-numbers
+order: 1
+name: Flying Numbers
+block: B1
+skills:
+- Decision-Making
+- Variable Pressure
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: half
+minutes: 15
+setup: Mark space with cones, small goals on both sides. Two teams along the touchline either side of
+  you. Call a number combo (1v1, 2v1, 2v2, 3v2) and each side sends in that number to scrimmage. New players
+  rotate in after every goal or ball out. Call different numbers from each side to create imbalanced situations.
+look_for: The most adaptable game in the toolkit. If one player is dominating, play them 1v2. If a quieter
+  player needs more touches, play the ball directly to them. You control the challenge level in real time.
+  Works perfectly as an anchor activity because it never feels the same twice.
+question: When you had more players than the other team, what did you do with that extra person?
+pairs_with:
+- shrinking-field
+- rondo
+- 1v1-to-endlines-goals
+equipment: 1 ball · 2 goals · Disc cones · Pinnies
