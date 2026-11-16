@@ -83,7 +83,7 @@ function viewWelcome(){
 }
 function viewSetup(){
   const first = !state.players;
-  app.innerHTML = (first ? '' : '<a class="back" href="#" data-nav="more">&larr; More</a>') + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
+  app.innerHTML = (first ? '' : needTour() ? '<a class="back" href="#" data-nav="onb/1">&larr; Back to the tour</a>' : '<a class="back" href="#" data-nav="more">&larr; More</a>') + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
   <div class="card"><label>Age group</label><select id="ag" required>${first ? '<option value="" disabled selected>Choose your age group</option>' : ''}${DATA.teams.map(t => `<option value="${t.id}" ${!first && T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
   <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
@@ -131,8 +131,8 @@ function tourSteps(){
 }
 function viewTour(n){
   const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
-  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><p class="note" style="margin:0">Step ${i} of ${last}</p><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
-    <button id="nx">${i === last ? 'Start with this week' : 'Next'}</button>${i > 1 ? `<button class="ghost" data-nav="onb/${i-1}">Back</button>` : ''}<a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
+  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><p class="note" style="margin:0">Step ${i} of ${last} · ${T.label} ${T.track === 'rec' ? 'rec' : T.track} · <a href="#" data-nav="setup">Change</a></p><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
+    <button id="nx">${i === last ? 'Start with this week' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
 }
