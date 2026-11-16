@@ -32,6 +32,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Setup <small>(layout, who starts where, how it restarts, progression)</small></label><textarea id="setup"></textarea>
 <label class="t">What to look for</label><textarea id="look_for"></textarea>
 <label class="t">Question to ask the players</label><input type="text" id="question">
+<label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
 <label class="t">Equipment</label><input type="text" id="equipment" placeholder="1 ball per group · 4 cones · Pinnies">
 <label class="t">Pairs well with <small>(optional)</small></label><div class="chk" id="pairs"></div>
 <label class="t">Diagram <small>(PNG, JPG, WebP or SVG)</small></label><input type="file" id="file" accept="image/*"><div id="pv"></div>
@@ -76,7 +77,7 @@ function fill(a){
   $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1';
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
-  ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : '');
+  ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : ''); $('#source').value = a && a.source ? a.source : '';
   $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
   $('#msg').innerHTML = ''; syncLevels(); fit();
 }
@@ -86,7 +87,7 @@ const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''
 $('#add').onclick = () => {
   const a = {name: $('#name').value.trim(), block: $('#block').value, ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
-    setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), pairs_with: vals('pair')};
+    setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
   const miss = []; [['name','Name'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }

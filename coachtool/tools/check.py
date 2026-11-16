@@ -9,6 +9,7 @@ def check(root=ROOT):
     acts = {}
     for f in sorted((root / 'data' / 'activities').glob('*.yaml')):
         a = load(f)
+        if 'source' in a and not (isinstance(a['source'], str) and a['source'].strip()): errs.append(f'{f.name}: source must be a non-empty string')
         for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'look_for', 'question', 'equipment']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')

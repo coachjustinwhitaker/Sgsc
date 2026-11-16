@@ -102,7 +102,7 @@ function viewWeek(n){
     const alts = alternatives(w, si, slot);
     return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? 'Activity ' + slot.toUpperCase() + (slot==='a' ? ' · anchor' : ' · focus') : 'Practice activity')}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${swapped ? 'Swapped in' : note}</div>
-      <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}</details>
+      <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}${a.source ? `<div class="lbl">Source</div>${a.source}` : ''}</details>
       <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');

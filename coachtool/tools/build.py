@@ -15,6 +15,7 @@ def names_list(refs, acts):
     return ns[0] if len(ns) == 1 else ' or '.join(ns) if len(ns) == 2 else ', '.join(ns[:-1]) + ', or ' + ns[-1]
 def card(a, acts):
     equip = esc(a['equipment'])
+    src = f'<div class="act-source">Source: {esc(a["source"])}</div>' if a.get('source') else ''
     return f'''    <div class="act-card">
       <div class="act-header">
         <div class="act-num">Activity {a["order"]:02d}</div>
@@ -27,6 +28,7 @@ def card(a, acts):
         <div class="a-question">&ldquo;{esc(a["question"])}&rdquo;</div>
         <span class="pairs-tag">&#8594; Pairs well with: {esc(names_list(a["pairs_with"], acts))}</span>
         <div class="e-tags" style="margin-top:10px;"><span class="e-tag">{equip}</span></div>
+        {src}
       </div></div>
 '''
 def activities_html(plan, acts, blocks):
