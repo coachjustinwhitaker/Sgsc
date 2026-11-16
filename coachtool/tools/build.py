@@ -129,7 +129,7 @@ def build_author():
             'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
-    (ROOT / 'build' / 'index.html').write_text('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach tool</title><style>body{font:18px/1.6 -apple-system,Segoe UI,Arial,sans-serif;max-width:560px;margin:40px auto;padding:0 16px}a{display:block;margin:12px 0}</style></head><body><h1>Coach tool</h1><a href="planner.sgsc.html">Season planner (U10 rec)</a><a href="activity-builder.html">Activity builder</a></body></html>', encoding='utf-8')
+    (ROOT / 'build' / 'index.html').write_text('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach tool</title><style>body{font:18px/1.6 -apple-system,Segoe UI,Arial,sans-serif;max-width:560px;margin:40px auto;padding:0 16px}a{display:block;margin:12px 0}</style></head><body><h1>Coach tool</h1><a href="planner.sgsc.html">Season planner (rec: U8, U10, U12)</a><a href="activity-builder.html">Activity builder</a></body></html>', encoding='utf-8')
     return out
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'author': print('wrote', build_author()); sys.exit()
