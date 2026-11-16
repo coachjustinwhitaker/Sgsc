@@ -39,6 +39,8 @@ coach:
 - cue: 'Wall players: call for the ball, show a target and set an angle that makes the return easy to
     play forward.'
   ask: Where did you stand to make the return easy?
+coach_note: 'Wall players are practicing a skill too: setting their angle, giving a clear target, and
+  timing the return.'
 type: pattern
 objective: 'Install wall pass mechanics before adding defenders: the pass to the wall, the return and
   first touch, and the movement after.'

@@ -36,6 +36,7 @@ coach:
   ask: Did your first touch move you forward?
 - cue: Do not dictate the choice. Combine or carry.
   ask: What told you to combine or carry?
+coach_note: Do not dictate the choice. Ask players what they saw that led them to combine or carry.
 type: small-sided
 objective: 'Apply the wall pass under live pressure. The central player chooses among three options: play
   right, play left, or beat the defender and shoot.'

@@ -12,7 +12,7 @@ def check(root=ROOT):
         _types = {t['id'] for t in load(root / 'data' / 'vocab' / 'activity-types.yaml')['types']} if (root / 'data' / 'vocab' / 'activity-types.yaml').exists() else set()
         if a.get('type') not in _types: errs.append(f"{f.name}: type must be one of {sorted(_types)}")
         def _txt(v): return (isinstance(v, str) and v.strip()) or (isinstance(v, list) and v and all(isinstance(x, str) and x.strip() for x in v))
-        for _k in ('setup', 'scoring', 'rules'):
+        for _k in ('setup', 'scoring', 'rules', 'coach_note'):
             if _k in a and not _txt(a[_k]): errs.append(f'{f.name}: {_k} must be text or a list of lines')
         for _k in ('objective', 'diagram_caption'):
             if _k in a and not (isinstance(a[_k], str) and a[_k].strip()): errs.append(f'{f.name}: {_k} must be a non-empty string')

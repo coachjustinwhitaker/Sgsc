@@ -2167,6 +2167,7 @@
      "ask": "Did you see your teammate before or after the ball arrived?"
     }
    ],
+   "coach_note": "Observe who looks for a teammate before receiving and who carries. This becomes the coaching point in the wall pass activity.",
    "type": "small-sided",
    "objective": "Get moving while demanding scanning before receiving. The tight field makes a wall pass faster than a dribble."
   },
@@ -2226,6 +2227,7 @@
      "ask": "Where did you stand to make the return easy?"
     }
    ],
+   "coach_note": "Wall players are practicing a skill too: setting their angle, giving a clear target, and timing the return.",
    "type": "pattern",
    "objective": "Install wall pass mechanics before adding defenders: the pass to the wall, the return and first touch, and the movement after."
   },
@@ -2283,6 +2285,7 @@
      "ask": "What told you to combine or carry?"
     }
    ],
+   "coach_note": "Do not dictate the choice. Ask players what they saw that led them to combine or carry.",
    "type": "small-sided",
    "objective": "Apply the wall pass under live pressure. The central player chooses among three options: play right, play left, or beat the defender and shoot."
   },
@@ -2347,6 +2350,7 @@
      "ask": "What did you see when you won it?"
     }
    ],
+   "coach_note": "The progression addresses midfielders abandoning central space. Use it only if the pattern appears.",
    "progression": [
     {
      "title": "Play through the middle first",

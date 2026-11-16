@@ -65,7 +65,7 @@ def main():
              'players': {'min': int(row['players_min']), 'max': int(row['players_max'])}, 'space': str(row['space']).lower(),
              'minutes': int(row.get('minutes') or 15), 'pairs_with': lst(row.get('pairs_with')), 'equipment': row['equipment']}
         a = dict(old) if old else {}; a.update(new)
-        for _k in ('setup', 'rules', 'scoring'):
+        for _k in ('setup', 'rules', 'scoring', 'coach_note'):
             if _k in row or _k == 'setup':
                 tv = text_val(row.get(_k))
                 if tv is not None: a[_k] = tv

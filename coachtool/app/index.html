@@ -67,6 +67,7 @@ ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
 .filters{display:flex;gap:6px}.filters select{flex:1;min-width:0;padding:9px 6px;font-size:14px}
 .toggles{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}.pillbtn{width:auto;margin:0;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:#fff;color:var(--navy);border:1px solid #c5cfe0;box-shadow:none}.pillbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
+.cnote{background:#eef2f9;border-radius:10px;padding:10px 14px;margin-top:14px}.cnote b{color:var(--navy);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.cnote p,.cnote ul{margin:4px 0 0}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
@@ -216,7 +217,7 @@ function weekText(n){
   const one = plan.sessions_per_week === 1;
   if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
   w.sessions.forEach((ses, si) => { L.push(one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A'));
-    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`); }); L.push(''); });
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...(a.coach_note ? ['  Coach note:', ...ls(a.coach_note)] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
   return L.join('\n').trim();
 }
@@ -235,6 +236,7 @@ function runIt(a){
    + `<div class="chips">${[pl, SPACE_LABEL[a.space], a.minutes ? a.minutes + ' min' : ''].filter(Boolean).map(x => `<span>${x}</span>`).join('')}</div>`
    + sec('Setup', a.setup) + sec('Rules', a.rules) + sec('Scoring', a.scoring)
    + (a.progression ? `<div class="lbl">Progressions</div><ol class="steps">${a.progression.map(p => `<li><b>${p.title}${p.minutes ? ` <span class="mins">${p.minutes} min</span>` : ''}</b> ${p.text}</li>`).join('')}</ol>` : '')
+   + (a.coach_note ? `<div class="cnote"><b>Coach note</b>${bul(a.coach_note)}</div>` : '')
    + `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul>${a.coach.map(c => `<li>${c.cue}<em>${c.ask}</em></li>`).join('')}</ul></div>`
    + `<div class="lbl">Equipment</div><p>${a.equipment}</p>` + (a.source ? `<div class="lbl">Source</div><p>${a.source}</p>` : '');
 }

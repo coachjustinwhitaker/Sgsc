@@ -40,6 +40,8 @@ coach:
   ask: What did you do right after the pass?
 - cue: When you win the ball, go to the counter Puggs.
   ask: What did you see when you won it?
+coach_note: The progression addresses midfielders abandoning central space. Use it only if the pattern
+  appears.
 progression:
 - title: Play through the middle first
   text: If central players always go wide first, require play through the middle before a joker can be
