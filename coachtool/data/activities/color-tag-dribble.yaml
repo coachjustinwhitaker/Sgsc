@@ -18,10 +18,9 @@ players:
   max: 16
 space: quarter
 minutes: 20
-setup: 'Grid about 25 by 20 yards with colored tall cones placed around the space. Every player has a
-  ball and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that
-  color before you count to ten. Vary the colors and the pace. Progress: have two callers with different
-  colors at the same time so players must split their attention.'
+setup: Grid about 25 by 20 yards with colored tall cones placed around the space. Every player has a ball
+  and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that color
+  before you count to ten. Vary the colors and the pace.
 coach:
 - cue: 'Players who keep their head up while dribbling reach the color fastest. Let the game teach the
     lesson. After the question, you can name it: "That is scanning."'
@@ -30,3 +29,6 @@ pairs_with:
 - gates-dribbling
 - red-light-green-light
 equipment: 1 ball per player · Multiple colored tall cones · Disc cones for grid
+progression:
+- title: Two callers
+  text: Have two callers with different colors at the same time so players must split their attention.

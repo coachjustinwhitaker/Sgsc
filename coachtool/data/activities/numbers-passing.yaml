@@ -21,8 +21,7 @@ players:
 space: quarter
 minutes: 15
 setup: 'Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space
-  passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1. Add a second ball
-  when they find a rhythm. Optional: add a goal. The last player shoots, then becomes the new number 1.'
+  passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1.'
 coach:
 - cue: Look for players keeping hips open (not square-on), cushioning the ball softly, then taking a purposeful
     next touch. Players who are always looking for the next number before the ball arrives will stand
@@ -32,3 +31,8 @@ pairs_with:
 - 1v1-to-endlines-goals
 - flying-numbers
 equipment: 1 ball (2 when ready) · Disc cones for grid
+progression:
+- title: Second ball
+  text: Add a second ball when they find a rhythm.
+- title: Add a goal
+  text: The last player shoots, then becomes the new number 1.

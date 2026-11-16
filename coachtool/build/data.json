@@ -133,7 +133,7 @@
    },
    "space": "quarter",
    "minutes": 15,
-   "setup": "1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s distance. Progress to 1v1 to Small Goals: add cone goals at each end, score below knee height. Pairs run simultaneously. Fast rotations. Keep multiple pairs active at once.",
+   "setup": "1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s distance. Pairs run simultaneously. Fast rotations. Keep multiple pairs active at once.",
    "coach": [
     {
      "cue": "At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot? When is each the right answer? Players who look up to check for the goal before driving are already thinking ahead. Works well as an anchor because every player is active simultaneously.",
@@ -155,7 +155,13 @@
       }
      ]
     }
-   }
+   },
+   "progression": [
+    {
+     "title": "Small goals",
+     "text": "Add cone goals at each end. Score below knee height."
+    }
+   ]
   },
   {
    "id": "rondo",
@@ -184,7 +190,7 @@
    },
    "space": "quarter",
    "minutes": 15,
-   "setup": "Square grid, one defender in the center, four attackers on the outside. This is called a rondo. Attackers keep the ball away from the defender. When the defender wins it or the ball goes out, the attacker who last touched it swaps into the middle. Keep track of consecutive passes. Progress: add a second defender (4v2) if passing is excellent, or drop to 3v1 to force attackers to move more.",
+   "setup": "Square grid, one defender in the center, four attackers on the outside. This is called a rondo. Attackers keep the ball away from the defender. When the defender wins it or the ball goes out, the attacker who last touched it swaps into the middle. Keep track of consecutive passes.",
    "coach": [
     {
      "cue": "Look for attackers spreading out to give the player with the ball multiple options. Players who bunch together make the defender's job easy. The player with the ball should always have at least two teammates they can see. On the receiving end, open hips give a player more time before the defender closes in.",
@@ -198,6 +204,12 @@
    "equipment": "1 ball per group · 4 cones per square · Pinnies for defenders",
    "aliases": [
     "4v2 Keep-Away"
+   ],
+   "progression": [
+    {
+     "title": "4v2 or 3v1",
+     "text": "Add a second defender (4v2) if passing is excellent, or drop to 3v1 to force attackers to move more."
+    }
    ]
   },
   {
@@ -313,7 +325,7 @@
    },
    "space": "quarter",
    "minutes": 15,
-   "setup": "Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1. Add a second ball when they find a rhythm. Optional: add a goal. The last player shoots, then becomes the new number 1.",
+   "setup": "Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1.",
    "coach": [
     {
      "cue": "Look for players keeping hips open (not square-on), cushioning the ball softly, then taking a purposeful next touch. Players who are always looking for the next number before the ball arrives will stand out. That anticipation is body shape doing its job. Works well as a focus activity after Gates Passing.",
@@ -324,7 +336,17 @@
     "1v1-to-endlines-goals",
     "flying-numbers"
    ],
-   "equipment": "1 ball (2 when ready) · Disc cones for grid"
+   "equipment": "1 ball (2 when ready) · Disc cones for grid",
+   "progression": [
+    {
+     "title": "Second ball",
+     "text": "Add a second ball when they find a rhythm."
+    },
+    {
+     "title": "Add a goal",
+     "text": "The last player shoots, then becomes the new number 1."
+    }
+   ]
   },
   {
    "id": "2v2-to-endlines-attacking",
@@ -543,7 +565,7 @@
    },
    "space": "quarter",
    "minutes": 15,
-   "setup": "Square of cones. Five attackers in a circle, two defenders in the center. Attackers keep the ball away. Track consecutive passes. Attacker who last touched an interception or ball out of bounds swaps with a defender. Rotate defenders every few minutes. Limit to 1–2 touches for extra challenge.",
+   "setup": "Square of cones. Five attackers in a circle, two defenders in the center. Attackers keep the ball away. Track consecutive passes. Attacker who last touched an interception or ball out of bounds swaps with a defender. Rotate defenders every few minutes.",
    "coach": [
     {
      "cue": "Where the Rondo (4v1) is a small tight game, this is the bigger version: more players, two defenders, faster decisions required. Quick touches and spreading the space are the two things to reinforce. Encourage attackers to draw a defender toward them before passing. The moment a defender commits, there is a free player somewhere. That read is the whole game.",
@@ -554,7 +576,13 @@
     "flying-numbers",
     "shrinking-field"
    ],
-   "equipment": "1 ball · 4 cones for square · Pinnies for defenders"
+   "equipment": "1 ball · 4 cones for square · Pinnies for defenders",
+   "progression": [
+    {
+     "title": "Limit the touches",
+     "text": "Limit to 1–2 touches for extra challenge."
+    }
+   ]
   },
   {
    "id": "approach-delay",
@@ -890,7 +918,7 @@
    },
    "space": "quarter",
    "minutes": 20,
-   "setup": "Grid about 20 by 20 yards. Every player has a ball and tucks a pinny in the back of their shorts. Players dribble around the space trying to steal a teammate's tail while protecting their own. Start with no elimination: if a tail falls off, tuck it back in and keep playing. For a final competitive round, switch to elimination: tail stolen means you are out. Last player with their tail wins. Count how many tails each player collects.",
+   "setup": "Grid about 20 by 20 yards. Every player has a ball and tucks a pinny in the back of their shorts. Players dribble around the space trying to steal a teammate's tail while protecting their own. Start with no elimination: if a tail falls off, tuck it back in and keep playing. Count how many tails each player collects.",
    "coach": [
     {
      "cue": "Players who face their opponent rather than just running away. That is the beginning of how they will take on a defender. Heads up to see where tails are and where opponents are coming from.",
@@ -901,7 +929,13 @@
     "knockout",
     "dinosaur-tag"
    ],
-   "equipment": "1 ball per player · Disc cones for grid · Pinnies as tails"
+   "equipment": "1 ball per player · Disc cones for grid · Pinnies as tails",
+   "progression": [
+    {
+     "title": "Elimination round",
+     "text": "Switch to elimination for a final competitive round. A stolen tail means you are out. The last player with their tail wins."
+    }
+   ]
   },
   {
    "id": "knockout",
@@ -929,7 +963,7 @@
    },
    "space": "quarter",
    "minutes": 20,
-   "setup": "Grid about 20 by 20 yards. Every player has a ball and dribbles freely. Players try to knock other players' balls out of the grid while keeping their own in. Ball knocked out: five toe taps outside the grid, then back in (non-elimination). For a final competitive round, switch to elimination: ball knocked out means you are out. Last player with their ball in the grid wins. Remind players to keep their ball close when an opponent approaches.",
+   "setup": "Grid about 20 by 20 yards. Every player has a ball and dribbles freely. Players try to knock other players' balls out of the grid while keeping their own in. Ball knocked out: five toe taps outside the grid, then back in (non-elimination). Remind players to keep their ball close when an opponent approaches.",
    "coach": [
     {
      "cue": "Players who shield the ball with their body rather than just running away. Players who look up to track both the ball and the incoming threat.",
@@ -940,7 +974,13 @@
     "duck-tails",
     "101-dalmatians"
    ],
-   "equipment": "1 ball per player · Disc cones for grid"
+   "equipment": "1 ball per player · Disc cones for grid",
+   "progression": [
+    {
+     "title": "Elimination round",
+     "text": "Switch to elimination for a final competitive round. A ball knocked out means you are out. The last player with their ball in the grid wins."
+    }
+   ]
   },
   {
    "id": "dinosaur-tag",
@@ -1019,7 +1059,7 @@
    },
    "space": "quarter",
    "minutes": 20,
-   "setup": "Grid about 25 by 20 yards with 8 to 10 gates scattered throughout. Each gate is two tall cones placed an arm's length apart. Every player has a ball. Score a point by dribbling through any gate. 60-second challenge: how many gates can you get through? Tell players to imagine a force field the size of their arms, and the ball should stay inside it while they dribble. Progress: call a specific cone color and players must look up to find those gates first.",
+   "setup": "Grid about 25 by 20 yards with 8 to 10 gates scattered throughout. Each gate is two tall cones placed an arm's length apart. Every player has a ball. Score a point by dribbling through any gate. 60-second challenge: how many gates can you get through? Tell players to imagine a force field the size of their arms, and the ball should stay inside it while they dribble.",
    "coach": [
     {
      "cue": "Players who keep their head up find more gates. The game creates the need for scanning without you naming it. After the question, name it: \"That looking up while you dribble is called scanning.\"",
@@ -1030,7 +1070,13 @@
     "color-tag-dribble",
     "shadow-dribbling"
    ],
-   "equipment": "1 ball per player · 8 to 10 tall cones in pairs · Disc cones for grid · Timer"
+   "equipment": "1 ball per player · 8 to 10 tall cones in pairs · Disc cones for grid · Timer",
+   "progression": [
+    {
+     "title": "Call a color",
+     "text": "Call a specific cone color and players must look up to find those gates first."
+    }
+   ]
   },
   {
    "id": "shadow-dribbling",
@@ -1097,7 +1143,7 @@
    },
    "space": "quarter",
    "minutes": 20,
-   "setup": "Grid about 25 by 20 yards with colored tall cones placed around the space. Every player has a ball and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that color before you count to ten. Vary the colors and the pace. Progress: have two callers with different colors at the same time so players must split their attention.",
+   "setup": "Grid about 25 by 20 yards with colored tall cones placed around the space. Every player has a ball and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that color before you count to ten. Vary the colors and the pace.",
    "coach": [
     {
      "cue": "Players who keep their head up while dribbling reach the color fastest. Let the game teach the lesson. After the question, you can name it: \"That is scanning.\"",
@@ -1108,7 +1154,13 @@
     "gates-dribbling",
     "red-light-green-light"
    ],
-   "equipment": "1 ball per player · Multiple colored tall cones · Disc cones for grid"
+   "equipment": "1 ball per player · Multiple colored tall cones · Disc cones for grid",
+   "progression": [
+    {
+     "title": "Two callers",
+     "text": "Have two callers with different colors at the same time so players must split their attention."
+    }
+   ]
   },
   {
    "id": "shooting-gallery",
@@ -1949,7 +2001,7 @@
    },
    "space": "half",
    "minutes": 15,
-   "setup": "Full-size goal with a goalkeeper. Wide players on each flank serve balls into the box while two or three attackers arrive to finish. Start with serves along the ground or driven low, finish with feet. Once the group is confident, add a defender in the box. Rotate servers, finishers and the goalkeeper every few turns. Heading is optional: if you include it, use a lighter ball, toss to the head from short range, and keep the total number of headers very low.",
+   "setup": "Full-size goal with a goalkeeper. Wide players on each flank serve balls into the box while two or three attackers arrive to finish. Start with serves along the ground or driven low, finish with feet. Rotate servers, finishers and the goalkeeper every few turns. Heading is optional: if you include it, use a lighter ball, toss to the head from short range, and keep the total number of headers very low.",
    "coach": [
     {
      "cue": "Do the attackers time their runs so they arrive as the ball does, rather than standing in the box waiting? Do they attack the near post and far post with different players? Watch for the serve itself: low and hard, away from the goalkeeper, is hard to defend.",
@@ -1960,7 +2012,13 @@
     "waves",
     "flying-numbers"
    ],
-   "equipment": "Balls in a bag · 1 full-size goal · Disc cones for the wide channels · Pinnies"
+   "equipment": "Balls in a bag · 1 full-size goal · Disc cones for the wide channels · Pinnies",
+   "progression": [
+    {
+     "title": "Add a defender",
+     "text": "Once the group is confident, add a defender in the box."
+    }
+   ]
   },
   {
    "id": "4v2-to-goal",

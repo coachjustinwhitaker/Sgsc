@@ -21,9 +21,8 @@ space: quarter
 minutes: 20
 setup: 'Grid about 20 by 20 yards. Every player has a ball and tucks a pinny in the back of their shorts.
   Players dribble around the space trying to steal a teammate''s tail while protecting their own. Start
-  with no elimination: if a tail falls off, tuck it back in and keep playing. For a final competitive
-  round, switch to elimination: tail stolen means you are out. Last player with their tail wins. Count
-  how many tails each player collects.'
+  with no elimination: if a tail falls off, tuck it back in and keep playing. Count how many tails each
+  player collects.'
 coach:
 - cue: Players who face their opponent rather than just running away. That is the beginning of how they
     will take on a defender. Heads up to see where tails are and where opponents are coming from.
@@ -32,3 +31,7 @@ pairs_with:
 - knockout
 - dinosaur-tag
 equipment: 1 ball per player · Disc cones for grid · Pinnies as tails
+progression:
+- title: Elimination round
+  text: Switch to elimination for a final competitive round. A stolen tail means you are out. The last
+    player with their tail wins.

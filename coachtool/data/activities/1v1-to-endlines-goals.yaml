@@ -22,8 +22,7 @@ players:
 space: quarter
 minutes: 15
 setup: '1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s
-  distance. Progress to 1v1 to Small Goals: add cone goals at each end, score below knee height. Pairs
-  run simultaneously. Fast rotations. Keep multiple pairs active at once.'
+  distance. Pairs run simultaneously. Fast rotations. Keep multiple pairs active at once.'
 coach:
 - cue: 'At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot? When
     is each the right answer? Players who look up to check for the goal before driving are already thinking
@@ -45,3 +44,6 @@ for_age:
         attempt regardless of outcome. If players are unevenly matched, play the ball directly to the
         less skilled player to level the challenge.
       ask: When you had the ball, did you try to go past your opponent or around them? What worked?
+progression:
+- title: Small goals
+  text: Add cone goals at each end. Score below knee height.
