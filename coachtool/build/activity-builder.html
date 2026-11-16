@@ -24,7 +24,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Block</label><select id="block"></select>
 <label class="t">Ages</label><div class="chk" id="ages"></div>
 <label class="t">Tracks <small>(rec = recreational, comp = competitive)</small></label><div class="chk" id="tracks"></div>
-<label class="t">Levels</label><div class="chk" id="levels"></div>
+<label class="t">Levels <small id="lvnote"></small></label><div class="chk" id="levels"></div>
 <div id="fit"></div>
 <label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
@@ -64,7 +64,12 @@ function fit(){
   vals('level').forEach(l => vals('track').forEach(t => { if(!D.ladder.levels[t].includes(l)) issues.push(`${t} does not use the ${LV[l]} level`); }));
   $('#fit').innerHTML = issues.length ? `<div class="warn">${[...new Set(issues)].join('<br>')}</div>` : '';
 }
-document.addEventListener('change', fit);
+function syncLevels(){
+  const t = vals('track'), recOnly = t.length && !t.includes('comp');
+  document.querySelectorAll('input[name=level]').forEach(x => { if(recOnly){ x.checked = x.value === 'intro'; x.disabled = true; } else x.disabled = false; });
+  const note = $('#lvnote'); if(note) note.textContent = recOnly ? 'Rec always works at Introduction, so this is set for you.' : (t.includes('comp') ? 'Comp uses all three. Check every level this activity works at.' : 'Pick a track first.');
+}
+document.addEventListener('change', () => { syncLevels(); fit(); });
 $('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r = new FileReader(); r.onload = () => { diagram = {name: f.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-'), data: r.result}; $('#pv').innerHTML = `<img class="pv" src="${r.result}">`; }; r.readAsDataURL(f); };
 function fill(a){
   editing = a ? a.id : null; diagram = null; $('#file').value = '';
@@ -73,7 +78,7 @@ function fill(a){
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
   ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : '');
   $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
-  $('#msg').innerHTML = ''; fit();
+  $('#msg').innerHTML = ''; syncLevels(); fit();
 }
 $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value));
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
