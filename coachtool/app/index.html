@@ -53,7 +53,7 @@ function fits(a){ return (!state.players || (a.players.min <= state.players && s
 function alternatives(w, si, slot){
   const slots = slotsOf(w, si), cur = slotRef(w, si, slot).split('#')[0], others = slots.filter(k => k !== slot).map(k => slotRef(w, si, k).split('#')[0]);
   const ok = T.ladder, same = [w.block].concat(w.also_blocks || []), anchor = slots.length > 1 && slot === 'a';
-  return DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (anchor ? ok.indexOf(a.block) <= ok.indexOf(w.block) : same.includes(a.block)));
+  return DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (anchor ? (ok.indexOf(a.block) <= ok.indexOf(w.block) || same.includes(a.block)) : same.includes(a.block)));
 }
 function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
@@ -100,7 +100,7 @@ function viewWeek(n){
     const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]), note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
     const alts = alternatives(w, si, slot);
-    return `<div class="slot"><div class="lab">${multi ? 'Activity ' + slot.toUpperCase() + (slot==='a' ? ' · anchor' : ' · focus') : 'Practice activity'}</div><div class="nm">${actName(ref)}</div>
+    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? 'Activity ' + slot.toUpperCase() + (slot==='a' ? ' · anchor' : ' · focus') : 'Practice activity')}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${swapped ? 'Swapped in' : note}</div>
       <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}</details>
       <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}

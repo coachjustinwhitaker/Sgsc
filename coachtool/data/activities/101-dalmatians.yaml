@@ -6,6 +6,7 @@ skills:
 - Dribbling
 - Scanning
 ages:
+- u6
 - u8
 tracks:
 - rec
@@ -28,3 +29,16 @@ pairs_with:
 - red-light-green-light
 - knockout
 equipment: 1 ball per player · Disc cones for outer grid and inner triangles
+for_age:
+  u6:
+    setup: Grid about 25 by 20 yards with cone triangles scattered throughout, one per player. Every player
+      has a ball. Players score by dribbling through a triangle with the ball within arm's reach of their
+      body. Players count their own score out loud and shout it each time they score. Set a group target
+      before the game starts and count up together. Try 20 to start. If they get there quickly, raise
+      it next round. Your job is to roam the grid and knock balls away. Go after your strongest players
+      first.
+    look_for: Count up loudly with the group as the number climbs. The shared team goal creates genuine
+      collective excitement when they hit the target. Raise the number each round to keep it challenging.
+      Encourage small touches and heads up. Do not worry about perfect technique. Just getting the ball
+      to the triangles is a win at this age.
+    question: How many did we get? Should we try for more next round?

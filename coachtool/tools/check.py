@@ -1,7 +1,7 @@
 """Checks the records. Exit code 1 if anything is wrong."""
 import sys, pathlib, yaml, re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BLOCKS = {'B1', 'B2', 'B3', 'B4', 'B5'}
+BLOCKS = set(yaml.safe_load((ROOT / 'data' / 'blocks.yaml').read_text(encoding='utf-8')))
 def load(p): return yaml.safe_load(p.read_text(encoding='utf-8'))
 def check(root=ROOT):
     errs = []

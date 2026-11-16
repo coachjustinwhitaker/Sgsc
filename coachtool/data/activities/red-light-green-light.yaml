@@ -6,6 +6,7 @@ skills:
 - Driving
 - Controlling
 ages:
+- u6
 - u8
 tracks:
 - rec
@@ -27,3 +28,14 @@ pairs_with:
 - gates-dribbling
 - 101-dalmatians
 equipment: 1 ball per player · Disc cones for grid
+for_age:
+  u6:
+    setup: 'Grid about 25 by 20 yards. Every player has a ball. Green light: dribble fast. Yellow light:
+      slow down with small touches. Red light: stop with one foot on the ball. Call lights at random.
+      After a minute, ask players to suggest a new color and assign it a new action: orange means spin
+      around, purple means jump. Add each new color a few times before introducing the next one.'
+    look_for: This game is simple, familiar, and brilliant at this age. Most players already know the
+      concept from the road. The player-generated colors keep it fresh and give them ownership. Look for
+      players keeping the ball within arm's reach at yellow and actually stopping on red rather than letting
+      the ball roll away.
+    question: What was the hardest color to remember? What action did you pick?
