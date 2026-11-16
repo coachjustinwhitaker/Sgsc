@@ -90,6 +90,19 @@ def build_app(plan_id, brand_id):
     import json
     errs, acts = check()
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
+    import io, mimetypes
+    from PIL import Image
+    for a in acts.values():
+        d = a.get('diagram')
+        if not d: continue
+        f = ROOT / 'data' / 'diagrams' / d
+        if f.suffix.lower() == '.svg': raw, mime = f.read_bytes(), 'image/svg+xml'
+        else:
+            im = Image.open(f); im.thumbnail((720, 720)); buf = io.BytesIO()
+            if im.mode in ('RGBA', 'LA', 'P'): im.save(buf, 'PNG', optimize=True); mime = 'image/png'
+            else: im.convert('RGB').save(buf, 'JPEG', quality=82, optimize=True); mime = 'image/jpeg'
+            raw = buf.getvalue()
+        a['diagram_src'] = f'data:{mime};base64,' + base64.b64encode(raw).decode()
     plan = load(ROOT / 'data' / 'plans' / f'{plan_id}.yaml'); blocks = load(ROOT / 'data' / 'blocks.yaml')
     brand = load(ROOT / 'theme' / brand_id / 'brand.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
