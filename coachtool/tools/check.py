@@ -69,6 +69,13 @@ def check(root=ROOT):
     for pf in sorted((root / 'data' / 'plans').glob('*.yaml')):
         for w in load(pf).get('weeks', []):
             if w.get('routine') and w['routine'] not in rids: errs.append(f'plan {pf.name} week {w.get("week")}: routine {w["routine"]} does not exist')
+    for pf in sorted((root / 'data' / 'plans').glob('*.yaml')):
+        pl = load(pf)
+        for w in pl.get('weeks', []):
+            for ses in w.get('sessions', []):
+                b, lv = ses.get('block'), ses.get('level')
+                if b and b not in ladder[pl['track']].get(pl['age'], []): errs.append(f'plan {pf.name} week {w.get("week")}: block {b} is not part of {pl["track"]} {pl["age"]}')
+                if lv and lv not in ladder['levels'][pl['track']]: errs.append(f'plan {pf.name} week {w.get("week")}: level {lv} is not used in {pl["track"]}')
     seen = {}
     for a in acts.values():
         _flat = lambda v: ' '.join(v) if isinstance(v, list) else str(v)
@@ -95,13 +102,14 @@ def check(root=ROOT):
             for i, ses in enumerate(w['sessions'], 1):
                 ids = []; full = []
                 for slot in [k for k in ('a', 'b') if k in ses]:
-                    r = ses[slot]['activity']
+                    r = ses[slot].get('activity')
+                    if not r: continue
                     if not ref_ok(r): errs.append(f'{f.name} wk{w["week"]} session {i} {slot}: unknown activity {r}'); continue
                     ids.append(r.split('#')[0]); full.append(r)
                     if p['age'] not in acts[r.split('#')[0]]['ages']: errs.append(f'{f.name} wk{w["week"]}: {r} is not an {p["age"]} activity')
                 if len(full) == 2 and full[0] == full[1]: errs.append(f'{f.name} wk{w["week"]} session {i}: A and B are the same activity')
-                if ids and not any(acts[x]['block'] in [w['block']] + w.get('also_blocks', []) for x in ids):
-                    errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {w["block"]} activity')
+                if ids and not any(acts[x]['block'] in [ses.get('block', w['block'])] + w.get('also_blocks', []) for x in ids):
+                    errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {ses.get("block", w["block"])} activity')
 
     # skills, goals and age configs
     for f in sorted((root / 'data' / 'rules').glob('*.yaml')) if (root / 'data' / 'rules').exists() else []:

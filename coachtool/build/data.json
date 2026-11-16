@@ -1,4 +1,5 @@
 {
+ "area": "all",
  "help": {
   "email": "",
   "form": "",
@@ -7555,6 +7556,1005 @@
     {
      "label": "Head injuries",
      "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Build-out line",
+     "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Substitutions",
+     "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Rosters",
+     "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Free kicks and penalties",
+     "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Officials",
+     "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    }
+   ],
+   "ladder": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5"
+   ]
+  },
+  {
+   "id": "u14-comp",
+   "age": "u14",
+   "track": "comp",
+   "label": "U13 and U14",
+   "plan": {
+    "season_note": "The weekly themes are a suggested order, so the season builds skill step by step instead of chasing whatever last weekend showed. Use them as the frame. If a game exposes a real problem, work it into your practice and keep the theme.",
+    "id": "u14-comp",
+    "age": "u14",
+    "track": "comp",
+    "sessions_per_week": 2,
+    "phases": [
+     {
+      "name": "Preseason",
+      "weeks": [
+       1,
+       6
+      ],
+      "goal": "Set the baseline",
+      "text": "No Application-level work yet. Players install the habits and technique every later block depends on: individual technique, combination play and collective defending shape.",
+      "success": "Players are comfortable receiving under light pressure, understand basic team mechanics and defensive shape, and show early decision-making instead of hesitation."
+     },
+     {
+      "name": "In-Season",
+      "weeks": [
+       7,
+       12
+      ],
+      "goal": "Apply under real pressure",
+      "text": "Games provide the pressure Application needs. B4 and B5 come online, and B1 to B3 start Application reps against real defenders.",
+      "success": "Decisions hold up at game speed, transitions trigger without prompting, and finishing chances start to convert more consistently."
+     },
+     {
+      "name": "Peak Performance",
+      "weeks": [
+       13,
+       18
+      ],
+      "goal": "Perform at the highest level",
+      "text": "Every block cycles at Application through repeated performance, not new content. Composure and game management are built through reps, not lectures.",
+      "success": "Composure in finishing moments, informed choices late in games, and communication and ownership without prompting."
+     }
+    ],
+    "standing": [
+     {
+      "title": "Every week: one live set-piece rep",
+      "text": "Attacking or defending: a corner, a free kick or a throw-in. It is a background layer, not a themed week."
+     }
+    ],
+    "weeks": [
+     {
+      "week": 1,
+      "focus": "First Touch & Awareness",
+      "block": "B1",
+      "level": "intro",
+      "sessions": [
+       {
+        "block": "B1",
+        "level": "intro"
+       },
+       {
+        "block": "B2",
+        "level": "intro"
+       }
+      ]
+     },
+     {
+      "week": 2,
+      "focus": "Defending Starts With Shape",
+      "block": "B3",
+      "level": "intro",
+      "sessions": [
+       {
+        "block": "B3",
+        "level": "intro"
+       },
+       {
+        "block": "B1",
+        "level": "intro"
+       }
+      ]
+     },
+     {
+      "week": 3,
+      "focus": "Supporting the Ball Carrier",
+      "block": "B2",
+      "level": "intro",
+      "sessions": [
+       {
+        "block": "B2",
+        "level": "intro"
+       },
+       {
+        "block": "B3",
+        "level": "intro"
+       }
+      ]
+     },
+     {
+      "week": 4,
+      "focus": "Receiving Under Pressure",
+      "block": "B1",
+      "level": "dev",
+      "sessions": [
+       {
+        "block": "B1",
+        "level": "dev"
+       },
+       {
+        "block": "B2",
+        "level": "dev"
+       }
+      ]
+     },
+     {
+      "week": 5,
+      "focus": "Compactness & Cover",
+      "block": "B3",
+      "level": "dev",
+      "sessions": [
+       {
+        "block": "B3",
+        "level": "dev"
+       },
+       {
+        "block": "B1",
+        "level": "dev"
+       }
+      ]
+     },
+     {
+      "week": 6,
+      "focus": "Combination Play",
+      "block": "B2",
+      "level": "dev",
+      "sessions": [
+       {
+        "block": "B2",
+        "level": "dev"
+       },
+       {
+        "block": "B3",
+        "level": "dev"
+       }
+      ]
+     },
+     {
+      "week": 7,
+      "focus": "Reading the Transition Moment",
+      "block": "B4",
+      "level": "intro",
+      "sessions": [
+       {
+        "block": "B4",
+        "level": "intro"
+       },
+       {
+        "block": "B1",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 8,
+      "focus": "Speed of Play",
+      "block": "B4",
+      "level": "dev",
+      "sessions": [
+       {
+        "block": "B4",
+        "level": "dev"
+       },
+       {
+        "block": "B2",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 9,
+      "focus": "First Touches in the Box",
+      "block": "B5",
+      "level": "intro",
+      "sessions": [
+       {
+        "block": "B5",
+        "level": "intro"
+       },
+       {
+        "block": "B3",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 10,
+      "focus": "Decision-Making Under Pressure",
+      "block": "B4",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B4",
+        "level": "app"
+       },
+       {
+        "block": "B1",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 11,
+      "focus": "Finishing the Attack",
+      "block": "B5",
+      "level": "dev",
+      "sessions": [
+       {
+        "block": "B5",
+        "level": "dev"
+       },
+       {
+        "block": "B2",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 12,
+      "focus": "Pressing Triggers",
+      "block": "B4",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B4",
+        "level": "app"
+       },
+       {
+        "block": "B3",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 13,
+      "focus": "Composure in the Box",
+      "block": "B5",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B5",
+        "level": "app"
+       },
+       {
+        "block": "B1",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 14,
+      "focus": "Tempo Control",
+      "block": "B4",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B4",
+        "level": "app"
+       },
+       {
+        "block": "B2",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 15,
+      "focus": "Winning Moments",
+      "block": "B5",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B5",
+        "level": "app"
+       },
+       {
+        "block": "B3",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 16,
+      "focus": "Composure at Speed",
+      "block": "B1",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B1",
+        "level": "app"
+       },
+       {
+        "block": "B4",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 17,
+      "focus": "Game Management",
+      "block": "B2",
+      "level": "app",
+      "sessions": [
+       {
+        "block": "B2",
+        "level": "app"
+       },
+       {
+        "block": "B5",
+        "level": "app"
+       }
+      ]
+     },
+     {
+      "week": 18,
+      "focus": "Player Ownership",
+      "coach_choice": true,
+      "note": "Flex week. Players drive their own priorities heading into the break. Ask them what they want to work on, then build practice around it."
+     }
+    ]
+   },
+   "goals": [
+    {
+     "id": "keeps-ball-full-field",
+     "text": "Keeps the ball under pressure on the full field",
+     "blocks": [
+      "B1"
+     ]
+    },
+    {
+     "id": "defends-as-eleven",
+     "text": "Defends as part of an eleven-player team",
+     "blocks": [
+      "B3"
+     ]
+    },
+    {
+     "id": "first-second",
+     "text": "Reacts in the first second after the ball changes hands",
+     "blocks": [
+      "B4"
+     ]
+    },
+    {
+     "id": "shoots-with-composure",
+     "text": "Takes shots with composure and makes good final-third decisions",
+     "blocks": [
+      "B5"
+     ]
+    },
+    {
+     "id": "times-runs",
+     "text": "Times runs to arrive when the ball does",
+     "blocks": [
+      "B2",
+      "B5"
+     ]
+    },
+    {
+     "id": "communicates",
+     "text": "Communicates with and coaches teammates on the field",
+     "blocks": [
+      "B2",
+      "B3"
+     ]
+    },
+    {
+     "id": "wants-to-play",
+     "text": "Shows up wanting to play again",
+     "blocks": [
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5"
+     ]
+    }
+   ],
+   "players": {
+    "id": "u14-comp",
+    "age": "u14",
+    "who": [
+     {
+      "label": "Growth is uneven",
+      "text": "In any U14 group you will see players who have already grown a lot and players who have not started. Do not read size as skill. Praise decisions and effort, and watch that your biggest players are not only winning duels with size."
+     },
+     {
+      "label": "The field got big",
+      "text": "The jump from 9v9 to 11v11 is a jump in distance, not just numbers. Players tire faster and shape breaks down. Short rests and water breaks are coaching tools, not weaknesses."
+     },
+     {
+      "label": "Peers matter more than you",
+      "text": "At this age what teammates think carries a lot of weight. Individual feedback works best quietly, one on one. Public praise for team moments and brave decisions builds the culture you want."
+     },
+     {
+      "label": "Some will be ready for more",
+      "text": "A few players in your group may be curious about a more competitive pathway. Notice them, encourage them, and pass it on to your club. Do not promise anything. Just open the door."
+     }
+    ],
+    "great_session": [
+     {
+      "title": "Players take the shot",
+      "text": "The ball is in the final third and someone shoots, early, with composure, without a second dribble. Missing is fine. Not shooting is the problem."
+     },
+     {
+      "title": "Compact, connected shape",
+      "text": "Eleven players on a big field can look scattered. Look for lines that stay close enough to support each other: defenders, midfielders and forwards moving as one unit."
+     },
+     {
+      "title": "Instant reaction on turnovers",
+      "text": "When the ball changes hands, do players react in the first second or watch? That reaction is the whole game-moments block."
+     },
+     {
+      "title": "Players talking to each other",
+      "text": "Voices on the field: \"Man on,\" \"Turn,\" \"Switch.\" Player-to-player coaching is a development goal. Step back when it happens."
+     },
+     {
+      "title": "Practice A concept in Practice B",
+      "text": "If something from the first session of the week shows up in the second without you asking, the concept is taking hold."
+     },
+     {
+      "title": "Everyone gets a turn in goal",
+      "text": "Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn."
+     }
+    ],
+    "prepared": "Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week's focus before you arrive and choose Activity A as something familiar. Activity B is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid pairing two new concepts in the same session.",
+    "parents": {
+     "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
+     "script": "This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.",
+     "outro": "At U14 players hear everything. Positive sideline energy is genuinely useful. Criticism of a missed shot makes the next shot less likely."
+    },
+    "cues": [
+     {
+      "when": "Player shoots early and misses",
+      "say": "\"Good decision. Great shot to take. Take that one every time.\" Praise the decision before you talk about the technique."
+     },
+     {
+      "when": "Player passes up a clear shot",
+      "say": "Ask, do not tell: \"What were you thinking when you had that space?\" Then listen. Often it is confidence, not judgment."
+     },
+     {
+      "when": "Team defends compactly",
+      "say": "\"That shape right there, everyone close enough to support each other. That is exactly what we are building toward.\""
+     },
+     {
+      "when": "Player presses instantly after turnover",
+      "say": "Name it in the moment: \"Did everyone see that? No hesitation. That is the whole idea.\""
+     },
+     {
+      "when": "Players coaching each other",
+      "say": "Step further back. Let it run. Come back and ask: \"What did you tell your teammate there?\""
+     },
+     {
+      "when": "Players too self-critical",
+      "say": "\"The best players in the world miss shots and lose the ball in every game. The difference is what they do next.\""
+     }
+    ]
+   },
+   "framework": {
+    "age": "u14",
+    "blocks": {
+     "B1": {
+      "tagline": "Prepare the body. Read the picture. Execute with intent.",
+      "overview": "Every player's relationship with the ball comes before everything else. This block establishes the perceptual and technical habits that make all combination play, defending and finishing possible: scanning before the ball arrives, shaping the body to play forward, and using first touch to create a decision rather than just react to pressure. When a player stalls in a later block, look back here first.",
+      "problem": "Players scan, position and make first-touch decisions under high pressure in tight spaces.",
+      "focus": [
+       "Scanning before, during and after receiving",
+       "Body shape and movement to play forward",
+       "Using first touch to create a decision, not just control",
+       "Technique at full game speed and pressure"
+      ]
+     },
+     "B2": {
+      "tagline": "Create advantage. Move the ball forward. Solve pressure together.",
+      "overview": "Combination play only works if the individual technique from the first block is already in place. This block takes that foundation and asks players to solve pressure together: recognizing a teammate's run, providing the right angle of support, and timing the next action so the advantage compounds rather than stalls.",
+      "problem": "Players use teammates to create time, space and numerical advantages, moving the ball forward under pressure through deliberate combination play.",
+      "focus": [
+       "Supporting angle, distance and timing",
+       "Combination play to break defensive lines",
+       "Recognizing and exploiting overloads",
+       "Movement after the pass, not just the pass itself"
+      ]
+     },
+     "B3": {
+      "tagline": "Compact. Coordinated. Aggressive. Defending is not just for defenders.",
+      "overview": "Defending is not just for defenders. Winning the ball back is a collective action: the nearest player pressures, teammates cover behind, and the team stays connected and compact to protect dangerous space. The standard is no longer just reacting to losing the ball. Teams defend proactively, with a compact block that regains possession as high up the field as possible.",
+      "problem": "Players create and maintain a compact defensive block, applying coordinated pressure, cover and balance to prevent forward play and regain the ball.",
+      "focus": [
+       "Coordinated pressure, cover and balance",
+       "Compact shape, vertically and horizontally",
+       "High defensive line and line management",
+       "Immediate reaction after losing the ball"
+      ]
+     },
+     "B4": {
+      "tagline": "Recognizing moments and acting fast.",
+      "overview": "Transitions are the moments that decide games. This block links attacking and defending: the instant possession changes, players must recognize the moment and respond, either with maximum intensity to win the ball back, or with immediate speed to attack before the opponent can organize. A player who reacts fast in transition is applying technique, combination and defensive shape all at once.",
+      "problem": "Players recognize the moment possession changes and respond immediately: pressing or recovering when it is lost, and playing forward at speed or securing the ball when it is won.",
+      "focus": [
+       "Immediate recognition of the transition moment",
+       "Reaction speed and acceleration",
+       "Press or recover, play forward or secure",
+       "Communication and organization under chaos"
+      ]
+     },
+     "B5": {
+      "tagline": "Can we turn advantage into goals?",
+      "overview": "All of the work in the earlier blocks is preparation for this one. Players who scan early, combine well, defend collectively and transition fast create finishing opportunities. This block is about having the composure and technique to take them. When players struggle to finish, the answer is rarely more finishing drills. Check the quality of preparation touches, the timing of runs, and the decisions made before the shot.",
+      "problem": "Players convert advantage into goals under pressure: separating to receive, combining for the final pass, and finishing with composure and limited touches.",
+      "focus": [
+       "Converting advantage into goals through quality final actions",
+       "Separating and unmarking to receive in the box",
+       "Finishing with composure and limited touches",
+       "Managing tempo and stakes as the game state demands"
+      ]
+     }
+    }
+   },
+   "skills": [
+    {
+     "id": "u14-b1-perception-and-preparation-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Perception and Preparation",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Scan before receiving to identify pressure and options",
+      "Begin orienting the body to see the field before the ball arrives",
+      "Recognize the obvious difference between time and immediate pressure"
+     ]
+    },
+    {
+     "id": "u14-b1-controlling-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Controlling",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Treat first touch as a decision, not just control",
+      "Receive across the body to begin opening up the field",
+      "Use small, controlled touches to set up the next action"
+     ]
+    },
+    {
+     "id": "u14-b1-protecting-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Protecting",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Shield and protect the ball when no forward option exists",
+      "Use the body between the ball and the defender",
+      "Hold possession until a forward option opens"
+     ]
+    },
+    {
+     "id": "u14-b1-driving-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Driving",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Attack the ball under pressure, move toward it rather than waiting",
+      "Push into open space when it is available",
+      "Begin to play with the head up while moving with the ball"
+     ]
+    },
+    {
+     "id": "u14-b1-dribbling-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Dribbling",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Use a first action, touch or feint, to create space",
+      "Begin recognizing obvious 1v1 moments",
+      "Show basic coordination when changing direction with the ball"
+     ]
+    },
+    {
+     "id": "u14-b1-passing-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Passing",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Play forward when possible, support when not",
+      "Use one touch when the pass dictates it",
+      "Begin passing accurately with both feet under light pressure"
+     ]
+    },
+    {
+     "id": "u14-b1-decision-making-intro",
+     "age": "u14",
+     "block": "B1",
+     "area": "Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Base the decision on body shape and scan before contact",
+      "Recognize forced one-touch situations versus time to take a touch",
+      "Decisions are deliberate and often reactive at this level"
+     ]
+    },
+    {
+     "id": "u14-b2-perception-and-preparation-intro",
+     "age": "u14",
+     "block": "B2",
+     "area": "Perception and Preparation",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Scan beyond the ball to identify nearby teammates",
+      "Recognize simple support positions: behind, beside and ahead of the ball",
+      "Identify when a teammate is under pressure and needs an outlet"
+     ]
+    },
+    {
+     "id": "u14-b2-supporting-intro",
+     "age": "u14",
+     "block": "B2",
+     "area": "Supporting",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Offer a clear passing option when a teammate has the ball",
+      "Move to avoid standing directly behind a defender",
+      "Reposition after passing rather than watching what happens next"
+     ]
+    },
+    {
+     "id": "u14-b2-technique-for-combination-play-intro",
+     "age": "u14",
+     "block": "B2",
+     "area": "Technique for Combination Play",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Execute basic wall passes at reduced speed",
+      "Use a simple supporting movement after passing",
+      "Adjust passing technique to play to feet rather than space in combination situations"
+     ]
+    },
+    {
+     "id": "u14-b2-passing-and-movement-intro",
+     "age": "u14",
+     "block": "B2",
+     "area": "Passing and Movement",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Pass and then move to a new supporting position rather than watching the pass",
+      "Offer a clear option when a teammate has the ball and understand basic spacing around the ball carrier"
+     ]
+    },
+    {
+     "id": "u14-b2-decision-making-intro",
+     "age": "u14",
+     "block": "B2",
+     "area": "Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Recognize the basic choice between combining with a teammate and carrying forward individually",
+      "Begin choosing between pass-and-move and carry based on where the defender is",
+      "Make simple combination decisions without waiting to be told"
+     ]
+    },
+    {
+     "id": "u14-b3-perception-and-preparation-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Perception and Preparation",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "React to losing the ball with immediate urgency",
+      "Identify the ball carrier as the first priority",
+      "Recognize nearby teammates as defensive support"
+     ]
+    },
+    {
+     "id": "u14-b3-covering-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Covering",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Recognize the importance of helping a teammate who is pressing",
+      "Begin to understand basic cover position behind the ball",
+      "Stay connected to the nearest teammate rather than isolated"
+     ]
+    },
+    {
+     "id": "u14-b3-shape-and-line-management-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Shape and Line Management",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Understand that the team defends as a connected group, not individuals",
+      "Begin to recognize when the team is too spread out",
+      "Recover into a basic defensive shape after losing the ball"
+     ]
+    },
+    {
+     "id": "u14-b3-defensive-decision-making-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Defensive Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Understand the basic choice between pressing and delaying",
+      "Begin to recover goal-side when beaten",
+      "Recognize the importance of helping teammates defend rather than defending alone"
+     ]
+    },
+    {
+     "id": "u14-b4-perception-and-awareness-intro",
+     "age": "u14",
+     "block": "B4",
+     "area": "Perception and Awareness",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Recognize the moment possession has changed",
+      "Identify the immediate attacking or defensive cue that follows",
+      "Begin scanning during chaotic, fast-moving moments"
+     ]
+    },
+    {
+     "id": "u14-b4-reaction-and-speed-intro",
+     "age": "u14",
+     "block": "B4",
+     "area": "Reaction and Speed",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "React quickly after losing or winning the ball",
+      "Accelerate toward the ball or space without hesitation",
+      "Attempt a forward pass after regaining possession when available"
+     ]
+    },
+    {
+     "id": "u14-b4-decision-making-intro",
+     "age": "u14",
+     "block": "B4",
+     "area": "Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Choose between fast attack and holding possession after a regain",
+      "Recognize when the press has failed and the team must recover",
+      "Support teammates in transition rather than acting alone"
+     ]
+    },
+    {
+     "id": "u14-b5-recognizing-the-moment-intro",
+     "age": "u14",
+     "block": "B5",
+     "area": "Recognizing the Moment",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Identify when in shooting or final-pass range",
+      "Notice goal location and basic pressure",
+      "Recognize simple scoring opportunities"
+     ]
+    },
+    {
+     "id": "u14-b5-preparation-and-body-shape-intro",
+     "age": "u14",
+     "block": "B5",
+     "area": "Preparation and Body Shape",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Set the body to face goal when receiving near the box",
+      "Use a settling touch to prepare for a shot or pass",
+      "Show basic balance before striking the ball"
+     ]
+    },
+    {
+     "id": "u14-b5-executing-final-actions-intro",
+     "age": "u14",
+     "block": "B5",
+     "area": "Executing Final Actions",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Use inside foot or simple laces technique to finish",
+      "Complete uncontested headers or rebounds",
+      "Execute basic cutbacks or square passes"
+     ]
+    },
+    {
+     "id": "u14-b5-composure-and-ownership-intro",
+     "age": "u14",
+     "block": "B5",
+     "area": "Composure and Ownership",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Willing to shoot or play the final pass",
+      "Accept missed chances without frustration",
+      "Reset quickly after attempts"
+     ]
+    }
+   ],
+   "club": {
+    "format": "11v11",
+    "rules": [
+     {
+      "label": "Format",
+      "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Heading",
+      "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Offside",
+      "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Build-out line",
+      "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Substitutions",
+      "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Rosters",
+      "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Free kicks and penalties",
+      "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Officials",
+      "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     },
+     {
+      "label": "Head injuries",
+      "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
+      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
+     }
+    ],
+    "pathway": [
+     "Some players will show real passion and ability this season",
+     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
+     "Talk to your club director about what that pathway looks like"
+    ],
+    "contact": "Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce finishing to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
+   },
+   "rules": [
+    {
+     "label": "Format",
+     "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Ball",
+     "text": "Size 5",
+     "source": "Laws of the Game",
+     "origin": "core"
+    },
+    {
+     "label": "Offside",
+     "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Head injuries",
+     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Heading",
+     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
      "origin": "club"
     },
