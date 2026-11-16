@@ -63,6 +63,10 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:24
 ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
 .coachbox{background:var(--navy-dark);color:#fff;border-radius:12px;padding:12px 16px;margin:14px 0 6px}.coachbox .eb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .coachbox ul{list-style:none;margin:0;padding:0}.coachbox li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12)}.coachbox li:first-child{border-top:0}.coachbox em{display:block;color:#dfc477;font-size:15px;margin-top:3px}
+.lsearch{width:100%;padding:11px 12px;font-size:16px;border:1px solid #c9d0db;border-radius:10px;background:#fff;margin:2px 0 8px;-webkit-appearance:none;appearance:none}
+.filters{display:flex;gap:6px}.filters select{flex:1;min-width:0;padding:9px 6px;font-size:14px}
+.toggles{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}.pillbtn{width:auto;margin:0;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:#fff;color:var(--navy);border:1px solid #c5cfe0;box-shadow:none}.pillbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
@@ -104,7 +108,7 @@ let whyFrom = '';
 const TYPE = id => ((DATA.types || []).find(t => t.id === id) || {}).label || '';
 function go(h){ if(h.startsWith('why/')) whyFrom = route || ''; route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const im = e.target.closest('.dg'); if(im){ im.classList.toggle('big'); return; } const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
-function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
+function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['library','Library'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewWelcome(){
   app.innerHTML = `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">Ideas for every week of your season, and a how-to for every activity. Use what helps. Change what does not.</p>
   <div class="card"><p><b>A suggested practice for each week</b><br>Run it as written, or make it yours.</p><p><b>Swaps when something does not fit</b><br>Change any activity to suit your numbers and your space.</p><p><b>One shared language</b><br>The same ideas and words from U6 to U14, so coaches and players talk about the game the same way.</p></div>
@@ -171,6 +175,28 @@ function viewTour(n){
 }
 const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`;
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
+const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false};
+function viewLibrary(){
+  const comp = T.track === 'comp', base = DATA.activities.filter(a => a.tracks.includes(T.track) && (lib.all && comp ? true : a.ages.includes(T.age)));
+  const skills = [...new Set(base.flatMap(a => a.skills))].sort(), types = (DATA.types || []).filter(t => base.some(a => a.type === t.id)), blocks = Object.keys(DATA.blocks).filter(b => base.some(a => a.block === b));
+  const opt = (v, cur, l) => `<option value="${v}"${cur === v ? ' selected' : ''}>${l}</option>`;
+  app.innerHTML = tabs('library') + `<h1>Activity library</h1><p class="lead">${lib.all && comp ? 'Every comp activity.' : 'Activities that suit ' + T.label + ' ' + (comp ? 'comp' : 'rec') + '.'} Tap one to see how to run it.</p>
+    <input type="search" id="lq" placeholder="Search by name" value="${lib.q.replace(/"/g, '&quot;')}" class="lsearch">
+    <div class="filters"><select id="lt">${opt('', lib.type, 'Any type')}${types.map(t => opt(t.id, lib.type, t.label)).join('')}</select><select id="lb">${opt('', lib.block, 'Any block')}${blocks.map(b => opt(b, lib.block, DATA.blocks[b].name)).join('')}</select><select id="ls">${opt('', lib.skill, 'Any skill')}${skills.map(x => opt(x, lib.skill, x)).join('')}</select></div>
+    <div class="toggles"><button class="pillbtn${lib.fit ? ' on' : ''}" id="lfit">Fits my numbers and space</button>${comp ? `<button class="pillbtn${lib.all ? ' on' : ''}" id="lall">All ages</button>` : ''}</div>
+    <p class="note" id="lcount"></p><div id="liblist"></div>`;
+  const draw = () => {
+    const q = lib.q.trim().toLowerCase(), list = base.filter(a => (!q || a.name.toLowerCase().includes(q)) && (!lib.type || a.type === lib.type) && (!lib.block || a.block === lib.block) && (!lib.skill || a.skills.includes(lib.skill)) && (!lib.fit || fits(a)))
+      .sort((x, y) => x.block.localeCompare(y.block) || x.order - y.order);
+    $('#lcount').textContent = `${list.length} ${list.length === 1 ? 'activity' : 'activities'}`;
+    $('#liblist').innerHTML = list.map(x => { const a = A(x.id), pl = a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`;
+      return `<div class="card"><div class="nm">${a.name}</div><div class="note">${[TYPE(a.type), DATA.blocks[a.block].name, pl, SPACE_LABEL[a.space]].filter(Boolean).join(' · ')}</div><details><summary>How to run it</summary>${runIt(a)}</details></div>`; }).join('') || '<p class="note">Nothing matches. Clear a filter or the search.</p>';
+  };
+  $('#lq').oninput = e => { lib.q = e.target.value; draw(); };
+  $('#lt').onchange = e => { lib.type = e.target.value; draw(); }; $('#lb').onchange = e => { lib.block = e.target.value; draw(); }; $('#ls').onchange = e => { lib.skill = e.target.value; draw(); };
+  $('#lfit').onclick = () => { lib.fit = !lib.fit; viewLibrary(); }; if($('#lall')) $('#lall').onclick = () => { lib.all = !lib.all; lib.type = lib.block = lib.skill = ''; viewLibrary(); };
+  draw();
+}
 function viewMore(){
   const ask = T.club.contact || (DATA.help && DATA.help.support), hl = helpLinks();
   app.innerHTML = tabs('more') + `<h1>More</h1>` + (ask || hl ? `<h2>Who to ask</h2>${ask ? `<div class="card"><p>${ask}</p></div>` : ''}${hl ? `<p class="note">Stuck on something, or have an activity your players love? Tell us.</p>${hl}` : ''}` : '') + `<h2>Your setup</h2><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`;
@@ -247,7 +273,7 @@ function viewWhy(b){
 function render(){
   let h = route || (!state.players ? 'welcome' : needTour() ? 'onb/1' : 'now');
   if(!state.players && h !== 'setup' && h !== 'welcome'){ route = 'welcome'; return render(); }
-  if(h === 'welcome') viewWelcome(); else if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'goals') viewGuide('goals'); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'more') viewMore(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
+  if(h === 'welcome') viewWelcome(); else if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'goals') viewGuide('goals'); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'more') viewMore(); else if(h === 'library') viewLibrary(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
   window.scrollTo(0,0);
 }
 render();
