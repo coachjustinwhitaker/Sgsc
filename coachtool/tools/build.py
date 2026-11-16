@@ -105,7 +105,7 @@ def build_app(plan_id, brand_id):
         a['diagram_src'] = f'data:{mime};base64,' + base64.b64encode(raw).decode()
     blocks = load(ROOT / 'data' / 'blocks.yaml'); brand = load(ROOT / 'theme' / brand_id / 'brand.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     teams = []
-    for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: load(f)['age']):
+    for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: int(re.sub(r'\D', '', load(f)['age']))):
         plan = load(pf); age = load(ROOT / 'data' / 'ages' / f"{plan['id']}.yaml"); fid = age['goals']
         skills = [r for f in (ROOT / 'data' / 'skills').glob(f"{plan['age']}.yaml") for r in load(f)['skills']]
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,

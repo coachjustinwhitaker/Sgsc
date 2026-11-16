@@ -42,7 +42,7 @@ function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch
 const $ = s => document.querySelector(s), app = $('#app');
 const acts = Object.fromEntries(DATA.activities.map(a => [a.id, a]));
 if(state.players && !state.team) state.team = 'u10-rec';
-const teamOf = id => DATA.teams.find(t => t.id === id) || DATA.teams[DATA.teams.length - 1];
+const teamOf = id => DATA.teams.find(t => t.id === id) || DATA.teams[0];
 let T = teamOf(state.team), plan = T.plan;
 function setTeam(id){ T = teamOf(id); plan = T.plan; state.team = T.id; }
 const A = id => { const a = acts[id], o = (a.for_age || {})[T.age]; return o ? Object.assign({}, a, o) : a; };

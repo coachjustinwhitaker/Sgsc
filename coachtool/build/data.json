@@ -1269,6 +1269,477 @@
  ],
  "teams": [
   {
+   "id": "u8-rec",
+   "age": "u8",
+   "track": "rec",
+   "label": "U8",
+   "plan": {
+    "id": "u8-rec",
+    "age": "u8",
+    "track": "rec",
+    "sessions_per_week": 1,
+    "weeks": [
+     {
+      "week": 1,
+      "focus": "Driving the ball",
+      "sessions": [
+       {
+        "a": {
+         "activity": "red-light-green-light",
+         "note": "Players keeping the ball close at yellow; heads up at green"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 2,
+      "focus": "Dribbling under pressure",
+      "sessions": [
+       {
+        "a": {
+         "activity": "101-dalmatians",
+         "note": "Players using small touches when you get close; players counting out loud"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 3,
+      "focus": "Scanning: looking up",
+      "sessions": [
+       {
+        "a": {
+         "activity": "gates-dribbling",
+         "note": "Players who find more gates because their heads are up"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 4,
+      "focus": "Scanning in pairs",
+      "sessions": [
+       {
+        "a": {
+         "activity": "shadow-dribbling",
+         "note": "Shadows who stay close because they are watching the leader, not their own ball"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 5,
+      "focus": "Direction changes and protecting",
+      "sessions": [
+       {
+        "a": {
+         "activity": "dinosaur-tag",
+         "note": "Players using both feet to turn. The competitive rounds in Duck Tails can also run here"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 6,
+      "focus": "Competing for the ball",
+      "sessions": [
+       {
+        "a": {
+         "activity": "knockout",
+         "note": "Players shielding with their body; players keeping heads up to track threats"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro"
+     },
+     {
+      "week": 7,
+      "focus": "Shooting and attacking",
+      "sessions": [
+       {
+        "a": {
+         "activity": "shooting-gallery",
+         "note": "Players looking up before shooting. Swap in 2v1 to Goal to look for any moment of combination play"
+        }
+       }
+      ],
+      "block": "B1",
+      "level": "intro",
+      "also_blocks": [
+       "B2"
+      ]
+     },
+     {
+      "week": 8,
+      "focus": "Coach's choice",
+      "coach_choice": true,
+      "note": "Use what your group loves most or needs most. Both are correct answers."
+     }
+    ]
+   },
+   "goals": [
+    {
+     "id": "keeps-ball-close",
+     "text": "Keeps a moving ball close while running",
+     "blocks": [
+      "B1"
+     ]
+    },
+    {
+     "id": "changes-direction",
+     "text": "Changes direction without losing control",
+     "blocks": [
+      "B1"
+     ]
+    },
+    {
+     "id": "looks-up",
+     "text": "Looks up sometimes while dribbling, the habit is forming",
+     "blocks": [
+      "B1"
+     ]
+    },
+    {
+     "id": "receives-with-intent",
+     "text": "Receives a short pass and does something intentional with it",
+     "blocks": [
+      "B1",
+      "B2"
+     ]
+    },
+    {
+     "id": "beats-defenders",
+     "text": "Tries to beat defenders rather than just kicking away",
+     "blocks": [
+      "B1"
+     ]
+    },
+    {
+     "id": "notices-teammates",
+     "text": "Notices teammates and occasionally tries to involve them",
+     "blocks": [
+      "B2"
+     ]
+    },
+    {
+     "id": "competes-with-joy",
+     "text": "Competes with genuine joy and wants to come back next season",
+     "blocks": [
+      "B1",
+      "B2"
+     ]
+    }
+   ],
+   "players": {
+    "id": "u8",
+    "age": "u8",
+    "who": [
+     {
+      "label": "How they learn",
+      "text": "Through experience and repetition, not explanation. Show them a game and they figure it out. Keep instructions short, one idea at a time, then let them play."
+     },
+     {
+      "label": "What motivates them",
+      "text": "Scoring goals. Being successful. Having fun with friends. Competing. Keep score. They care about it, and it creates genuine intensity without you manufacturing it."
+     },
+     {
+      "label": "Attention and activity",
+      "text": "Their attention span is short but improving. Long lines and waiting kill engagement. Every player should be active for virtually the entire session. If kids are standing still, change the game."
+     },
+     {
+      "label": "Positions and the game",
+      "text": "There are no fixed positions at U8. Every player plays everywhere over the course of the season. In the game, rotate the goalkeeper regularly so everyone gets a turn in goal."
+     }
+    ],
+    "great_session": [
+     {
+      "title": "Players have the ball constantly",
+      "text": "We encourage players to have the ball at their feet as frequently as possible. One player, one ball is the target during practice activities. No sharing, no waiting."
+     },
+     {
+      "title": "Lots of goals scored",
+      "text": "US Soccer is explicit: set up games where players can be successful and score lots of goals. Frequent scoring means high engagement and happy players."
+     },
+     {
+      "title": "Noise and energy",
+      "text": "Laughing, celebrating, competing. If it is quiet, something is wrong. This age group should be loud and joyful."
+     },
+     {
+      "title": "Coach mostly watching",
+      "text": "Your best coaching is a single question after something happens. Resist the urge to over-coach. The game is the teacher."
+     },
+     {
+      "title": "Players making decisions",
+      "text": "Even simple ones: which goal to attack, when to dribble, when to pass. Decision-making in the game starts here."
+     },
+     {
+      "title": "Sessions end too soon",
+      "text": "If players leave wanting more, you did your job. That desire to return is what builds a long-term love of the game."
+     }
+    ],
+    "prepared": "The best sessions start before the first player arrives. Coaches who show up knowing their activity and their question spend the whole session watching their players and enjoying it. The setup is the same every week: mark a grid with disc cones, lay a ball out for every player, set up cone goals at each end of the closing game space. By the time players arrive, the only thing left to do is put a ball at their feet.",
+    "parents": {
+     "intro": "Before the session starts, take 30 seconds to walk over and say something like:",
+     "script": "Today we are working on keeping the ball close and looking up while dribbling. The most helpful thing you can do is cheer everything: the attempt, the stumble, the scramble. That's the job.",
+     "outro": "Most parents want to know what is happening and how to help. Give them a role and they will take it. If you see a parent who is genuinely enthusiastic and engaged, that conversation is worth having."
+    },
+    "shape": {
+     "title": "The session",
+     "note": "About 55 to 60 minutes. Arrive 15 minutes early.",
+     "opening": {
+      "label": "Opening game",
+      "minutes": "10 to 12 min",
+      "title": "Free small-sided game",
+      "setup": "Same setup every week, so players know this game before they arrive. Mini goals or cone goals at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline. Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper throughout the season so every player gets time in the position.",
+      "job": "Watch. Look for moments of good scanning, a player who tries to beat someone, a clever pass. Make a mental note of two or three things. One of them will tell you which practice activity to run today. Do not stop the game. Do not instruct. Save your voice for the question.",
+      "question": "Who scored a goal today? How did you do it: did you dribble past someone, or did you find a teammate?",
+      "kit": "1 ball per team · Mini goals or cone goals at each end · Disc cones for boundaries · Pinnies in 2 colors"
+     },
+     "practice": {
+      "label": "Practice",
+      "minutes": "25 to 30 min",
+      "note": "Pick one activity based on what you saw in the opening game and run it for 20 to 25 minutes. Rotate through the toolkit across the season."
+     },
+     "closing": {
+      "label": "Closing game",
+      "minutes": "10 to 12 min",
+      "title": "Back to the game",
+      "setup": "Same format as the opening. The space can be slightly larger to give players more room. Let it run without stopping and step all the way back. Alternative: one large goal at one end with two cone goals at the halfway line. One team defends the large goal, the other scores through the halfway cones. It gives players a taste of a more directional game.",
+      "question": "What is one thing you did today that you want to try again next week?",
+      "kit": "1 ball per team · Mini goals, cone goals, or 1 large goal plus cone goals · Disc cones for boundaries · Pinnies in 2 colors"
+     }
+    },
+    "cues": [
+     {
+      "when": "Player looks up while dribbling",
+      "say": "\"Yes, that is scanning. You are already looking for what is next. That is a big deal at any age.\""
+     },
+     {
+      "when": "Player tries to dribble past and fails",
+      "say": "\"I love that you tried it. What would you do differently next time?\""
+     },
+     {
+      "when": "Player passes and teammate scores",
+      "say": "Celebrate it loudly. Do not over-explain why it worked. Let the result speak for itself."
+     },
+     {
+      "when": "Player stands still without the ball",
+      "say": "Do not instruct. Ask: \"Where could you move to help your team right now?\""
+     },
+     {
+      "when": "Player gets frustrated after a mistake",
+      "say": "\"Every player in the world loses the ball. The best ones go and win it straight back.\""
+     },
+     {
+      "when": "Session feels chaotic",
+      "say": "That is okay. Controlled chaos at U8 is normal. If everyone has a ball and is moving, you are doing it right."
+     }
+    ]
+   },
+   "framework": {
+    "age": "u8",
+    "blocks": {
+     "B1": {
+      "tagline": "Keep it close. Head up. Take it with you.",
+      "overview": "Every player's relationship with the ball comes first. At U8, this block builds comfort and confidence: close touches, moving with the ball, taking on an opponent, and shooting. Heads come up as comfort grows, not before.",
+      "problem": "Players build the comfort and confidence to move with the ball, take on opponents and shoot, with the ball staying close.",
+      "focus": [
+       "Close control while moving",
+       "Taking on an opponent 1v1",
+       "Shooting from short range",
+       "Looking up as ball comfort grows"
+      ]
+     },
+     "B2": {
+      "tagline": "A teammate is an option.",
+      "overview": "The first look at team play. Players start to see that a teammate in open space is an option, and that a pass can solve a problem a dribble cannot. At U8 this is low structured: spread out, be available, and pass to a free teammate when it helps.",
+      "problem": "Players start to use teammates as options: moving into open space to be available, and passing to a free teammate.",
+      "focus": [
+       "Finding open space away from opponents and teammates",
+       "Showing the player with the ball an option to pass to",
+       "Passing to a free teammate"
+      ]
+     }
+    }
+   },
+   "skills": [
+    {
+     "id": "u8-b1-controlling-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Controlling",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Settle the ball close to the body with small touches",
+      "Receive short passes from 5 to 10 yards",
+      "Keep the ball close after receiving so the next touch is easy"
+     ]
+    },
+    {
+     "id": "u8-b1-protecting-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Protecting",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Put the body between the ball and the opponent",
+      "Keep the ball on the far foot from the opponent",
+      "Keep the ball safe until a good option opens"
+     ]
+    },
+    {
+     "id": "u8-b1-driving-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Driving",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Push the ball a few steps ahead and run with it",
+      "Keep the ball within a few steps of the body",
+      "Drive into open space"
+     ]
+    },
+    {
+     "id": "u8-b1-dribbling-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Dribbling",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Take the ball past an opponent with a change of direction or speed",
+      "Try a move when an opponent is close",
+      "Use both feet"
+     ]
+    },
+    {
+     "id": "u8-b1-passing-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Passing",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Play short passes to a teammate's feet or into space",
+      "Pass with the inside of the foot",
+      "Pass and keep moving"
+     ]
+    },
+    {
+     "id": "u8-b1-shooting-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Shooting",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Strike the ball on goal from short range",
+      "Shoot when in range instead of passing up the chance",
+      "Follow the ball after the shot"
+     ]
+    },
+    {
+     "id": "u8-b1-scanning-intro",
+     "age": "u8",
+     "block": "B1",
+     "area": "Scanning",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Look up for the ball and the goal while moving",
+      "Build the habit once ball comfort is there",
+      "Look first, then decide"
+     ]
+    },
+    {
+     "id": "u8-b2-supporting-intro",
+     "age": "u8",
+     "block": "B2",
+     "area": "Supporting",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Spread out instead of bunching around the ball",
+      "Find open space with no opponent and no teammate in it",
+      "Look at the player with the ball so they can find you"
+     ]
+    },
+    {
+     "id": "u8-b2-passing-to-a-free-teammate-intro",
+     "age": "u8",
+     "block": "B2",
+     "area": "Passing to a Free Teammate",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Look up and find a teammate in open space",
+      "Pass to the teammate's feet or into space with the right pace",
+      "Move to a new spot after passing"
+     ]
+    },
+    {
+     "id": "u8-b2-decision-making-intro",
+     "age": "u8",
+     "block": "B2",
+     "area": "Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Choose between dribbling and passing in the game",
+      "Pass when a teammate is free and the dribble is blocked",
+      "Celebrate a pass that leads to a goal"
+     ]
+    }
+   ],
+   "club": {
+    "format": "5v5",
+    "pathway": [
+     "Some players will show a real passion and natural ability this season",
+     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
+     "Talk to your club director about what that pathway looks like"
+    ],
+    "contact": "Got a question about an activity? Not sure what to run with a particular group? Want to talk through what you are seeing at training? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
+   },
+   "ladder": [
+    "B1",
+    "B2"
+   ]
+  },
+  {
    "id": "u10-rec",
    "age": "u10",
    "track": "rec",
@@ -2846,477 +3317,6 @@
     "B2",
     "B3",
     "B4"
-   ]
-  },
-  {
-   "id": "u8-rec",
-   "age": "u8",
-   "track": "rec",
-   "label": "U8",
-   "plan": {
-    "id": "u8-rec",
-    "age": "u8",
-    "track": "rec",
-    "sessions_per_week": 1,
-    "weeks": [
-     {
-      "week": 1,
-      "focus": "Driving the ball",
-      "sessions": [
-       {
-        "a": {
-         "activity": "red-light-green-light",
-         "note": "Players keeping the ball close at yellow; heads up at green"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 2,
-      "focus": "Dribbling under pressure",
-      "sessions": [
-       {
-        "a": {
-         "activity": "101-dalmatians",
-         "note": "Players using small touches when you get close; players counting out loud"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 3,
-      "focus": "Scanning: looking up",
-      "sessions": [
-       {
-        "a": {
-         "activity": "gates-dribbling",
-         "note": "Players who find more gates because their heads are up"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 4,
-      "focus": "Scanning in pairs",
-      "sessions": [
-       {
-        "a": {
-         "activity": "shadow-dribbling",
-         "note": "Shadows who stay close because they are watching the leader, not their own ball"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 5,
-      "focus": "Direction changes and protecting",
-      "sessions": [
-       {
-        "a": {
-         "activity": "dinosaur-tag",
-         "note": "Players using both feet to turn. The competitive rounds in Duck Tails can also run here"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 6,
-      "focus": "Competing for the ball",
-      "sessions": [
-       {
-        "a": {
-         "activity": "knockout",
-         "note": "Players shielding with their body; players keeping heads up to track threats"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro"
-     },
-     {
-      "week": 7,
-      "focus": "Shooting and attacking",
-      "sessions": [
-       {
-        "a": {
-         "activity": "shooting-gallery",
-         "note": "Players looking up before shooting. Swap in 2v1 to Goal to look for any moment of combination play"
-        }
-       }
-      ],
-      "block": "B1",
-      "level": "intro",
-      "also_blocks": [
-       "B2"
-      ]
-     },
-     {
-      "week": 8,
-      "focus": "Coach's choice",
-      "coach_choice": true,
-      "note": "Use what your group loves most or needs most. Both are correct answers."
-     }
-    ]
-   },
-   "goals": [
-    {
-     "id": "keeps-ball-close",
-     "text": "Keeps a moving ball close while running",
-     "blocks": [
-      "B1"
-     ]
-    },
-    {
-     "id": "changes-direction",
-     "text": "Changes direction without losing control",
-     "blocks": [
-      "B1"
-     ]
-    },
-    {
-     "id": "looks-up",
-     "text": "Looks up sometimes while dribbling, the habit is forming",
-     "blocks": [
-      "B1"
-     ]
-    },
-    {
-     "id": "receives-with-intent",
-     "text": "Receives a short pass and does something intentional with it",
-     "blocks": [
-      "B1",
-      "B2"
-     ]
-    },
-    {
-     "id": "beats-defenders",
-     "text": "Tries to beat defenders rather than just kicking away",
-     "blocks": [
-      "B1"
-     ]
-    },
-    {
-     "id": "notices-teammates",
-     "text": "Notices teammates and occasionally tries to involve them",
-     "blocks": [
-      "B2"
-     ]
-    },
-    {
-     "id": "competes-with-joy",
-     "text": "Competes with genuine joy and wants to come back next season",
-     "blocks": [
-      "B1",
-      "B2"
-     ]
-    }
-   ],
-   "players": {
-    "id": "u8",
-    "age": "u8",
-    "who": [
-     {
-      "label": "How they learn",
-      "text": "Through experience and repetition, not explanation. Show them a game and they figure it out. Keep instructions short, one idea at a time, then let them play."
-     },
-     {
-      "label": "What motivates them",
-      "text": "Scoring goals. Being successful. Having fun with friends. Competing. Keep score. They care about it, and it creates genuine intensity without you manufacturing it."
-     },
-     {
-      "label": "Attention and activity",
-      "text": "Their attention span is short but improving. Long lines and waiting kill engagement. Every player should be active for virtually the entire session. If kids are standing still, change the game."
-     },
-     {
-      "label": "Positions and the game",
-      "text": "There are no fixed positions at U8. Every player plays everywhere over the course of the season. In the game, rotate the goalkeeper regularly so everyone gets a turn in goal."
-     }
-    ],
-    "great_session": [
-     {
-      "title": "Players have the ball constantly",
-      "text": "We encourage players to have the ball at their feet as frequently as possible. One player, one ball is the target during practice activities. No sharing, no waiting."
-     },
-     {
-      "title": "Lots of goals scored",
-      "text": "US Soccer is explicit: set up games where players can be successful and score lots of goals. Frequent scoring means high engagement and happy players."
-     },
-     {
-      "title": "Noise and energy",
-      "text": "Laughing, celebrating, competing. If it is quiet, something is wrong. This age group should be loud and joyful."
-     },
-     {
-      "title": "Coach mostly watching",
-      "text": "Your best coaching is a single question after something happens. Resist the urge to over-coach. The game is the teacher."
-     },
-     {
-      "title": "Players making decisions",
-      "text": "Even simple ones: which goal to attack, when to dribble, when to pass. Decision-making in the game starts here."
-     },
-     {
-      "title": "Sessions end too soon",
-      "text": "If players leave wanting more, you did your job. That desire to return is what builds a long-term love of the game."
-     }
-    ],
-    "prepared": "The best sessions start before the first player arrives. Coaches who show up knowing their activity and their question spend the whole session watching their players and enjoying it. The setup is the same every week: mark a grid with disc cones, lay a ball out for every player, set up cone goals at each end of the closing game space. By the time players arrive, the only thing left to do is put a ball at their feet.",
-    "parents": {
-     "intro": "Before the session starts, take 30 seconds to walk over and say something like:",
-     "script": "Today we are working on keeping the ball close and looking up while dribbling. The most helpful thing you can do is cheer everything: the attempt, the stumble, the scramble. That's the job.",
-     "outro": "Most parents want to know what is happening and how to help. Give them a role and they will take it. If you see a parent who is genuinely enthusiastic and engaged, that conversation is worth having."
-    },
-    "shape": {
-     "title": "The session",
-     "note": "About 55 to 60 minutes. Arrive 15 minutes early.",
-     "opening": {
-      "label": "Opening game",
-      "minutes": "10 to 12 min",
-      "title": "Free small-sided game",
-      "setup": "Same setup every week, so players know this game before they arrive. Mini goals or cone goals at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline. Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper throughout the season so every player gets time in the position.",
-      "job": "Watch. Look for moments of good scanning, a player who tries to beat someone, a clever pass. Make a mental note of two or three things. One of them will tell you which practice activity to run today. Do not stop the game. Do not instruct. Save your voice for the question.",
-      "question": "Who scored a goal today? How did you do it: did you dribble past someone, or did you find a teammate?",
-      "kit": "1 ball per team · Mini goals or cone goals at each end · Disc cones for boundaries · Pinnies in 2 colors"
-     },
-     "practice": {
-      "label": "Practice",
-      "minutes": "25 to 30 min",
-      "note": "Pick one activity based on what you saw in the opening game and run it for 20 to 25 minutes. Rotate through the toolkit across the season."
-     },
-     "closing": {
-      "label": "Closing game",
-      "minutes": "10 to 12 min",
-      "title": "Back to the game",
-      "setup": "Same format as the opening. The space can be slightly larger to give players more room. Let it run without stopping and step all the way back. Alternative: one large goal at one end with two cone goals at the halfway line. One team defends the large goal, the other scores through the halfway cones. It gives players a taste of a more directional game.",
-      "question": "What is one thing you did today that you want to try again next week?",
-      "kit": "1 ball per team · Mini goals, cone goals, or 1 large goal plus cone goals · Disc cones for boundaries · Pinnies in 2 colors"
-     }
-    },
-    "cues": [
-     {
-      "when": "Player looks up while dribbling",
-      "say": "\"Yes, that is scanning. You are already looking for what is next. That is a big deal at any age.\""
-     },
-     {
-      "when": "Player tries to dribble past and fails",
-      "say": "\"I love that you tried it. What would you do differently next time?\""
-     },
-     {
-      "when": "Player passes and teammate scores",
-      "say": "Celebrate it loudly. Do not over-explain why it worked. Let the result speak for itself."
-     },
-     {
-      "when": "Player stands still without the ball",
-      "say": "Do not instruct. Ask: \"Where could you move to help your team right now?\""
-     },
-     {
-      "when": "Player gets frustrated after a mistake",
-      "say": "\"Every player in the world loses the ball. The best ones go and win it straight back.\""
-     },
-     {
-      "when": "Session feels chaotic",
-      "say": "That is okay. Controlled chaos at U8 is normal. If everyone has a ball and is moving, you are doing it right."
-     }
-    ]
-   },
-   "framework": {
-    "age": "u8",
-    "blocks": {
-     "B1": {
-      "tagline": "Keep it close. Head up. Take it with you.",
-      "overview": "Every player's relationship with the ball comes first. At U8, this block builds comfort and confidence: close touches, moving with the ball, taking on an opponent, and shooting. Heads come up as comfort grows, not before.",
-      "problem": "Players build the comfort and confidence to move with the ball, take on opponents and shoot, with the ball staying close.",
-      "focus": [
-       "Close control while moving",
-       "Taking on an opponent 1v1",
-       "Shooting from short range",
-       "Looking up as ball comfort grows"
-      ]
-     },
-     "B2": {
-      "tagline": "A teammate is an option.",
-      "overview": "The first look at team play. Players start to see that a teammate in open space is an option, and that a pass can solve a problem a dribble cannot. At U8 this is low structured: spread out, be available, and pass to a free teammate when it helps.",
-      "problem": "Players start to use teammates as options: moving into open space to be available, and passing to a free teammate.",
-      "focus": [
-       "Finding open space away from opponents and teammates",
-       "Showing the player with the ball an option to pass to",
-       "Passing to a free teammate"
-      ]
-     }
-    }
-   },
-   "skills": [
-    {
-     "id": "u8-b1-controlling-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Controlling",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Settle the ball close to the body with small touches",
-      "Receive short passes from 5 to 10 yards",
-      "Keep the ball close after receiving so the next touch is easy"
-     ]
-    },
-    {
-     "id": "u8-b1-protecting-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Protecting",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Put the body between the ball and the opponent",
-      "Keep the ball on the far foot from the opponent",
-      "Keep the ball safe until a good option opens"
-     ]
-    },
-    {
-     "id": "u8-b1-driving-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Driving",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Push the ball a few steps ahead and run with it",
-      "Keep the ball within a few steps of the body",
-      "Drive into open space"
-     ]
-    },
-    {
-     "id": "u8-b1-dribbling-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Dribbling",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Take the ball past an opponent with a change of direction or speed",
-      "Try a move when an opponent is close",
-      "Use both feet"
-     ]
-    },
-    {
-     "id": "u8-b1-passing-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Passing",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Play short passes to a teammate's feet or into space",
-      "Pass with the inside of the foot",
-      "Pass and keep moving"
-     ]
-    },
-    {
-     "id": "u8-b1-shooting-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Shooting",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Strike the ball on goal from short range",
-      "Shoot when in range instead of passing up the chance",
-      "Follow the ball after the shot"
-     ]
-    },
-    {
-     "id": "u8-b1-scanning-intro",
-     "age": "u8",
-     "block": "B1",
-     "area": "Scanning",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Look up for the ball and the goal while moving",
-      "Build the habit once ball comfort is there",
-      "Look first, then decide"
-     ]
-    },
-    {
-     "id": "u8-b2-supporting-intro",
-     "age": "u8",
-     "block": "B2",
-     "area": "Supporting",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Spread out instead of bunching around the ball",
-      "Find open space with no opponent and no teammate in it",
-      "Look at the player with the ball so they can find you"
-     ]
-    },
-    {
-     "id": "u8-b2-passing-to-a-free-teammate-intro",
-     "age": "u8",
-     "block": "B2",
-     "area": "Passing to a Free Teammate",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Look up and find a teammate in open space",
-      "Pass to the teammate's feet or into space with the right pace",
-      "Move to a new spot after passing"
-     ]
-    },
-    {
-     "id": "u8-b2-decision-making-intro",
-     "age": "u8",
-     "block": "B2",
-     "area": "Decision-Making",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Choose between dribbling and passing in the game",
-      "Pass when a teammate is free and the dribble is blocked",
-      "Celebrate a pass that leads to a goal"
-     ]
-    }
-   ],
-   "club": {
-    "format": "5v5",
-    "pathway": [
-     "Some players will show a real passion and natural ability this season",
-     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
-     "Talk to your club director about what that pathway looks like"
-    ],
-    "contact": "Got a question about an activity? Not sure what to run with a particular group? Want to talk through what you are seeing at training? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
-   },
-   "ladder": [
-    "B1",
-    "B2"
    ]
   }
  ],
