@@ -10,3 +10,5 @@ supporting: {label: Supporting, kind: perc}
 body-shape: {label: Body Shape, kind: perc}
 covering: {label: Covering, kind: perc}
 marking: {label: Marking, kind: perc}
+finishing: {label: Finishing, kind: tech}
+timing-runs: {label: Timing Runs, kind: perc}

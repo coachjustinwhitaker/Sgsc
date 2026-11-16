@@ -7,6 +7,7 @@ skills:
 - Decision-Making
 ages:
 - u12
+- u14
 tracks:
 - rec
 levels:
@@ -28,3 +29,14 @@ pairs_with:
 - team-handball
 - five-goal-game
 equipment: 1 ball · 2 small goals · Disc cones for outer grid and hotbox square · Pinnies
+for_age:
+  u14:
+    setup: Rectangular grid with a small goal at each end and a no-go square (the hotbox) in the center.
+      4v4 or 5v5. Players cannot enter the hotbox. Only the ball can pass through it. When the attackers'
+      path is blocked by the hotbox and a defender, the solution is to switch the ball to the other side.
+    look_for: 'Generates all five blocks in a single game: ball skills under pressure, switching with
+      teammates, cutting off lanes around the box, instant reaction on turnovers, and a decisive finish
+      when the opening appears. Best used in week 7 to observe without isolating any one block. Do not
+      over-coach. Watch.'
+    question: When your path was blocked, what did you do? And when the ball turned over, what was your
+      first movement?

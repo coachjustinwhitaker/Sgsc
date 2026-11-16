@@ -7,6 +7,7 @@ skills:
 - Pressing
 ages:
 - u12
+- u14
 tracks:
 - rec
 levels:
@@ -28,3 +29,13 @@ pairs_with:
 - half-court-soccer
 - 2v2v2-keep-away
 equipment: 1 ball · 2 small goals · Disc cones
+for_age:
+  u14:
+    setup: 'Rectangular grid with small goals at each end. 4v4 or 5v5. Every minute, move each touchline
+      in by 3 steps. Tell them before you start: "today we are watching the defending team." Play 2 to
+      3 rounds.'
+    look_for: 'As the field shrinks, compact shape matters more and more. Watch for the defending team
+      getting tighter: closer together, higher up, forcing play to one side. Are they reacting to the
+      ball or anticipating where it is going? Anticipation is worth naming.'
+    question: As the field got smaller, did defending get easier or harder? What does that tell you about
+      defending in tight spaces?

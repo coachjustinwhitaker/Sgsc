@@ -9,6 +9,7 @@ skills:
 ages:
 - u10
 - u12
+- u14
 tracks:
 - rec
 levels:
@@ -40,3 +41,11 @@ for_age:
       an anchor.
     question: Before you scored, was there a moment where you switched the ball to the other side? What
       did that open up?
+  u14:
+    setup: 'Rectangular grid with goals at each end. 4v4, no goalkeeper. Score points equal to the number
+      of passes completed before scoring: 8 passes before a goal is 8 points. A missed shot scores nothing.
+      Play short rounds of 3 to 4 minutes.'
+    look_for: Watch for players who switch the ball to the far side before going to goal, drawing defenders
+      across before finding the opening. Name it when it happens. Best as a focus activity, not an anchor.
+    question: Before you scored, was there a moment you switched the ball to the other side? What did
+      that open up?
