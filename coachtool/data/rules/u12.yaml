@@ -24,7 +24,8 @@ rules:
 - label: Heading
   tracks:
   - rec
-  text: Not allowed in practice or games. Recreational players start heading at U14.
+  text: Not allowed in practice or games, for the whole age group. Rec groups mix two birth years, so
+    one rule has to cover every player. Recreational players start heading at U14.
   source: 'Methodology default: rec players start heading at U14, comp players at U12'
 - label: Heading
   text: Heading starts at U12 in competitive play. US Soccer limits it in practice to 30 minutes a week
