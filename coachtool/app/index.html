@@ -35,7 +35,7 @@ nav.tabs{gap:0!important;margin:0 0 12px!important;border-bottom:1px solid var(-
 .card>p:first-child{margin-top:0}.card>p:last-child{margin-bottom:0}.card.game{background:#f0f3f9;border-style:dashed}
 .swap summary{font-size:14px;color:var(--mute);font-weight:500}.bar{height:4px;border-radius:2px;background:var(--line);margin:4px 0 8px}.bar i{display:block;height:100%;border-radius:2px;background:var(--gold)}
 input[type=date]{-webkit-appearance:none;appearance:none;display:block;max-width:100%;min-width:0;text-align:left;box-sizing:border-box;width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
-.reset a{color:var(--mute)}select:invalid{color:var(--mute)}
+.reset a{color:var(--mute)}.note a{color:var(--navy)}select:invalid{color:var(--mute)}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
@@ -127,12 +127,14 @@ function tourSteps(){
   if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', chunk(T.rules, 4).map(g => `<div class="card">${g.map(r => `<p class="rule"><b>${r.label}</b>${r.origin === 'club' ? ' <span class="club">Local</span>' : ''}<br>${r.text}${r.source ? `<br><span class="src">${r.source}</span>` : ''}</p>`).join('')}</div>`));
   add('Player goals', `By the end of the season, a ${T.label} should be showing these.`, chunk(T.goals, 4).map(g => `<div class="card">${g.map(x => `<div class="goal"><span>${x.text}<br>${x.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`));
   add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. Each week has one focus.`, chunk(plan.weeks, 4).map(g => g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
+  const seen = [], topics = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)).map(s => `<li style="margin:8px 0"><b>${s.title}</b><br><span class="note">${s.sub}</span></li>`).join(''), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
+  steps.unshift({title: 'Before you start', sub: `A short tour of your ${T.label} group. Here is what is coming.`, part: '', html: `<div class="card"><ul style="padding-left:20px;margin:6px 0">${topics}</ul></div><p>About ${mins} minutes. You can skip any of it, and all of it stays in the Guide for later.</p>`});
   return steps;
 }
 function viewTour(n){
   const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
   app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><p class="note" style="margin:0">Step ${i} of ${last} · ${T.label} ${T.track === 'rec' ? 'rec' : T.track} · <a href="#" data-nav="setup">Change</a></p><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
-    <button id="nx">${i === last ? 'Start with this week' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
+    <button id="nx">${i === last ? 'Start with this week' : i === 1 ? 'Start the tour' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
 }
