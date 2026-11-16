@@ -34,7 +34,7 @@ nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:cen
 nav.tabs{gap:0!important;margin:0 0 12px!important;border-bottom:1px solid var(--line)}nav.tabs a{flex:1;background:none!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;padding:10px 4px!important;font-size:15px!important;color:var(--mute)!important}nav.tabs a.on{color:var(--navy)!important;border-bottom-color:var(--gold)!important}
 .card>p:first-child{margin-top:0}.card>p:last-child{margin-bottom:0}.card.game{background:#f0f3f9;border-style:dashed}
 .swap summary{font-size:14px;color:var(--mute);font-weight:500}.bar{height:4px;border-radius:2px;background:var(--line);margin:4px 0 8px}.bar i{display:block;height:100%;border-radius:2px;background:var(--gold)}
-input[type=date]{width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;max-width:100%;min-width:0;text-align:left;box-sizing:border-box;width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
 .reset a{color:var(--mute)}select:invalid{color:var(--mute)}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
 </style></head><body>
@@ -77,7 +77,7 @@ document.addEventListener('click', e => { const a = e.target.closest('[data-nav]
 function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewSetup(){
   const first = !state.players;
-  app.innerHTML = (first ? '' : tabs('setup')) + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
+  app.innerHTML = (first ? '' : '<a class="back" href="#" data-nav="more">&larr; More</a>') + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
   <div class="card"><label>Age group</label><select id="ag" required>${first ? '<option value="" disabled selected>Choose your age group</option>' : ''}${DATA.teams.map(t => `<option value="${t.id}" ${!first && T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
   <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
@@ -134,7 +134,7 @@ const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
 function viewMore(){ app.innerHTML = tabs('more') + `<h1>More</h1><a class="card row" href="#" data-nav="goals"><b>Player goals</b><div class="note">What your players should be showing by the end of the season.</div></a><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`; }
 function viewGoals(){
-  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>` + goalsHtml();
+  app.innerHTML = '<a class="back" href="#" data-nav="more">&larr; More</a>' + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>` + goalsHtml();
 }
 function viewPlan(){
   const n = plan.sessions_per_week, cw = curWeek();
