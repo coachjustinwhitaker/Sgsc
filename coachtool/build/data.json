@@ -611,7 +611,7 @@
    "order": 17,
    "name": "Red Light Green Light",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Driving",
     "Controlling"
@@ -653,7 +653,7 @@
    "order": 18,
    "name": "101 Dalmatians",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -695,7 +695,7 @@
    "order": 19,
    "name": "Wreck-It Ralph",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Scanning",
@@ -738,7 +738,7 @@
    "order": 20,
    "name": "Duck Tails",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Protecting"
@@ -772,7 +772,7 @@
    "order": 21,
    "name": "Knockout",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Protecting",
     "Dribbling"
@@ -806,7 +806,7 @@
    "order": 22,
    "name": "Dinosaur Tag",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -848,7 +848,7 @@
    "order": 23,
    "name": "Gates Dribbling",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Driving",
     "Scanning"
@@ -882,7 +882,7 @@
    "order": 24,
    "name": "Shadow Dribbling",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Scanning",
     "Dribbling"
@@ -916,7 +916,7 @@
    "order": 25,
    "name": "Color Tag Dribble",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Scanning",
     "Driving"
@@ -950,7 +950,7 @@
    "order": 26,
    "name": "Shooting Gallery",
    "block": "B1",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Shooting",
     "Decision-Making"
@@ -1381,7 +1381,7 @@
    "order": 38,
    "name": "Sharks and Minnows",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -1415,7 +1415,7 @@
    "order": 39,
    "name": "Octopus",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Driving"
@@ -1448,7 +1448,7 @@
    "order": 40,
    "name": "Kangaroo Jacks",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1482,7 +1482,7 @@
    "order": 41,
    "name": "Snake",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Communication",
     "Scanning"
@@ -1515,7 +1515,7 @@
    "order": 42,
    "name": "Bunny Trail",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1548,7 +1548,7 @@
    "order": 43,
    "name": "Mosquitoes",
    "block": "D",
-   "type": "warm-up",
+   "type": "ball-mastery",
    "skills": [
     "Dribbling",
     "Shooting",
@@ -5405,6 +5405,10 @@
   }
  },
  "types": [
+  {
+   "id": "ball-mastery",
+   "label": "Ball mastery"
+  },
   {
    "id": "warm-up",
    "label": "Warm-up"
