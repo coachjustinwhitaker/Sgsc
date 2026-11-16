@@ -29,6 +29,8 @@ nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:cen
 .skip{display:block;text-align:center;color:var(--mute);font-size:14px;margin-top:14px}.banner{background:#fff8e6;border:1px solid #f0dca0;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0}
 .rule .src{font-size:12px;color:var(--mute)}.rule .club{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase}
 .row{display:block;color:inherit;text-decoration:none}.row b{color:var(--navy)}
+@media print{header,nav.tabs,.strip a,.noprint,button,summary{display:none!important}body{background:#fff}main{max-width:none;padding:0}.card{break-inside:avoid;border-color:#bbb}details>*{display:block}}
+.share{display:flex;gap:8px;margin:14px 0}.share button{margin:0;flex:1}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Planner</b><small>{{brand.short_name}} · prototype</small></div></header>
@@ -115,6 +117,23 @@ function viewPlan(){
 }
 function gameCard(g){ return `<div class="card"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
   <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
+function weekText(n){
+  const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, L = [`${T.label} · Week ${n} of ${plan.weeks.length}`, w.focus, ''];
+  if(w.coach_choice){ L.push(w.note); return L.join('\n'); }
+  const one = plan.sessions_per_week === 1;
+  if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
+  w.sessions.forEach((ses, si) => { L.push(one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A'));
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); L.push(`- ${actName(ref)}: ${a.setup}`, `  Look for: ${a.look_for}`, `  Ask: "${a.question}"`, `  Equipment: ${a.equipment}`); }); L.push(''); });
+  if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
+  return L.join('\n').trim();
+}
+async function shareWeek(n, btn){
+  const text = weekText(n), title = `${T.label} week ${n}`;
+  try { if(navigator.share){ await navigator.share({title, text}); return; } } catch(e){ if(e && e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied. Paste it anywhere.'; }
+  catch(e){ const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); btn.textContent = 'Copied. Paste it anywhere.'; } catch(x){ btn.textContent = 'Could not copy'; } t.remove(); }
+}
+function printWeek(){ const ds = [...document.querySelectorAll('details')], was = ds.map(d => d.open); ds.forEach(d => d.open = true); window.print(); ds.forEach((d, i) => d.open = was[i]); }
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
   if(!state.start){ state.week = n; save(); }
@@ -136,7 +155,8 @@ function viewWeek(n){
   }).join('') + '</div>').join('');
   const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
   const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note"><a href="#" data-nav="why/${w.block}">Why this block: ${DATA.blocks[w.block].name}</a> · <a href="#" data-nav="guide">Coach guide</a></p></div>`;
-  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '') + bits;
+  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>`;
+  $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }
 function viewWhy(b){
