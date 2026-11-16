@@ -131,9 +131,10 @@ def check(root=ROOT):
                 if r['age'] in ladder[tr] and r['block'] not in ladder[tr][r['age']]: errs.append(f'{r["id"]}: block {r["block"]} not part of {tr} {r["age"]}')
             areas.setdefault((r['block'], r['area']), set()).add(r['level'])
             for b in r['bullets']:
-                key = (r['age'], re.sub(r'\W+', ' ', b.lower()).strip())
-                if key in seen_b: errs.append(f'{r["id"]}: bullet repeats {seen_b[key]}: "{b[:50]}"')
-                seen_b[key] = r['id']
+                for tr in r['tracks']:
+                    key = (r['age'], tr, re.sub(r'\W+', ' ', b.lower()).strip())
+                    if key in seen_b: errs.append(f'{r["id"]}: bullet repeats {seen_b[key]}: "{b[:50]}"')
+                    seen_b[key] = r['id']
         for (b, a), lv in areas.items():
             if 'intro' not in lv: errs.append(f'{f.name}: {b} {a} has no intro level')
     for f in sorted((root / 'data' / 'goals').glob('*.yaml')):

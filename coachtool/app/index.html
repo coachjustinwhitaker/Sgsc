@@ -357,10 +357,10 @@ function viewWeek(n){
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }
 function viewWhy(b){
-  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && r.level === 'intro'), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
+  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && (T.track === 'comp' || r.level === 'intro')), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
   app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
   <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p><div class="lbl">Core focus</div><ul>${f.focus.map(x => `<li>${x}</li>`).join('')}</ul></div>
-  <h2>What to look for</h2>${areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
+  <h2>What to look for</h2>${T.track === 'comp' ? [...new Set(areas.map(r => r.area))].map(n => `<div class="card"><b>${n}</b>${['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul>`).join('')).join('')}</div>`).join('') : areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
   <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
 }
 function foot(h){
