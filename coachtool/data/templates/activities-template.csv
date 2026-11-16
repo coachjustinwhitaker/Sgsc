@@ -1,4 +1,4 @@
-name,block,type,objective,skills,ages,tracks,levels,players_min,players_max,space,minutes,setup,rules,scoring,progression,coach,coach_note,equipment,pairs_with,diagram,diagram_caption,source
+name,block,type,objective,skills,ages,tracks,levels,players_min,players_max,space,minutes,setup,rules,scoring,progression,coach,coach_note,equipment,pairs_with,diagram,diagram_caption,video,source
 Example Activity,B2,small-sided,One line: what this activity is for.,Passing; Supporting,u10,rec,intro,6,12,quarter,15,"One line per bullet.
 How the grid is laid out.
 Who starts where and how it restarts.","Optional. One line per rule.

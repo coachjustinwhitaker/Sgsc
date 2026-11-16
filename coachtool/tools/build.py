@@ -117,16 +117,19 @@ def build_app(plan_id, brand_id):
     import io, mimetypes
     from PIL import Image
     for a in acts.values():
-        d = a.get('diagram')
-        if not d: continue
-        f = ROOT / 'data' / 'diagrams' / d
-        if f.suffix.lower() == '.svg': raw, mime = f.read_bytes(), 'image/svg+xml'
-        else:
-            im = Image.open(f); im.thumbnail((720, 720)); buf = io.BytesIO()
-            if im.mode in ('RGBA', 'LA', 'P'): im.save(buf, 'PNG', optimize=True); mime = 'image/png'
-            else: im.convert('RGB').save(buf, 'JPEG', quality=82, optimize=True); mime = 'image/jpeg'
-            raw = buf.getvalue()
-        a['diagram_src'] = f'data:{mime};base64,' + base64.b64encode(raw).decode()
+        ds = a.get('diagram'); ds = [ds] if isinstance(ds, str) else (ds or [])
+        cs = a.get('diagram_caption'); cs = [cs] if isinstance(cs, str) else (cs or [])
+        figs = []
+        for n, d in enumerate(ds):
+            f = ROOT / 'data' / 'diagrams' / d
+            if f.suffix.lower() == '.svg': raw, mime = f.read_bytes(), 'image/svg+xml'
+            else:
+                im = Image.open(f); im.thumbnail((720, 720)); buf = io.BytesIO()
+                if im.mode in ('RGBA', 'LA', 'P'): im.save(buf, 'PNG', optimize=True); mime = 'image/png'
+                else: im.convert('RGB').save(buf, 'JPEG', quality=82, optimize=True); mime = 'image/jpeg'
+                raw = buf.getvalue()
+            figs.append({'src': f'data:{mime};base64,' + base64.b64encode(raw).decode(), 'caption': cs[n] if n < len(cs) else ''})
+        if figs: a['figs'] = figs
     blocks = load(ROOT / 'data' / 'blocks.yaml'); brand = load(ROOT / 'theme' / brand_id / 'club.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     teams = []
     for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: int(re.sub(r'\D', '', load(f)['age']))):
