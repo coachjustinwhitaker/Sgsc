@@ -1,2 +1,2 @@
-name,block,skills,ages,tracks,levels,players_min,players_max,space,minutes,setup,look_for,question,equipment,pairs_with,diagram
+name,block,skills,ages,tracks,levels,players_min,players_max,space,minutes,setup,look_for,question,equipment,pairs_with,diagram,source
 Example Activity,B2,Passing; Supporting,u10,rec,intro,6,12,quarter,15,"How the grid is laid out, who starts where, how it restarts, and the progression.","What good looks like, and the common mistake.","One open question for the players.","1 ball per group; 4 cones; pinnies",gates-passing,example-activity.png

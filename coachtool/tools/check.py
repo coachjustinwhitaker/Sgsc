@@ -9,6 +9,7 @@ def check(root=ROOT):
     acts = {}
     for f in sorted((root / 'data' / 'activities').glob('*.yaml')):
         a = load(f)
+        if 'source' in a and not (isinstance(a['source'], str) and a['source'].strip()): errs.append(f'{f.name}: source must be a non-empty string')
         for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'look_for', 'question', 'equipment']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')
@@ -64,6 +65,13 @@ def check(root=ROOT):
                     errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {w["block"]} activity')
 
     # skills, goals and age configs
+    for f in sorted((root / 'data' / 'rules').glob('*.yaml')) if (root / 'data' / 'rules').exists() else []:
+        rd = load(f); seen = set()
+        for r in rd.get('rules', []):
+            if not r.get('label') or not r.get('text'): errs.append(f'{f.name}: every rule needs a label and text')
+            elif (r['label'].lower(), tuple(r.get('tracks', []))) in seen: errs.append(f'{f.name}: duplicate rule label {r["label"]}')
+            else: seen.add((r['label'].lower(), tuple(r.get('tracks', []))))
+        if rd.get('age') != f.stem: errs.append(f'{f.name}: age does not match file name')
     vocab = load(root / 'data' / 'vocab' / 'skills.yaml')
     seen_b = {}
     for f in sorted((root / 'data' / 'skills').glob('*.yaml')):

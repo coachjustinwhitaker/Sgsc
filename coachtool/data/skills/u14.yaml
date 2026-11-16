@@ -1,0 +1,253 @@
+skills:
+- id: u14-b1-perception-and-preparation-intro
+  age: u14
+  block: B1
+  area: Perception and Preparation
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Scan before receiving to identify pressure and options
+  - Begin orienting the body to see the field before the ball arrives
+  - Recognize the obvious difference between time and immediate pressure
+- id: u14-b1-controlling-intro
+  age: u14
+  block: B1
+  area: Controlling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Treat first touch as a decision, not just control
+  - Receive across the body to begin opening up the field
+  - Use small, controlled touches to set up the next action
+- id: u14-b1-protecting-intro
+  age: u14
+  block: B1
+  area: Protecting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Shield and protect the ball when no forward option exists
+  - Use the body between the ball and the defender
+  - Hold possession until a forward option opens
+- id: u14-b1-driving-intro
+  age: u14
+  block: B1
+  area: Driving
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Attack the ball under pressure, move toward it rather than waiting
+  - Push into open space when it is available
+  - Begin to play with the head up while moving with the ball
+- id: u14-b1-dribbling-intro
+  age: u14
+  block: B1
+  area: Dribbling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Use a first action, touch or feint, to create space
+  - Begin recognizing obvious 1v1 moments
+  - Show basic coordination when changing direction with the ball
+- id: u14-b1-passing-intro
+  age: u14
+  block: B1
+  area: Passing
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Play forward when possible, support when not
+  - Use one touch when the pass dictates it
+  - Begin passing accurately with both feet under light pressure
+- id: u14-b1-decision-making-intro
+  age: u14
+  block: B1
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Base the decision on body shape and scan before contact
+  - Recognize forced one-touch situations versus time to take a touch
+  - Decisions are deliberate and often reactive at this level
+- id: u14-b2-perception-and-preparation-intro
+  age: u14
+  block: B2
+  area: Perception and Preparation
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Scan beyond the ball to identify nearby teammates
+  - 'Recognize simple support positions: behind, beside and ahead of the ball'
+  - Identify when a teammate is under pressure and needs an outlet
+- id: u14-b2-supporting-intro
+  age: u14
+  block: B2
+  area: Supporting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Offer a clear passing option when a teammate has the ball
+  - Move to avoid standing directly behind a defender
+  - Reposition after passing rather than watching what happens next
+- id: u14-b2-technique-for-combination-play-intro
+  age: u14
+  block: B2
+  area: Technique for Combination Play
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Execute basic wall passes at reduced speed
+  - Use a simple supporting movement after passing
+  - Adjust passing technique to play to feet rather than space in combination situations
+- id: u14-b2-passing-and-movement-intro
+  age: u14
+  block: B2
+  area: Passing and Movement
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Pass and then move to a new supporting position rather than watching the pass
+  - Offer a clear option when a teammate has the ball and understand basic spacing around the ball carrier
+- id: u14-b2-decision-making-intro
+  age: u14
+  block: B2
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Recognize the basic choice between combining with a teammate and carrying forward individually
+  - Begin choosing between pass-and-move and carry based on where the defender is
+  - Make simple combination decisions without waiting to be told
+- id: u14-b3-perception-and-preparation-intro
+  age: u14
+  block: B3
+  area: Perception and Preparation
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - React to losing the ball with immediate urgency
+  - Identify the ball carrier as the first priority
+  - Recognize nearby teammates as defensive support
+- id: u14-b3-covering-intro
+  age: u14
+  block: B3
+  area: Covering
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Recognize the importance of helping a teammate who is pressing
+  - Begin to understand basic cover position behind the ball
+  - Stay connected to the nearest teammate rather than isolated
+- id: u14-b3-shape-and-line-management-intro
+  age: u14
+  block: B3
+  area: Shape and Line Management
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Understand that the team defends as a connected group, not individuals
+  - Begin to recognize when the team is too spread out
+  - Recover into a basic defensive shape after losing the ball
+- id: u14-b3-defensive-decision-making-intro
+  age: u14
+  block: B3
+  area: Defensive Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Understand the basic choice between pressing and delaying
+  - Begin to recover goal-side when beaten
+  - Recognize the importance of helping teammates defend rather than defending alone
+- id: u14-b4-perception-and-awareness-intro
+  age: u14
+  block: B4
+  area: Perception and Awareness
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Recognize the moment possession has changed
+  - Identify the immediate attacking or defensive cue that follows
+  - Begin scanning during chaotic, fast-moving moments
+- id: u14-b4-reaction-and-speed-intro
+  age: u14
+  block: B4
+  area: Reaction and Speed
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - React quickly after losing or winning the ball
+  - Accelerate toward the ball or space without hesitation
+  - Attempt a forward pass after regaining possession when available
+- id: u14-b4-decision-making-intro
+  age: u14
+  block: B4
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Choose between fast attack and holding possession after a regain
+  - Recognize when the press has failed and the team must recover
+  - Support teammates in transition rather than acting alone
+- id: u14-b5-recognizing-the-moment-intro
+  age: u14
+  block: B5
+  area: Recognizing the Moment
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Identify when in shooting or final-pass range
+  - Notice goal location and basic pressure
+  - Recognize simple scoring opportunities
+- id: u14-b5-preparation-and-body-shape-intro
+  age: u14
+  block: B5
+  area: Preparation and Body Shape
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Set the body to face goal when receiving near the box
+  - Use a settling touch to prepare for a shot or pass
+  - Show basic balance before striking the ball
+- id: u14-b5-executing-final-actions-intro
+  age: u14
+  block: B5
+  area: Executing Final Actions
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Use inside foot or simple laces technique to finish
+  - Complete uncontested headers or rebounds
+  - Execute basic cutbacks or square passes
+- id: u14-b5-composure-and-ownership-intro
+  age: u14
+  block: B5
+  area: Composure and Ownership
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Willing to shoot or play the final pass
+  - Accept missed chances without frustration
+  - Reset quickly after attempts
