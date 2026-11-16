@@ -14,6 +14,8 @@ def names_list(refs, acts):
         base, _, var = r.partition('#')
         ns.append(next(v['name'] for v in acts[base].get('variants', []) if v['id'] == var) if var else acts[base]['name'])
     return ns[0] if len(ns) == 1 else ' or '.join(ns) if len(ns) == 2 else ', '.join(ns[:-1]) + ', or ' + ns[-1]
+def opt(label, v):
+    return f'<div class="a-label">{label}</div><div class="a-text">{esc(v)}</div>' if v else ''
 def card(a, acts):
     equip = esc(a['equipment'])
     src = f'<div class="act-source">Source: {esc(a["source"])}</div>' if a.get('source') else ''
@@ -24,7 +26,8 @@ def card(a, acts):
         <div class="act-focus">{esc(" · ".join(a["skills"]))}</div>
       </div>
       <div class="act-body">
-        <div class="a-label">Setup</div><div class="a-text">{esc(a["setup"])}</div>
+        {opt('What it is for', a.get('objective'))}<div class="a-label">Setup</div><div class="a-text">{esc(a["setup"])}</div>
+        {opt('Rules', a.get('rules'))}{opt('Scoring', a.get('scoring'))}{opt('Progression', a.get('progression'))}
         <div class="a-label">What to Look For</div><div class="a-text">{esc(a["look_for"])}</div>
         <div class="a-question">&ldquo;{esc(a["question"])}&rdquo;</div>
         <span class="pairs-tag">&#8594; Pairs well with: {esc(names_list(a["pairs_with"], acts))}</span>

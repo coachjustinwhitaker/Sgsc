@@ -30,8 +30,11 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
+<label class="t">Objective <small>(one line: what is this for?)</small></label><input type="text" id="objective">
 <label class="t">Setup <small>(layout, who starts where, how it restarts, progression)</small></label><textarea id="setup"></textarea>
 <label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
+<label class="t">Rules <small>(optional: touch limits, what counts as a foul)</small></label><textarea id="rules" style="min-height:60px"></textarea>
+<label class="t">Progression <small>(optional: a harder version, and what you would see that tells you to use it)</small></label><textarea id="progression" style="min-height:60px"></textarea>
 <label class="t">What to look for</label><textarea id="look_for"></textarea>
 <label class="t">Question to ask the players</label><input type="text" id="question">
 <label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
@@ -77,7 +80,7 @@ document.addEventListener('change', () => { syncLevels(); fit(); });
 $('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r = new FileReader(); r.onload = () => { diagram = {name: f.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-'), data: r.result}; $('#pv').innerHTML = `<img class="pv" src="${r.result}">`; }; r.readAsDataURL(f); };
 function fill(a){
   editing = a ? a.id : null; diagram = null; $('#file').value = '';
-  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#scoring').value = a && a.scoring ? a.scoring : '';
+  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#scoring').value = a && a.scoring ? a.scoring : ''; ['objective','rules','progression'].forEach(k => $('#'+k).value = a && a[k] ? a[k] : '');
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
   ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : ''); $('#source').value = a && a.source ? a.source : '';
@@ -88,7 +91,7 @@ $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value))
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('#add').onclick = () => {
-  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
+  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
     setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
   const miss = []; [['name','Name'],['type','Type'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });

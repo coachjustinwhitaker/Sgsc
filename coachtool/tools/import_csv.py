@@ -39,7 +39,8 @@ def main():
         if row.get('diagram'): a['diagram'] = row['diagram']
         if (row.get('source') or '').strip(): a['source'] = row['source'].strip()
         if (row.get('type') or '').strip(): a['type'] = row['type'].strip().lower()
-        if (row.get('scoring') or '').strip(): a['scoring'] = row['scoring'].strip()
+        for _k in ('scoring', 'objective', 'rules', 'progression'):
+            if (row.get(_k) or '').strip(): a[_k] = row[_k].strip()
         if row.get('diagram_data') and a.get('diagram'):
             f = ddir / a['diagram']
             if not f.exists(): newfiles.append(f)
