@@ -21,6 +21,7 @@ details summary{cursor:pointer;color:var(--navy);font-weight:600;margin-top:8px}
 .alt{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.alt span{font-size:15px}
 .dg{width:100%;height:auto;border-radius:8px;margin-top:10px}
 .lbl{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;margin-top:10px}
+.tag{text-decoration:none}
 .back{display:inline-block;margin:4px 0 8px;color:var(--navy);text-decoration:none;font-weight:600}
 nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:center;padding:8px;border-radius:8px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;font-size:14px;font-weight:600}nav.tabs a.on{background:var(--navy);color:#fff}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
@@ -40,66 +41,86 @@ function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } cat
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
 const $ = s => document.querySelector(s), app = $('#app');
 const acts = Object.fromEntries(DATA.activities.map(a => [a.id, a]));
-const plan = DATA.plans[0];
+if(state.players && !state.team) state.team = 'u10-rec';
+const teamOf = id => DATA.teams.find(t => t.id === id) || DATA.teams[DATA.teams.length - 1];
+let T = teamOf(state.team), plan = T.plan;
+function setTeam(id){ T = teamOf(id); plan = T.plan; state.team = T.id; }
+const A = id => { const a = acts[id], o = (a.for_age || {})[T.age]; return o ? Object.assign({}, a, o) : a; };
 function actName(ref){ const [b, v] = ref.split('#'); const a = acts[b]; if(!v) return a.name; return (a.variants||[]).find(x => x.id === v).name; }
+const slotsOf = (w, si) => ['a','b'].filter(k => w.sessions[si][k]);
 function slotRef(w, si, slot){ const k = `${w.week}-${si}-${slot}`; return (state.swaps||{})[k] || w.sessions[si][slot].activity; }
 function fits(a){ return (!state.players || (a.players.min <= state.players && state.players <= a.players.max)) && (!state.space || SPACE[a.space] <= SPACE[state.space]); }
 function alternatives(w, si, slot){
-  const cur = slotRef(w, si, slot).split('#')[0], other = slotRef(w, si, slot === 'a' ? 'b' : 'a').split('#')[0];
-  const ok = DATA.ladder.rec.u10;
-  return DATA.activities.filter(a => a.id !== cur && a.id !== other && fits(a) && (slot === 'b' ? a.block === w.block : ok.indexOf(a.block) <= ok.indexOf(w.block)));
+  const slots = slotsOf(w, si), cur = slotRef(w, si, slot).split('#')[0], others = slots.filter(k => k !== slot).map(k => slotRef(w, si, k).split('#')[0]);
+  const ok = T.ladder, same = [w.block].concat(w.also_blocks || []), anchor = slots.length > 1 && slot === 'a';
+  return DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (anchor ? ok.indexOf(a.block) <= ok.indexOf(w.block) : same.includes(a.block)));
 }
 function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
 function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['players','Players'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewSetup(){
-  app.innerHTML = `<h1>Set up your team</h1><p class="lead">U10 recreational. Two minutes, and you can change it any time.</p>
-  <div class="card"><label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
+  app.innerHTML = `<h1>Set up your team</h1><p class="lead">Recreational. Two minutes, and you can change it any time.</p>
+  <div class="card"><label>Age group</label><select id="ag">${DATA.teams.map(t => `<option value="${t.id}" ${T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
+  <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
   <button id="ok">${state.players ? 'Save' : 'Next: your players'}</button></div>
   <p class="reset"><a href="#" id="rs">Start over</a></p>`;
-  $('#ok').onclick = () => { const first = !state.players; state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'players' : 'plan'); };
-  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); go('setup'); };
+  $('#ok').onclick = () => { const first = !state.players; if($('#ag').value !== T.id){ state.swaps = {}; setTeam($('#ag').value); } state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'players' : 'plan'); };
+  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); setTeam(DATA.teams[0].id); go('setup'); };
 }
 function viewPlayers(){
-  const P = DATA.players;
-  app.innerHTML = tabs('players') + `<h1>Who is in front of you</h1><p class="lead">Understanding your U10 players.</p>
+  const P = T.players;
+  app.innerHTML = tabs('players') + `<h1>Who is in front of you</h1><p class="lead">Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.</p>
   <div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>
   <h2>What a great session looks like</h2>
   <div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>
   <h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>
   <h2>The parents on the sideline</h2><div class="card"><p>${P.parents.intro}</p><p><i>&ldquo;${P.parents.script}&rdquo;</i></p><p>${P.parents.outro}</p></div>
+  ${P.cues ? `<h2>Coaching cues</h2><div class="card">${P.cues.map(c => `<p><b>${c.when}</b><br>${c.say}</p>`).join('')}</div>` : ''}
+  ${T.club.pathway ? `<h2>A player ready for more</h2><div class="card"><ul>${T.club.pathway.map(x => `<li>${x}</li>`).join('')}</ul></div>` : ''}
+  ${T.club.contact ? `<h2>Questions?</h2><div class="card"><p>${T.club.contact}</p></div>` : ''}
   <button data-nav="goals">Next: player goals</button>`;
 }
 function viewGoals(){
-  const goals = DATA.goals;
-  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a U10 should be showing these. The plan on the next screen builds toward them.</p>
-  <div class="card">${goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<span class="tag">${DATA.blocks[b].name}</span>`).join('')}</span></div>`).join('')}</div>
+  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>
+  <div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>
   <button data-nav="plan">Next: your season</button>`;
 }
 function viewPlan(){
-  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">8 weeks, two practices a week. Tap a week to see the sessions.</p>` + plan.weeks.map(w => `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}</b><div class="f">${w.focus}</div></a>`).join('');
+  const n = plan.sessions_per_week;
+  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">${plan.weeks.length} weeks, ${n === 1 ? 'one practice' : 'two practices'} a week. Tap a week to see the session${n === 1 ? '' : 's'}.</p>` + plan.weeks.map(w => `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}</b><div class="f">${w.focus}</div></a>`).join('');
 }
+function gameCard(g){ return `<div class="card"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
+  <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
 function viewWeek(n){
-  const w = plan.weeks.find(x => x.week === n);
+  const w = plan.weeks.find(x => x.week === n), shape = T.players.shape;
   if(w.coach_choice){ app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
-  const sessions = [0,1].map(si => `<div class="card"><b>Practice ${si ? 'B' : 'A'}</b>` + ['a','b'].map(slot => {
-    const ref = slotRef(w, si, slot), a = acts[ref.split('#')[0]], note = (w.sessions[si][slot].note);
+  const one = plan.sessions_per_week === 1;
+  const sessions = w.sessions.map((ses, si) => `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>` + slotsOf(w, si).map(slot => {
+    const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]), note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
     const alts = alternatives(w, si, slot);
-    return `<div class="slot"><div class="lab">Activity ${slot.toUpperCase()}${slot==='a'?' · anchor':' · focus'}</div><div class="nm">${actName(ref)}</div>
+    return `<div class="slot"><div class="lab">${multi ? 'Activity ' + slot.toUpperCase() + (slot==='a' ? ' · anchor' : ' · focus') : 'Practice activity'}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${swapped ? 'Swapped in' : note}</div>
       <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}</details>
       <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');
-  app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><p class="lead">${w.focus}</p>` + sessions;
+  app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><p class="lead">${w.focus}</p>
+    <p class="lead"><a href="#" data-nav="why/${w.block}">Why this block: ${DATA.blocks[w.block].name}</a></p>` + (shape ? `<p class="note">${shape.note}</p>` + gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '');
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
+}
+function viewWhy(b){
+  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && r.level === 'intro'), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
+  app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
+  <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p><div class="lbl">Core focus</div><ul>${f.focus.map(x => `<li>${x}</li>`).join('')}</ul></div>
+  <h2>What to look for</h2>${areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
+  <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
 }
 function render(){
   const h = route || (state.players ? 'plan' : 'setup');
   if(!state.players && h !== 'setup'){ route = 'setup'; return render(); }
-  if(h === 'setup') viewSetup(); else if(h === 'players') viewPlayers(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else viewPlan();
+  if(h === 'setup') viewSetup(); else if(h === 'players') viewPlayers(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
   window.scrollTo(0,0);
 }
 render();
