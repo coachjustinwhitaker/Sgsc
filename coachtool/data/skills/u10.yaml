@@ -1,8 +1,8 @@
 skills:
-- id: u10-b1-scanning-and-body-shape-intro
+- id: u10-b1-perception-preparation-intro
   age: u10
   block: B1
-  area: Scanning and Body Shape
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -11,10 +11,10 @@ skills:
   - Look for the ball, teammates and the goal before receiving
   - Open the body so the field is in view when the ball arrives
   - Keep the head up while driving and dribbling
-- id: u10-b1-scanning-and-body-shape-dev
+- id: u10-b1-perception-preparation-dev-comp
   age: u10
   block: B1
-  area: Scanning and Body Shape
+  area: Perception & Preparation
   level: dev
   tracks:
   - comp
@@ -160,10 +160,10 @@ skills:
   - Choose a support position that gives the passer a forward option
   - Adjust the angle and distance as the ball moves
   - Call or signal for the ball with a word or a hand
-- id: u10-b2-give-and-go-intro
+- id: u10-b2-passing-movement-intro
   age: u10
   block: B2
-  area: Give and Go
+  area: Passing & Movement
   level: intro
   tracks:
   - rec
@@ -172,10 +172,10 @@ skills:
   - Pass to a teammate and run into space for the return
   - Pass into feet so the teammate can play it back
   - Keep moving after the pass
-- id: u10-b2-give-and-go-dev
+- id: u10-b2-passing-movement-dev-comp
   age: u10
   block: B2
-  area: Give and Go
+  area: Passing & Movement
   level: dev
   tracks:
   - comp
@@ -183,10 +183,10 @@ skills:
   - Time the run so the return pass arrives in space
   - Use a first-time return pass when the defender is close
   - Look for the give and go when the dribble is blocked
-- id: u10-b2-2v1-and-combination-intro
+- id: u10-b2-technique-for-combination-play-intro
   age: u10
   block: B2
-  area: 2v1 and Combination
+  area: Technique for Combination Play
   level: intro
   tracks:
   - rec
@@ -195,10 +195,10 @@ skills:
   - Notice when a teammate is free and a 2v1 is possible
   - Drive at one defender, then pass to the free teammate
   - Celebrate passes that beat a defender
-- id: u10-b2-2v1-and-combination-dev
+- id: u10-b2-technique-for-combination-play-dev-comp
   age: u10
   block: B2
-  area: 2v1 and Combination
+  area: Technique for Combination Play
   level: dev
   tracks:
   - comp
@@ -229,10 +229,10 @@ skills:
   - Make the choice faster as the picture changes
   - Choose the forward pass when it is there, the safe pass when it is not
   - Stay connected to the next play after the pass
-- id: u10-b3-pressing-and-challenging-intro
+- id: u10-b3-defensive-decision-making-intro
   age: u10
   block: B3
-  area: Pressing and Challenging
+  area: Defensive Decision-Making
   level: intro
   tracks:
   - rec
@@ -241,10 +241,13 @@ skills:
   - Run to the player with the ball to stop them from scanning and passing forward
   - Slow down as you arrive so you do not get dribbled past
   - Go in to win the ball when the moment is right
-- id: u10-b3-pressing-and-challenging-dev
+  - Slow the ball carrier down when a teammate is not ready to help
+  - Stay between the ball and the goal
+  - Stand with the body at an angle to the goal you are protecting
+- id: u10-b3-defensive-decision-making-dev-comp
   age: u10
   block: B3
-  area: Pressing and Challenging
+  area: Defensive Decision-Making
   level: dev
   tracks:
   - comp
@@ -252,26 +255,6 @@ skills:
   - Choose when to press, when to delay and when to go in
   - Show the ball carrier one way and cut off the other
   - Press again straight away if the first press is beaten
-- id: u10-b3-delaying-intro
-  age: u10
-  block: B3
-  area: Delaying
-  level: intro
-  tracks:
-  - rec
-  - comp
-  bullets:
-  - Slow the ball carrier down when a teammate is not ready to help
-  - Stay between the ball and the goal
-  - Stand with the body at an angle to the goal you are protecting
-- id: u10-b3-delaying-dev
-  age: u10
-  block: B3
-  area: Delaying
-  level: dev
-  tracks:
-  - comp
-  bullets:
   - Delay until cover arrives, then step in
   - Force the ball carrier toward the sideline
   - Keep a balanced stance to react to a change of direction
@@ -287,6 +270,9 @@ skills:
   - Stand behind the pressing teammate at a good distance
   - Be ready to press if they are beaten
   - Block the passing option nearest to the ball
+  - Stay close to the opponent in your area
+  - Keep your body between the opponent and the goal
+  - Stay close enough to stop an easy pass to them
 - id: u10-b3-covering-dev
   age: u10
   block: B3
@@ -298,33 +284,13 @@ skills:
   - Adjust distance and angle as the press changes
   - Call out "I've got cover" so the presser commits
   - Slide across when the first defender steps in
-- id: u10-b3-marking-intro
-  age: u10
-  block: B3
-  area: Marking
-  level: intro
-  tracks:
-  - rec
-  - comp
-  bullets:
-  - Stay close to the opponent in your area
-  - Keep your body between the opponent and the goal
-  - Stay close enough to stop an easy pass to them
-- id: u10-b3-marking-dev
-  age: u10
-  block: B3
-  area: Marking
-  level: dev
-  tracks:
-  - comp
-  bullets:
   - Stay goal-side and ball-side as the ball moves
   - Anticipate the pass and step in to intercept
   - Switch the mark with a teammate when needed
-- id: u10-b3-compact-shape-and-recovery-intro
+- id: u10-b3-shape-line-management-intro
   age: u10
   block: B3
-  area: Compact Shape and Recovery
+  area: Shape & Line Management
   level: intro
   tracks:
   - rec
@@ -333,10 +299,10 @@ skills:
   - Stay close to your teammates when the other team has the ball
   - Run back goal-side when the ball is lost
   - Close the middle of the field first
-- id: u10-b3-compact-shape-and-recovery-dev
+- id: u10-b3-shape-line-management-dev-comp
   age: u10
   block: B3
-  area: Compact Shape and Recovery
+  area: Shape & Line Management
   level: dev
   tracks:
   - comp

@@ -4813,10 +4813,10 @@
      ]
     },
     {
-     "id": "u8-b1-scanning-intro",
+     "id": "u8-b1-perception-preparation-intro",
      "age": "u8",
      "block": "B1",
-     "area": "Scanning",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec"
@@ -4843,10 +4843,10 @@
      ]
     },
     {
-     "id": "u8-b2-passing-to-a-free-teammate-intro",
+     "id": "u8-b2-passing-movement-intro",
      "age": "u8",
      "block": "B2",
-     "area": "Passing to a Free Teammate",
+     "area": "Passing & Movement",
      "level": "intro",
      "tracks": [
       "rec"
@@ -5333,10 +5333,10 @@
    },
    "skills": [
     {
-     "id": "u10-b1-scanning-and-body-shape-intro",
+     "id": "u10-b1-perception-preparation-intro",
      "age": "u10",
      "block": "B1",
-     "area": "Scanning and Body Shape",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec",
@@ -5445,10 +5445,10 @@
      ]
     },
     {
-     "id": "u10-b2-give-and-go-intro",
+     "id": "u10-b2-passing-movement-intro",
      "age": "u10",
      "block": "B2",
-     "area": "Give and Go",
+     "area": "Passing & Movement",
      "level": "intro",
      "tracks": [
       "rec",
@@ -5461,10 +5461,10 @@
      ]
     },
     {
-     "id": "u10-b2-2v1-and-combination-intro",
+     "id": "u10-b2-technique-for-combination-play-intro",
      "age": "u10",
      "block": "B2",
-     "area": "2v1 and Combination",
+     "area": "Technique for Combination Play",
      "level": "intro",
      "tracks": [
       "rec",
@@ -5493,10 +5493,10 @@
      ]
     },
     {
-     "id": "u10-b3-pressing-and-challenging-intro",
+     "id": "u10-b3-defensive-decision-making-intro",
      "age": "u10",
      "block": "B3",
-     "area": "Pressing and Challenging",
+     "area": "Defensive Decision-Making",
      "level": "intro",
      "tracks": [
       "rec",
@@ -5505,20 +5505,7 @@
      "bullets": [
       "Run to the player with the ball to stop them from scanning and passing forward",
       "Slow down as you arrive so you do not get dribbled past",
-      "Go in to win the ball when the moment is right"
-     ]
-    },
-    {
-     "id": "u10-b3-delaying-intro",
-     "age": "u10",
-     "block": "B3",
-     "area": "Delaying",
-     "level": "intro",
-     "tracks": [
-      "rec",
-      "comp"
-     ],
-     "bullets": [
+      "Go in to win the ball when the moment is right",
       "Slow the ball carrier down when a teammate is not ready to help",
       "Stay between the ball and the goal",
       "Stand with the body at an angle to the goal you are protecting"
@@ -5537,30 +5524,17 @@
      "bullets": [
       "Stand behind the pressing teammate at a good distance",
       "Be ready to press if they are beaten",
-      "Block the passing option nearest to the ball"
-     ]
-    },
-    {
-     "id": "u10-b3-marking-intro",
-     "age": "u10",
-     "block": "B3",
-     "area": "Marking",
-     "level": "intro",
-     "tracks": [
-      "rec",
-      "comp"
-     ],
-     "bullets": [
+      "Block the passing option nearest to the ball",
       "Stay close to the opponent in your area",
       "Keep your body between the opponent and the goal",
       "Stay close enough to stop an easy pass to them"
      ]
     },
     {
-     "id": "u10-b3-compact-shape-and-recovery-intro",
+     "id": "u10-b3-shape-line-management-intro",
      "age": "u10",
      "block": "B3",
-     "area": "Compact Shape and Recovery",
+     "area": "Shape & Line Management",
      "level": "intro",
      "tracks": [
       "rec",
@@ -6105,10 +6079,10 @@
    },
    "skills": [
     {
-     "id": "u12-b1-scanning-and-body-shape-intro",
+     "id": "u12-b1-perception-preparation-intro",
      "age": "u12",
      "block": "B1",
-     "area": "Scanning and Body Shape",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec"
@@ -6210,10 +6184,10 @@
      ]
     },
     {
-     "id": "u12-b2-switching-and-wall-passes-intro",
+     "id": "u12-b2-technique-for-combination-play-intro",
      "age": "u12",
      "block": "B2",
-     "area": "Switching and Wall Passes",
+     "area": "Technique for Combination Play",
      "level": "intro",
      "tracks": [
       "rec"
@@ -6221,19 +6195,7 @@
      "bullets": [
       "Switch the ball to the far side when the near side is closed",
       "Play a wall pass (give and go) in a small space",
-      "Recognize when a teammate on the other side is free"
-     ]
-    },
-    {
-     "id": "u12-b2-combining-in-threes-intro",
-     "age": "u12",
-     "block": "B2",
-     "area": "Combining in Threes",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
+      "Recognize when a teammate on the other side is free",
       "Find the free player between or behind the opposition",
       "Make a third-player run when two teammates are combining",
       "Engage a defender 1v1 or 2v1 to create the space"
@@ -6255,10 +6217,10 @@
      ]
     },
     {
-     "id": "u12-b3-pressure,-cover-and-support-intro",
+     "id": "u12-b3-covering-intro",
      "age": "u12",
      "block": "B3",
-     "area": "Pressure, Cover and Support",
+     "area": "Covering",
      "level": "intro",
      "tracks": [
       "rec"
@@ -6266,14 +6228,17 @@
      "bullets": [
       "The nearest player pressures the ball",
       "The second player covers behind the presser at a distance that lets them step in",
-      "The rest of the team supports to cut off space"
+      "The rest of the team supports to cut off space",
+      "Stay between the opponent and the goal",
+      "Mark a specific opponent and deny them the ball in a good position",
+      "Step in to intercept when the pass is on"
      ]
     },
     {
-     "id": "u12-b3-compact-shape-intro",
+     "id": "u12-b3-shape-line-management-intro",
      "age": "u12",
      "block": "B3",
-     "area": "Compact Shape",
+     "area": "Shape & Line Management",
      "level": "intro",
      "tracks": [
       "rec"
@@ -6281,44 +6246,17 @@
      "bullets": [
       "Stay close to teammates so the space between lines is small",
       "Move together toward the ball side",
-      "Close the middle of the field first"
-     ]
-    },
-    {
-     "id": "u12-b3-marking-and-intercepting-intro",
-     "age": "u12",
-     "block": "B3",
-     "area": "Marking and Intercepting",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Stay between the opponent and the goal",
-      "Mark a specific opponent and deny them the ball in a good position",
-      "Step in to intercept when the pass is on"
-     ]
-    },
-    {
-     "id": "u12-b3-recovery-and-preventing-the-switch-intro",
-     "age": "u12",
-     "block": "B3",
-     "area": "Recovery and Preventing the Switch",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
+      "Close the middle of the field first",
       "Recover goal-side when pressure is broken",
       "Cut off the pass to the far side",
       "Re-apply pressure as soon as the shape is back"
      ]
     },
     {
-     "id": "u12-b4-reacting-when-we-lose-it-intro",
+     "id": "u12-b4-reaction-speed-intro",
      "age": "u12",
      "block": "B4",
-     "area": "Reacting When We Lose It",
+     "area": "Reaction & Speed",
      "level": "intro",
      "tracks": [
       "rec"
@@ -6326,34 +6264,10 @@
      "bullets": [
       "React in the first second after losing the ball",
       "Press at once if teammates are close, delay if they are not",
-      "Sprint back into shape when pressure is broken"
-     ]
-    },
-    {
-     "id": "u12-b4-reacting-when-we-win-it-intro",
-     "age": "u12",
-     "block": "B4",
-     "area": "Reacting When We Win It",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
+      "Sprint back into shape when pressure is broken",
       "Look up for the first pass forward on winning the ball",
       "Join the attack with speed",
-      "Play forward when it is on and keep it when it is not"
-     ]
-    },
-    {
-     "id": "u12-b4-urgency-in-the-moment-intro",
-     "age": "u12",
-     "block": "B4",
-     "area": "Urgency in the Moment",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
+      "Play forward when it is on and keep it when it is not",
       "Recognize at once that possession has changed",
       "Accelerate toward the ball or space",
       "Keep the intensity through repeated turnovers"
@@ -6888,10 +6802,10 @@
    },
    "skills": [
     {
-     "id": "u14-b1-perception-and-preparation-intro",
+     "id": "u14-b1-perception-preparation-intro",
      "age": "u14",
      "block": "B1",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7000,10 +6914,10 @@
      ]
     },
     {
-     "id": "u14-b2-perception-and-preparation-intro",
+     "id": "u14-b2-perception-preparation-intro",
      "age": "u14",
      "block": "B2",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec"
@@ -7047,10 +6961,10 @@
      ]
     },
     {
-     "id": "u14-b2-passing-and-movement-intro",
+     "id": "u14-b2-passing-movement-intro",
      "age": "u14",
      "block": "B2",
-     "area": "Passing and Movement",
+     "area": "Passing & Movement",
      "level": "intro",
      "tracks": [
       "rec"
@@ -7077,10 +6991,10 @@
      ]
     },
     {
-     "id": "u14-b3-perception-and-preparation-intro",
+     "id": "u14-b3-perception-preparation-intro",
      "age": "u14",
      "block": "B3",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7109,10 +7023,10 @@
      ]
     },
     {
-     "id": "u14-b3-shape-and-line-management-intro",
+     "id": "u14-b3-shape-line-management-intro",
      "age": "u14",
      "block": "B3",
-     "area": "Shape and Line Management",
+     "area": "Shape & Line Management",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7141,10 +7055,10 @@
      ]
     },
     {
-     "id": "u14-b4-perception-and-awareness-intro",
+     "id": "u14-b4-perception-awareness-intro",
      "age": "u14",
      "block": "B4",
-     "area": "Perception and Awareness",
+     "area": "Perception & Awareness",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7157,10 +7071,10 @@
      ]
     },
     {
-     "id": "u14-b4-reaction-and-speed-intro",
+     "id": "u14-b4-reaction-speed-intro",
      "age": "u14",
      "block": "B4",
-     "area": "Reaction and Speed",
+     "area": "Reaction & Speed",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7205,10 +7119,10 @@
      ]
     },
     {
-     "id": "u14-b5-preparation-and-body-shape-intro",
+     "id": "u14-b5-preparation-body-shape-intro",
      "age": "u14",
      "block": "B5",
-     "area": "Preparation and Body Shape",
+     "area": "Preparation & Body Shape",
      "level": "intro",
      "tracks": [
       "rec"
@@ -7236,10 +7150,10 @@
      ]
     },
     {
-     "id": "u14-b5-composure-and-ownership-intro",
+     "id": "u14-b5-composure-ownership-intro",
      "age": "u14",
      "block": "B5",
-     "area": "Composure and Ownership",
+     "area": "Composure & Ownership",
      "level": "intro",
      "tracks": [
       "rec",
@@ -7959,10 +7873,10 @@
    },
    "skills": [
     {
-     "id": "u14-b1-perception-and-preparation-intro",
+     "id": "u14-b1-perception-preparation-intro",
      "age": "u14",
      "block": "B1",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8119,10 +8033,10 @@
      ]
     },
     {
-     "id": "u14-b3-perception-and-preparation-intro",
+     "id": "u14-b3-perception-preparation-intro",
      "age": "u14",
      "block": "B3",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8151,10 +8065,10 @@
      ]
     },
     {
-     "id": "u14-b3-shape-and-line-management-intro",
+     "id": "u14-b3-shape-line-management-intro",
      "age": "u14",
      "block": "B3",
-     "area": "Shape and Line Management",
+     "area": "Shape & Line Management",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8183,10 +8097,10 @@
      ]
     },
     {
-     "id": "u14-b4-perception-and-awareness-intro",
+     "id": "u14-b4-perception-awareness-intro",
      "age": "u14",
      "block": "B4",
-     "area": "Perception and Awareness",
+     "area": "Perception & Awareness",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8199,10 +8113,10 @@
      ]
     },
     {
-     "id": "u14-b4-reaction-and-speed-intro",
+     "id": "u14-b4-reaction-speed-intro",
      "age": "u14",
      "block": "B4",
-     "area": "Reaction and Speed",
+     "area": "Reaction & Speed",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8263,10 +8177,10 @@
      ]
     },
     {
-     "id": "u14-b5-composure-and-ownership-intro",
+     "id": "u14-b5-composure-ownership-intro",
      "age": "u14",
      "block": "B5",
-     "area": "Composure and Ownership",
+     "area": "Composure & Ownership",
      "level": "intro",
      "tracks": [
       "rec",
@@ -8279,10 +8193,10 @@
      ]
     },
     {
-     "id": "u14-b1-perception-and-preparation-dev-comp",
+     "id": "u14-b1-perception-preparation-dev-comp",
      "age": "u14",
      "block": "B1",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "dev",
      "tracks": [
       "comp"
@@ -8294,10 +8208,10 @@
      ]
     },
     {
-     "id": "u14-b1-perception-and-preparation-app-comp",
+     "id": "u14-b1-perception-preparation-app-comp",
      "age": "u14",
      "block": "B1",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "app",
      "tracks": [
       "comp"
@@ -8667,10 +8581,10 @@
      ]
     },
     {
-     "id": "u14-b3-perception-and-preparation-dev-comp",
+     "id": "u14-b3-perception-preparation-dev-comp",
      "age": "u14",
      "block": "B3",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "dev",
      "tracks": [
       "comp"
@@ -8682,10 +8596,10 @@
      ]
     },
     {
-     "id": "u14-b3-perception-and-preparation-app-comp",
+     "id": "u14-b3-perception-preparation-app-comp",
      "age": "u14",
      "block": "B3",
-     "area": "Perception and Preparation",
+     "area": "Perception & Preparation",
      "level": "app",
      "tracks": [
       "comp"
@@ -8729,10 +8643,10 @@
      ]
     },
     {
-     "id": "u14-b3-shape-and-line-management-dev-comp",
+     "id": "u14-b3-shape-line-management-dev-comp",
      "age": "u14",
      "block": "B3",
-     "area": "Shape and Line Management",
+     "area": "Shape & Line Management",
      "level": "dev",
      "tracks": [
       "comp"
@@ -8744,10 +8658,10 @@
      ]
     },
     {
-     "id": "u14-b3-shape-and-line-management-app-comp",
+     "id": "u14-b3-shape-line-management-app-comp",
      "age": "u14",
      "block": "B3",
-     "area": "Shape and Line Management",
+     "area": "Shape & Line Management",
      "level": "app",
      "tracks": [
       "comp"
@@ -8791,10 +8705,10 @@
      ]
     },
     {
-     "id": "u14-b4-perception-and-awareness-dev-comp",
+     "id": "u14-b4-perception-awareness-dev-comp",
      "age": "u14",
      "block": "B4",
-     "area": "Perception and Awareness",
+     "area": "Perception & Awareness",
      "level": "dev",
      "tracks": [
       "comp"
@@ -8806,10 +8720,10 @@
      ]
     },
     {
-     "id": "u14-b4-perception-and-awareness-app-comp",
+     "id": "u14-b4-perception-awareness-app-comp",
      "age": "u14",
      "block": "B4",
-     "area": "Perception and Awareness",
+     "area": "Perception & Awareness",
      "level": "app",
      "tracks": [
       "comp"
@@ -8822,10 +8736,10 @@
      ]
     },
     {
-     "id": "u14-b4-reaction-and-speed-dev-comp",
+     "id": "u14-b4-reaction-speed-dev-comp",
      "age": "u14",
      "block": "B4",
-     "area": "Reaction and Speed",
+     "area": "Reaction & Speed",
      "level": "dev",
      "tracks": [
       "comp"
@@ -8837,10 +8751,10 @@
      ]
     },
     {
-     "id": "u14-b4-reaction-and-speed-app-comp",
+     "id": "u14-b4-reaction-speed-app-comp",
      "age": "u14",
      "block": "B4",
-     "area": "Reaction and Speed",
+     "area": "Reaction & Speed",
      "level": "app",
      "tracks": [
       "comp"
@@ -8992,10 +8906,10 @@
      ]
     },
     {
-     "id": "u14-b5-composure-and-ownership-dev-comp",
+     "id": "u14-b5-composure-ownership-dev-comp",
      "age": "u14",
      "block": "B5",
-     "area": "Composure and Ownership",
+     "area": "Composure & Ownership",
      "level": "dev",
      "tracks": [
       "comp"
@@ -9007,10 +8921,10 @@
      ]
     },
     {
-     "id": "u14-b5-composure-and-ownership-app-comp",
+     "id": "u14-b5-composure-ownership-app-comp",
      "age": "u14",
      "block": "B5",
-     "area": "Composure and Ownership",
+     "area": "Composure & Ownership",
      "level": "app",
      "tracks": [
       "comp"

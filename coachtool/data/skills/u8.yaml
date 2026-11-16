@@ -65,10 +65,10 @@ skills:
   - Strike the ball on goal from short range
   - Shoot when in range instead of passing up the chance
   - Follow the ball after the shot
-- id: u8-b1-scanning-intro
+- id: u8-b1-perception-preparation-intro
   age: u8
   block: B1
-  area: Scanning
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -87,10 +87,10 @@ skills:
   - Spread out instead of bunching around the ball
   - Find open space with no opponent and no teammate in it
   - Look at the player with the ball so they can find you
-- id: u8-b2-passing-to-a-free-teammate-intro
+- id: u8-b2-passing-movement-intro
   age: u8
   block: B2
-  area: Passing to a Free Teammate
+  area: Passing & Movement
   level: intro
   tracks:
   - rec

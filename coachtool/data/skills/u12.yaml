@@ -1,8 +1,8 @@
 skills:
-- id: u12-b1-scanning-and-body-shape-intro
+- id: u12-b1-perception-preparation-intro
   age: u12
   block: B1
-  area: Scanning and Body Shape
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -76,10 +76,10 @@ skills:
   - Create height, width and depth around the ball
   - Offer a vertical or diagonal option to the player on the ball
   - Move off a teammate so two players are not in the same space
-- id: u12-b2-switching-and-wall-passes-intro
+- id: u12-b2-technique-for-combination-play-intro
   age: u12
   block: B2
-  area: Switching and Wall Passes
+  area: Technique for Combination Play
   level: intro
   tracks:
   - rec
@@ -87,14 +87,6 @@ skills:
   - Switch the ball to the far side when the near side is closed
   - Play a wall pass (give and go) in a small space
   - Recognize when a teammate on the other side is free
-- id: u12-b2-combining-in-threes-intro
-  age: u12
-  block: B2
-  area: Combining in Threes
-  level: intro
-  tracks:
-  - rec
-  bullets:
   - Find the free player between or behind the opposition
   - Make a third-player run when two teammates are combining
   - Engage a defender 1v1 or 2v1 to create the space
@@ -109,10 +101,10 @@ skills:
   - Choose the quick pass or the dribble based on the pressure
   - Talk to teammates with calls that help
   - Stay involved in the next play after passing
-- id: u12-b3-pressure,-cover-and-support-intro
+- id: u12-b3-covering-intro
   age: u12
   block: B3
-  area: Pressure, Cover and Support
+  area: Covering
   level: intro
   tracks:
   - rec
@@ -120,10 +112,13 @@ skills:
   - The nearest player pressures the ball
   - The second player covers behind the presser at a distance that lets them step in
   - The rest of the team supports to cut off space
-- id: u12-b3-compact-shape-intro
+  - Stay between the opponent and the goal
+  - Mark a specific opponent and deny them the ball in a good position
+  - Step in to intercept when the pass is on
+- id: u12-b3-shape-line-management-intro
   age: u12
   block: B3
-  area: Compact Shape
+  area: Shape & Line Management
   level: intro
   tracks:
   - rec
@@ -131,32 +126,13 @@ skills:
   - Stay close to teammates so the space between lines is small
   - Move together toward the ball side
   - Close the middle of the field first
-- id: u12-b3-marking-and-intercepting-intro
-  age: u12
-  block: B3
-  area: Marking and Intercepting
-  level: intro
-  tracks:
-  - rec
-  bullets:
-  - Stay between the opponent and the goal
-  - Mark a specific opponent and deny them the ball in a good position
-  - Step in to intercept when the pass is on
-- id: u12-b3-recovery-and-preventing-the-switch-intro
-  age: u12
-  block: B3
-  area: Recovery and Preventing the Switch
-  level: intro
-  tracks:
-  - rec
-  bullets:
   - Recover goal-side when pressure is broken
   - Cut off the pass to the far side
   - Re-apply pressure as soon as the shape is back
-- id: u12-b4-reacting-when-we-lose-it-intro
+- id: u12-b4-reaction-speed-intro
   age: u12
   block: B4
-  area: Reacting When We Lose It
+  area: Reaction & Speed
   level: intro
   tracks:
   - rec
@@ -164,25 +140,9 @@ skills:
   - React in the first second after losing the ball
   - Press at once if teammates are close, delay if they are not
   - Sprint back into shape when pressure is broken
-- id: u12-b4-reacting-when-we-win-it-intro
-  age: u12
-  block: B4
-  area: Reacting When We Win It
-  level: intro
-  tracks:
-  - rec
-  bullets:
   - Look up for the first pass forward on winning the ball
   - Join the attack with speed
   - Play forward when it is on and keep it when it is not
-- id: u12-b4-urgency-in-the-moment-intro
-  age: u12
-  block: B4
-  area: Urgency in the Moment
-  level: intro
-  tracks:
-  - rec
-  bullets:
   - Recognize at once that possession has changed
   - Accelerate toward the ball or space
   - Keep the intensity through repeated turnovers
@@ -219,10 +179,10 @@ skills:
   - Scan early and often, even under active pressure
   - Adjust position before receiving to create time and space
   - 'Consistently recognize tempo: one-touch, two-touch, or carry'
-- id: u12-b1-footwork-ball-mastery-intro-comp
+- id: u12-b1-dribbling-intro-comp
   age: u12
   block: B1
-  area: Footwork & Ball Mastery
+  area: Dribbling
   level: intro
   tracks:
   - comp
@@ -230,10 +190,13 @@ skills:
   - Use small, controlled touches to settle the ball
   - Show basic coordination when changing direction
   - Begin using body position to protect the ball when pressured
-- id: u12-b1-footwork-ball-mastery-dev-comp
+  - Use simple body movements to suggest one action and take another
+  - Show balance and coordination when shifting weight or changing direction
+  - Begin recognizing when a defender is close enough to manipulate
+- id: u12-b1-dribbling-dev-comp
   age: u12
   block: B1
-  area: Footwork & Ball Mastery
+  area: Dribbling
   level: dev
   tracks:
   - comp
@@ -241,10 +204,13 @@ skills:
   - Use first touch to move the ball away from pressure
   - Adjust footwork to receive with inside or outside foot as needed
   - Protect the ball using body shape when pressure arrives
-- id: u12-b1-footwork-ball-mastery-app-comp
+  - Use body feints to commit or delay a defender before first touch
+  - Coordinate feint and first touch to move into space
+  - Maintain balance and control while changing direction under light pressure
+- id: u12-b1-dribbling-app-comp
   age: u12
   block: B1
-  area: Footwork & Ball Mastery
+  area: Dribbling
   level: app
   tracks:
   - comp
@@ -252,36 +218,6 @@ skills:
   - First touch consistently creates a new angle or breaks pressure
   - Maintain balance and coordination while changing direction at speed
   - Shield the ball effectively under pressure
-- id: u12-b1-feints-body-movement-intro-comp
-  age: u12
-  block: B1
-  area: Feints & Body Movement
-  level: intro
-  tracks:
-  - comp
-  bullets:
-  - Use simple body movements to suggest one action and take another
-  - Show balance and coordination when shifting weight or changing direction
-  - Begin recognizing when a defender is close enough to manipulate
-- id: u12-b1-feints-body-movement-dev-comp
-  age: u12
-  block: B1
-  area: Feints & Body Movement
-  level: dev
-  tracks:
-  - comp
-  bullets:
-  - Use body feints to commit or delay a defender before first touch
-  - Coordinate feint and first touch to move into space
-  - Maintain balance and control while changing direction under light pressure
-- id: u12-b1-feints-body-movement-app-comp
-  age: u12
-  block: B1
-  area: Feints & Body Movement
-  level: app
-  tracks:
-  - comp
-  bullets:
   - Choose between feint, first touch, or immediate pass based on defender position
   - Use body movement to create space to play forward or escape pressure
   - Execute feints at game speed while scanning for next action
@@ -648,10 +584,10 @@ skills:
   - Read transition cues in real time
   - 'Recognize game state: risk vs. control'
   - Communicate and organize teammates during transitions
-- id: u12-b4-technical-physical-actions-intro-comp
+- id: u12-b4-reaction-speed-intro-comp
   age: u12
   block: B4
-  area: Technical & Physical Actions
+  area: Reaction & Speed
   level: intro
   tracks:
   - comp
@@ -659,10 +595,10 @@ skills:
   - React quickly after losing or winning the ball
   - Accelerate toward the ball or space
   - Attempt forward passes after regaining possession
-- id: u12-b4-technical-physical-actions-dev-comp
+- id: u12-b4-reaction-speed-dev-comp
   age: u12
   block: B4
-  area: Technical & Physical Actions
+  area: Reaction & Speed
   level: dev
   tracks:
   - comp
@@ -670,10 +606,10 @@ skills:
   - Identify numbers-up or numbers-down situations
   - Recognize when space is available to attack
   - Anticipate transition moments before they fully occur
-- id: u12-b4-technical-physical-actions-app-comp
+- id: u12-b4-reaction-speed-app-comp
   age: u12
   block: B4
-  area: Technical & Physical Actions
+  area: Reaction & Speed
   level: app
   tracks:
   - comp
