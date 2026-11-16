@@ -52,6 +52,17 @@ button,.btn{border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(20,30
 button.ghost,.btn.ghost{box-shadow:none;border-color:#c5cfe0}
 .tag{font-weight:600}
 .tourtop{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 4px}.badge{background:var(--navy);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:4px 12px}.tourtop .note{font-size:13px;color:var(--mute)}
+.fig{margin:10px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}.fig figcaption{font-size:12px;color:var(--mute);padding:7px 12px;background:#fafbfd;border-bottom:1px solid var(--line)}.fig .dg{display:block;margin:0;border-radius:0;cursor:zoom-in}
+.dg.big{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;object-fit:contain;background:rgba(10,20,40,.92);padding:12px;cursor:zoom-out}
+.obj{background:#fdf9ef;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;margin:10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}.chips span{font-size:12px;font-weight:600;background:#eaf0f9;color:var(--navy);padding:3px 10px;border-radius:999px}
+ul.plain{list-style:none;padding:0;margin:4px 0}ul.plain li{position:relative;padding:3px 0 3px 18px}ul.plain li::before{content:"";position:absolute;left:3px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+details p{margin:4px 0}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:6px 0}ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px solid var(--line)}ol.steps li:first-child{border-top:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:12px;text-align:center;line-height:24px}
+ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
+.coachbox{background:var(--navy-dark);color:#fff;border-radius:12px;padding:12px 16px;margin:14px 0 6px}.coachbox .eb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.coachbox ul{list-style:none;margin:0;padding:0}.coachbox li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12)}.coachbox li:first-child{border-top:0}.coachbox em{display:block;color:#dfc477;font-size:15px;margin-top:3px}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
@@ -92,7 +103,7 @@ function needTour(){ const o = state.onb; if(!o || o.team !== T.id) return true;
 let whyFrom = '';
 const TYPE = id => ((DATA.types || []).find(t => t.id === id) || {}).label || '';
 function go(h){ if(h.startsWith('why/')) whyFrom = route || ''; route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
-document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
+document.addEventListener('click', e => { const im = e.target.closest('.dg'); if(im){ im.classList.toggle('big'); return; } const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
 function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewWelcome(){
   app.innerHTML = `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">Ideas for every week of your season, and a how-to for every activity. Use what helps. Change what does not.</p>
@@ -179,7 +190,7 @@ function weekText(n){
   const one = plan.sessions_per_week === 1;
   if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
   w.sessions.forEach((ses, si) => { L.push(one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A'));
-    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); L.push(`- ${actName(ref)}: ${a.setup}`, ...(a.rules ? [`  Rules: ${a.rules}`] : []), ...(a.scoring ? [`  Scoring: ${a.scoring}`] : []), ...(a.progression ? [`  Progression: ${a.progression}`] : []), `  Look for: ${a.look_for}`, `  Ask: "${a.question}"`, `  Equipment: ${a.equipment}`); }); L.push(''); });
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
   return L.join('\n').trim();
 }
@@ -190,6 +201,17 @@ async function shareWeek(n, btn){
   catch(e){ const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); btn.textContent = 'Copied. Paste it anywhere.'; } catch(x){ btn.textContent = 'Could not copy'; } t.remove(); }
 }
 function printWeek(){ const ds = [...document.querySelectorAll('details')], was = ds.map(d => d.open); ds.forEach(d => d.open = true); window.print(); ds.forEach((d, i) => d.open = was[i]); }
+const bul = v => Array.isArray(v) ? `<ul class="plain">${v.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${v}</p>`;
+function runIt(a){
+  const pl = a.players ? (a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`) : '', sec = (t, v) => v ? `<div class="lbl">${t}</div>${bul(v)}` : '';
+  return (a.diagram_src ? `<figure class="fig">${a.diagram_caption ? `<figcaption>${a.diagram_caption} Tap to enlarge.</figcaption>` : ''}<img class="dg" src="${a.diagram_src}" alt="${a.diagram_caption || a.name + ' diagram'}"></figure>` : '')
+   + (a.objective ? `<div class="obj">${a.objective}</div>` : '')
+   + `<div class="chips">${[pl, SPACE_LABEL[a.space], a.minutes ? a.minutes + ' min' : ''].filter(Boolean).map(x => `<span>${x}</span>`).join('')}</div>`
+   + sec('Setup', a.setup) + sec('Rules', a.rules) + sec('Scoring', a.scoring)
+   + (a.progression ? `<div class="lbl">Progressions</div><ol class="steps">${a.progression.map(p => `<li><b>${p.title}${p.minutes ? ` <span class="mins">${p.minutes} min</span>` : ''}</b> ${p.text}</li>`).join('')}</ol>` : '')
+   + `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul>${a.coach.map(c => `<li>${c.cue}<em>${c.ask}</em></li>`).join('')}</ul></div>`
+   + `<div class="lbl">Equipment</div><p>${a.equipment}</p>` + (a.source ? `<div class="lbl">Source</div><p>${a.source}</p>` : '');
+}
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
   if(!state.start){ state.week = n; save(); }
@@ -205,7 +227,7 @@ function viewWeek(n){
     const alts = alternatives(w, si, slot);
     return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>
-      <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}${a.objective ? `<div class="lbl">What it is for</div>${a.objective}` : ''}<div class="lbl">Setup</div>${a.setup}${a.rules ? `<div class="lbl">Rules</div>${a.rules}` : ''}${a.scoring ? `<div class="lbl">Scoring</div>${a.scoring}` : ''}${a.progression ? `<div class="lbl">Progression</div>${a.progression}` : ''}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}${a.source ? `<div class="lbl">Source</div>${a.source}` : ''}</details>
+      <details><summary>How to run it</summary>${runIt(a)}</details>
       <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');

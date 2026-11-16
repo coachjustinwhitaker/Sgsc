@@ -21,11 +21,12 @@ setup: 'Two lines of players about 25 yards from a full-size goal with a goalkee
   The coach plays a ball in. The first attacker and first defender race to it and play 1v1 to goal. Shot,
   save, miss or ball out ends the duel. Next pair goes. Keep the pace quick: three or four duels per player,
   then swap roles.'
-look_for: 'The moment of decision: does the attacker commit, or hesitate and give the defender time? Look
-  for the attacker who takes one decisive touch toward goal, and for the player who shoots early instead
-  of dribbling one extra time. For defenders, look for patience: delay, do not dive in.'
-question: 'When you had the ball facing the goalkeeper, what did you decide first: shoot, dribble, or
-  pass? What told you that?'
+coach:
+- cue: 'The moment of decision: does the attacker commit, or hesitate and give the defender time? Look
+    for the attacker who takes one decisive touch toward goal, and for the player who shoots early instead
+    of dribbling one extra time. For defenders, look for patience: delay, do not dive in.'
+  ask: 'When you had the ball facing the goalkeeper, what did you decide first: shoot, dribble, or pass?
+    What told you that?'
 pairs_with:
 - flying-numbers
 - waves

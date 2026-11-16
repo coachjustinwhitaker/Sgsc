@@ -21,10 +21,11 @@ setup: 'Grid about 20 by 20 yards with a cone goal on the center of each side, a
   goals total. Every player has their own ball. Players dribble freely inside the grid and shoot at any
   goal they choose. After the shot, retrieve the ball and go again. No groups, no queues, everyone active
   the whole time. Challenge: how many different goals can you score on in 60 seconds?'
-look_for: 'Players who look up to find an open goal before driving toward it. Volume of attempts is the
-  point: confidence to shoot develops now and accuracy comes with time. Celebrate every goal. A player
-  who scores on all four goals in one round deserves a big reaction.'
-question: Before you shot, what did you look at?
+coach:
+- cue: 'Players who look up to find an open goal before driving toward it. Volume of attempts is the point:
+    confidence to shoot develops now and accuracy comes with time. Celebrate every goal. A player who
+    scores on all four goals in one round deserves a big reaction.'
+  ask: Before you shot, what did you look at?
 pairs_with:
 - wreck-it-ralph
 - 2v1-to-goal

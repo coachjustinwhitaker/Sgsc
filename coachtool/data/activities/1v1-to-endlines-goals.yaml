@@ -22,10 +22,11 @@ minutes: 15
 setup: '1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s
   distance. Progress to 1v1 to Small Goals: add cone goals at each end, score below knee height. Pairs
   run simultaneously. Fast rotations. Keep multiple pairs active at once.'
-look_for: 'At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot?
-  When is each the right answer? Players who look up to check for the goal before driving are already
-  thinking ahead. Works well as an anchor because every player is active simultaneously.'
-question: When you got past your opponent, what made you decide to shoot rather than keep dribbling?
+coach:
+- cue: 'At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot? When
+    is each the right answer? Players who look up to check for the goal before driving are already thinking
+    ahead. Works well as an anchor because every player is active simultaneously.'
+  ask: When you got past your opponent, what made you decide to shoot rather than keep dribbling?
 pairs_with:
 - gates-passing
 - 2v2-to-endlines-attacking
@@ -37,7 +38,8 @@ for_age:
       so more touches and more decisions. Progress to 1v1 to Cone Goals: add a cone goal at each end and
       players score by kicking through below knee height. Run all pairs simultaneously. Fast rotations
       keep everyone active.'
-    look_for: Players trying to dribble past the defender rather than just kicking and chasing. Reward
-      the attempt regardless of outcome. If players are unevenly matched, play the ball directly to the
-      less skilled player to level the challenge.
-    question: When you had the ball, did you try to go past your opponent or around them? What worked?
+    coach:
+    - cue: Players trying to dribble past the defender rather than just kicking and chasing. Reward the
+        attempt regardless of outcome. If players are unevenly matched, play the ball directly to the
+        less skilled player to level the challenge.
+      ask: When you had the ball, did you try to go past your opponent or around them? What worked?

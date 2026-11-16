@@ -21,10 +21,11 @@ setup: Rectangle about 20 by 15 yards. One or two volunteers are the Kangaroo Ja
   a ball. Kangaroo Jacks must hop everywhere they go. Players dribble from one side of the grid to the
   other without getting tagged by a hopping Kangaroo Jack. If tagged, that player becomes a Kangaroo too.
   After a minute or so, call time, catch your breath, and play again.
-look_for: The hopping is the whole point. Two-footed hopping is genuinely difficult for many 5 and 6 year
-  olds and they will fall over and think it is hilarious. That is fine. Let them. The coordination work
-  happening in this game is foundational to athletic development and they will never know they are training.
-question: When more kangaroos appeared, how did you find space to dribble?
+coach:
+- cue: The hopping is the whole point. Two-footed hopping is genuinely difficult for many 5 and 6 year
+    olds and they will fall over and think it is hilarious. That is fine. Let them. The coordination work
+    happening in this game is foundational to athletic development and they will never know they are training.
+  ask: When more kangaroos appeared, how did you find space to dribble?
 pairs_with:
 - bunny-trail
 - snake

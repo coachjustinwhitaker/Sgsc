@@ -21,11 +21,10 @@ setup: Square of cones for every 6 players. Three pairs in different colors. Two
   the ball away from the defending pair. When defenders steal or force a mistake, they replace the attacking
   pair who last touched the ball. Immediately, no stoppages. The new defenders must get into position
   fast.
-look_for: 'The defending pair must communicate constantly: who pressures the ball, who covers behind.
-  Look for the pair who splits those jobs naturally. The team that defends compactly wins the ball most
-  often.'
-question: When you were the defending pair, how did you decide who would press the ball and who would
-  cover?
+coach:
+- cue: 'The defending pair must communicate constantly: who pressures the ball, who covers behind. Look
+    for the pair who splits those jobs naturally. The team that defends compactly wins the ball most often.'
+  ask: When you were the defending pair, how did you decide who would press the ball and who would cover?
 pairs_with:
 - flying-numbers
 - half-court-soccer

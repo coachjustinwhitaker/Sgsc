@@ -11,10 +11,21 @@ def check(root=ROOT):
         a = load(f)
         _types = {t['id'] for t in load(root / 'data' / 'vocab' / 'activity-types.yaml')['types']} if (root / 'data' / 'vocab' / 'activity-types.yaml').exists() else set()
         if a.get('type') not in _types: errs.append(f"{f.name}: type must be one of {sorted(_types)}")
-        for _k in ('scoring', 'objective', 'rules', 'progression'):
+        def _txt(v): return (isinstance(v, str) and v.strip()) or (isinstance(v, list) and v and all(isinstance(x, str) and x.strip() for x in v))
+        for _k in ('setup', 'scoring', 'rules'):
+            if _k in a and not _txt(a[_k]): errs.append(f'{f.name}: {_k} must be text or a list of lines')
+        for _k in ('objective', 'diagram_caption'):
             if _k in a and not (isinstance(a[_k], str) and a[_k].strip()): errs.append(f'{f.name}: {_k} must be a non-empty string')
+        def _coach(c): return isinstance(c, list) and c and all(isinstance(x, dict) and (x.get('cue') or '').strip() and (x.get('ask') or '').strip() for x in c)
+        if not _coach(a.get('coach')): errs.append(f'{f.name}: coach must be a list of cue and ask pairs')
+        for ag, o in (a.get('for_age') or {}).items():
+            if 'coach' in o and not _coach(o['coach']): errs.append(f'{f.name}: for_age {ag} coach must be a list of cue and ask pairs')
+        if 'progression' in a:
+            p = a['progression']
+            if not (isinstance(p, list) and p and all(isinstance(x, dict) and (x.get('title') or '').strip() and (x.get('text') or '').strip() and (x.get('minutes') is None or isinstance(x['minutes'], int)) for x in p)):
+                errs.append(f'{f.name}: progression must be a list of steps with a title and text (minutes optional)')
         if 'source' in a and not (isinstance(a['source'], str) and a['source'].strip()): errs.append(f'{f.name}: source must be a non-empty string')
-        for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'look_for', 'question', 'equipment']:
+        for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'coach', 'equipment']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')
         if a.get('space') not in ('quarter', 'half', 'full'): errs.append(f'{f.name}: space must be quarter, half or full, not {a.get("space")}')
@@ -37,8 +48,9 @@ def check(root=ROOT):
             if ag not in a['ages']: errs.append(f'{a["id"]}: for_age {ag} is not one of its ages')
     seen = {}
     for a in acts.values():
-        for k in ('setup', 'look_for', 'question'):
-            key = re.sub(r'\W+', ' ', a[k].lower()).strip()
+        _flat = lambda v: ' '.join(v) if isinstance(v, list) else str(v)
+        for k, val in (('setup', _flat(a['setup'])),) + tuple((f'coach {i+1} cue', c['cue']) for i, c in enumerate(a['coach'])) + tuple((f'coach {i+1} ask', c['ask']) for i, c in enumerate(a['coach'])):
+            key = re.sub(r'\W+', ' ', val.lower()).strip()
             if key in seen: errs.append(f'{a["id"]}: {k} repeats {seen[key]}')
             seen[key] = f'{a["id"]}.{k}'
     def ref_ok(r):

@@ -20,10 +20,11 @@ minutes: 15
 setup: Rectangular grid with a cone goal in each corner plus one in the center, 5 goals total. 3v3 or
   4v4. Players try to pass the ball through any goal to a teammate to score in any direction. Defenders
   protect all 5 goals and can only gain possession by intercepting or stealing.
-look_for: Attackers must adapt quickly when their path is blocked. Players without the ball must move
-  to open space near goals so their teammate has someone to find. Best as a focus activity later in the
-  season when combination play is starting to click.
-question: When the goal you were aiming for was blocked, what did you do?
+coach:
+- cue: Attackers must adapt quickly when their path is blocked. Players without the ball must move to
+    open space near goals so their teammate has someone to find. Best as a focus activity later in the
+    season when combination play is starting to click.
+  ask: When the goal you were aiming for was blocked, what did you do?
 pairs_with:
 - flying-numbers
 - 3v2-to-goal
@@ -33,9 +34,10 @@ for_age:
     setup: Rectangular grid with a cone goal in each corner plus one in the center, 5 goals total. 3v3
       or 4v4. Players try to pass the ball through any goal to a teammate to score in any direction. Defenders
       protect all 5 goals and can only gain possession by intercepting or stealing.
-    look_for: 'At U12 this game requires players to read the whole picture: all five goals, where teammates
-      are, where defenders are. Watch for players who signal to a teammate where they are switching before
-      the ball arrives. That anticipation is team play at its most sophisticated. Also watch for immediate
-      transition reactions on every turnover.'
-    question: When you changed which goal you were going for, did your teammate know before you passed,
-      or after?
+    coach:
+    - cue: 'At U12 this game requires players to read the whole picture: all five goals, where teammates
+        are, where defenders are. Watch for players who signal to a teammate where they are switching
+        before the ball arrives. That anticipation is team play at its most sophisticated. Also watch
+        for immediate transition reactions on every turnover.'
+      ask: When you changed which goal you were going for, did your teammate know before you passed, or
+        after?

@@ -21,9 +21,10 @@ setup: 'Grid about 25 by 20 yards with colored tall cones placed around the spac
   ball and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that
   color before you count to ten. Vary the colors and the pace. Progress: have two callers with different
   colors at the same time so players must split their attention.'
-look_for: 'Players who keep their head up while dribbling reach the color fastest. Let the game teach
-  the lesson. After the question, you can name it: "That is scanning."'
-question: Who got to the cone fastest? What were you doing with your head while you were dribbling?
+coach:
+- cue: 'Players who keep their head up while dribbling reach the color fastest. Let the game teach the
+    lesson. After the question, you can name it: "That is scanning."'
+  ask: Who got to the cone fastest? What were you doing with your head while you were dribbling?
 pairs_with:
 - gates-dribbling
 - red-light-green-light

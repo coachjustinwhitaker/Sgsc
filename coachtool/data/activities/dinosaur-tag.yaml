@@ -22,10 +22,11 @@ setup: No outer boundary needed. Each pair sets up a triangle of three cones, wi
   long. One player is the dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur
   tries to tag the park ranger. The park ranger can go any direction around the triangle but cannot leave
   the ball. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.
-look_for: Players learning to change direction quickly while keeping the ball close. Some players will
-  struggle with the turns, and that is fine. Encourage small touches with both inside and outside of the
-  foot. The competition drives the skill.
-question: What did you do with the ball when you needed to change direction quickly?
+coach:
+- cue: Players learning to change direction quickly while keeping the ball close. Some players will struggle
+    with the turns, and that is fine. Encourage small touches with both inside and outside of the foot.
+    The competition drives the skill.
+  ask: What did you do with the ball when you needed to change direction quickly?
 pairs_with:
 - duck-tails
 - shadow-dribbling
@@ -36,8 +37,9 @@ for_age:
       dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur tries to tag
       the park ranger. The park ranger can go any direction around the triangle but cannot leave the ball
       behind. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.
-    look_for: Some players will struggle to turn the ball around the triangle corners. That is fine. The
-      skill develops with time on the ball. Focus on the competition and the fun, not the technique. The
-      pairs format means everyone is active simultaneously and no one is waiting. Watch for players using
-      both feet.
-    question: What did you do when the dinosaur was catching up to you?
+    coach:
+    - cue: Some players will struggle to turn the ball around the triangle corners. That is fine. The
+        skill develops with time on the ball. Focus on the competition and the fun, not the technique.
+        The pairs format means everyone is active simultaneously and no one is waiting. Watch for players
+        using both feet.
+      ask: What did you do when the dinosaur was catching up to you?

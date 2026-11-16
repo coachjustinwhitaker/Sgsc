@@ -20,11 +20,12 @@ minutes: 15
 setup: Same as the opening game anchor, but now explicitly framed around transition. Outgoing players
   must sprint off the field. Incoming players must sprint on. No walking at any point during rotation.
   Call the numbers quickly so there is barely any gap between rounds.
-look_for: The transition moment is the entire point. What happens the instant a goal is scored or the
-  ball goes out? Do players react and sprint in, or shuffle in? Urgency in transition is a habit and habits
-  form through repetition. This is why Flying Numbers appears in both the anchor and focus roles.
-question: What is the difference between a team that sprints into transition and a team that walks? How
-  does that change what the other team can do?
+coach:
+- cue: The transition moment is the entire point. What happens the instant a goal is scored or the ball
+    goes out? Do players react and sprint in, or shuffle in? Urgency in transition is a habit and habits
+    form through repetition. This is why Flying Numbers appears in both the anchor and focus roles.
+  ask: What is the difference between a team that sprints into transition and a team that walks? How does
+    that change what the other team can do?
 pairs_with:
 - crisscross
 - hawaii

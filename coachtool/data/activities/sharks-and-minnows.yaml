@@ -22,10 +22,11 @@ setup: Mark a rectangle and call it the ocean. Every player is a minnow with the
   their ball knocked away by you. Any minnow whose ball is knocked out becomes a shark and joins you for
   the next crossing. Minnows who make it safely line up and go again. Play until everyone has become a
   shark, then start fresh with a new volunteer as the first shark.
-look_for: Encourage minnows to keep their heads up to find gaps, small touches to get around the sharks,
-  and bigger touches to escape when they have space. The game is self-regulating as more sharks appear.
-  Go after your more confident players first.
-question: How did you get past the shark? Did you go fast or did you go around?
+coach:
+- cue: Encourage minnows to keep their heads up to find gaps, small touches to get around the sharks,
+    and bigger touches to escape when they have space. The game is self-regulating as more sharks appear.
+    Go after your more confident players first.
+  ask: How did you get past the shark? Did you go fast or did you go around?
 pairs_with:
 - octopus
 - kangaroo-jacks
