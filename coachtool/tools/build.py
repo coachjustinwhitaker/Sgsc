@@ -107,16 +107,10 @@ def merge_rules(age, club, track):
         if at is None: out.append(r)
         else: out[at] = r
     return out
-def build_app(plan_id, brand_id):
-    cerrs, cwarns = club_report(brand_id)
-    if cerrs: sys.exit('Fix the club file first:\n' + '\n'.join('  ' + e for e in cerrs))
-    for w in cwarns: print('club setup, blank:', w)
-    import json
-    errs, acts = check()
-    if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
-    import io, mimetypes
+def attach_figs(acts):
+    import io
     from PIL import Image
-    for a in acts.values():
+    for a in acts:
         ds = a.get('diagram'); ds = [ds] if isinstance(ds, str) else (ds or [])
         cs = a.get('diagram_caption'); cs = [cs] if isinstance(cs, str) else (cs or [])
         figs = []
@@ -130,6 +124,15 @@ def build_app(plan_id, brand_id):
                 raw = buf.getvalue()
             figs.append({'src': f'data:{mime};base64,' + base64.b64encode(raw).decode(), 'caption': cs[n] if n < len(cs) else ''})
         if figs: a['figs'] = figs
+
+def build_app(plan_id, brand_id):
+    cerrs, cwarns = club_report(brand_id)
+    if cerrs: sys.exit('Fix the club file first:\n' + '\n'.join('  ' + e for e in cerrs))
+    for w in cwarns: print('club setup, blank:', w)
+    import json
+    errs, acts = check()
+    if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
+    attach_figs(acts.values())
     blocks = load(ROOT / 'data' / 'blocks.yaml'); brand = load(ROOT / 'theme' / brand_id / 'club.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     teams = []
     for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: int(re.sub(r'\D', '', load(f)['age']))):
@@ -153,11 +156,12 @@ def build_author():
     import json
     errs, acts = check()
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
-    build_app('u10-rec', 'sgsc')  # fills diagram_src on the activity records
+    attach_figs(acts.values())
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'blocks': load(ROOT / 'data' / 'blocks.yaml'),
             'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'types': load(ROOT / 'data' / 'vocab' / 'activity-types.yaml')['types'], 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
+    (ROOT / 'build' / 'all-activities.html').write_text((ROOT / 'app' / 'all.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False)), encoding='utf-8')
     brand = load(ROOT / 'theme' / 'sgsc' / 'club.yaml')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / 'sgsc' / brand['logo_file']).read_bytes()).decode()
     root = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach Companion</title><style>
