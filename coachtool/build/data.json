@@ -7926,6 +7926,54 @@
       "coach_choice": true,
       "note": "Flex week. Players drive their own priorities heading into the break. Ask them what they want to work on, then build practice around it."
      }
+    ],
+    "why_periodize": [
+     {
+      "title": "Plan, do not react",
+      "text": "Periodization ties every week to a developmental standard: what players need to be building at this point in their growth, in the order that lets those habits compound. It is a plan built against a framework, and it holds regardless of how last Saturday went."
+     },
+     {
+      "title": "The alternative treats symptoms",
+      "text": "After a tough loss it is tempting to chase the scoreline. Conceded on transitions, so Tuesday becomes a transition drill. Missed chances, so Wednesday is finishing. It feels responsive, but it treats symptoms instead of building players, and nothing compounds. A periodized plan stays with the standard. Trust the sequence, and problems like transitions and finishing tend to solve themselves, because the foundation underneath them is solid."
+     },
+     {
+      "title": "The season is a spiral",
+      "text": "Blocks do not run once and finish. A concept is introduced, the team moves to other work, then returns to it at a deeper level, with real spacing so each return is a genuine retention check. Introduction becomes Development. Development becomes Application. At U13, Application is also where specialization begins, grouped by who executes the action together rather than assigned upfront."
+     },
+     {
+      "title": "Weekly themes are a lens",
+      "text": "Every week carries a theme, something a player can hold onto: a focus idea you can build a practice around or talk about before or after training. The themes are not a second curriculum. They are a lens on the same week's work, connecting the technical content to something bigger like tempo, composure, decision-making and ownership."
+     },
+     {
+      "title": "Why this protects your players",
+      "text": "A coach who reacts to every result sends a message: what we work on depends on whether we won last week. Players feel that instability and start playing not to make mistakes. A periodized plan says we know where we are going and this week connects to last week's and next week's. Players build confidence in the process, not just their skills."
+     },
+     {
+      "title": "What it asks of you",
+      "text": "Hold the line when the instinct to fix things is strong. After a hard game you will want to throw the plan out. Sometimes that is the right call. But the default should be the plan, because it was built when you were thinking clearly, not in the 24 hours after a loss."
+     }
+    ],
+    "levels": [
+     {
+      "title": "Introduction",
+      "text": "Players are becoming aware of a concept and trying it. Decisions are slow and execution is inconsistent. Every player at every position works through this level the same way."
+     },
+     {
+      "title": "Development",
+      "text": "Players make repeatable, intentional choices. They understand the concept and are beginning to apply it under pressure, but it is not yet automatic. Still universal, with no position differentiation."
+     },
+     {
+      "title": "Application",
+      "text": "Decisions are fast and reliable under real game pressure. This is where position-specific depth begins to show up, grouped by who actually executes the action together, not by fixed labels."
+     },
+     {
+      "title": "Your goal",
+      "text": "Not to push every player to Application by the end of the season. Recognize where each player is and create the right conditions for them to move forward from there. Arriving at Introduction and leaving at Development is progress. Reaching Application under pressure by the final weeks is a great season."
+     },
+     {
+      "title": "Specialization at U13",
+      "text": "Introduction and Development stay universal in every block. Application is where specialization begins, grouped by function rather than assigned upfront. A player's technique and decision-making at Application are still revealing what kind of player he is becoming. Locking a player into a position too early risks missing who he actually turns out to be."
+     }
     ]
    },
    "goals": [
@@ -7990,20 +8038,24 @@
     "age": "u14",
     "who": [
      {
-      "label": "Growth is uneven",
-      "text": "In any U14 group you will see players who have already grown a lot and players who have not started. Do not read size as skill. Praise decisions and effort, and watch that your biggest players are not only winning duels with size."
+      "label": "Social",
+      "text": "These players are moving into a new social world, the kind of shift that comes with heading toward high school. They are building an identity, which can create friction with authority, including you. They lean on a peer group or a best friend. Pushing back is part of how they grow up, not a sign they stopped caring. Treat it as defiance and you lose them. Give them some ownership of decisions and you keep them."
      },
      {
-      "label": "The field got big",
-      "text": "The jump from 9v9 to 11v11 is a jump in distance, not just numbers. Players tire faster and shape breaks down. Short rests and water breaks are coaching tools, not weaknesses."
+      "label": "Emotional",
+      "text": "Players are sensitive about their bodies and compare themselves to teammates who are maturing faster or slower. Mood swings are sharper than at U12 and impulse control is still catching up. The blowup after a bad touch or a tough loss is not an attitude problem. It is a player who has not built the regulation skills to match the emotion. Mistakes and losses carry more weight socially than they did at U12."
      },
      {
-      "label": "Peers matter more than you",
-      "text": "At this age what teammates think carries a lot of weight. Individual feedback works best quietly, one on one. Public praise for team moments and brave decisions builds the culture you want."
+      "label": "Cognitive",
+      "text": "This is the inflection point. These players can reason beyond what they are told, take responsibility for their own commitment and plan ahead. They can start to build an identity around a role: not just a soccer player, but the center back or the wing back. That is what makes deeper positional work possible at U13. They can now understand why a responsibility exists and start to own it."
      },
      {
-      "label": "Some will be ready for more",
-      "text": "A few players in your group may be curious about a more competitive pathway. Notice them, encourage them, and pass it on to your club. Do not promise anything. Just open the door."
+      "label": "Physical",
+      "text": "Growth is visible and uneven. Injury rates rise: ankle sprains, tendonitis, and growth-related issues like Osgood-Schlatter and Sever's. The gap between your earliest and latest maturing players is wider than last year and keeps widening through U14. Do not let physical maturity stand in for development. Flex effort and fitness expectations to the player, and watch training load."
+     },
+     {
+      "label": "What US Soccer asks",
+      "text": "Progression Phase I is the first stage where players play inside a formation with defined roles. New objectives appear: midfield interchange, center back penetration into midfield to create overloads, and quick combination play under high pressure in tight spaces. Coaches are asked to help players own their development, encourage player-led warm-ups and player-to-player coaching, and have players solve game situations themselves."
      }
     ],
     "great_session": [
@@ -8032,7 +8084,7 @@
       "text": "Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn."
      }
     ],
-    "prepared": "Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week's focus before you arrive and choose Activity A as something familiar. Activity B is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid pairing two new concepts in the same session.",
+    "prepared": "Before you arrive, read the week's theme and the block and level for each practice. Build each practice from the library or your own activities. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try not to pair two new concepts in the same practice. If the group needs more time on a concept, stay with it instead of moving on.",
     "parents": {
      "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
      "script": "This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.",
@@ -8070,21 +8122,21 @@
     "blocks": {
      "B1": {
       "tagline": "Prepare the body. Read the picture. Execute with intent.",
-      "overview": "Every player's relationship with the ball comes before everything else. This block establishes the perceptual and technical habits that make all combination play, defending and finishing possible: scanning before the ball arrives, shaping the body to play forward, and using first touch to create a decision rather than just react to pressure. When a player stalls in a later block, look back here first.",
-      "problem": "Players scan, position and make first-touch decisions under high pressure in tight spaces.",
+      "overview": "Every player’s relationship with the ball comes before everything else. B1 establishes the perceptual and technical habits that make all combination play, defending, and finishing possible: scanning before the ball arrives, shaping the body to play forward, and using first touch to create a decision rather than just react to pressure. This block runs through every phase of the season because the habits live here. When a player stalls in B3 or B4, look back at B1 first.",
+      "problem": "Players must scan, position, and execute first-touch decisions under high pressure in tight spaces. At U13, the skill itself does not change position to position, the environment around it does. First touch is now a decision made under maximum defensive intensity, not just a technical act.",
       "focus": [
-       "Scanning before, during and after receiving",
+       "Scanning before, during, and after receiving",
        "Body shape and movement to play forward",
        "Using first touch to create a decision, not just control",
-       "Technique at full game speed and pressure"
+       "Technique executed at full U13 game speed and pressure"
       ]
      },
      "B2": {
       "tagline": "Create advantage. Move the ball forward. Solve pressure together.",
-      "overview": "Combination play only works if the individual technique from the first block is already in place. This block takes that foundation and asks players to solve pressure together: recognizing a teammate's run, providing the right angle of support, and timing the next action so the advantage compounds rather than stalls.",
-      "problem": "Players use teammates to create time, space and numerical advantages, moving the ball forward under pressure through deliberate combination play.",
+      "overview": "Combination play only works if the individual technique from B1 is already in place. A player who cannot control the ball under light pressure cannot execute a wall pass at game speed. B2 takes that individual foundation and asks players to solve pressure together: recognizing a teammate's run, providing the right angle of support, and timing the next action so the advantage compounds rather than stalls.",
+      "problem": "Players use teammates to create time, space, and numerical advantages, progressing the ball forward under pressure through deliberate combination play.",
       "focus": [
-       "Supporting angle, distance and timing",
+       "Supporting angle, distance, and timing",
        "Combination play to break defensive lines",
        "Recognizing and exploiting overloads",
        "Movement after the pass, not just the pass itself"
@@ -8092,10 +8144,10 @@
      },
      "B3": {
       "tagline": "Compact. Coordinated. Aggressive. Defending is not just for defenders.",
-      "overview": "Defending is not just for defenders. Winning the ball back is a collective action: the nearest player pressures, teammates cover behind, and the team stays connected and compact to protect dangerous space. The standard is no longer just reacting to losing the ball. Teams defend proactively, with a compact block that regains possession as high up the field as possible.",
-      "problem": "Players create and maintain a compact defensive block, applying coordinated pressure, cover and balance to prevent forward play and regain the ball.",
+      "overview": "Defending is not just for defenders. Strikers set the tone for the entire pressing structure, they're often the first line and the players who trigger the whole team's coordinated press. B3 is where every player learns that winning the ball back is a collective action: the nearest player pressures, teammates cover behind, and the team stays connected and compact to protect dangerous space. At U13, the standard is no longer just reacting to losing the ball. Teams are expected to defend proactively, a compact, high defensive block that regains possession as high up the field as possible.",
+      "problem": "Players create and maintain a compact, high defensive block, applying coordinated pressure-cover-balance to prevent forward play and regain the ball as high as possible.",
       "focus": [
-       "Coordinated pressure, cover and balance",
+       "Coordinated pressure-cover-balance",
        "Compact shape, vertically and horizontally",
        "High defensive line and line management",
        "Immediate reaction after losing the ball"
@@ -8103,23 +8155,23 @@
      },
      "B4": {
       "tagline": "Recognizing moments and acting fast.",
-      "overview": "Transitions are the moments that decide games. This block links attacking and defending: the instant possession changes, players must recognize the moment and respond, either with maximum intensity to win the ball back, or with immediate speed to attack before the opponent can organize. A player who reacts fast in transition is applying technique, combination and defensive shape all at once.",
-      "problem": "Players recognize the moment possession changes and respond immediately: pressing or recovering when it is lost, and playing forward at speed or securing the ball when it is won.",
+      "overview": "Transitions are the moments that decide games. B4 explicitly links attacking and defending: the instant possession changes, players must recognize the moment and respond, either with maximum intensity to win the ball back, or with immediate speed to attack before the opponent can organize. This block draws directly on B1, B2, and B3. A player who reacts fast in transition is applying all three at once, technique, combination, and defensive shape, compressed into a few seconds of chaos.",
+      "problem": "Players recognize the moment possession changes and respond immediately, either pressing with maximum intensity to regain the ball or recovering into defensive shape, and on regain, either playing forward at speed or securing possession to build.",
       "focus": [
        "Immediate recognition of the transition moment",
        "Reaction speed and acceleration",
-       "Press or recover, play forward or secure",
+       "Press vs. recover, play forward vs. secure",
        "Communication and organization under chaos"
       ]
      },
      "B5": {
       "tagline": "Can we turn advantage into goals?",
-      "overview": "All of the work in the earlier blocks is preparation for this one. Players who scan early, combine well, defend collectively and transition fast create finishing opportunities. This block is about having the composure and technique to take them. When players struggle to finish, the answer is rarely more finishing drills. Check the quality of preparation touches, the timing of runs, and the decisions made before the shot.",
-      "problem": "Players convert advantage into goals under pressure: separating to receive, combining for the final pass, and finishing with composure and limited touches.",
+      "overview": "All of the work in B1 through B4 is preparation for this block. Players who scan early, combine well, defend collectively, and transition fast create finishing opportunities. B5 is about having the composure and technique to take them. When players struggle to finish, the answer is rarely more finishing drills. Check the quality of preparation touches, the timing of runs, and the decisions made before the shot. The problem usually lives earlier in the chain.",
+      "problem": "Players convert advantage into goals under high defensive pressure, separating to receive, combining for the final pass, and finishing with composure and limited touches, while managing tempo and stakes as the game state demands.",
       "focus": [
        "Converting advantage into goals through quality final actions",
        "Separating and unmarking to receive in the box",
-       "Finishing with composure and limited touches",
+       "Finishing with composure and limited touches under pressure",
        "Managing tempo and stakes as the game state demands"
       ]
      }
