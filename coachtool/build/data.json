@@ -7655,13 +7655,11 @@
       "sessions": [
        {
         "block": "B1",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        },
        {
         "block": "B2",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        }
       ]
      },
@@ -7673,13 +7671,11 @@
       "sessions": [
        {
         "block": "B3",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        },
        {
         "block": "B1",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        }
       ]
      },
@@ -7691,13 +7687,11 @@
       "sessions": [
        {
         "block": "B2",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        },
        {
         "block": "B3",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        }
       ]
      },
@@ -7709,13 +7703,11 @@
       "sessions": [
        {
         "block": "B1",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        },
        {
         "block": "B2",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        }
       ]
      },
@@ -7727,13 +7719,11 @@
       "sessions": [
        {
         "block": "B3",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        },
        {
         "block": "B1",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        }
       ]
      },
@@ -7745,13 +7735,11 @@
       "sessions": [
        {
         "block": "B2",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        },
        {
         "block": "B3",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        }
       ]
      },
@@ -7763,13 +7751,11 @@
       "sessions": [
        {
         "block": "B4",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        },
        {
         "block": "B1",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7781,13 +7767,11 @@
       "sessions": [
        {
         "block": "B4",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        },
        {
         "block": "B2",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7799,13 +7783,11 @@
       "sessions": [
        {
         "block": "B5",
-        "level": "intro",
-        "a": {}
+        "level": "intro"
        },
        {
         "block": "B3",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7817,13 +7799,11 @@
       "sessions": [
        {
         "block": "B4",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B1",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7835,13 +7815,11 @@
       "sessions": [
        {
         "block": "B5",
-        "level": "dev",
-        "a": {}
+        "level": "dev"
        },
        {
         "block": "B2",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7853,13 +7831,11 @@
       "sessions": [
        {
         "block": "B4",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B3",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7871,13 +7847,11 @@
       "sessions": [
        {
         "block": "B5",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B1",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7889,13 +7863,11 @@
       "sessions": [
        {
         "block": "B4",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B2",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7907,13 +7879,11 @@
       "sessions": [
        {
         "block": "B5",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B3",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7925,13 +7895,11 @@
       "sessions": [
        {
         "block": "B1",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B4",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },
@@ -7943,13 +7911,11 @@
       "sessions": [
        {
         "block": "B2",
-        "level": "app",
-        "a": {}
+        "level": "app"
        },
        {
         "block": "B5",
-        "level": "app",
-        "a": {}
+        "level": "app"
        }
       ]
      },

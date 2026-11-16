@@ -42,10 +42,8 @@ weeks:
   sessions:
   - block: B1
     level: intro
-    a: {}
   - block: B2
     level: intro
-    a: {}
 - week: 2
   focus: Defending Starts With Shape
   block: B3
@@ -53,10 +51,8 @@ weeks:
   sessions:
   - block: B3
     level: intro
-    a: {}
   - block: B1
     level: intro
-    a: {}
 - week: 3
   focus: Supporting the Ball Carrier
   block: B2
@@ -64,10 +60,8 @@ weeks:
   sessions:
   - block: B2
     level: intro
-    a: {}
   - block: B3
     level: intro
-    a: {}
 - week: 4
   focus: Receiving Under Pressure
   block: B1
@@ -75,10 +69,8 @@ weeks:
   sessions:
   - block: B1
     level: dev
-    a: {}
   - block: B2
     level: dev
-    a: {}
 - week: 5
   focus: Compactness & Cover
   block: B3
@@ -86,10 +78,8 @@ weeks:
   sessions:
   - block: B3
     level: dev
-    a: {}
   - block: B1
     level: dev
-    a: {}
 - week: 6
   focus: Combination Play
   block: B2
@@ -97,10 +87,8 @@ weeks:
   sessions:
   - block: B2
     level: dev
-    a: {}
   - block: B3
     level: dev
-    a: {}
 - week: 7
   focus: Reading the Transition Moment
   block: B4
@@ -108,10 +96,8 @@ weeks:
   sessions:
   - block: B4
     level: intro
-    a: {}
   - block: B1
     level: app
-    a: {}
 - week: 8
   focus: Speed of Play
   block: B4
@@ -119,10 +105,8 @@ weeks:
   sessions:
   - block: B4
     level: dev
-    a: {}
   - block: B2
     level: app
-    a: {}
 - week: 9
   focus: First Touches in the Box
   block: B5
@@ -130,10 +114,8 @@ weeks:
   sessions:
   - block: B5
     level: intro
-    a: {}
   - block: B3
     level: app
-    a: {}
 - week: 10
   focus: Decision-Making Under Pressure
   block: B4
@@ -141,10 +123,8 @@ weeks:
   sessions:
   - block: B4
     level: app
-    a: {}
   - block: B1
     level: app
-    a: {}
 - week: 11
   focus: Finishing the Attack
   block: B5
@@ -152,10 +132,8 @@ weeks:
   sessions:
   - block: B5
     level: dev
-    a: {}
   - block: B2
     level: app
-    a: {}
 - week: 12
   focus: Pressing Triggers
   block: B4
@@ -163,10 +141,8 @@ weeks:
   sessions:
   - block: B4
     level: app
-    a: {}
   - block: B3
     level: app
-    a: {}
 - week: 13
   focus: Composure in the Box
   block: B5
@@ -174,10 +150,8 @@ weeks:
   sessions:
   - block: B5
     level: app
-    a: {}
   - block: B1
     level: app
-    a: {}
 - week: 14
   focus: Tempo Control
   block: B4
@@ -185,10 +159,8 @@ weeks:
   sessions:
   - block: B4
     level: app
-    a: {}
   - block: B2
     level: app
-    a: {}
 - week: 15
   focus: Winning Moments
   block: B5
@@ -196,10 +168,8 @@ weeks:
   sessions:
   - block: B5
     level: app
-    a: {}
   - block: B3
     level: app
-    a: {}
 - week: 16
   focus: Composure at Speed
   block: B1
@@ -207,10 +177,8 @@ weeks:
   sessions:
   - block: B1
     level: app
-    a: {}
   - block: B4
     level: app
-    a: {}
 - week: 17
   focus: Game Management
   block: B2
@@ -218,10 +186,8 @@ weeks:
   sessions:
   - block: B2
     level: app
-    a: {}
   - block: B5
     level: app
-    a: {}
 - week: 18
   focus: Player Ownership
   coach_choice: true

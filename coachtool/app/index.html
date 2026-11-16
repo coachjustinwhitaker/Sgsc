@@ -71,6 +71,7 @@ ol.steps .cue{display:block;font-style:normal;font-size:13px;color:var(--mute);m
 nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
 .cnote{background:#eef2f9;border-radius:10px;padding:10px 14px;margin-top:14px}.cnote b{color:var(--navy);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.cnote p,.cnote ul{margin:4px 0 0}
 .desc{margin:6px 0 2px!important}
+/*own*/.brow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}.mn{display:flex;align-items:center;gap:6px;font-size:13px;margin:0;font-weight:600}.mn input{width:64px;padding:6px 8px;margin:0}.ownform label{display:block;font-weight:600;font-size:14px;margin:10px 0 3px}.ownform input[type=text],.ownform textarea{width:100%}.ownform textarea{min-height:90px}
 /*phase*/.phase{margin:18px 0 8px;padding:12px 14px;border-left:4px solid var(--gold);background:#fff;border-radius:0 12px 12px 0}.phase .eb{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}.phase b{font-size:17px;color:var(--navy)}.phase p{margin:4px 0 0}
 #foot{max-width:640px;margin:8px auto 0;padding:18px 16px 28px;text-align:center;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}#foot a{color:var(--navy);font-weight:600;text-decoration:none}#foot .u{margin-top:2px;font-size:12px}
 </style></head><body>
@@ -135,7 +136,7 @@ function viewSetup(){
   <div class="card"><label>Age group</label><select id="ag" required>${first ? '<option value="" disabled selected>Choose your age group</option>' : ''}${DATA.teams.map(t => `<option value="${t.id}" ${!first && T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
   <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
-  <label>First week of your season</label><input id="st" type="date" value="${state.start || iso(todayD())}"><p class="note" style="margin:6px 0 0">The app opens on the week you are in. Not sure yet? Leave it as today.</p>
+  <label>First week of your season</label><input id="st" type="date" value="${state.start || iso(todayD())}"><p class="note" style="margin:6px 0 0">The app opens on the week you are in. Not sure yet? Leave it as today.</p><p class="note" style="margin:10px 0 0">Everything you set up and change stays on this device. The club does not see it.</p>
   <button id="ok">${first ? 'Next: your players' : 'Save'}</button></div>
   <p class="reset"><a href="#" id="rs">Start over</a></p>`;
   $('#ok').onclick = () => { if(!$('#ag').value){ $('#ag').focus(); return; } if($('#ag').value !== T.id){ state.swaps = {}; setTeam($('#ag').value); } state.players = +$('#pl').value; state.space = $('#sp').value; state.start = $('#st').value || iso(todayD()); save(); go(needTour() ? 'onb/1' : 'now'); };
@@ -233,6 +234,14 @@ function viewPlan(){
 }
 function gameCard(g){ return `<div class="card game"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
   <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
+const buildKey = (w, si) => `${w.week}-${si}`;
+const buildOf = (w, si) => ((state.build || {})[buildKey(w, si)] || []);
+const setBuild = (w, si, list) => { state.build = state.build || {}; if(list.length) state.build[buildKey(w, si)] = list; else delete state.build[buildKey(w, si)]; save(); };
+function itemInfo(it){ if(it.r.startsWith('own:')){ const o = (state.own || {})[it.r.slice(4)] || {name: 'Removed activity'}; return {name: o.name, own: o}; } const a = A(it.r.slice(4)); return {name: a.name, a}; }
+const ownLines = o => [...(o.notes ? lsx(o.notes.split('\n').filter(x => x.trim())) : []), ...(o.cue ? [`  Look for: ${o.cue}`] : []), ...(o.ask ? [`  Ask: "${o.ask}"`] : [])];
+function runOwn(o){ return `<div class="obj">Your activity. Only you can see it.</div>` + (o.notes ? `<div class="lbl">Notes</div>${o.notes.split('\n').filter(x => x.trim()).map(x => `<p>${x}</p>`).join('')}` : '') + ((o.cue || o.ask) ? `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul><li>${o.cue || ''}<em>${o.ask || ''}</em></li></ul></div>` : ''); }
+const lsx = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v];
+const actLines = a => { const ls = lsx; return [...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...(a.coach_note ? ['  Coach note:', ...ls(a.coach_note)] : []), ...(a.video ? ['  Video: ' + a.video] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`]; };
 function weekText(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, L = [`${T.label} · Week ${n} of ${plan.weeks.length}`, w.focus, ''];
   if(w.coach_choice){ L.push(w.note); return L.join('\n'); }
@@ -240,7 +249,8 @@ function weekText(n){
   if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
   { const r = w.routine && R(w.routine); if(r) L.push(`Start with: ${r.name}${r.dosage ? ' (' + r.dosage + ')' : ''}`, ...r.steps.map((x, i) => `  ${i + 1}. ${x.name}: ${x.how}`), ''); }
   w.sessions.forEach((ses, si) => { L.push((one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')) + (ses.block ? ` · ${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}` : ''));
-    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot); if(!ref){ L.push('- Activity not chosen yet'); return; } const a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...(a.coach_note ? ['  Coach note:', ...ls(a.coach_note)] : []), ...(a.video ? ['  Video: ' + a.video] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`); }); L.push(''); });
+    if(ses.block){ const items = buildOf(w, si); if(!items.length) L.push('- Nothing added yet'); items.forEach(it => { const o = itemInfo(it); L.push(`- ${o.name}${it.m ? ' (' + it.m + ' min)' : ''}`, ...(o.own ? ownLines(o.own) : actLines(o.a))); }); if(items.some(x => x.m)) L.push(`Total: ${items.reduce((t, x) => t + (+x.m || 0), 0)} min`); }
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot); if(!ref){ L.push('- Activity not chosen yet'); return; } const a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...actLines(a)); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
   (plan.standing || []).forEach(x => L.push('', `${x.title}: ${x.text}`));
   return L.join('\n').trim();
@@ -280,6 +290,25 @@ function runIt(a){
    + `<div class="lbl">Equipment</div><p>${a.equipment}</p>` + (a.source ? `<div class="lbl">Source</div><p>${a.source}</p>` : '');
 }
 function routineCard(w){ const r = w.routine && R(w.routine); return r ? `<div class="card"><div class="lab">Start with</div><div class="nm">${r.name}</div><div class="note">${[RK(r.kind), r.minutes ? r.minutes + ' min' : '', r.dosage].filter(Boolean).join(' · ')}</div><details><summary>How to run it</summary>${runRoutine(r)}</details></div>` : ''; }
+const buildUI = {};
+function practiceCard(w, si, one){
+  const ses = w.sessions[si], key = buildKey(w, si), items = buildOf(w, si), ui = buildUI[key] || (buildUI[key] = {any: false}), have = items.map(x => x.r);
+  const lvl = ses.level, pool = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && fits(a) && !have.includes('lib:' + a.id)), fit = pool.filter(a => a.block === ses.block && (!lvl || (a.levels || []).includes(lvl))), list = ui.any ? pool : fit;
+  const own = Object.entries(state.own || {}).filter(([id]) => !have.includes('own:' + id));
+  const total = items.reduce((t, x) => t + (+x.m || 0), 0);
+  const rows = items.map((it, i) => { const o = itemInfo(it); return `<div class="slot"><div class="nm">${o.name}</div><div class="note">${o.own ? 'Your activity' : TYPE(o.a.type)}</div>
+    <details><summary>How to run it</summary>${o.own ? runOwn(o.own) : runIt(o.a)}</details>
+    <div class="brow"><label class="mn">Minutes <input type="number" min="1" max="90" value="${it.m || ''}" data-m="${key}|${i}"></label>${i ? `<button class="small ghost" data-up="${key}|${i}">Move up</button>` : ''}${o.own ? `<button class="small ghost" data-edit="${it.r.slice(4)}|${key}">Edit</button>` : ''}<button class="small ghost" data-rm="${key}|${i}">Remove</button></div></div>`; }).join('');
+  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b> <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
+    ${items.length ? rows + (total ? `<p class="note">Total ${total} min</p>` : '') : `<p class="note" style="margin:10px 0 4px">Your practice. Add from the library, or add your own.</p>`}
+    <details class="swap" ${ui.open === 'lib' ? 'open' : ''}><summary>Add from the library</summary>
+      <p class="note">${ui.any ? 'Everything for ' + T.label + ' that fits your numbers and space.' : fit.length + ' fit ' + DATA.blocks[ses.block].name + ', ' + (LVL[lvl] || '') + ', your numbers and space.'}</p>
+      ${list.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${TYPE(x.type)}${ui.any ? ' · ' + DATA.blocks[x.block].name : ''}</span></span><button class="small" data-add="${key}|lib:${x.id}">Add</button></div>`).join('') || '<p class="note">Nothing fits. Try showing every block, or a different space in Setup.</p>'}
+      <button class="small ghost" data-any="${key}">${ui.any ? 'Only this block and stage' : 'Show every block'}</button></details>
+    <details class="swap" ${ui.open === 'own' ? 'open' : ''}><summary>Add my own</summary>
+      ${own.map(([id, o]) => `<div class="alt"><span>${o.name}<br><span class="note">Your activity</span></span><button class="small" data-add="${key}|own:${id}">Add</button></div>`).join('')}
+      <div class="ownform" data-of="${key}"><label>Name</label><input type="text" class="o-name" maxlength="80"><label>Notes <small>(setup, rules, what it is for. One idea per line)</small></label><textarea class="o-notes"></textarea><label>Look for <small>(optional)</small></label><input type="text" class="o-cue"><label>Ask <small>(optional)</small></label><input type="text" class="o-ask"><input type="hidden" class="o-id"><button class="small" data-saveown="${key}">Save and add</button></div></details></div>`;
+}
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
   if(!state.start){ state.week = n; save(); }
@@ -289,7 +318,7 @@ function viewWeek(n){
   const on = n === cw ? 'now' : 'plan';
   if(w.coach_choice){ app.innerHTML = tabs(on) + strip + bn + `<h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
   const one = plan.sessions_per_week === 1;
-  const sessions = w.sessions.map((ses, si) => `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}` + slotsOf(w, si).map(slot => {
+  const sessions = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}` + slotsOf(w, si).map(slot => {
     const ref = slotRef(w, si, slot), key = `${w.week}-${si}-${slot}`, a = ref ? A(ref.split('#')[0]) : null, note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[key];
     const alts = alternatives(w, si, slot);
@@ -306,6 +335,17 @@ function viewWeek(n){
   const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note">${[...new Set(w.sessions.map((x, i) => sesBlock(w, i)))].map(b => `<a href="#" data-nav="why/${b}">Why this block: ${DATA.blocks[b].name}</a>`).join(' · ')} · <a href="#" data-nav="guide">Coach guide</a></p></div>${(plan.standing || []).map(x => `<div class="card"><p><b>${x.title}</b><br>${x.text}</p></div>`).join('')}`;
   app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + routineCard(w) + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
+  const wk = k => { const [wn, si] = k.split('-'); return [plan.weeks.find(x => x.week === +wn), +si]; };
+  const done = () => viewWeek(n);
+  app.querySelectorAll('[data-add]').forEach(b => b.onclick = () => { const [k, r] = b.dataset.add.split('|'); const [ww, si] = wk(k); setBuild(ww, si, buildOf(ww, si).concat({r})); buildUI[k].open = r.startsWith('own:') ? 'own' : 'lib'; done(); });
+  app.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { const [k, i] = b.dataset.rm.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).slice(); l.splice(+i, 1); setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const [k, i] = b.dataset.up.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).slice(), x = +i; [l[x - 1], l[x]] = [l[x], l[x - 1]]; setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-m]').forEach(inp => inp.onchange = () => { const [k, i] = inp.dataset.m.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).map(x => Object.assign({}, x)); const v = +inp.value; if(v > 0) l[+i].m = v; else delete l[+i].m; setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-any]').forEach(b => b.onclick = () => { const u = buildUI[b.dataset.any]; u.any = !u.any; u.open = 'lib'; done(); });
+  app.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { const [id, k] = b.dataset.edit.split('|'), o = state.own[id], f = app.querySelector(`[data-of="${k}"]`); f.querySelector('.o-name').value = o.name; f.querySelector('.o-notes').value = o.notes || ''; f.querySelector('.o-cue').value = o.cue || ''; f.querySelector('.o-ask').value = o.ask || ''; f.querySelector('.o-id').value = id; f.closest('details').open = true; f.scrollIntoView({block: 'center'}); });
+  app.querySelectorAll('[data-saveown]').forEach(b => b.onclick = () => { const k = b.dataset.saveown, f = app.querySelector(`[data-of="${k}"]`), name = f.querySelector('.o-name').value.trim(); if(!name){ f.querySelector('.o-name').focus(); return; }
+    state.own = state.own || {}; const eid = f.querySelector('.o-id').value, id = eid || 'o' + Date.now().toString(36); state.own[id] = {name, notes: f.querySelector('.o-notes').value.trim(), cue: f.querySelector('.o-cue').value.trim(), ask: f.querySelector('.o-ask').value.trim()};
+    const [ww, si] = wk(k); if(!eid) setBuild(ww, si, buildOf(ww, si).concat({r: 'own:' + id})); else save(); buildUI[k].open = 'own'; done(); });
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }
 function viewWhy(b){
