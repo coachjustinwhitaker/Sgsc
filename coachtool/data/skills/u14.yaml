@@ -1,8 +1,8 @@
 skills:
-- id: u14-b1-perception-and-preparation-intro
+- id: u14-b1-perception-preparation-intro
   age: u14
   block: B1
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -83,10 +83,10 @@ skills:
   - Base the decision on body shape and scan before contact
   - Recognize forced one-touch situations versus time to take a touch
   - Decisions are deliberate and often reactive at this level
-- id: u14-b2-perception-and-preparation-intro
+- id: u14-b2-perception-preparation-intro
   age: u14
   block: B2
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -118,10 +118,10 @@ skills:
   - Execute basic wall passes at reduced speed
   - Use a simple supporting movement after passing
   - Adjust passing technique to play to feet rather than space in combination situations
-- id: u14-b2-passing-and-movement-intro
+- id: u14-b2-passing-movement-intro
   age: u14
   block: B2
-  area: Passing and Movement
+  area: Passing & Movement
   level: intro
   tracks:
   - rec
@@ -140,10 +140,10 @@ skills:
   - Recognize the basic choice between combining with a teammate and carrying forward individually
   - Begin choosing between pass-and-move and carry based on where the defender is
   - Make simple combination decisions without waiting to be told
-- id: u14-b3-perception-and-preparation-intro
+- id: u14-b3-perception-preparation-intro
   age: u14
   block: B3
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: intro
   tracks:
   - rec
@@ -164,10 +164,10 @@ skills:
   - Recognize the importance of helping a teammate who is pressing
   - Begin to understand basic cover position behind the ball
   - Stay connected to the nearest teammate rather than isolated
-- id: u14-b3-shape-and-line-management-intro
+- id: u14-b3-shape-line-management-intro
   age: u14
   block: B3
-  area: Shape and Line Management
+  area: Shape & Line Management
   level: intro
   tracks:
   - rec
@@ -188,10 +188,10 @@ skills:
   - Understand the basic choice between pressing and delaying
   - Begin to recover goal-side when beaten
   - Recognize the importance of helping teammates defend rather than defending alone
-- id: u14-b4-perception-and-awareness-intro
+- id: u14-b4-perception-awareness-intro
   age: u14
   block: B4
-  area: Perception and Awareness
+  area: Perception & Awareness
   level: intro
   tracks:
   - rec
@@ -200,10 +200,10 @@ skills:
   - Recognize the moment possession has changed
   - Identify the immediate attacking or defensive cue that follows
   - Begin scanning during chaotic, fast-moving moments
-- id: u14-b4-reaction-and-speed-intro
+- id: u14-b4-reaction-speed-intro
   age: u14
   block: B4
-  area: Reaction and Speed
+  area: Reaction & Speed
   level: intro
   tracks:
   - rec
@@ -236,10 +236,10 @@ skills:
   - Identify when in shooting or final-pass range
   - Notice goal location and basic pressure
   - Recognize simple scoring opportunities
-- id: u14-b5-preparation-and-body-shape-intro
+- id: u14-b5-preparation-body-shape-intro
   age: u14
   block: B5
-  area: Preparation and Body Shape
+  area: Preparation & Body Shape
   level: intro
   tracks:
   - rec
@@ -259,10 +259,10 @@ skills:
   - Use inside foot or simple laces technique to finish
   - Complete uncontested headers or rebounds
   - Execute basic cutbacks or square passes
-- id: u14-b5-composure-and-ownership-intro
+- id: u14-b5-composure-ownership-intro
   age: u14
   block: B5
-  area: Composure and Ownership
+  area: Composure & Ownership
   level: intro
   tracks:
   - rec
@@ -271,10 +271,10 @@ skills:
   - Willing to shoot or play the final pass
   - Accept missed chances without frustration
   - Reset quickly after attempts
-- id: u14-b1-perception-and-preparation-dev-comp
+- id: u14-b1-perception-preparation-dev-comp
   age: u14
   block: B1
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: dev
   tracks:
   - comp
@@ -283,10 +283,10 @@ skills:
   - Body shape oriented to see the largest number of options before receiving, not just the nearest one
   - Recognize the difference between time to take a touch and a forced one-touch situation before the
     ball gets there
-- id: u14-b1-perception-and-preparation-app-comp
+- id: u14-b1-perception-preparation-app-comp
   age: u14
   block: B1
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: app
   tracks:
   - comp
@@ -589,10 +589,10 @@ skills:
   - 'Attacking Mids + Wingers + Strikers: Decide whether to play the third-man combination or play forward
     directly based on how the defenders have positioned relative to the run; if the run is tracked, play
     forward, if the run is free, play the third-man.'
-- id: u14-b3-perception-and-preparation-dev-comp
+- id: u14-b3-perception-preparation-dev-comp
   age: u14
   block: B3
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: dev
   tracks:
   - comp
@@ -600,10 +600,10 @@ skills:
   - Scan to recognize pressing triggers before the ball arrives at the target
   - 'Identify dangerous spaces: central channels, shooting lanes, space in behind'
   - Recognize the moment pressure has been broken and shape must adjust
-- id: u14-b3-perception-and-preparation-app-comp
+- id: u14-b3-perception-preparation-app-comp
   age: u14
   block: B3
-  area: Perception and Preparation
+  area: Perception & Preparation
   level: app
   tracks:
   - comp
@@ -643,10 +643,10 @@ skills:
     connected enough to prevent the central lane opening.'
   - 'Center Backs + Defensive Mid: The covering CB reads the stepping CB''s press and adjusts the line
     so no gap opens in behind.'
-- id: u14-b3-shape-and-line-management-dev-comp
+- id: u14-b3-shape-line-management-dev-comp
   age: u14
   block: B3
-  area: Shape and Line Management
+  area: Shape & Line Management
   level: dev
   tracks:
   - comp
@@ -654,10 +654,10 @@ skills:
   - Maintain compactness vertically and horizontally as a unit
   - Shift as a group toward the ball rather than defending in isolation
   - Recognize when the team shape has been broken and needs to reset
-- id: u14-b3-shape-and-line-management-app-comp
+- id: u14-b3-shape-line-management-app-comp
   age: u14
   block: B3
-  area: Shape and Line Management
+  area: Shape & Line Management
   level: app
   tracks:
   - comp
@@ -697,10 +697,10 @@ skills:
     the risk of being played through.'
   - 'Center Backs + Defensive Mid: Decide whether to step and engage or hold the line, understanding that
     stepping wrong breaks the entire defensive structure.'
-- id: u14-b4-perception-and-awareness-dev-comp
+- id: u14-b4-perception-awareness-dev-comp
   age: u14
   block: B4
-  area: Perception and Awareness
+  area: Perception & Awareness
   level: dev
   tracks:
   - comp
@@ -709,10 +709,10 @@ skills:
     demands
   - Choose action instead of freezing when the picture is unclear
   - Recognize that hesitation itself creates a disadvantage
-- id: u14-b4-perception-and-awareness-app-comp
+- id: u14-b4-perception-awareness-app-comp
   age: u14
   block: B4
-  area: Perception and Awareness
+  area: Perception & Awareness
   level: app
   tracks:
   - comp
@@ -725,10 +725,10 @@ skills:
     before the first touch.'
   - 'Def → Att: Support the Counter: Recognize space opening in behind the defense the instant possession
     changes, not a second later.'
-- id: u14-b4-reaction-and-speed-dev-comp
+- id: u14-b4-reaction-speed-dev-comp
   age: u14
   block: B4
-  area: Reaction and Speed
+  area: Reaction & Speed
   level: dev
   tracks:
   - comp
@@ -736,10 +736,10 @@ skills:
   - Identify numbers-up or numbers-down situations in the transition moment
   - Recognize when space is available to attack immediately
   - Begin anticipating transition moments before they fully occur
-- id: u14-b4-reaction-and-speed-app-comp
+- id: u14-b4-reaction-speed-app-comp
   age: u14
   block: B4
-  area: Reaction and Speed
+  area: Reaction & Speed
   level: app
   tracks:
   - comp
@@ -870,10 +870,10 @@ skills:
     and pace to reach a moving target, not just the space.'
   - 'All Positions: Numbers in the Box / Game State: Arrive in the correct zone in the box to convert
     a delivery, or manage the ball late to protect the result.'
-- id: u14-b5-composure-and-ownership-dev-comp
+- id: u14-b5-composure-ownership-dev-comp
   age: u14
   block: B5
-  area: Composure and Ownership
+  area: Composure & Ownership
   level: dev
   tracks:
   - comp
@@ -881,10 +881,10 @@ skills:
   - Stay composed as pressure and stakes increase
   - Take responsibility for decisive moments
   - Respond positively after success or failure
-- id: u14-b5-composure-and-ownership-app-comp
+- id: u14-b5-composure-ownership-app-comp
   age: u14
   block: B5
-  area: Composure and Ownership
+  area: Composure & Ownership
   level: app
   tracks:
   - comp
