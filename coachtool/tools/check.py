@@ -14,8 +14,8 @@ def check(root=ROOT):
         def _txt(v): return (isinstance(v, str) and v.strip()) or (isinstance(v, list) and v and all(isinstance(x, str) and x.strip() for x in v))
         for _k in ('setup', 'scoring', 'rules', 'coach_note'):
             if _k in a and not _txt(a[_k]): errs.append(f'{f.name}: {_k} must be text or a list of lines')
-        for _k in ('objective', 'diagram_caption'):
-            if _k in a and not (isinstance(a[_k], str) and a[_k].strip()): errs.append(f'{f.name}: {_k} must be a non-empty string')
+        if 'objective' in a and not (isinstance(a['objective'], str) and a['objective'].strip()): errs.append(f'{f.name}: objective must be a non-empty string')
+        if 'diagram_caption' in a and not _txt(a['diagram_caption']): errs.append(f'{f.name}: diagram_caption must be text or a list of captions')
         def _coach(c): return isinstance(c, list) and c and all(isinstance(x, dict) and (x.get('cue') or '').strip() and (x.get('ask') or '').strip() for x in c)
         if not _coach(a.get('coach')): errs.append(f'{f.name}: coach must be a list of cue and ask pairs')
         for ag, o in (a.get('for_age') or {}).items():
@@ -30,9 +30,14 @@ def check(root=ROOT):
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')
         if a.get('space') not in ('quarter', 'half', 'full'): errs.append(f'{f.name}: space must be quarter, half or full, not {a.get("space")}')
         if a.get('block') not in BLOCKS: errs.append(f'{f.name}: bad block {a.get("block")}')
-        d = a.get('diagram')
-        if d and not (root / 'data' / 'diagrams' / d).is_file(): errs.append(f'{f.name}: diagram file {d} not found in data/diagrams')
-        if d and d.rsplit('.', 1)[-1].lower() not in ('png', 'jpg', 'jpeg', 'webp', 'svg'): errs.append(f'{f.name}: diagram must be png, jpg, webp or svg')
+        ds = a.get('diagram'); ds = [ds] if isinstance(ds, str) else (ds or [])
+        cs = a.get('diagram_caption'); cs = [cs] if isinstance(cs, str) else (cs or [])
+        if len(cs) > len(ds) or (len(ds) > 1 and cs and len(cs) != len(ds)): errs.append(f'{f.name}: give one diagram caption per diagram, or none')
+        for d in ds:
+            if not (root / 'data' / 'diagrams' / d).is_file(): errs.append(f'{f.name}: diagram file {d} not found in data/diagrams')
+            if d.rsplit('.', 1)[-1].lower() not in ('png', 'jpg', 'jpeg', 'webp', 'svg'): errs.append(f'{f.name}: diagram must be png, jpg, webp or svg')
+        v = a.get('video')
+        if v and not (isinstance(v, str) and v.startswith(('http://', 'https://'))): errs.append(f'{f.name}: video must be a web link starting with http')
         tags = load(root / 'data' / 'vocab' / 'activity-tags.yaml'); okt = set(tags['actions'] + tags['concepts'])
         for t in a.get('skills', []):
             if t not in okt: errs.append(f'{f.name}: skill tag "{t}" is not in data/vocab/activity-tags.yaml')

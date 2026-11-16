@@ -73,12 +73,16 @@ def main():
         if cv: a['coach'] = cv
         a.pop('look_for', None); a.pop('question', None)
         if row.get('progression'): a['progression'] = prog_val(row['progression'])
-        if row.get('diagram'): a['diagram'] = row['diagram']
+        if (row.get('diagram') or '').strip():
+            ds = [x.strip() for x in row['diagram'].split(';') if x.strip()]
+            a['diagram'] = ds[0] if len(ds) == 1 else ds
+        if (row.get('video') or '').strip(): a['video'] = row['video'].strip()
         if (row.get('source') or '').strip(): a['source'] = row['source'].strip()
         if (row.get('type') or '').strip(): a['type'] = row['type'].strip().lower()
-        for _k in ('objective', 'diagram_caption'):
-            if (row.get(_k) or '').strip(): a[_k] = row[_k].strip()
-        if row.get('diagram_data') and a.get('diagram'):
+        if (row.get('objective') or '').strip(): a['objective'] = row['objective'].strip()
+        if (row.get('diagram_caption') or '').strip():
+            cl = lines(row['diagram_caption']); a['diagram_caption'] = cl[0] if len(cl) == 1 else cl
+        if row.get('diagram_data') and isinstance(a.get('diagram'), str):
             f = ddir / a['diagram']
             if not f.exists(): newfiles.append(f)
             f.write_bytes(base64.b64decode(row['diagram_data'].split(',', 1)[1]))

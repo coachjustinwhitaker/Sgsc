@@ -38,6 +38,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Coach note <small>(optional: how to coach it, one line per note. For example: do not dictate the choice, ask what they saw.)</small></label><textarea id="coach_note" style="min-height:60px"></textarea>
 <label class="t">Coach it <small>(2 to 4 pairs. A cue, then the question that goes with it)</small></label><div id="coachrows"></div>
 <label class="t">Diagram caption <small>(optional: say in plain words what the diagram shows)</small></label><input type="text" id="diagram_caption">
+<label class="t">Video link <small>(optional: a web link to an example, like YouTube or Vimeo)</small></label><input type="url" id="video" placeholder="https://">
 <label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
 <label class="t">Equipment</label><input type="text" id="equipment" placeholder="1 ball per group · 4 cones · Pinnies">
 <label class="t">Pairs well with <small>(optional)</small></label><div class="chk" id="pairs"></div>
@@ -85,8 +86,8 @@ function fill(a){
   $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#objective').value = a && a.objective ? a.objective : '';
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
-  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring','coach_note'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && a.diagram_caption ? a.diagram_caption : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
-  $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
+  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring','coach_note'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && typeof a.diagram_caption === 'string' ? a.diagram_caption : ''; $('#video').value = a && a.video ? a.video : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
+  $('#pv').innerHTML = a && a.figs ? `<img class="pv" src="${a.figs[0].src}"><small>${a.figs.length > 1 ? a.figs.length + ' diagrams are set. Choosing a file here replaces them all with one. To change one, ask in the chat thread.' : 'Current diagram. Choose a file to replace it.'}</small>` : '';
   $('#msg').innerHTML = ''; syncLevels(); fit();
 }
 $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value));
@@ -95,14 +96,14 @@ const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''
 $('#add').onclick = () => {
   const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), coach_note: $('#coach_note').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
-    setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
+    setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), video: $('#video').value.trim(), pairs_with: vals('pair')};
   const miss = []; [['name','Name'],['type','Type'],['objective','Objective'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
   if(a.coach.some(c => !c.cue || !c.ask)) miss.push('Each cue needs its question');
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }
   a.id = editing || slug(a.name); a.update = !!editing;
   if(!editing && D.activities.some(x => x.id === a.id)){ $('#msg').innerHTML = `<div class="err">An activity with this name already exists. Load it above to edit it, or change the name.</div>`; return; }
-  if(diagram){ a.diagram = diagram.name; a.diagram_data = diagram.data; } else { const old = D.activities.find(x => x.id === editing); if(old && old.diagram) a.diagram = old.diagram; }
+  if(diagram){ a.diagram = diagram.name; a.diagram_data = diagram.data; } else { const old = D.activities.find(x => x.id === editing); if(old && old.diagram){ a.diagram = old.diagram; if(Array.isArray(old.diagram) && old.diagram_caption) a.diagram_caption = old.diagram_caption; } }
   batch = batch.filter(x => x.id !== a.id).concat(a); saveBatch(); drawBatch(); $('#load').value = ''; fill(null); window.scrollTo(0, document.body.scrollHeight);
 };
 function drawBatch(){
