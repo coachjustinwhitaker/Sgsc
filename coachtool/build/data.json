@@ -1995,9 +1995,83 @@
     }
    ],
    "club": {
-    "format": "5v5"
+    "format": "5v5",
+    "rules": [
+     {
+      "label": "Format",
+      "text": "SGSC plays 5v5 at this age.",
+      "source": "Sierra Gold Soccer Club"
+     }
+    ]
    },
-   "rules": [],
+   "rules": [
+    {
+     "label": "Format",
+     "text": "SGSC plays 5v5 at this age.",
+     "source": "Sierra Gold Soccer Club",
+     "origin": "club"
+    },
+    {
+     "label": "Ball",
+     "text": "Size 3",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Field",
+     "text": "25 to 35 yards long, 15 to 25 yards wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goals",
+     "text": "Up to 4 feet high, 6 feet wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Game time",
+     "text": "4 quarters of 10 minutes",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goalkeeper",
+     "text": "No goalkeeper",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Offside",
+     "text": "No offside",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Heading",
+     "text": "Not allowed in practice or games",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Substitutions",
+     "text": "Unlimited, at any time",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Rosters",
+     "text": "No formal rosters. About 6 players per team is suggested.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Head injuries",
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    }
+   ],
    "ladder": [
     "D",
     "B1"
@@ -2467,9 +2541,83 @@
      "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
      "Talk to your club director about what that pathway looks like"
     ],
-    "contact": "Got a question about an activity? Not sure what to run with a particular group? Want to talk through what you are seeing at training? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
+    "contact": "Got a question about an activity? Not sure what to run with a particular group? Want to talk through what you are seeing at training? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time.",
+    "rules": [
+     {
+      "label": "Format",
+      "text": "SGSC plays 5v5 at this age.",
+      "source": "Sierra Gold Soccer Club"
+     }
+    ]
    },
-   "rules": [],
+   "rules": [
+    {
+     "label": "Format",
+     "text": "SGSC plays 5v5 at this age.",
+     "source": "Sierra Gold Soccer Club",
+     "origin": "club"
+    },
+    {
+     "label": "Ball",
+     "text": "Size 3",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Field",
+     "text": "25 to 35 yards long, 15 to 25 yards wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goals",
+     "text": "Up to 4 feet high, 6 feet wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Game time",
+     "text": "4 quarters of 10 minutes",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goalkeeper",
+     "text": "No goalkeeper",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Offside",
+     "text": "No offside",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Heading",
+     "text": "Not allowed in practice or games",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Substitutions",
+     "text": "Unlimited, at any time",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Rosters",
+     "text": "No formal rosters. About 6 players per team is suggested.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Head injuries",
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    }
+   ],
    "ladder": [
     "B1",
     "B2"
@@ -3345,7 +3493,80 @@
    "club": {
     "format": "7v7"
    },
-   "rules": [],
+   "rules": [
+    {
+     "label": "Format",
+     "text": "7v7",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Ball",
+     "text": "Size 4",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Field",
+     "text": "55 to 65 yards long, 35 to 45 yards wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goals",
+     "text": "Up to 6.5 feet high, 18.5 feet wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Game time",
+     "text": "2 halves of 25 minutes",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goalkeeper",
+     "text": "Goalkeeper",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Offside",
+     "text": "Offside applies",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Heading",
+     "text": "Not allowed in practice or games",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Build-out line",
+     "text": "Used at 7v7. When the goalkeeper has the ball in hand or takes a goal kick, opponents stay behind the line until the ball is in play. No offside between the halfway line and the build-out line. Your league sets where the line goes.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Substitutions",
+     "text": "Unlimited, at any stoppage",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Rosters",
+     "text": "Up to 12 players. A team needs at least 5 to start or continue.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Head injuries",
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    }
+   ],
    "ladder": [
     "B1",
     "B2",
@@ -4049,7 +4270,74 @@
     ],
     "contact": "Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce a new concept to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
    },
-   "rules": [],
+   "rules": [
+    {
+     "label": "Format",
+     "text": "9v9",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Ball",
+     "text": "Size 4",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Field",
+     "text": "70 to 80 yards long, 45 to 55 yards wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goals",
+     "text": "Up to 7 feet high, 21 feet wide",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Game time",
+     "text": "2 halves of 30 minutes",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Goalkeeper",
+     "text": "Goalkeeper",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Offside",
+     "text": "Offside applies",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Heading",
+     "text": "Not allowed in U11 play. At U12, US Soccer limits heading in practice to 30 minutes a week and 15 to 20 headers per player a week. Check your league for game rules.",
+     "source": "US Soccer Player Development Initiatives; US Soccer U11-U12 age group guide",
+     "origin": "core"
+    },
+    {
+     "label": "Substitutions",
+     "text": "Unlimited, at any stoppage",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Rosters",
+     "text": "Up to 16 players. A team needs at least 6 to start or continue.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    },
+    {
+     "label": "Head injuries",
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
+    }
+   ],
    "ladder": [
     "B1",
     "B2",
@@ -4906,14 +5194,26 @@
      "origin": "club"
     },
     {
-     "label": "Heading",
-     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "label": "Ball",
+     "text": "Size 5",
+     "source": "Laws of the Game",
+     "origin": "core"
     },
     {
      "label": "Offside",
      "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Head injuries",
+     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
+     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
+     "origin": "club"
+    },
+    {
+     "label": "Heading",
+     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
      "origin": "club"
     },
@@ -4944,12 +5244,6 @@
     {
      "label": "Officials",
      "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Head injuries",
-     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
      "origin": "club"
     }

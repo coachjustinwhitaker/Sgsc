@@ -65,6 +65,13 @@ def check(root=ROOT):
                     errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {w["block"]} activity')
 
     # skills, goals and age configs
+    for f in sorted((root / 'data' / 'rules').glob('*.yaml')) if (root / 'data' / 'rules').exists() else []:
+        rd = load(f); seen = set()
+        for r in rd.get('rules', []):
+            if not r.get('label') or not r.get('text'): errs.append(f'{f.name}: every rule needs a label and text')
+            elif r['label'].lower() in seen: errs.append(f'{f.name}: duplicate rule label {r["label"]}')
+            else: seen.add(r['label'].lower())
+        if rd.get('age') != f.stem: errs.append(f'{f.name}: age does not match file name')
     vocab = load(root / 'data' / 'vocab' / 'skills.yaml')
     seen_b = {}
     for f in sorted((root / 'data' / 'skills').glob('*.yaml')):
