@@ -7926,6 +7926,28 @@
       "coach_choice": true,
       "note": "Flex week. Players drive their own priorities heading into the break. Ask them what they want to work on, then build practice around it."
      }
+    ],
+    "why_periodize": [
+     {
+      "title": "Plan, do not react",
+      "text": "Training follows a developmental plan, not the last scoreline. Drilling transitions after a loss treats a symptom. A planned season builds skills that compound, and the plan holds after a bad game."
+     },
+     {
+      "title": "The season is a spiral",
+      "text": "Ideas are introduced, set down while other work happens, then come back at greater depth. Players move from Introduction to Development to Application. At U13, specialization begins at Application."
+     },
+     {
+      "title": "Weekly themes are a lens",
+      "text": "Each week has a focus idea that gives players something to hold onto. It is a lens on the same work, not a separate curriculum."
+     },
+     {
+      "title": "Players read the plan too",
+      "text": "A plan that does not swing with each result builds confidence in the process. Constant reaction tells players things are unstable."
+     },
+     {
+      "title": "Hold the plan by default",
+      "text": "Change it when it is clearly the right call, not because of one game."
+     }
     ]
    },
    "goals": [
@@ -7990,20 +8012,24 @@
     "age": "u14",
     "who": [
      {
-      "label": "Growth is uneven",
-      "text": "In any U14 group you will see players who have already grown a lot and players who have not started. Do not read size as skill. Praise decisions and effort, and watch that your biggest players are not only winning duels with size."
+      "label": "Social",
+      "text": "These players are moving into a new social world, the kind of shift that comes with heading toward high school. They are building an identity, which can create friction with authority, including you. They lean on a peer group or a best friend. Pushing back is part of how they grow up, not a sign they stopped caring. Treat it as defiance and you lose them. Give them some ownership of decisions and you keep them."
      },
      {
-      "label": "The field got big",
-      "text": "The jump from 9v9 to 11v11 is a jump in distance, not just numbers. Players tire faster and shape breaks down. Short rests and water breaks are coaching tools, not weaknesses."
+      "label": "Emotional",
+      "text": "Players are sensitive about their bodies and compare themselves to teammates who are maturing faster or slower. Mood swings are sharper than at U12 and impulse control is still catching up. The blowup after a bad touch or a tough loss is not an attitude problem. It is a player who has not built the regulation skills to match the emotion. Mistakes and losses carry more weight socially than they did at U12."
      },
      {
-      "label": "Peers matter more than you",
-      "text": "At this age what teammates think carries a lot of weight. Individual feedback works best quietly, one on one. Public praise for team moments and brave decisions builds the culture you want."
+      "label": "Cognitive",
+      "text": "This is the inflection point. These players can reason beyond what they are told, take responsibility for their own commitment and plan ahead. They can start to build an identity around a role: not just a soccer player, but the center back or the wing back. That is what makes deeper positional work possible at U13. They can now understand why a responsibility exists and start to own it."
      },
      {
-      "label": "Some will be ready for more",
-      "text": "A few players in your group may be curious about a more competitive pathway. Notice them, encourage them, and pass it on to your club. Do not promise anything. Just open the door."
+      "label": "Physical",
+      "text": "Growth is visible and uneven. Injury rates rise: ankle sprains, tendonitis, and growth-related issues like Osgood-Schlatter and Sever's. The gap between your earliest and latest maturing players is wider than last year and keeps widening through U14. Do not let physical maturity stand in for development. Flex effort and fitness expectations to the player, and watch training load."
+     },
+     {
+      "label": "What US Soccer asks",
+      "text": "Progression Phase I is the first stage where players play inside a formation with defined roles. New objectives appear: midfield interchange, center back penetration into midfield to create overloads, and quick combination play under high pressure in tight spaces. Coaches are asked to help players own their development, encourage player-led warm-ups and player-to-player coaching, and have players solve game situations themselves."
      }
     ],
     "great_session": [
@@ -8032,7 +8058,7 @@
       "text": "Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn."
      }
     ],
-    "prepared": "Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week's focus before you arrive and choose Activity A as something familiar. Activity B is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid pairing two new concepts in the same session.",
+    "prepared": "Before you arrive, read the week's theme and the block and level for each practice. Build each practice from the library or your own activities. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try not to pair two new concepts in the same practice. If the group needs more time on a concept, stay with it instead of moving on.",
     "parents": {
      "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
      "script": "This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.",

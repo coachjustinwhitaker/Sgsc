@@ -1,4 +1,6 @@
-season_note: 'The weekly themes are a suggested order, so the season builds skill step by step instead of chasing whatever last weekend showed. Use them as the frame. If a game exposes a real problem, work it into your practice and keep the theme.'
+season_note: The weekly themes are a suggested order, so the season builds skill step by step instead
+  of chasing whatever last weekend showed. Use them as the frame. If a game exposes a real problem, work
+  it into your practice and keep the theme.
 id: u14-comp
 age: u14
 track: comp
@@ -194,3 +196,18 @@ weeks:
   coach_choice: true
   note: Flex week. Players drive their own priorities heading into the break. Ask them what they want
     to work on, then build practice around it.
+why_periodize:
+- title: Plan, do not react
+  text: Training follows a developmental plan, not the last scoreline. Drilling transitions after a loss
+    treats a symptom. A planned season builds skills that compound, and the plan holds after a bad game.
+- title: The season is a spiral
+  text: Ideas are introduced, set down while other work happens, then come back at greater depth. Players
+    move from Introduction to Development to Application. At U13, specialization begins at Application.
+- title: Weekly themes are a lens
+  text: Each week has a focus idea that gives players something to hold onto. It is a lens on the same
+    work, not a separate curriculum.
+- title: Players read the plan too
+  text: A plan that does not swing with each result builds confidence in the process. Constant reaction
+    tells players things are unstable.
+- title: Hold the plan by default
+  text: Change it when it is clearly the right call, not because of one game.
