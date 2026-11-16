@@ -147,7 +147,15 @@ def build_author():
             'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
-    (ROOT / 'build' / 'index.html').write_text('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach tool</title><style>body{font:18px/1.6 -apple-system,Segoe UI,Arial,sans-serif;max-width:560px;margin:40px auto;padding:0 16px}a{display:block;margin:12px 0}</style></head><body><h1>Coach tool</h1><a href="planner.sgsc.html">Season planner (rec: U8, U10, U12)</a><a href="activity-builder.html">Activity builder</a></body></html>', encoding='utf-8')
+    brand = load(ROOT / 'theme' / 'sgsc' / 'club.yaml')
+    logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / 'sgsc' / brand['logo_file']).read_bytes()).decode()
+    root = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach Companion</title><style>
+body{{margin:0;font:18px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;background:#f6f7fa}}header{{background:{brand['navy_dark']};border-bottom:3px solid {brand['gold']};padding:14px 16px;color:#fff;display:flex;align-items:center;gap:12px}}header img{{height:44px}}header b{{font-size:17px}}header small{{display:block;opacity:.75;font-size:13px}}
+main{{max-width:560px;margin:0 auto;padding:28px 16px}}h1{{font-size:28px;margin:0 0 8px}}p.lead{{color:#555;margin:0 0 22px}}a.go{{display:block;background:{brand['navy']};color:#fff;text-align:center;text-decoration:none;font-weight:700;border-radius:12px;padding:16px;font-size:19px}}.tip{{color:#6b7280;font-size:15px;margin:14px 0 0;text-align:center}}footer{{max-width:560px;margin:30px auto 0;padding:16px;border-top:1px solid #e3e7ee;font-size:14px;color:#6b7280}}footer a{{color:#6b7280}}</style></head><body>
+<header><img src="{logo}" alt=""><div><b>Coach Companion</b><small>{brand['short_name']}</small></div></header>
+<main><h1>Ideas for your season, one week at a time</h1><p class="lead">Suggested sessions and how-tos for every activity, in one shared language across the club.</p><a class="go" href="planner.sgsc.html">Open Coach Companion</a><p class="tip">Tip: save this page to your phone's home screen so it opens like an app.</p></main>
+<footer>For authors: <a href="activity-builder.html">Activity Builder</a></footer></body></html>'''
+    (ROOT / 'build' / 'index.html').write_text(root, encoding='utf-8')
     return out
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'author': print('wrote', build_author()); sys.exit()
