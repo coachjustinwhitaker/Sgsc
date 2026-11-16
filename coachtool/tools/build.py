@@ -93,7 +93,7 @@ def build_app(plan_id, brand_id):
     plan = load(ROOT / 'data' / 'plans' / f'{plan_id}.yaml'); blocks = load(ROOT / 'data' / 'blocks.yaml')
     brand = load(ROOT / 'theme' / brand_id / 'brand.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
-    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'plans': [plan], 'blocks': blocks, 'goals': goals, 'ladder': ladder}
+    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'plans': [plan], 'blocks': blocks, 'goals': goals, 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"), 'ladder': ladder}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))

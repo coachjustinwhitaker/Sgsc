@@ -50,15 +50,25 @@ function alternatives(w, si, slot){
 }
 function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
-function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
+function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['players','Players'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewSetup(){
   app.innerHTML = `<h1>Set up your team</h1><p class="lead">U10 recreational. Two minutes, and you can change it any time.</p>
   <div class="card"><label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
   <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
-  <button id="ok">${state.players ? 'Save' : 'Next: player goals'}</button></div>
+  <button id="ok">${state.players ? 'Save' : 'Next: your players'}</button></div>
   <p class="reset"><a href="#" id="rs">Start over</a></p>`;
-  $('#ok').onclick = () => { const first = !state.players; state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'goals' : 'plan'); };
+  $('#ok').onclick = () => { const first = !state.players; state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'players' : 'plan'); };
   $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); go('setup'); };
+}
+function viewPlayers(){
+  const P = DATA.players;
+  app.innerHTML = tabs('players') + `<h1>Who is in front of you</h1><p class="lead">Understanding your U10 players.</p>
+  <div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>
+  <h2>What a great session looks like</h2>
+  <div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>
+  <h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>
+  <h2>The parents on the sideline</h2><div class="card"><p>${P.parents.intro}</p><p><i>&ldquo;${P.parents.script}&rdquo;</i></p><p>${P.parents.outro}</p></div>
+  <button data-nav="goals">Next: player goals</button>`;
 }
 function viewGoals(){
   const goals = DATA.goals;
@@ -88,7 +98,7 @@ function viewWeek(n){
 function render(){
   const h = route || (state.players ? 'plan' : 'setup');
   if(!state.players && h !== 'setup'){ route = 'setup'; return render(); }
-  if(h === 'setup') viewSetup(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else viewPlan();
+  if(h === 'setup') viewSetup(); else if(h === 'players') viewPlayers(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else viewPlan();
   window.scrollTo(0,0);
 }
 render();
