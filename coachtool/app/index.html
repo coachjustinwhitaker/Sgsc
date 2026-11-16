@@ -51,6 +51,7 @@ p.lead{font-size:16px;line-height:1.5}
 button,.btn{border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,50,.12)}
 button.ghost,.btn.ghost{box-shadow:none;border-color:#c5cfe0}
 .tag{font-weight:600}
+.tourtop{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 4px}.badge{background:var(--navy);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:4px 12px}.tourtop .note{font-size:13px;color:var(--mute)}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
@@ -148,7 +149,7 @@ function tourSteps(){
 }
 function viewTour(n){
   const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
-  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><p class="note" style="margin:0">Step ${i} of ${last} · ${T.label} ${T.track === 'rec' ? 'rec' : T.track} · <a href="#" data-nav="setup">Change</a></p><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
+  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><div class="tourtop"><span class="badge">${[T.label, T.track === 'rec' ? 'Rec' : T.track.charAt(0).toUpperCase() + T.track.slice(1), T.club.format].filter(Boolean).join(' · ')}</span><span class="note">Step ${i} of ${last} · <a href="#" data-nav="setup">Change</a></span></div><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
     <button id="nx">${i === last ? 'Start with this week' : i === 1 ? 'Start the tour' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
