@@ -1,0 +1,229 @@
+id: u14-comp
+age: u14
+track: comp
+sessions_per_week: 2
+phases:
+- name: Preseason
+  weeks:
+  - 1
+  - 6
+  goal: Set the baseline
+  text: 'No Application-level work yet. Players install the habits and technique every later block depends
+    on: individual technique, combination play and collective defending shape.'
+  success: Players are comfortable receiving under light pressure, understand basic team mechanics and
+    defensive shape, and show early decision-making instead of hesitation.
+- name: In-Season
+  weeks:
+  - 7
+  - 12
+  goal: Apply under real pressure
+  text: Games provide the pressure Application needs. B4 and B5 come online, and B1 to B3 start Application
+    reps against real defenders.
+  success: Decisions hold up at game speed, transitions trigger without prompting, and finishing chances
+    start to convert more consistently.
+- name: Peak Performance
+  weeks:
+  - 13
+  - 18
+  goal: Perform at the highest level
+  text: Every block cycles at Application through repeated performance, not new content. Composure and
+    game management are built through reps, not lectures.
+  success: Composure in finishing moments, informed choices late in games, and communication and ownership
+    without prompting.
+standing:
+- title: 'Every week: one live set-piece rep'
+  text: 'Attacking or defending: a corner, a free kick or a throw-in. It is a background layer, not a
+    themed week.'
+weeks:
+- week: 1
+  focus: First Touch & Awareness
+  block: B1
+  level: intro
+  sessions:
+  - block: B1
+    level: intro
+    a: {}
+  - block: B2
+    level: intro
+    a: {}
+- week: 2
+  focus: Defending Starts With Shape
+  block: B3
+  level: intro
+  sessions:
+  - block: B3
+    level: intro
+    a: {}
+  - block: B1
+    level: intro
+    a: {}
+- week: 3
+  focus: Supporting the Ball Carrier
+  block: B2
+  level: intro
+  sessions:
+  - block: B2
+    level: intro
+    a: {}
+  - block: B3
+    level: intro
+    a: {}
+- week: 4
+  focus: Receiving Under Pressure
+  block: B1
+  level: dev
+  sessions:
+  - block: B1
+    level: dev
+    a: {}
+  - block: B2
+    level: dev
+    a: {}
+- week: 5
+  focus: Compactness & Cover
+  block: B3
+  level: dev
+  sessions:
+  - block: B3
+    level: dev
+    a: {}
+  - block: B1
+    level: dev
+    a: {}
+- week: 6
+  focus: Combination Play
+  block: B2
+  level: dev
+  sessions:
+  - block: B2
+    level: dev
+    a: {}
+  - block: B3
+    level: dev
+    a: {}
+- week: 7
+  focus: Reading the Transition Moment
+  block: B4
+  level: intro
+  sessions:
+  - block: B4
+    level: intro
+    a: {}
+  - block: B1
+    level: app
+    a: {}
+- week: 8
+  focus: Speed of Play
+  block: B4
+  level: dev
+  sessions:
+  - block: B4
+    level: dev
+    a: {}
+  - block: B2
+    level: app
+    a: {}
+- week: 9
+  focus: First Touches in the Box
+  block: B5
+  level: intro
+  sessions:
+  - block: B5
+    level: intro
+    a: {}
+  - block: B3
+    level: app
+    a: {}
+- week: 10
+  focus: Decision-Making Under Pressure
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+    a: {}
+  - block: B1
+    level: app
+    a: {}
+- week: 11
+  focus: Finishing the Attack
+  block: B5
+  level: dev
+  sessions:
+  - block: B5
+    level: dev
+    a: {}
+  - block: B2
+    level: app
+    a: {}
+- week: 12
+  focus: Pressing Triggers
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+    a: {}
+  - block: B3
+    level: app
+    a: {}
+- week: 13
+  focus: Composure in the Box
+  block: B5
+  level: app
+  sessions:
+  - block: B5
+    level: app
+    a: {}
+  - block: B1
+    level: app
+    a: {}
+- week: 14
+  focus: Tempo Control
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+    a: {}
+  - block: B2
+    level: app
+    a: {}
+- week: 15
+  focus: Winning Moments
+  block: B5
+  level: app
+  sessions:
+  - block: B5
+    level: app
+    a: {}
+  - block: B3
+    level: app
+    a: {}
+- week: 16
+  focus: Composure at Speed
+  block: B1
+  level: app
+  sessions:
+  - block: B1
+    level: app
+    a: {}
+  - block: B4
+    level: app
+    a: {}
+- week: 17
+  focus: Game Management
+  block: B2
+  level: app
+  sessions:
+  - block: B2
+    level: app
+    a: {}
+  - block: B5
+    level: app
+    a: {}
+- week: 18
+  focus: Player Ownership
+  coach_choice: true
+  note: Flex week. Players drive their own priorities heading into the break. Ask them what they want
+    to work on, then build practice around it.
