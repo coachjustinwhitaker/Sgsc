@@ -90,10 +90,23 @@ def build_app(plan_id, brand_id):
     import json
     errs, acts = check()
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
+    import io, mimetypes
+    from PIL import Image
+    for a in acts.values():
+        d = a.get('diagram')
+        if not d: continue
+        f = ROOT / 'data' / 'diagrams' / d
+        if f.suffix.lower() == '.svg': raw, mime = f.read_bytes(), 'image/svg+xml'
+        else:
+            im = Image.open(f); im.thumbnail((720, 720)); buf = io.BytesIO()
+            if im.mode in ('RGBA', 'LA', 'P'): im.save(buf, 'PNG', optimize=True); mime = 'image/png'
+            else: im.convert('RGB').save(buf, 'JPEG', quality=82, optimize=True); mime = 'image/jpeg'
+            raw = buf.getvalue()
+        a['diagram_src'] = f'data:{mime};base64,' + base64.b64encode(raw).decode()
     plan = load(ROOT / 'data' / 'plans' / f'{plan_id}.yaml'); blocks = load(ROOT / 'data' / 'blocks.yaml')
     brand = load(ROOT / 'theme' / brand_id / 'brand.yaml'); ladder = load(ROOT / 'rules' / 'ladder.yaml')
     age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
-    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'plans': [plan], 'blocks': blocks, 'goals': goals, 'ladder': ladder}
+    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'plans': [plan], 'blocks': blocks, 'goals': goals, 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"), 'ladder': ladder}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
@@ -102,6 +115,18 @@ def build_app(plan_id, brand_id):
     left = re.findall(r'\{\{[^}]+\}\}', page)
     if left: sys.exit(f'Unfilled tokens: {left}')
     out = ROOT / 'build' / f'planner.{brand_id}.html'; out.write_text(page, encoding='utf-8'); return out
+def build_author():
+    import json
+    errs, acts = check()
+    if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
+    build_app('u10-rec', 'sgsc')  # fills diagram_src on the activity records
+    data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'blocks': load(ROOT / 'data' / 'blocks.yaml'),
+            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
+    page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
+    out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
+    (ROOT / 'build' / 'index.html').write_text('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach tool</title><style>body{font:18px/1.6 -apple-system,Segoe UI,Arial,sans-serif;max-width:560px;margin:40px auto;padding:0 16px}a{display:block;margin:12px 0}</style></head><body><h1>Coach tool</h1><a href="planner.sgsc.html">Season planner (U10 rec)</a><a href="activity-builder.html">Activity builder</a></body></html>', encoding='utf-8')
+    return out
 if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == 'author': print('wrote', build_author()); sys.exit()
     if len(sys.argv) > 3 and sys.argv[3] == 'app': print('wrote', build_app(sys.argv[1], sys.argv[2])); sys.exit()
     print('wrote', build(sys.argv[1], sys.argv[2]))

@@ -3,9 +3,8 @@ order: 14
 name: Pressure & Cover 3v3
 block: B3
 skills:
-- Cover
-- Recover
-- Working Together
+- Covering
+- Communication
 ages:
 - u10
 tracks:
