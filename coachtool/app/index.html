@@ -71,9 +71,11 @@ ol.steps .cue{display:block;font-style:normal;font-size:13px;color:var(--mute);m
 nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
 .cnote{background:#eef2f9;border-radius:10px;padding:10px 14px;margin-top:14px}.cnote b{color:var(--navy);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.cnote p,.cnote ul{margin:4px 0 0}
 .desc{margin:6px 0 2px!important}
+#foot{max-width:640px;margin:8px auto 0;padding:18px 16px 28px;text-align:center;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}#foot a{color:var(--navy);font-weight:600;text-decoration:none}#foot .u{margin-top:2px;font-size:12px}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
+<footer id="foot" class="noprint"></footer>
 <script>
 const DATA = /*DATA*/;
 const KEY = 'coachplanner.v1';
@@ -306,11 +308,16 @@ function viewWhy(b){
   <h2>What to look for</h2>${areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
   <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
 }
+function foot(h){
+  const el = $('#foot'); if(!el) return; if(h.startsWith('onb/')){ el.innerHTML = ''; return; }
+  const H = DATA.help || {}, C = DATA.credit || {};
+  el.innerHTML = (H.email ? `<div><a href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + T.label + ' ' + T.track)}">Ask for help</a></div>` : '') + (C.author ? `<div>Built by ${C.author}</div>` : '') + (DATA.updated ? `<div class="u">Updated ${DATA.updated}</div>` : '');
+}
 function render(){
   let h = route || (!state.players ? 'welcome' : needTour() ? 'onb/1' : 'now');
   if(!state.players && h !== 'setup' && h !== 'welcome'){ route = 'welcome'; return render(); }
   if(h === 'welcome') viewWelcome(); else if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'goals') viewGuide('goals'); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'more') viewMore(); else if(h === 'library') viewLibrary(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
-  window.scrollTo(0,0);
+  foot(h); window.scrollTo(0,0);
 }
 render();
 </script></body></html>
