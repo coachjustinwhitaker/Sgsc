@@ -37,6 +37,20 @@ nav.tabs{gap:0!important;margin:0 0 12px!important;border-bottom:1px solid var(-
 input[type=date]{-webkit-appearance:none;appearance:none;display:block;max-width:100%;min-width:0;text-align:left;box-sizing:border-box;width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
 .reset a{color:var(--mute)}.note a{color:var(--navy)}select:invalid{color:var(--mute)}
 .reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
+/* softer look */
+:root{--ink:#3b4350;--bg:#f4f5f2}
+body{line-height:1.55}
+h1{color:var(--navy);font-size:24px;font-weight:700;letter-spacing:-.01em;margin:8px 0 6px}
+p.lead{font-size:16px;line-height:1.5}
+.card{border-radius:14px;padding:16px 18px;margin:12px 0;border-color:#e6e8e3;box-shadow:0 1px 2px rgba(20,30,50,.05)}
+.card b{font-weight:600;color:var(--navy)}
+.card p{margin:10px 0}
+.goal{padding:12px 0}
+.slot .nm,.nm{font-size:18px;font-weight:600;color:var(--navy);margin:2px 0 4px}
+.card.game{background:#eef2f8;border:1px solid #dbe3f0}
+button,.btn{border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,50,.12)}
+button.ghost,.btn.ghost{box-shadow:none;border-color:#c5cfe0}
+.tag{font-weight:600}
 </style></head><body>
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · prototype</small></div></header>
 <main id="app"></main>
