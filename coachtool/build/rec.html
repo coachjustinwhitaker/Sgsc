@@ -363,7 +363,7 @@ function viewWhy(b){
 function foot(h){
   const el = $('#foot'); if(!el) return; if(h.startsWith('onb/')){ el.innerHTML = ''; return; }
   const H = DATA.help || {}, C = DATA.credit || {};
-  el.innerHTML = (H.email ? `<div><a href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + T.label + ' ' + T.track)}">Ask for help</a></div>` : '') + (C.author ? `<div>Built by ${C.author}</div>` : '') + (DATA.updated ? `<div class="u">Updated ${DATA.updated}</div>` : '');
+  el.innerHTML = (H.email ? `<div><a href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + T.label + ' ' + T.track)}">Ask for help</a></div>` : '') + (C.author ? `<div>Designed by ${C.author}</div>` : '') + (DATA.updated ? `<div class="u">Updated ${DATA.updated}</div>` : '');
 }
 function render(){
   let h = route || (!state.players ? 'welcome' : needTour() ? 'onb/1' : 'now');
