@@ -186,3 +186,663 @@ skills:
   - Recognize at once that possession has changed
   - Accelerate toward the ball or space
   - Keep the intensity through repeated turnovers
+- id: u12-b1-perception-preparation-intro-comp
+  age: u12
+  block: B1
+  area: Perception & Preparation
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Scan occasionally before receiving to identify pressure or teammates
+  - Begin adjusting body shape to face the field when possible
+  - Recognize obvious moments of time vs. immediate pressure
+- id: u12-b1-perception-preparation-dev-comp
+  age: u12
+  block: B1
+  area: Perception & Preparation
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Scan regularly before receiving under light to moderate pressure
+  - Receive on the half-turn when space allows
+  - Recognize when one-touch play is needed vs. when they can take a touch
+- id: u12-b1-perception-preparation-app-comp
+  age: u12
+  block: B1
+  area: Perception & Preparation
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Scan early and often, even under active pressure
+  - Adjust position before receiving to create time and space
+  - 'Consistently recognize tempo: one-touch, two-touch, or carry'
+- id: u12-b1-footwork-ball-mastery-intro-comp
+  age: u12
+  block: B1
+  area: Footwork & Ball Mastery
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Use small, controlled touches to settle the ball
+  - Show basic coordination when changing direction
+  - Begin using body position to protect the ball when pressured
+- id: u12-b1-footwork-ball-mastery-dev-comp
+  age: u12
+  block: B1
+  area: Footwork & Ball Mastery
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Use first touch to move the ball away from pressure
+  - Adjust footwork to receive with inside or outside foot as needed
+  - Protect the ball using body shape when pressure arrives
+- id: u12-b1-footwork-ball-mastery-app-comp
+  age: u12
+  block: B1
+  area: Footwork & Ball Mastery
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - First touch consistently creates a new angle or breaks pressure
+  - Maintain balance and coordination while changing direction at speed
+  - Shield the ball effectively under pressure
+- id: u12-b1-feints-body-movement-intro-comp
+  age: u12
+  block: B1
+  area: Feints & Body Movement
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Use simple body movements to suggest one action and take another
+  - Show balance and coordination when shifting weight or changing direction
+  - Begin recognizing when a defender is close enough to manipulate
+- id: u12-b1-feints-body-movement-dev-comp
+  age: u12
+  block: B1
+  area: Feints & Body Movement
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Use body feints to commit or delay a defender before first touch
+  - Coordinate feint and first touch to move into space
+  - Maintain balance and control while changing direction under light pressure
+- id: u12-b1-feints-body-movement-app-comp
+  age: u12
+  block: B1
+  area: Feints & Body Movement
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Choose between feint, first touch, or immediate pass based on defender position
+  - Use body movement to create space to play forward or escape pressure
+  - Execute feints at game speed while scanning for next action
+- id: u12-b1-passing-receiving-intro-comp
+  age: u12
+  block: B1
+  area: Passing & Receiving
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Complete short passes with correct surface
+  - Receive the ball with intent to control first
+  - Attempt to pass to open teammates rather than defaulting forward
+- id: u12-b1-passing-receiving-dev-comp
+  age: u12
+  block: B1
+  area: Passing & Receiving
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Weight and pace the pass so the teammate can continue without slowing down
+  - Avoid passing to a teammate surrounded by two or more opponents
+  - Receive on the bounce or from the air with a soft first touch
+- id: u12-b1-passing-receiving-app-comp
+  age: u12
+  block: B1
+  area: Passing & Receiving
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Play the right pass at the right speed and time under active pressure
+  - Play a long pass in the air to a teammate in space
+  - Play first time when the picture demands it and the pass can be accurate
+- id: u12-b1-shooting-intro-comp
+  age: u12
+  block: B1
+  area: Shooting
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Shoot on goal when the chance is there instead of passing it up
+  - Strike the ball cleanly with the laces or inside of the foot
+  - Look at the goal and the goalkeeper before shooting
+- id: u12-b1-shooting-dev-comp
+  age: u12
+  block: B1
+  area: Shooting
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Read the goalkeeper's position and select a target before the shot
+  - Aim for the far side when shooting from an angle and the goalkeeper protects the near post
+  - Shoot after a dribble or a pass, not only from a set ball
+- id: u12-b1-shooting-app-comp
+  age: u12
+  block: B1
+  area: Shooting
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Finish in one touch when closely marked
+  - Keep clean technique and target selection with a defender closing
+  - Pick the shot over the extra touch when the window is short
+- id: u12-b1-decision-making-intro-comp
+  age: u12
+  block: B1
+  area: Decision-Making
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Recognize when a forward option exists
+  - Begin to understand that keeping possession is sometimes the best choice
+  - Decisions are slow but intentional
+- id: u12-b1-decision-making-dev-comp
+  age: u12
+  block: B1
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose between playing forward or keeping possession more consistently
+  - Make decisions faster as comfort increases
+  - Begin recognizing simple combination opportunities
+- id: u12-b1-decision-making-app-comp
+  age: u12
+  block: B1
+  area: Decision-Making
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Play forward or line-breaking passes when available
+  - Use appropriate passing surface and weight instinctively
+  - Receive the ball to immediately connect play
+- id: u12-b2-perception-preparation-intro-comp
+  age: u12
+  block: B2
+  area: Perception & Preparation
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Begin scanning beyond the ball to identify nearby teammates
+  - 'Recognize simple support positions: behind, beside, ahead'
+  - Start to see when a teammate is under pressure or free
+- id: u12-b2-perception-preparation-dev-comp
+  age: u12
+  block: B2
+  area: Perception & Preparation
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - 'Scan to identify numbers-up situations: 2v1, 3v2'
+  - Recognize defensive pressure cues that signal the need to combine
+  - Anticipate teammate movement rather than reacting late
+- id: u12-b2-perception-preparation-app-comp
+  age: u12
+  block: B2
+  area: Perception & Preparation
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Scan early to recognize overloads and defensive imbalance
+  - Position proactively to create passing triangles
+  - 'Read teammate cues: movement, body shape, eye line'
+- id: u12-b2-technique-for-combination-play-intro-comp
+  age: u12
+  block: B2
+  area: Technique for Combination Play
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Execute basic wall passes at walking or jogging speed
+  - Use simple supporting movements after passing
+  - Adjust passing technique to play to feet rather than space
+- id: u12-b2-technique-for-combination-play-dev-comp
+  age: u12
+  block: B2
+  area: Technique for Combination Play
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Execute wall passes, overlaps, and simple third-man runs at game speed
+  - Use first touch to set up combination play
+  - Adjust passing surface and weight for moving teammates
+- id: u12-b2-technique-for-combination-play-app-comp
+  age: u12
+  block: B2
+  area: Technique for Combination Play
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Execute combinations cleanly under active pressure
+  - Use one-touch or two-touch play to increase tempo
+  - Adjust technique instinctively based on space, pressure, and timing
+- id: u12-b2-passing-movement-intro-comp
+  age: u12
+  block: B2
+  area: Passing & Movement
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Pass and then move to a new supporting position
+  - Offer a clear passing option when a teammate has the ball
+  - 'Begin understanding basic spacing: not standing directly behind defenders'
+- id: u12-b2-passing-movement-dev-comp
+  age: u12
+  block: B2
+  area: Passing & Movement
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Pass with purpose and move to unbalance defenders
+  - Maintain spacing to create passing lanes and angles
+  - Support play at appropriate distances to keep possession alive
+- id: u12-b2-passing-movement-app-comp
+  age: u12
+  block: B2
+  area: Passing & Movement
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Anticipate as the third player who will receive after a pass between two teammates
+  - Switch positions with a teammate to lose a direct opponent
+  - Time the run past the ball to overload wide
+- id: u12-b2-decision-making-intro-comp
+  age: u12
+  block: B2
+  area: Decision-Making
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Recognize when playing with a teammate is safer than dribbling
+  - Choose simple combinations over individual actions when prompted
+  - Decisions are deliberate and often reactive
+- id: u12-b2-decision-making-dev-comp
+  age: u12
+  block: B2
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose when to combine vs. when to carry the ball
+  - Begin using teammates to break pressure or advance play
+  - Decisions are quicker and more connected to team shape
+- id: u12-b2-decision-making-app-comp
+  age: u12
+  block: B2
+  area: Decision-Making
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Use teammates to manipulate defenders and advance play
+  - Recognize when combination play creates a better outcome than direct play
+  - Solve problems collaboratively without verbal prompting
+- id: u12-b3-perception-preparation-intro-comp
+  age: u12
+  block: B3
+  area: Perception & Preparation
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - React to losing the ball with urgency
+  - Identify the ball carrier as the first priority
+  - Recognize nearby teammates as defensive support
+- id: u12-b3-perception-preparation-dev-comp
+  age: u12
+  block: B3
+  area: Perception & Preparation
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Scan to recognize pressing cues and cover positions
+  - 'Identify dangerous spaces: central channels, shooting lanes'
+  - Recognize when pressure has been broken
+- id: u12-b3-perception-preparation-app-comp
+  age: u12
+  block: B3
+  area: Perception & Preparation
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Anticipate transitions before possession is fully lost
+  - 'Read opponents'' next actions: pass, dribble, shot'
+  - Maintain awareness of teammates and space while pressing
+- id: u12-b3-defensive-technique-movement-intro-comp
+  age: u12
+  block: B3
+  area: Defensive Technique & Movement
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Apply basic pressure to slow the attacker
+  - Approach the ball under control, not diving in
+  - Adjust body shape to show play away from goal
+- id: u12-b3-defensive-technique-movement-dev-comp
+  age: u12
+  block: B3
+  area: Defensive Technique & Movement
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Apply controlled pressure to deny forward play
+  - Provide cover at appropriate distance and angle
+  - Intercept passes by anticipating rather than reacting
+- id: u12-b3-defensive-technique-movement-app-comp
+  age: u12
+  block: B3
+  area: Defensive Technique & Movement
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - 'Apply pressure with clear defensive intent: win, delay, or force error'
+  - Support pressing teammates with compact shape
+  - Block shots and passes in critical moments
+- id: u12-b3-defensive-decision-making-intro-comp
+  age: u12
+  block: B3
+  area: Defensive Decision-Making
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Understand when to press vs. delay
+  - Begin to recover goal-side when beaten
+  - Recognize the importance of helping teammates defend
+- id: u12-b3-defensive-decision-making-dev-comp
+  age: u12
+  block: B3
+  area: Defensive Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Decide when to step, delay, or recover
+  - Shift as a unit toward the ball
+  - Deny penetration and force play into less dangerous areas
+- id: u12-b3-defensive-decision-making-app-comp
+  age: u12
+  block: B3
+  area: Defensive Decision-Making
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Choose collective solutions over individual actions
+  - Recognize when to press high vs. recover shape
+  - Protect the goal first while looking for moments to regain possession
+- id: u12-b4-perception-awareness-intro-comp
+  age: u12
+  block: B4
+  area: Perception & Awareness
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Recognize when possession has changed
+  - Identify immediate attacking or defensive cues
+  - Begin scanning during chaotic moments
+- id: u12-b4-perception-awareness-dev-comp
+  age: u12
+  block: B4
+  area: Perception & Awareness
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Understand the idea of playing fast vs. recovering
+  - Begin choosing action instead of freezing
+  - Learn that hesitation creates disadvantage
+- id: u12-b4-perception-awareness-app-comp
+  age: u12
+  block: B4
+  area: Perception & Awareness
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Read transition cues in real time
+  - 'Recognize game state: risk vs. control'
+  - Communicate and organize teammates during transitions
+- id: u12-b4-technical-physical-actions-intro-comp
+  age: u12
+  block: B4
+  area: Technical & Physical Actions
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - React quickly after losing or winning the ball
+  - Accelerate toward the ball or space
+  - Attempt forward passes after regaining possession
+- id: u12-b4-technical-physical-actions-dev-comp
+  age: u12
+  block: B4
+  area: Technical & Physical Actions
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Identify numbers-up or numbers-down situations
+  - Recognize when space is available to attack
+  - Anticipate transition moments before they fully occur
+- id: u12-b4-technical-physical-actions-app-comp
+  age: u12
+  block: B4
+  area: Technical & Physical Actions
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Execute forward actions at speed under pressure
+  - Transition seamlessly between attacking and defending roles
+  - Maintain intensity through repeated transition moments
+- id: u12-b4-decision-making-intro-comp
+  age: u12
+  block: B4
+  area: Decision-Making
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Play forward on regain when space is open, otherwise keep the ball
+  - Decide to press or recover based on whether the ball can be won
+  - Make the first action quickly instead of waiting
+- id: u12-b4-decision-making-dev-comp
+  age: u12
+  block: B4
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose between fast attack and possession
+  - Recognize when the press has failed and recover
+  - Support teammates rather than acting alone
+- id: u12-b4-decision-making-app-comp
+  age: u12
+  block: B4
+  area: Decision-Making
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Choose speed or control at full speed based on the score and the picture
+  - Decide between delaying the counterattack and pressing for the regain
+  - Keep composure to find the player in a scoring position at speed
+- id: u12-b5-recognizing-the-moment-intro-comp
+  age: u12
+  block: B5
+  area: Recognizing the Moment
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Identify when they are in shooting or final-pass range
+  - Notice goal location and basic pressure
+  - Recognize simple scoring opportunities
+- id: u12-b5-recognizing-the-moment-dev-comp
+  age: u12
+  block: B5
+  area: Recognizing the Moment
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Read defender distance and goalkeeper position
+  - Distinguish between shooting, passing, or recycling
+  - Anticipate second-ball and rebound opportunities
+- id: u12-b5-recognizing-the-moment-app-comp
+  age: u12
+  block: B5
+  area: Recognizing the Moment
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Instantly recognize finishing moments at game speed
+  - 'Read game state: score, time, and risk before acting'
+  - Choose decisive actions under pressure without hesitation
+- id: u12-b5-preparation-body-shape-intro-comp
+  age: u12
+  block: B5
+  area: Preparation & Body Shape
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Set body to face goal when receiving near the box
+  - Use a settling touch to prepare for a shot or pass
+  - Show basic balance before striking the ball
+- id: u12-b5-preparation-body-shape-dev-comp
+  age: u12
+  block: B5
+  area: Preparation & Body Shape
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Adjust body shape to shoot with one or two touches
+  - Prepare for first-time finishes when appropriate
+  - Set feet and hips quickly as pressure arrives
+- id: u12-b5-preparation-body-shape-app-comp
+  age: u12
+  block: B5
+  area: Preparation & Body Shape
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Prepare body before the ball arrives at full speed
+  - Adjust technique mid-action when space closes
+  - Finish effectively while moving or off-balance
+- id: u12-b5-executing-final-actions-intro-comp
+  age: u12
+  block: B5
+  area: Executing Final Actions
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Use inside foot or simple laces technique to finish
+  - Complete uncontested headers or rebounds
+  - Execute basic cutbacks or square passes
+- id: u12-b5-executing-final-actions-dev-comp
+  age: u12
+  block: B5
+  area: Executing Final Actions
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Finish under light-to-moderate defensive pressure
+  - Execute volleys and half-volleys in live play
+  - Choose placement vs. power based on situation
+- id: u12-b5-executing-final-actions-app-comp
+  age: u12
+  block: B5
+  area: Executing Final Actions
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Finish through contact and tight windows
+  - Convert chances with minimal time and space
+  - Execute decisive actions consistently in game chaos
+- id: u12-b5-composure-ownership-intro-comp
+  age: u12
+  block: B5
+  area: Composure & Ownership
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Willing to shoot or play the final pass
+  - Accept missed chances without frustration
+  - Reset quickly after attempts
+- id: u12-b5-composure-ownership-dev-comp
+  age: u12
+  block: B5
+  area: Composure & Ownership
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Stay composed as pressure and stakes increase
+  - Take responsibility for decisive moments
+  - Respond positively after success or failure
+- id: u12-b5-composure-ownership-app-comp
+  age: u12
+  block: B5
+  area: Composure & Ownership
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Maintain composure in high-pressure game moments
+  - Influence teammates emotionally and tactically
+  - Show leadership late in games

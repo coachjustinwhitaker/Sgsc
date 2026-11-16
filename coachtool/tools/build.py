@@ -137,7 +137,7 @@ def build_app(plan_id, brand_id, area=None):
     teams = []
     for pf in sorted((ROOT / 'data' / 'plans').glob('*.yaml'), key=lambda f: int(re.sub(r'\D', '', load(f)['age']))):
         plan = load(pf); age = load(ROOT / 'data' / 'ages' / f"{plan['id']}.yaml"); fid = age['goals']
-        skills = [r for f in (ROOT / 'data' / 'skills').glob(f"{plan['age']}.yaml") for r in load(f)['skills']]
+        skills = [r for f in (ROOT / 'data' / 'skills').glob(f"{plan['age']}.yaml") for r in load(f)['skills'] if plan['track'] in r['tracks']]
         ov = ROOT / 'theme' / brand_id / 'overlay' / f"{plan['age']}.yaml"
         club = load(ov) if ov.exists() else {}
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,
@@ -169,6 +169,8 @@ def build_author():
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
     (ROOT / 'build' / 'all-activities.html').write_text((ROOT / 'app' / 'all.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False)), encoding='utf-8')
+    skills = [r for f in sorted((ROOT / 'data' / 'skills').glob('*.yaml')) for r in load(f)['skills']]
+    (ROOT / 'build' / 'skills-matrix.html').write_text((ROOT / 'app' / 'matrix.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps({'skills': skills, 'blocks': data['blocks']}, ensure_ascii=False)), encoding='utf-8')
     brand = load(ROOT / 'theme' / 'sgsc' / 'club.yaml')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / 'sgsc' / brand['logo_file']).read_bytes()).decode()
     root = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach Companion</title><style>
