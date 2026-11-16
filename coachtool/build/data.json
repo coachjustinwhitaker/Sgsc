@@ -4315,8 +4315,11 @@
     },
     {
      "label": "Heading",
-     "text": "Not allowed in U11 play. At U12, US Soccer limits heading in practice to 30 minutes a week and 15 to 20 headers per player a week. Check your league for game rules.",
-     "source": "US Soccer Player Development Initiatives; US Soccer U11-U12 age group guide",
+     "tracks": [
+      "rec"
+     ],
+     "text": "Not allowed in practice or games. Recreational players start heading at U14.",
+     "source": "Methodology default: rec players start heading at U14, comp players at U12",
      "origin": "core"
     },
     {
@@ -5206,14 +5209,14 @@
      "origin": "club"
     },
     {
-     "label": "Head injuries",
-     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
+     "label": "Heading",
+     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
      "origin": "club"
     },
     {
-     "label": "Heading",
-     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
+     "label": "Head injuries",
+     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
      "origin": "club"
     },

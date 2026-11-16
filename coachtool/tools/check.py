@@ -69,8 +69,8 @@ def check(root=ROOT):
         rd = load(f); seen = set()
         for r in rd.get('rules', []):
             if not r.get('label') or not r.get('text'): errs.append(f'{f.name}: every rule needs a label and text')
-            elif r['label'].lower() in seen: errs.append(f'{f.name}: duplicate rule label {r["label"]}')
-            else: seen.add(r['label'].lower())
+            elif (r['label'].lower(), tuple(r.get('tracks', []))) in seen: errs.append(f'{f.name}: duplicate rule label {r["label"]}')
+            else: seen.add((r['label'].lower(), tuple(r.get('tracks', []))))
         if rd.get('age') != f.stem: errs.append(f'{f.name}: age does not match file name')
     vocab = load(root / 'data' / 'vocab' / 'skills.yaml')
     seen_b = {}

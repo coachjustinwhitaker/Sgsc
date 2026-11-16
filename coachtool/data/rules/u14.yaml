@@ -9,6 +9,12 @@ rules:
 - label: Offside
   text: Offside applies.
   source: Laws of the Game
+- label: Heading
+  tracks:
+  - rec
+  text: 'Recreational players start heading at U14. Build up slowly in training: light balls, short distances,
+    very few headers.'
+  source: 'Methodology default: rec players start heading at U14, comp players at U12'
 - label: Head injuries
   text: If a head injury is suspected, play stops for evaluation. The player may be substituted. Return
     requires clearance from a health care professional or certified athletic trainer.

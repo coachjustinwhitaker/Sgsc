@@ -88,11 +88,12 @@ def build(plan_id, brand_id, out=None):
     left = [t for t in re.findall(r'\{\{[^}]+\}\}', page)]
     if left: sys.exit(f'Unfilled tokens: {left}')
     out = pathlib.Path(out or ROOT / 'build' / f'{plan_id}.{brand_id}.html'); out.write_text(page, encoding='utf-8'); return out
-def merge_rules(age, club):
+def merge_rules(age, club, track):
     """Core rules for the age, then the club's. Same label: the club's replaces the core one in place. New label: appended."""
     cp = ROOT / 'data' / 'rules' / f'{age}.yaml'
-    out = [dict(r, origin='core') for r in (load(cp).get('rules', []) if cp.exists() else [])]
+    out = [dict(r, origin='core') for r in (load(cp).get('rules', []) if cp.exists() else []) if track in r.get('tracks', [track])]
     for r in club.get('rules', []):
+        if track not in r.get('tracks', [track]): continue
         r = dict(r, origin='club'); at = next((i for i, x in enumerate(out) if x['label'].lower() == r['label'].lower()), None)
         if at is None: out.append(r)
         else: out[at] = r
@@ -123,7 +124,7 @@ def build_app(plan_id, brand_id):
         club = load(ov) if ov.exists() else {}
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,
                       'goals': load(ROOT / 'data' / 'goals' / f"{fid}.yaml")['goals'], 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"),
-                      'framework': load(ROOT / 'data' / 'framework' / f"{age['framework']}.yaml"), 'skills': skills, 'club': club, 'rules': merge_rules(plan['age'], club), 'ladder': ladder[plan['track']][plan['age']]})
+                      'framework': load(ROOT / 'data' / 'framework' / f"{age['framework']}.yaml"), 'skills': skills, 'club': club, 'rules': merge_rules(plan['age'], club, plan['track']), 'ladder': ladder[plan['track']][plan['age']]})
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
