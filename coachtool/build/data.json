@@ -6,8 +6,7 @@
    "name": "Flying Numbers",
    "block": "B1",
    "skills": [
-    "Decision-Making",
-    "Variable Pressure"
+    "Decision-Making"
    ],
    "ages": [
     "u10"
@@ -40,9 +39,8 @@
    "name": "Shrinking Field",
    "block": "B1",
    "skills": [
-    "First Touch",
-    "Body Shape",
-    "Pressure"
+    "Controlling",
+    "Body Shape"
    ],
    "ages": [
     "u10"
@@ -75,8 +73,8 @@
    "block": "B1",
    "skills": [
     "Dribbling",
-    "Defending",
-    "Control"
+    "Pressing",
+    "Controlling"
    ],
    "ages": [
     "u10"
@@ -110,7 +108,7 @@
    "skills": [
     "Possession",
     "Body Shape",
-    "Quick Passing"
+    "Passing"
    ],
    "ages": [
     "u10"
@@ -146,7 +144,7 @@
    "block": "B2",
    "skills": [
     "Passing",
-    "Move After Passing",
+    "Supporting",
     "Communication"
    ],
    "ages": [
@@ -186,8 +184,7 @@
    "name": "End Zone Passing",
    "block": "B2",
    "skills": [
-    "Supporting Runs",
-    "Move Off the Ball",
+    "Supporting",
     "Combination Play"
    ],
    "ages": [
@@ -220,9 +217,9 @@
    "name": "Numbers Passing",
    "block": "B2",
    "skills": [
-    "Passing Sequence",
+    "Passing",
     "Body Shape",
-    "Anticipation"
+    "Scanning"
    ],
    "ages": [
     "u10"
@@ -254,8 +251,8 @@
    "name": "2v2 to Endlines — Attacking",
    "block": "B2",
    "skills": [
-    "Spreading Out",
-    "2v1 Situations"
+    "Supporting",
+    "Numerical Advantage"
    ],
    "ages": [
     "u10"
@@ -320,8 +317,7 @@
    "name": "Five Goal Game",
    "block": "B2",
    "skills": [
-    "Finding New Paths",
-    "Problem Solving"
+    "Decision-Making"
    ],
    "ages": [
     "u10"
@@ -353,8 +349,8 @@
    "name": "Barcelona",
    "block": "B2",
    "skills": [
-    "Patience",
-    "Pass Counting",
+    "Possession",
+    "Passing",
     "Combination Play"
    ],
    "ages": [
@@ -387,9 +383,9 @@
    "name": "Rondo 5v2",
    "block": "B2",
    "skills": [
-    "Quick Passing",
+    "Passing",
     "Body Shape",
-    "Controlled Touches"
+    "Controlling"
    ],
    "ages": [
     "u10"
@@ -422,8 +418,7 @@
    "block": "B3",
    "skills": [
     "Pressing",
-    "Delaying",
-    "Challenging"
+    "Delaying"
    ],
    "ages": [
     "u10"
@@ -455,9 +450,8 @@
    "name": "Pressure & Cover 3v3",
    "block": "B3",
    "skills": [
-    "Cover",
-    "Recover",
-    "Working Together"
+    "Covering",
+    "Communication"
    ],
    "ages": [
     "u10"
@@ -489,9 +483,7 @@
    "name": "Shadow Marking",
    "block": "B3",
    "skills": [
-    "Marking",
-    "Goal Side",
-    "Interceptions"
+    "Marking"
    ],
    "ages": [
     "u10"
@@ -523,9 +515,7 @@
    "name": "Squeeze the Space",
    "block": "B3",
    "skills": [
-    "Compact Shape",
-    "Narrow in the Middle",
-    "Deny the Finish"
+    "Compact Shape"
    ],
    "ages": [
     "u10"

@@ -26,8 +26,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Tracks <small>(rec = recreational, comp = competitive)</small></label><div class="chk" id="tracks"></div>
 <label class="t">Levels</label><div class="chk" id="levels"></div>
 <div id="fit"></div>
-<label class="t">Skills <small>(tags already used in the library)</small></label><div class="chk" id="skills"></div>
-<input type="text" id="newskills" placeholder="New skill tags, separated by commas" style="margin-top:8px">
+<label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
 <label class="t">Setup <small>(layout, who starts where, how it restarts, progression)</small></label><textarea id="setup"></textarea>
@@ -48,8 +47,7 @@ const $ = s => document.querySelector(s), SP = {quarter:'1/4 field: heavy constr
 const ages = [...new Set(['rec','comp'].flatMap(t => Object.keys(D.ladder[t])))], levels = ['intro','dev','app'], LV = {intro:'Introduction', dev:'Development', app:'Application'};
 const chk = (id, items, name) => { $(id).innerHTML = items.map(([v,l]) => `<label><input type="checkbox" name="${name}" value="${v}">${l}</label>`).join(''); };
 chk('#ages', ages.map(a => [a, a.toUpperCase()]), 'age'); chk('#tracks', [['rec','Rec'],['comp','Comp']], 'track'); chk('#levels', levels.map(l => [l, LV[l]]), 'level');
-const tags = () => [...new Set(D.activities.flatMap(a => a.skills).concat(batch.flatMap(a => a.skills)))].sort((x,y) => x.localeCompare(y));
-function drawSkills(keep){ chk('#skills', tags().map(t => [t, t]), 'skill'); setv('skill', keep); }
+function drawSkills(keep){ $('#skills').innerHTML = [['Player actions', D.tags.actions], ['Game concepts', D.tags.concepts]].map(([h, l]) => `<div style="width:100%"><small>${h}</small></div>` + l.map(t => `<label><input type="checkbox" name="skill" value="${t}">${t}</label>`).join('')).join(''); setv('skill', keep); }
 chk('#pairs', D.activities.map(a => [a.id, a.name]), 'pair');
 $('#block').innerHTML = Object.keys(D.blocks).map(b => `<option value="${b}">${b} · ${D.blocks[b].name}</option>`).join('');
 $('#space').innerHTML = Object.keys(SP).map(k => `<option value="${k}">${SP[k]}</option>`).join('');
@@ -71,7 +69,7 @@ $('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r
 function fill(a){
   editing = a ? a.id : null; diagram = null; $('#file').value = '';
   $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1';
-  setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); $('#newskills').value = ''; setv('pair', a && a.pairs_with);
+  setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
   ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : '');
   $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
@@ -81,7 +79,7 @@ $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value))
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('#add').onclick = () => {
-  const a = {name: $('#name').value.trim(), block: $('#block').value, ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill').concat($('#newskills').value.split(',').map(x => x.trim()).filter(Boolean)),
+  const a = {name: $('#name').value.trim(), block: $('#block').value, ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
     setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), pairs_with: vals('pair')};
   const miss = []; [['name','Name'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });

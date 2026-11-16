@@ -17,6 +17,9 @@ def check(root=ROOT):
         d = a.get('diagram')
         if d and not (root / 'data' / 'diagrams' / d).is_file(): errs.append(f'{f.name}: diagram file {d} not found in data/diagrams')
         if d and d.rsplit('.', 1)[-1].lower() not in ('png', 'jpg', 'jpeg', 'webp', 'svg'): errs.append(f'{f.name}: diagram must be png, jpg, webp or svg')
+        tags = load(root / 'data' / 'vocab' / 'activity-tags.yaml'); okt = set(tags['actions'] + tags['concepts'])
+        for t in a.get('skills', []):
+            if t not in okt: errs.append(f'{f.name}: skill tag "{t}" is not in data/vocab/activity-tags.yaml')
         acts[a['id']] = a
         for age in a.get('ages', []):
             for tr in a.get('tracks', []):

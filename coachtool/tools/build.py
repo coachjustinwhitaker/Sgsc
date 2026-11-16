@@ -121,7 +121,7 @@ def build_author():
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
     build_app('u10-rec', 'sgsc')  # fills diagram_src on the activity records
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'blocks': load(ROOT / 'data' / 'blocks.yaml'),
-            'vocab': load(ROOT / 'data' / 'vocab' / 'skills.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
+            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8'); return out
 if __name__ == '__main__':
