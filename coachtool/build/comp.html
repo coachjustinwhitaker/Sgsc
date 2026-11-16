@@ -125,7 +125,11 @@ function rulesHtml(){
 }
 function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['library','Library'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewWelcome(){
-  app.innerHTML = `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">Ideas for every week of your season, and a how-to for every activity. Use what helps. Change what does not.</p>
+  const comp = DATA.area === 'comp';
+  app.innerHTML = comp ? `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">A season frame and a library of activities. You plan the practices.</p>
+  <div class="card"><p><b>A frame for the season</b><br>Each week has a theme, a block and a level. It builds skill across the whole season, so you are not chasing last weekend's game.</p><p><b>Your practices</b><br>Pick from the library or add your own activities. Set the minutes and the order.</p><p><b>One shared language</b><br>The same blocks and words from U6 to U14, so coaches and players talk about the game the same way.</p></div>
+  <p class="note">Setup takes a few minutes the first time. Your plans stay on this device. The club does not see them.</p><button id="gs">Get started</button>`
+  : `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">Ideas for every week of your season, and a how-to for every activity. Use what helps. Change what does not.</p>
   <div class="card"><p><b>A suggested practice for each week</b><br>Run it as written, or make it yours.</p><p><b>Swaps when something does not fit</b><br>Change any activity to suit your numbers and your space.</p><p><b>One shared language</b><br>The same ideas and words from U6 to U14, so coaches and players talk about the game the same way.</p></div>
   <p class="note">Setup takes a few minutes the first time. After that it opens on this week.</p><button id="gs">Get started</button>`;
   $('#gs').onclick = () => go('setup');
@@ -177,7 +181,7 @@ function tourSteps(){
   org.push(`<div class="card"><p>${P.prepared}</p></div>`);
   add('How a session is organized', 'The shape, and how to get ready.', [org.join('')]);
   if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', [rulesHtml()]);
-  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. Each week has one focus.`, chunk(plan.weeks, 99).map(g => (plan.season_note ? `<div class="card"><p>${plan.season_note}</p></div>` : '') + g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
+  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, chunk(plan.weeks, 99).map(g => (plan.season_note ? `<div class="card"><p>${plan.season_note}</p></div>` : '') + g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
   const seen = [], topics = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)).map(s => `<li style="margin:8px 0"><b>${s.title}</b><br><span class="note">${s.sub}</span></li>`).join(''), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
   steps.unshift({title: 'Before you start', sub: `A short tour of your ${T.label} group. Here is what is coming.`, part: '', html: `<div class="card"><ul style="padding-left:20px;margin:6px 0">${topics}</ul></div><p>About ${mins} minutes. You can skip any of it, and all of it stays in the Guide for later.</p>`});
   return steps;
