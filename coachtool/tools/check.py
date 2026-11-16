@@ -12,6 +12,7 @@ def check(root=ROOT):
         for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'look_for', 'question', 'equipment']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')
         if a.get('id') != f.stem: errs.append(f'{f.name}: id {a.get("id")} does not match file name')
+        if a.get('space') not in ('quarter', 'half', 'full'): errs.append(f'{f.name}: space must be quarter, half or full, not {a.get("space")}')
         if a.get('block') not in BLOCKS: errs.append(f'{f.name}: bad block {a.get("block")}')
         acts[a['id']] = a
         for age in a.get('ages', []):

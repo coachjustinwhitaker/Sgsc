@@ -15,7 +15,7 @@ levels:
 players:
   min: 6
   max: 12
-space: medium
+space: quarter
 minutes: 15
 setup: Grid about 25 by 20 yards with three cone gates on one end line. Attackers (3) score by passing
   or dribbling through any gate. Defenders (3) win the ball and play it out across the opposite end line.

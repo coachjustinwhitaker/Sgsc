@@ -15,7 +15,7 @@ levels:
 players:
   min: 7
   max: 14
-space: small
+space: quarter
 minutes: 15
 setup: Square of cones. Five attackers in a circle, two defenders in the center. Attackers keep the ball
   away. Track consecutive passes. Attacker who last touched an interception or ball out of bounds swaps

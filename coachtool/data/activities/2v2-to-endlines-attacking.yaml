@@ -14,7 +14,7 @@ levels:
 players:
   min: 4
   max: 12
-space: small
+space: quarter
 minutes: 15
 setup: Small rectangular space. Two attackers vs two defenders. Attackers score by dribbling ball over
   opponent’s end line within arm’s distance. Defenders can steal and score too. Rotate new players when

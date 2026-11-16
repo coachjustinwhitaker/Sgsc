@@ -15,7 +15,7 @@ levels:
 players:
   min: 6
   max: 16
-space: medium
+space: quarter
 minutes: 15
 setup: Rectangular grid with a small end zone marked at each end (about 4 yards deep). Two teams of 3
   or 4. Players can dribble freely in the middle of the field, but the only way to score is to pass the

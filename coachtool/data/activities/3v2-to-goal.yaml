@@ -14,7 +14,7 @@ levels:
 players:
   min: 5
   max: 15
-space: medium
+space: quarter
 minutes: 15
 setup: Rectangular grid, small goal at one end. Three attackers from one end meet two defenders. Attackers
   work together to score. Defenders can score by dribbling over the end line. Remind attackers to spread

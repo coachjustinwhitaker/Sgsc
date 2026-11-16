@@ -15,7 +15,7 @@ levels:
 players:
   min: 5
   max: 15
-space: small
+space: quarter
 minutes: 15
 setup: 'Square grid, one defender in the center, four attackers on the outside. This is called a rondo.
   Attackers keep the ball away from the defender. When the defender wins it or the ball goes out, the

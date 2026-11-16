@@ -14,7 +14,7 @@ levels:
 players:
   min: 6
   max: 16
-space: medium
+space: quarter
 minutes: 15
 setup: Rectangular grid with a cone goal in each corner plus one in the center, 5 goals total. 3v3 or
   4v4. Players try to pass the ball through any goal to a teammate to score in any direction. Defenders

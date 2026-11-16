@@ -15,7 +15,7 @@ levels:
 players:
   min: 2
   max: 16
-space: medium
+space: half
 minutes: 15
 setup: Rectangular grid with 8–10 gates scattered throughout (two cones arm’s length apart). Players in
   pairs with one ball. Score by passing to each other through gates. After passing, move immediately to

@@ -15,7 +15,7 @@ levels:
 players:
   min: 2
   max: 12
-space: small
+space: quarter
 minutes: 15
 setup: 'Rectangular grid about 10 by 15 yards. An attacker with the ball starts at one end line, a defender
   starts 5 yards away. The attacker scores by dribbling over the far end line. The defender wins by taking

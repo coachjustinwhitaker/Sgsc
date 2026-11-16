@@ -15,7 +15,7 @@ levels:
 players:
   min: 8
   max: 16
-space: medium
+space: quarter
 minutes: 15
 setup: Grid about 30 by 20 yards with a small goal at each end, no goalkeepers. 4v4. Give each defender
   one attacker to stay with (match pinnie colors or numbers). A goal counts double if the scoring player

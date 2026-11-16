@@ -15,7 +15,7 @@ levels:
 players:
   min: 2
   max: 14
-space: small
+space: quarter
 minutes: 15
 setup: '1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s
   distance. Progress to 1v1 to Small Goals: add cone goals at each end, score below knee height. Pairs

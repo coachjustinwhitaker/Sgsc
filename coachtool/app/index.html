@@ -12,7 +12,7 @@ h1{font-size:22px;margin:6px 0 4px}h2{font-size:17px;margin:20px 0 8px}p.lead{co
 label{display:block;font-weight:600;margin:12px 0 4px}select,input[type=number]{width:100%;padding:10px;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff}
 button,.btn{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-size:16px;font-weight:600;cursor:pointer;width:100%;margin-top:14px;text-align:center;text-decoration:none;display:block}
 button.ghost,.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}button.small{width:auto;padding:7px 12px;font-size:14px;margin:0}
-.goal{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.goal:first-child{border-top:0}.goal input{margin-top:4px;width:20px;height:20px;flex:none}
+.goal{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.goal:first-child{border-top:0}
 .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#e8eef8;border-radius:999px;padding:2px 8px;margin-right:4px}
 .wk{display:block;color:inherit;text-decoration:none}.wk b{color:var(--navy)}.wk .f{font-size:14px;color:var(--mute)}
 .slot{border-top:1px solid var(--line);padding:12px 0}.slot:first-child{border-top:0}.slot .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em}
@@ -29,9 +29,12 @@ nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:cen
 <script>
 const DATA = /*DATA*/;
 const KEY = 'coachplanner.v1';
-const SPACE = {small: 1, medium: 2, half: 3};
-const SPACE_LABEL = {small: 'Small grid (about 15 x 20 yards)', medium: 'Medium grid (about 25 x 30 yards)', half: 'Half field or more'};
+const SPACE = {quarter: 1, half: 2, full: 3};
+const SPACE_LABEL = {quarter: '1/4 field', half: '1/2 field', full: 'Full field'};
 let state = load();
+if(state.space && !SPACE[state.space]) state.space = 'half';
+let route = '';
+try { route = location.hash.slice(1); } catch(e){}
 function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
 const $ = s => document.querySelector(s), app = $('#app');
@@ -45,30 +48,30 @@ function alternatives(w, si, slot){
   const ok = DATA.ladder.rec.u10;
   return DATA.activities.filter(a => a.id !== cur && a.id !== other && fits(a) && (slot === 'b' ? a.block === w.block : ok.indexOf(a.block) <= ok.indexOf(w.block)));
 }
-function go(h){ location.hash = h; }
-function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
+function go(h){ route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
+document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
+function tabs(on){ return `<nav class="tabs">${[['plan','Season'],['goals','Goals'],['setup','Setup']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h?'on':''}">${l}</a>`).join('')}</nav>`; }
 function viewSetup(){
   app.innerHTML = `<h1>Set up your team</h1><p class="lead">U10 recreational. Two minutes, and you can change it any time.</p>
   <div class="card"><label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
-  <label>Space you usually have</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'medium')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
+  <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
   <button id="ok">${state.players ? 'Save' : 'Next: player goals'}</button></div>
   <p class="reset"><a href="#" id="rs">Start over</a></p>`;
   $('#ok').onclick = () => { const first = !state.players; state.players = +$('#pl').value; state.space = $('#sp').value; save(); go(first ? 'goals' : 'plan'); };
-  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); go('setup'); render(); };
+  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); go('setup'); };
 }
 function viewGoals(){
-  const goals = DATA.goals; if(!state.goals) state.goals = goals.map(g => g.id);
-  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a U10 should be showing these. Keep the ones that matter most for your group.</p>
-  <div class="card">${goals.map(g => `<label class="goal" style="font-weight:400;margin:0"><input type="checkbox" data-id="${g.id}" ${state.goals.includes(g.id)?'checked':''}><span>${g.text}<br>${g.blocks.map(b => `<span class="tag">${DATA.blocks[b].name}</span>`).join('')}</span></label>`).join('')}</div>
-  <a class="btn" href="#plan">See your season</a>`;
-  app.querySelectorAll('input[type=checkbox]').forEach(c => c.onchange = () => { state.goals = [...app.querySelectorAll('input:checked')].map(x => x.dataset.id); save(); });
+  const goals = DATA.goals;
+  app.innerHTML = tabs('goals') + `<h1>Player goals</h1><p class="lead">By the end of the season, a U10 should be showing these. The plan on the next screen builds toward them.</p>
+  <div class="card">${goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<span class="tag">${DATA.blocks[b].name}</span>`).join('')}</span></div>`).join('')}</div>
+  <button data-nav="plan">Next: your season</button>`;
 }
 function viewPlan(){
-  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">8 weeks, two practices a week. Tap a week to see the sessions.</p>` + plan.weeks.map(w => `<a class="card wk" href="#week/${w.week}"><b>Week ${w.week}</b><div class="f">${w.focus}</div></a>`).join('');
+  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">8 weeks, two practices a week. Tap a week to see the sessions.</p>` + plan.weeks.map(w => `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}</b><div class="f">${w.focus}</div></a>`).join('');
 }
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n);
-  if(w.coach_choice){ app.innerHTML = `<a class="back" href="#plan">&larr; Season</a><h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
+  if(w.coach_choice){ app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
   const sessions = [0,1].map(si => `<div class="card"><b>Practice ${si ? 'B' : 'A'}</b>` + ['a','b'].map(slot => {
     const ref = slotRef(w, si, slot), a = acts[ref.split('#')[0]], note = (w.sessions[si][slot].note);
     const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
@@ -79,14 +82,14 @@ function viewWeek(n){
       <details><summary>Swap (${alts.length} fit your numbers and space)</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');
-  app.innerHTML = `<a class="back" href="#plan">&larr; Season</a><h1>Week ${w.week}</h1><p class="lead">${w.focus}</p>` + sessions;
+  app.innerHTML = `<a class="back" href="#" data-nav="plan">&larr; Season</a><h1>Week ${w.week}</h1><p class="lead">${w.focus}</p>` + sessions;
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }
 function render(){
-  const h = location.hash.slice(1) || (state.players ? 'plan' : 'setup');
-  if(!state.players && h !== 'setup'){ return go('setup'); }
+  const h = route || (state.players ? 'plan' : 'setup');
+  if(!state.players && h !== 'setup'){ route = 'setup'; return render(); }
   if(h === 'setup') viewSetup(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(+h.split('/')[1]); else viewPlan();
   window.scrollTo(0,0);
 }
-window.addEventListener('hashchange', render); render();
+render();
 </script></body></html>

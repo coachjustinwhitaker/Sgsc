@@ -15,7 +15,7 @@ levels:
 players:
   min: 4
   max: 8
-space: small
+space: quarter
 minutes: 15
 setup: 'Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space
   passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1. Add a second ball

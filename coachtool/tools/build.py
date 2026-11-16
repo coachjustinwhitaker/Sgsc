@@ -95,7 +95,7 @@ def build_app(plan_id, brand_id):
     age = load(ROOT / 'data' / 'ages' / f'{plan_id}.yaml'); goals = load(ROOT / 'data' / 'goals' / f"{age['goals']}.yaml")['goals']
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'plans': [plan], 'blocks': blocks, 'goals': goals, 'ladder': ladder}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
-    logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand['logo_file']).read_bytes()).decode()
+    logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     for k, v in brand.items(): page = page.replace('{{brand.%s}}' % k, v)
     page = page.replace('{{brand.logo_src}}', logo)
