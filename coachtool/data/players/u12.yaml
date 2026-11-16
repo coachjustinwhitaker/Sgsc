@@ -55,7 +55,7 @@ shape:
   title: The session
   note: Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.
   opening:
-    label: Opening game
+    label: Warm-up game
     minutes: 12 min
     title: 5v5 or 6v6 free small-sided game
     setup: Same setup every session. Smaller than the closing game, so more touches and cleaner decisions.
@@ -68,7 +68,7 @@ shape:
     question: When the ball changed hands today, when you won it or lost it, what was your first reaction?
     kit: 1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors
   closing:
-    label: Closing game
+    label: Final game
     minutes: 25 min
     title: Full game
     setup: 'The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate
