@@ -10,6 +10,7 @@
    "order": 1,
    "name": "Flying Numbers",
    "block": "B1",
+   "type": "small-sided",
    "skills": [
     "Decision-Making"
    ],
@@ -57,6 +58,7 @@
    "order": 2,
    "name": "Shrinking Field",
    "block": "B1",
+   "type": "small-sided",
    "skills": [
     "Controlling",
     "Body Shape"
@@ -90,6 +92,7 @@
    "order": 3,
    "name": "1v1 to Endlines & Goals",
    "block": "B1",
+   "type": "small-sided",
    "skills": [
     "Dribbling",
     "Pressing",
@@ -132,6 +135,7 @@
    "order": 4,
    "name": "Rondo",
    "block": "B1",
+   "type": "rondo",
    "skills": [
     "Possession",
     "Body Shape",
@@ -169,6 +173,7 @@
    "order": 5,
    "name": "Gates Passing",
    "block": "B2",
+   "type": "pattern",
    "skills": [
     "Passing",
     "Supporting",
@@ -210,6 +215,7 @@
    "order": 6,
    "name": "End Zone Passing",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Supporting",
     "Combination Play"
@@ -243,6 +249,7 @@
    "order": 7,
    "name": "Numbers Passing",
    "block": "B2",
+   "type": "pattern",
    "skills": [
     "Passing",
     "Body Shape",
@@ -277,6 +284,7 @@
    "order": 8,
    "name": "2v2 to Endlines — Attacking",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Supporting",
     "Numerical Advantage"
@@ -310,6 +318,7 @@
    "order": 9,
    "name": "3v2 to Goal",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Numerical Advantage",
     "Combination Play"
@@ -343,6 +352,7 @@
    "order": 10,
    "name": "Five Goal Game",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Decision-Making"
    ],
@@ -383,6 +393,7 @@
    "order": 11,
    "name": "Barcelona",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Possession",
     "Passing",
@@ -431,6 +442,7 @@
    "order": 12,
    "name": "Rondo 5v2",
    "block": "B2",
+   "type": "rondo",
    "skills": [
     "Passing",
     "Body Shape",
@@ -465,6 +477,7 @@
    "order": 13,
    "name": "Approach & Delay",
    "block": "B3",
+   "type": "small-sided",
    "skills": [
     "Pressing",
     "Delaying"
@@ -498,6 +511,7 @@
    "order": 14,
    "name": "Pressure & Cover 3v3",
    "block": "B3",
+   "type": "small-sided",
    "skills": [
     "Covering",
     "Communication"
@@ -531,6 +545,7 @@
    "order": 15,
    "name": "Shadow Marking",
    "block": "B3",
+   "type": "small-sided",
    "skills": [
     "Marking"
    ],
@@ -563,6 +578,7 @@
    "order": 16,
    "name": "Squeeze the Space",
    "block": "B3",
+   "type": "positional",
    "skills": [
     "Compact Shape"
    ],
@@ -595,6 +611,7 @@
    "order": 17,
    "name": "Red Light Green Light",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Driving",
     "Controlling"
@@ -636,6 +653,7 @@
    "order": 18,
    "name": "101 Dalmatians",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -677,6 +695,7 @@
    "order": 19,
    "name": "Wreck-It Ralph",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Scanning",
@@ -719,6 +738,7 @@
    "order": 20,
    "name": "Duck Tails",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Protecting"
@@ -752,6 +772,7 @@
    "order": 21,
    "name": "Knockout",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Protecting",
     "Dribbling"
@@ -785,6 +806,7 @@
    "order": 22,
    "name": "Dinosaur Tag",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -826,6 +848,7 @@
    "order": 23,
    "name": "Gates Dribbling",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Driving",
     "Scanning"
@@ -859,6 +882,7 @@
    "order": 24,
    "name": "Shadow Dribbling",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Scanning",
     "Dribbling"
@@ -892,6 +916,7 @@
    "order": 25,
    "name": "Color Tag Dribble",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Scanning",
     "Driving"
@@ -925,6 +950,7 @@
    "order": 26,
    "name": "Shooting Gallery",
    "block": "B1",
+   "type": "warm-up",
    "skills": [
     "Shooting",
     "Decision-Making"
@@ -958,6 +984,7 @@
    "order": 27,
    "name": "2v1 to Goal",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Passing",
     "Numerical Advantage",
@@ -991,6 +1018,7 @@
    "order": 28,
    "name": "Half and Half",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Supporting",
     "Combination Play"
@@ -1024,6 +1052,7 @@
    "order": 29,
    "name": "3v3+1 Keep-Away",
    "block": "B2",
+   "type": "rondo",
    "skills": [
     "Possession",
     "Body Shape"
@@ -1056,6 +1085,7 @@
    "order": 30,
    "name": "2v2v2 Keep-Away",
    "block": "B3",
+   "type": "rondo",
    "skills": [
     "Pressing",
     "Covering"
@@ -1089,6 +1119,7 @@
    "order": 31,
    "name": "Half Court Soccer",
    "block": "B3",
+   "type": "small-sided",
    "skills": [
     "Compact Shape",
     "Marking"
@@ -1122,6 +1153,7 @@
    "order": 32,
    "name": "Shrinking Field: Defending Focus",
    "block": "B3",
+   "type": "small-sided",
    "skills": [
     "Compact Shape",
     "Pressing"
@@ -1163,6 +1195,7 @@
    "order": 33,
    "name": "Flying Numbers: Transition Focus",
    "block": "B4",
+   "type": "small-sided",
    "skills": [
     "Decision-Making",
     "Communication"
@@ -1196,6 +1229,7 @@
    "order": 34,
    "name": "Crisscross",
    "block": "B4",
+   "type": "small-sided",
    "skills": [
     "Decision-Making",
     "Scanning"
@@ -1237,6 +1271,7 @@
    "order": 35,
    "name": "Hawaii",
    "block": "B4",
+   "type": "small-sided",
    "skills": [
     "Decision-Making",
     "Pressing"
@@ -1270,6 +1305,7 @@
    "order": 36,
    "name": "Hotbox",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Combination Play",
     "Decision-Making"
@@ -1311,6 +1347,7 @@
    "order": 37,
    "name": "Team Handball",
    "block": "B2",
+   "type": "small-sided",
    "skills": [
     "Combination Play",
     "Supporting"
@@ -1344,6 +1381,7 @@
    "order": 38,
    "name": "Sharks and Minnows",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Scanning"
@@ -1377,6 +1415,7 @@
    "order": 39,
    "name": "Octopus",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Driving"
@@ -1409,6 +1448,7 @@
    "order": 40,
    "name": "Kangaroo Jacks",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1442,6 +1482,7 @@
    "order": 41,
    "name": "Snake",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Communication",
     "Scanning"
@@ -1474,6 +1515,7 @@
    "order": 42,
    "name": "Bunny Trail",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Controlling"
@@ -1506,6 +1548,7 @@
    "order": 43,
    "name": "Mosquitoes",
    "block": "D",
+   "type": "warm-up",
    "skills": [
     "Dribbling",
     "Shooting",
@@ -1539,6 +1582,7 @@
    "order": 44,
    "name": "Duels to Goal",
    "block": "B5",
+   "type": "small-sided",
    "skills": [
     "Shooting",
     "Decision-Making"
@@ -1572,6 +1616,7 @@
    "order": 45,
    "name": "Waves",
    "block": "B5",
+   "type": "small-sided",
    "skills": [
     "Numerical Advantage",
     "Passing",
@@ -1606,6 +1651,7 @@
    "order": 46,
    "name": "Wide Service Finishing",
    "block": "B5",
+   "type": "pattern",
    "skills": [
     "Shooting",
     "Supporting"
@@ -5357,5 +5403,35 @@
     "app"
    ]
   }
- }
+ },
+ "types": [
+  {
+   "id": "warm-up",
+   "label": "Warm-up"
+  },
+  {
+   "id": "pattern",
+   "label": "Passing pattern"
+  },
+  {
+   "id": "rondo",
+   "label": "Rondo or possession"
+  },
+  {
+   "id": "small-sided",
+   "label": "Small-sided game"
+  },
+  {
+   "id": "positional",
+   "label": "Positional work"
+  },
+  {
+   "id": "full-game",
+   "label": "Full game"
+  },
+  {
+   "id": "fitness",
+   "label": "Fitness"
+  }
+ ]
 }

@@ -2,6 +2,7 @@ id: approach-delay
 order: 13
 name: Approach & Delay
 block: B3
+type: small-sided
 skills:
 - Pressing
 - Delaying

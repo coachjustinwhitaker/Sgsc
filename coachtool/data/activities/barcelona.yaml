@@ -2,6 +2,7 @@ id: barcelona
 order: 11
 name: Barcelona
 block: B2
+type: small-sided
 skills:
 - Possession
 - Passing

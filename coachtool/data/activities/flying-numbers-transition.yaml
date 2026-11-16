@@ -2,6 +2,7 @@ id: flying-numbers-transition
 order: 33
 name: 'Flying Numbers: Transition Focus'
 block: B4
+type: small-sided
 skills:
 - Decision-Making
 - Communication

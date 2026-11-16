@@ -22,6 +22,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <div class="card">
 <label class="t">Name</label><input type="text" id="name">
 <label class="t">Block</label><select id="block"></select>
+<label class="t">Type</label><select id="type"></select>
 <label class="t">Ages</label><div class="chk" id="ages"></div>
 <label class="t">Tracks <small>(rec = recreational, comp = competitive)</small></label><div class="chk" id="tracks"></div>
 <label class="t">Levels <small id="lvnote"></small></label><div class="chk" id="levels"></div>
@@ -30,6 +31,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
 <label class="t">Setup <small>(layout, who starts where, how it restarts, progression)</small></label><textarea id="setup"></textarea>
+<label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
 <label class="t">What to look for</label><textarea id="look_for"></textarea>
 <label class="t">Question to ask the players</label><input type="text" id="question">
 <label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
@@ -50,6 +52,7 @@ const chk = (id, items, name) => { $(id).innerHTML = items.map(([v,l]) => `<labe
 chk('#ages', ages.map(a => [a, a.toUpperCase()]), 'age'); chk('#tracks', [['rec','Rec'],['comp','Comp']], 'track'); chk('#levels', levels.map(l => [l, LV[l]]), 'level');
 function drawSkills(keep){ $('#skills').innerHTML = [['Player actions', D.tags.actions], ['Game concepts', D.tags.concepts]].map(([h, l]) => `<div style="width:100%"><small>${h}</small></div>` + l.map(t => `<label><input type="checkbox" name="skill" value="${t}">${t}</label>`).join('')).join(''); setv('skill', keep); }
 chk('#pairs', D.activities.map(a => [a.id, a.name]), 'pair');
+$('#type').innerHTML = '<option value="">Choose a type</option>' + D.types.map(t => `<option value="${t.id}">${t.label}</option>`).join('');
 $('#block').innerHTML = Object.keys(D.blocks).map(b => `<option value="${b}">${b} · ${D.blocks[b].name}</option>`).join('');
 $('#space').innerHTML = Object.keys(SP).map(k => `<option value="${k}">${SP[k]}</option>`).join('');
 $('#load').innerHTML = '<option value="">New activity</option>' + D.activities.map(a => `<option value="${a.id}">${a.name} (${a.block}, ${a.ages.join(' ')})</option>`).join('');
@@ -74,7 +77,7 @@ document.addEventListener('change', () => { syncLevels(); fit(); });
 $('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r = new FileReader(); r.onload = () => { diagram = {name: f.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-'), data: r.result}; $('#pv').innerHTML = `<img class="pv" src="${r.result}">`; }; r.readAsDataURL(f); };
 function fill(a){
   editing = a ? a.id : null; diagram = null; $('#file').value = '';
-  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1';
+  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#scoring').value = a && a.scoring ? a.scoring : '';
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
   ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : ''); $('#source').value = a && a.source ? a.source : '';
@@ -85,10 +88,10 @@ $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value))
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('#add').onclick = () => {
-  const a = {name: $('#name').value.trim(), block: $('#block').value, ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
+  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
     setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
-  const miss = []; [['name','Name'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+  const miss = []; [['name','Name'],['type','Type'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }
   a.id = editing || slug(a.name); a.update = !!editing;

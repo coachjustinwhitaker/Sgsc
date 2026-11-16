@@ -80,7 +80,9 @@ function fits(a){ return (!state.players || (a.players.min <= state.players && s
 function alternatives(w, si, slot){
   const slots = slotsOf(w, si), cur = slotRef(w, si, slot).split('#')[0], others = slots.filter(k => k !== slot).map(k => slotRef(w, si, k).split('#')[0]);
   const ok = T.ladder, same = [w.block].concat(w.also_blocks || []), anchor = slots.length > 1 && slot === 'a';
-  return DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (anchor ? (ok.indexOf(a.block) <= ok.indexOf(w.block) || same.includes(a.block)) : same.includes(a.block)));
+  const curT = (A(cur) || {}).type;
+  const list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (anchor ? (ok.indexOf(a.block) <= ok.indexOf(w.block) || same.includes(a.block)) : same.includes(a.block)));
+  return list.sort((x, y) => (y.type === curT) - (x.type === curT));
 }
 const DAY = 864e5, iso = d => { const z = new Date(d.getTime() - d.getTimezoneOffset()*6e4); return z.toISOString().slice(0,10); }, parse = t => { const [y,m,d] = t.split('-').map(Number); return new Date(y, m-1, d); };
 const todayD = () => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };
@@ -88,6 +90,7 @@ const nice = t => parse(t).toLocaleDateString(undefined, {month: 'short', day: '
 function curWeek(){ const N = plan.weeks.length; if(!state.start) return Math.min(state.week || 1, N); return Math.max(1, Math.min(N, Math.floor((todayD() - parse(state.start)) / (7*DAY)) + 1)); }
 function needTour(){ const o = state.onb; if(!o || o.team !== T.id) return true; return !state.start || !o.start || Math.abs(parse(state.start) - parse(o.start)) > 90*DAY; }
 let whyFrom = '';
+const TYPE = id => ((DATA.types || []).find(t => t.id === id) || {}).label || '';
 function go(h){ if(h.startsWith('why/')) whyFrom = route || ''; route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
 document.addEventListener('click', e => { const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
 function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
@@ -176,7 +179,7 @@ function weekText(n){
   const one = plan.sessions_per_week === 1;
   if(shape){ const g = shape.opening; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
   w.sessions.forEach((ses, si) => { L.push(one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A'));
-    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); L.push(`- ${actName(ref)}: ${a.setup}`, `  Look for: ${a.look_for}`, `  Ask: "${a.question}"`, `  Equipment: ${a.equipment}`); }); L.push(''); });
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot), a = A(ref.split('#')[0]); L.push(`- ${actName(ref)}: ${a.setup}`, ...(a.scoring ? [`  Scoring: ${a.scoring}`] : []), `  Look for: ${a.look_for}`, `  Ask: "${a.question}"`, `  Equipment: ${a.equipment}`); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
   return L.join('\n').trim();
 }
@@ -201,8 +204,8 @@ function viewWeek(n){
     const swapped = (state.swaps||{})[`${w.week}-${si}-${slot}`];
     const alts = alternatives(w, si, slot);
     return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}</div><div class="nm">${actName(ref)}</div>
-      <div class="note">${swapped ? 'Swapped in' : note}</div>
-      <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}${a.source ? `<div class="lbl">Source</div>${a.source}` : ''}</details>
+      <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>
+      <details><summary>How to run it</summary>${a.diagram_src ? `<img class="dg" src="${a.diagram_src}" alt="${a.name} diagram">` : ''}<div class="lbl">Setup</div>${a.setup}${a.scoring ? `<div class="lbl">Scoring</div>${a.scoring}` : ''}<div class="lbl">What to look for</div>${a.look_for}<div class="lbl">Ask</div>&ldquo;${a.question}&rdquo;<div class="lbl">Equipment</div>${a.equipment}${a.source ? `<div class="lbl">Source</div>${a.source}` : ''}</details>
       <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${w.week}-${si}-${slot}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${w.week}-${si}-${slot}" data-id="">Put the original back</button>` : ''}</details></div>`;
   }).join('') + '</div>').join('');

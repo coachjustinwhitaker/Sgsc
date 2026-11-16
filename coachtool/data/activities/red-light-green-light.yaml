@@ -2,6 +2,7 @@ id: red-light-green-light
 order: 17
 name: Red Light Green Light
 block: B1
+type: warm-up
 skills:
 - Driving
 - Controlling

@@ -9,6 +9,9 @@ def check(root=ROOT):
     acts = {}
     for f in sorted((root / 'data' / 'activities').glob('*.yaml')):
         a = load(f)
+        _types = {t['id'] for t in load(root / 'data' / 'vocab' / 'activity-types.yaml')['types']} if (root / 'data' / 'vocab' / 'activity-types.yaml').exists() else set()
+        if a.get('type') not in _types: errs.append(f"{f.name}: type must be one of {sorted(_types)}")
+        if 'scoring' in a and not (isinstance(a['scoring'], str) and a['scoring'].strip()): errs.append(f'{f.name}: scoring must be a non-empty string')
         if 'source' in a and not (isinstance(a['source'], str) and a['source'].strip()): errs.append(f'{f.name}: source must be a non-empty string')
         for k in ['id', 'name', 'block', 'skills', 'ages', 'tracks', 'levels', 'players', 'space', 'setup', 'look_for', 'question', 'equipment']:
             if a.get(k) in (None, '', []): errs.append(f'{f.name}: missing {k}')

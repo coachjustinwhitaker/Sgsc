@@ -2,6 +2,7 @@ id: duels-to-goal
 order: 44
 name: Duels to Goal
 block: B5
+type: small-sided
 skills:
 - Shooting
 - Decision-Making

@@ -2,6 +2,7 @@ id: rondo
 order: 4
 name: Rondo
 block: B1
+type: rondo
 skills:
 - Possession
 - Body Shape

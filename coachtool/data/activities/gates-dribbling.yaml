@@ -2,6 +2,7 @@ id: gates-dribbling
 order: 23
 name: Gates Dribbling
 block: B1
+type: warm-up
 skills:
 - Driving
 - Scanning

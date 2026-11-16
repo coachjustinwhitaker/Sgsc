@@ -2,6 +2,7 @@ id: 3v3-plus-1-keep-away
 order: 29
 name: 3v3+1 Keep-Away
 block: B2
+type: rondo
 skills:
 - Possession
 - Body Shape

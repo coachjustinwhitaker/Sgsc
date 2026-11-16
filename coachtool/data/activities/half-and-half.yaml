@@ -2,6 +2,7 @@ id: half-and-half
 order: 28
 name: Half and Half
 block: B2
+type: small-sided
 skills:
 - Supporting
 - Combination Play

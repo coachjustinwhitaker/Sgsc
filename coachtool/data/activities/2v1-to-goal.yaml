@@ -2,6 +2,7 @@ id: 2v1-to-goal
 order: 27
 name: 2v1 to Goal
 block: B2
+type: small-sided
 skills:
 - Passing
 - Numerical Advantage

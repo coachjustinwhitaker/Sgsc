@@ -2,6 +2,7 @@ id: rondo-5v2
 order: 12
 name: Rondo 5v2
 block: B2
+type: rondo
 skills:
 - Passing
 - Body Shape

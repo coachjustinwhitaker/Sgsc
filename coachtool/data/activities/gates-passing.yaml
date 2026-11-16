@@ -2,6 +2,7 @@ id: gates-passing
 order: 5
 name: Gates Passing
 block: B2
+type: pattern
 skills:
 - Passing
 - Supporting

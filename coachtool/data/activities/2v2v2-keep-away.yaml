@@ -2,6 +2,7 @@ id: 2v2v2-keep-away
 order: 30
 name: 2v2v2 Keep-Away
 block: B3
+type: rondo
 skills:
 - Pressing
 - Covering

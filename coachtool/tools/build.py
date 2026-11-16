@@ -129,7 +129,7 @@ def build_app(plan_id, brand_id):
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,
                       'goals': load(ROOT / 'data' / 'goals' / f"{fid}.yaml")['goals'], 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"),
                       'framework': load(ROOT / 'data' / 'framework' / f"{age['framework']}.yaml"), 'skills': skills, 'club': club, 'rules': merge_rules(plan['age'], club, plan['track']), 'ladder': ladder[plan['track']][plan['age']]})
-    data = {'help': {'email': (brand.get('help_email') or '').strip(), 'form': (brand.get('suggest_form_url') or '').strip(), 'support': (brand.get('support_line') or '').strip()}, 'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder}
+    data = {'help': {'email': (brand.get('help_email') or '').strip(), 'form': (brand.get('suggest_form_url') or '').strip(), 'support': (brand.get('support_line') or '').strip()}, 'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder, 'types': load(ROOT / 'data' / 'vocab' / 'activity-types.yaml')['types']}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
@@ -144,7 +144,7 @@ def build_author():
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
     build_app('u10-rec', 'sgsc')  # fills diagram_src on the activity records
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'blocks': load(ROOT / 'data' / 'blocks.yaml'),
-            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
+            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'types': load(ROOT / 'data' / 'vocab' / 'activity-types.yaml')['types'], 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
     brand = load(ROOT / 'theme' / 'sgsc' / 'club.yaml')

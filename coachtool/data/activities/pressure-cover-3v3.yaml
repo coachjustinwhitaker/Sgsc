@@ -2,6 +2,7 @@ id: pressure-cover-3v3
 order: 14
 name: Pressure & Cover 3v3
 block: B3
+type: small-sided
 skills:
 - Covering
 - Communication

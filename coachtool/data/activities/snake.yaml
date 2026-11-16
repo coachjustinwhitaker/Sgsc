@@ -2,6 +2,7 @@ id: snake
 order: 41
 name: Snake
 block: D
+type: warm-up
 skills:
 - Communication
 - Scanning

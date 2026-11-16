@@ -38,6 +38,8 @@ def main():
         a = dict(old) if old else {}; a.update(new)
         if row.get('diagram'): a['diagram'] = row['diagram']
         if (row.get('source') or '').strip(): a['source'] = row['source'].strip()
+        if (row.get('type') or '').strip(): a['type'] = row['type'].strip().lower()
+        if (row.get('scoring') or '').strip(): a['scoring'] = row['scoring'].strip()
         if row.get('diagram_data') and a.get('diagram'):
             f = ddir / a['diagram']
             if not f.exists(): newfiles.append(f)

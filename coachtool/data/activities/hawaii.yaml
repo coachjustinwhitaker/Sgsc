@@ -2,6 +2,7 @@ id: hawaii
 order: 35
 name: Hawaii
 block: B4
+type: small-sided
 skills:
 - Decision-Making
 - Pressing

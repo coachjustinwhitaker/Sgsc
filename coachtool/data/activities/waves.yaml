@@ -2,6 +2,7 @@ id: waves
 order: 45
 name: Waves
 block: B5
+type: small-sided
 skills:
 - Numerical Advantage
 - Passing

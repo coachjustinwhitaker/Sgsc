@@ -2,6 +2,7 @@ id: shrinking-field
 order: 2
 name: Shrinking Field
 block: B1
+type: small-sided
 skills:
 - Controlling
 - Body Shape

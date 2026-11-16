@@ -2,6 +2,7 @@ id: hotbox
 order: 36
 name: Hotbox
 block: B2
+type: small-sided
 skills:
 - Combination Play
 - Decision-Making

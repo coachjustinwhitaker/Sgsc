@@ -2,6 +2,7 @@ id: team-handball
 order: 37
 name: Team Handball
 block: B2
+type: small-sided
 skills:
 - Combination Play
 - Supporting

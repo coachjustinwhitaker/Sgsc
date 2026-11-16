@@ -2,6 +2,7 @@ id: squeeze-the-space
 order: 16
 name: Squeeze the Space
 block: B3
+type: positional
 skills:
 - Compact Shape
 ages:

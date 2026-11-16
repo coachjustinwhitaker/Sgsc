@@ -2,6 +2,7 @@ id: half-court-soccer
 order: 31
 name: Half Court Soccer
 block: B3
+type: small-sided
 skills:
 - Compact Shape
 - Marking

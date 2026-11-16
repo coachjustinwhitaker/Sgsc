@@ -2,6 +2,7 @@ id: five-goal-game
 order: 10
 name: Five Goal Game
 block: B2
+type: small-sided
 skills:
 - Decision-Making
 ages:

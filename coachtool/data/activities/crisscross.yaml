@@ -2,6 +2,7 @@ id: crisscross
 order: 34
 name: Crisscross
 block: B4
+type: small-sided
 skills:
 - Decision-Making
 - Scanning

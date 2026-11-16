@@ -2,6 +2,7 @@ id: shadow-dribbling
 order: 24
 name: Shadow Dribbling
 block: B1
+type: warm-up
 skills:
 - Scanning
 - Dribbling

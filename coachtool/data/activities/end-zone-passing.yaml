@@ -2,6 +2,7 @@ id: end-zone-passing
 order: 6
 name: End Zone Passing
 block: B2
+type: small-sided
 skills:
 - Supporting
 - Combination Play

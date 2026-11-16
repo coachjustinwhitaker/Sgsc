@@ -2,6 +2,7 @@ id: wide-service-finishing
 order: 46
 name: Wide Service Finishing
 block: B5
+type: pattern
 skills:
 - Shooting
 - Supporting

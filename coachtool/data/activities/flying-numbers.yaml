@@ -2,6 +2,7 @@ id: flying-numbers
 order: 1
 name: Flying Numbers
 block: B1
+type: small-sided
 skills:
 - Decision-Making
 ages:

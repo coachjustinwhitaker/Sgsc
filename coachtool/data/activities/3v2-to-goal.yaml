@@ -2,6 +2,7 @@ id: 3v2-to-goal
 order: 9
 name: 3v2 to Goal
 block: B2
+type: small-sided
 skills:
 - Numerical Advantage
 - Combination Play

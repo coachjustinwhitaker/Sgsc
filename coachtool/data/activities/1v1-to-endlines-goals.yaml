@@ -2,6 +2,7 @@ id: 1v1-to-endlines-goals
 order: 3
 name: 1v1 to Endlines & Goals
 block: B1
+type: small-sided
 skills:
 - Dribbling
 - Pressing

@@ -2,6 +2,7 @@ id: 2v2-to-endlines-attacking
 order: 8
 name: 2v2 to Endlines — Attacking
 block: B2
+type: small-sided
 skills:
 - Supporting
 - Numerical Advantage

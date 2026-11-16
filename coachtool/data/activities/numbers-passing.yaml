@@ -2,6 +2,7 @@ id: numbers-passing
 order: 7
 name: Numbers Passing
 block: B2
+type: pattern
 skills:
 - Passing
 - Body Shape
