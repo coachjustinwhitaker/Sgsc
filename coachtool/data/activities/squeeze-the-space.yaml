@@ -2,6 +2,7 @@ id: squeeze-the-space
 order: 16
 name: Squeeze the Space
 block: B3
+type: positional
 skills:
 - Compact Shape
 ages:
@@ -19,11 +20,11 @@ setup: Half field with a goal and a goalkeeper (or a large cone goal). Mark two 
   yards wide, along the sidelines. 5 attackers v 4 defenders. Attackers score from the middle or by crossing
   from a wide channel. Defenders start by getting narrow and close to the center, then shift toward the
   ball. Call “squeeze” and the defenders tighten up around the ball.
-look_for: Defenders closer together than they were a minute ago. A shape that shifts as the ball moves
-  instead of chasing it. Watch for the wide defender who keeps the cross from being easy, and the players
-  who block the shot instead of turning away. Winning the ball is a bonus. Making the shot hard is the
-  goal.
-question: When the ball went wide, where did the rest of your team go?
+coach:
+- cue: Defenders closer together than they were a minute ago. A shape that shifts as the ball moves instead
+    of chasing it. Watch for the wide defender who keeps the cross from being easy, and the players who
+    block the shot instead of turning away. Winning the ball is a bonus. Making the shot hard is the goal.
+  ask: When the ball went wide, where did the rest of your team go?
 pairs_with:
 - approach-delay
 - shadow-marking

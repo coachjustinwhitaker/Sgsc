@@ -2,6 +2,7 @@ id: approach-delay
 order: 13
 name: Approach & Delay
 block: B3
+type: small-sided
 skills:
 - Pressing
 - Delaying
@@ -20,10 +21,11 @@ setup: 'Rectangular grid about 10 by 15 yards. An attacker with the ball starts 
   starts 5 yards away. The attacker scores by dribbling over the far end line. The defender wins by taking
   the ball or knocking it out. Rotate after every turn. Teach one picture: run at the ball quickly, then
   slow down as you arrive, with the body turned a little to the side.'
-look_for: 'Fast approach, slow arrival. A defender who lunges and gets dribbled past has learned something
-  too. Name the player who slows down and stays on their feet, even if the attacker gets by. Delaying
-  is a win at this age. Progress: add a second defender who starts behind the first and calls “cover.”'
-question: When you got close to the dribbler, what did you do with your feet and your speed?
+coach:
+- cue: 'Fast approach, slow arrival. A defender who lunges and gets dribbled past has learned something
+    too. Name the player who slows down and stays on their feet, even if the attacker gets by. Delaying
+    is a win at this age. Progress: add a second defender who starts behind the first and calls “cover.”'
+  ask: When you got close to the dribbler, what did you do with your feet and your speed?
 pairs_with:
 - flying-numbers
 - shrinking-field

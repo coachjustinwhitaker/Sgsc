@@ -14,6 +14,13 @@ def names_list(refs, acts):
         base, _, var = r.partition('#')
         ns.append(next(v['name'] for v in acts[base].get('variants', []) if v['id'] == var) if var else acts[base]['name'])
     return ns[0] if len(ns) == 1 else ' or '.join(ns) if len(ns) == 2 else ', '.join(ns[:-1]) + ', or ' + ns[-1]
+def txt(v):
+    return '<ul>' + ''.join(f'<li>{esc(x)}</li>' for x in v) + '</ul>' if isinstance(v, list) else esc(v)
+def opt(label, v):
+    return f'<div class="a-label">{label}</div><div class="a-text">{txt(v)}</div>' if v else ''
+def progression_html(a):
+    if not a.get('progression'): return ''
+    return '<div class="a-label">Progressions</div><div class="a-text"><ol>' + ''.join(f'<li><b>{esc(p["title"])}</b>{(" (" + str(p["minutes"]) + " min)") if p.get("minutes") else ""} {esc(p["text"])}</li>' for p in a['progression']) + '</ol></div>'
 def card(a, acts):
     equip = esc(a['equipment'])
     src = f'<div class="act-source">Source: {esc(a["source"])}</div>' if a.get('source') else ''
@@ -24,9 +31,10 @@ def card(a, acts):
         <div class="act-focus">{esc(" · ".join(a["skills"]))}</div>
       </div>
       <div class="act-body">
-        <div class="a-label">Setup</div><div class="a-text">{esc(a["setup"])}</div>
-        <div class="a-label">What to Look For</div><div class="a-text">{esc(a["look_for"])}</div>
-        <div class="a-question">&ldquo;{esc(a["question"])}&rdquo;</div>
+        {opt('What it is for', a.get('objective'))}<div class="a-label">Setup</div><div class="a-text">{txt(a["setup"])}</div>
+        {opt('Rules', a.get('rules'))}{opt('Scoring', a.get('scoring'))}
+        {progression_html(a)}<div class="a-label">What to Look For</div><div class="a-text">{" ".join(esc(c["cue"]) for c in a["coach"])}</div>
+        {"".join(f'<div class="a-question">&ldquo;{esc(c["ask"])}&rdquo;</div>' for c in a["coach"])}
         <span class="pairs-tag">&#8594; Pairs well with: {esc(names_list(a["pairs_with"], acts))}</span>
         <div class="e-tags" style="margin-top:10px;"><span class="e-tag">{equip}</span></div>
         {src}
@@ -129,7 +137,7 @@ def build_app(plan_id, brand_id):
         teams.append({'id': plan['id'], 'age': plan['age'], 'track': plan['track'], 'label': age.get('label', plan['age'].upper()), 'plan': plan,
                       'goals': load(ROOT / 'data' / 'goals' / f"{fid}.yaml")['goals'], 'players': load(ROOT / 'data' / 'players' / f"{age['players']}.yaml"),
                       'framework': load(ROOT / 'data' / 'framework' / f"{age['framework']}.yaml"), 'skills': skills, 'club': club, 'rules': merge_rules(plan['age'], club, plan['track']), 'ladder': ladder[plan['track']][plan['age']]})
-    data = {'help': {'email': (brand.get('help_email') or '').strip(), 'form': (brand.get('suggest_form_url') or '').strip(), 'support': (brand.get('support_line') or '').strip()}, 'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder}
+    data = {'help': {'email': (brand.get('help_email') or '').strip(), 'form': (brand.get('suggest_form_url') or '').strip(), 'support': (brand.get('support_line') or '').strip()}, 'activities': sorted(acts.values(), key=lambda a: a['order']), 'teams': teams, 'blocks': blocks, 'ladder': ladder, 'types': load(ROOT / 'data' / 'vocab' / 'activity-types.yaml')['types']}
     (ROOT / 'build' / 'data.json').write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / brand_id / brand.get('logo_small_file', brand['logo_file'])).read_bytes()).decode()
     page = (ROOT / 'app' / 'index.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
@@ -144,7 +152,7 @@ def build_author():
     if errs: sys.exit('Fix these first:\n' + '\n'.join(errs))
     build_app('u10-rec', 'sgsc')  # fills diagram_src on the activity records
     data = {'activities': sorted(acts.values(), key=lambda a: a['order']), 'blocks': load(ROOT / 'data' / 'blocks.yaml'),
-            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
+            'tags': load(ROOT / 'data' / 'vocab' / 'activity-tags.yaml'), 'types': load(ROOT / 'data' / 'vocab' / 'activity-types.yaml')['types'], 'ladder': load(ROOT / 'rules' / 'ladder.yaml')}
     page = (ROOT / 'app' / 'author.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
     out = ROOT / 'build' / 'activity-builder.html'; out.write_text(page, encoding='utf-8')
     brand = load(ROOT / 'theme' / 'sgsc' / 'club.yaml')

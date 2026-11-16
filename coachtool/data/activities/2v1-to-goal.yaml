@@ -2,6 +2,7 @@ id: 2v1-to-goal
 order: 27
 name: 2v1 to Goal
 block: B2
+type: small-sided
 skills:
 - Passing
 - Numerical Advantage
@@ -21,11 +22,11 @@ setup: 'Groups of 3. Two attackers against one defender, attacking a cone goal a
   starts with one attacker around 10 yards out. Rotate roles every 30 seconds. Run 2 to 3 groups simultaneously
   depending on how many adults are available to manage them. Do not coach the pass: let players discover
   the advantage of having a teammate free. Rotate defenders regularly so they do not get discouraged.'
-look_for: 'Do not coach the combination. If a player passes to a free teammate and they score, celebrate
-  it loudly and specifically: "Did everyone see that? Two players just solved a problem that one player
-  couldn''t." That moment is the first seed of Me & My Teammates.'
-question: When you had two players against one defender, what options did you have? Did you use both of
-  them?
+coach:
+- cue: 'Do not coach the combination. If a player passes to a free teammate and they score, celebrate
+    it loudly and specifically: "Did everyone see that? Two players just solved a problem that one player
+    couldn''t." That moment is the first seed of Me & My Teammates.'
+  ask: When you had two players against one defender, what options did you have? Did you use both of them?
 pairs_with:
 - shooting-gallery
 equipment: 1 ball per group · 2 tall cones per goal · Pinnies · Run 2 to 3 groups simultaneously

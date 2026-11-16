@@ -2,6 +2,7 @@ id: gates-passing
 order: 5
 name: Gates Passing
 block: B2
+type: pattern
 skills:
 - Passing
 - Supporting
@@ -20,12 +21,13 @@ minutes: 15
 setup: Rectangular grid with 8–10 gates scattered throughout (two cones arm’s length apart). Players in
   pairs with one ball. Score by passing to each other through gates. After passing, move immediately to
   a new gate. Encourage players to tell their partner where they are going before they pass.
-look_for: 'The pass-and-move habit is the entire point. A player who passes and stands still is not learning
-  “Me & My Teammates.” Look for any player who moves after passing. Name it when you see it. Also look
-  for open body shape on receiving. Progress: replace the gates with cone triangles scattered around the
-  grid. Players score by passing through a triangle to their partner. Now add a challenge: tell your partner
-  where you are going before you pass. The pair that communicates most will score the most.'
-question: After you passed the ball, what did you do next? Why does moving matter?
+coach:
+- cue: 'The pass-and-move habit is the entire point. A player who passes and stands still is not learning
+    “Me & My Teammates.” Look for any player who moves after passing. Name it when you see it. Also look
+    for open body shape on receiving. Progress: replace the gates with cone triangles scattered around
+    the grid. Players score by passing through a triangle to their partner. Now add a challenge: tell
+    your partner where you are going before you pass. The pair that communicates most will score the most.'
+  ask: After you passed the ball, what did you do next? Why does moving matter?
 pairs_with:
 - flying-numbers
 - rondo

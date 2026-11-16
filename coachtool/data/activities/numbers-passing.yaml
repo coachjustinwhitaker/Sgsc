@@ -2,6 +2,7 @@ id: numbers-passing
 order: 7
 name: Numbers Passing
 block: B2
+type: pattern
 skills:
 - Passing
 - Body Shape
@@ -20,11 +21,11 @@ minutes: 15
 setup: 'Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space
   passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1. Add a second ball
   when they find a rhythm. Optional: add a goal. The last player shoots, then becomes the new number 1.'
-look_for: Look for players keeping hips open (not square-on), cushioning the ball softly, then taking
-  a purposeful next touch. Players who are always looking for the next number before the ball arrives
-  will stand out. That anticipation is body shape doing its job. Works well as a focus activity after
-  Gates Passing.
-question: How did you know where the next number was before the ball came to you?
+coach:
+- cue: Look for players keeping hips open (not square-on), cushioning the ball softly, then taking a purposeful
+    next touch. Players who are always looking for the next number before the ball arrives will stand
+    out. That anticipation is body shape doing its job. Works well as a focus activity after Gates Passing.
+  ask: How did you know where the next number was before the ball came to you?
 pairs_with:
 - 1v1-to-endlines-goals
 - flying-numbers

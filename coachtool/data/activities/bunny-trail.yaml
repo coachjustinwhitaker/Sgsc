@@ -2,6 +2,7 @@ id: bunny-trail
 order: 42
 name: Bunny Trail
 block: D
+type: ball-mastery
 skills:
 - Dribbling
 - Controlling
@@ -20,11 +21,12 @@ setup: Create a circle of cones spaced about 6 feet apart. Each player starts at
   ball. On your call, players either dribble to the next cone or hop while carrying their ball. Alternate
   between dribbling and hopping segments on your command. Tell players to imagine a force field the size
   of their arms and to keep the ball inside it while they dribble.
-look_for: The dribbling and hopping alternate creates a natural rhythm, and the coordination challenge
-  of switching between the two is the whole point. Some players will struggle with two-footed hopping.
-  Demonstrate it and encourage the attempt. Do not run more than three hopping segments in a row or energy
-  will drop.
-question: Which was harder, dribbling or hopping? Why?
+coach:
+- cue: The dribbling and hopping alternate creates a natural rhythm, and the coordination challenge of
+    switching between the two is the whole point. Some players will struggle with two-footed hopping.
+    Demonstrate it and encourage the attempt. Do not run more than three hopping segments in a row or
+    energy will drop.
+  ask: Which was harder, dribbling or hopping? Why?
 pairs_with:
 - kangaroo-jacks
 equipment: 1 ball per player · 1 cone per player arranged in a circle

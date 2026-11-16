@@ -22,6 +22,7 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <div class="card">
 <label class="t">Name</label><input type="text" id="name">
 <label class="t">Block</label><select id="block"></select>
+<label class="t">Type</label><select id="type"></select>
 <label class="t">Ages</label><div class="chk" id="ages"></div>
 <label class="t">Tracks <small>(rec = recreational, comp = competitive)</small></label><div class="chk" id="tracks"></div>
 <label class="t">Levels <small id="lvnote"></small></label><div class="chk" id="levels"></div>
@@ -29,9 +30,13 @@ img.pv{max-width:100%;border-radius:8px;margin-top:8px}
 <label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
 <div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
 <label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
-<label class="t">Setup <small>(layout, who starts where, how it restarts, progression)</small></label><textarea id="setup"></textarea>
-<label class="t">What to look for</label><textarea id="look_for"></textarea>
-<label class="t">Question to ask the players</label><input type="text" id="question">
+<label class="t">Objective <small>(one line: what is this for?)</small></label><input type="text" id="objective">
+<label class="t">Setup <small>(one line per bullet: layout, who starts where, how it restarts)</small></label><textarea id="setup"></textarea>
+<label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
+<label class="t">Rules <small>(optional, one line per rule)</small></label><textarea id="rules" style="min-height:60px"></textarea>
+<label class="t">Progressions <small>(optional, one per line: Title (minutes) :: what changes. Say what you would see that tells you to use it.)</small></label><textarea id="progression" style="min-height:80px" placeholder="Two touches (7 min) :: Play with a two touch limit past the midline."></textarea>
+<label class="t">Coach it <small>(2 to 4 pairs. A cue, then the question that goes with it)</small></label><div id="coachrows"></div>
+<label class="t">Diagram caption <small>(optional: say in plain words what the diagram shows)</small></label><input type="text" id="diagram_caption">
 <label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
 <label class="t">Equipment</label><input type="text" id="equipment" placeholder="1 ball per group · 4 cones · Pinnies">
 <label class="t">Pairs well with <small>(optional)</small></label><div class="chk" id="pairs"></div>
@@ -50,6 +55,8 @@ const chk = (id, items, name) => { $(id).innerHTML = items.map(([v,l]) => `<labe
 chk('#ages', ages.map(a => [a, a.toUpperCase()]), 'age'); chk('#tracks', [['rec','Rec'],['comp','Comp']], 'track'); chk('#levels', levels.map(l => [l, LV[l]]), 'level');
 function drawSkills(keep){ $('#skills').innerHTML = [['Player actions', D.tags.actions], ['Game concepts', D.tags.concepts]].map(([h, l]) => `<div style="width:100%"><small>${h}</small></div>` + l.map(t => `<label><input type="checkbox" name="skill" value="${t}">${t}</label>`).join('')).join(''); setv('skill', keep); }
 chk('#pairs', D.activities.map(a => [a.id, a.name]), 'pair');
+$('#coachrows').innerHTML = [1,2,3,4].map(i => `<div class="card" style="margin:6px 0"><input type="text" id="cue${i}" placeholder="Cue ${i}${i===1?'':' (optional)'}"><input type="text" id="ask${i}" placeholder="Ask ${i}" style="margin-top:6px"></div>`).join('');
+$('#type').innerHTML = '<option value="">Choose a type</option>' + D.types.map(t => `<option value="${t.id}">${t.label}</option>`).join('');
 $('#block').innerHTML = Object.keys(D.blocks).map(b => `<option value="${b}">${b} · ${D.blocks[b].name}</option>`).join('');
 $('#space').innerHTML = Object.keys(SP).map(k => `<option value="${k}">${SP[k]}</option>`).join('');
 $('#load').innerHTML = '<option value="">New activity</option>' + D.activities.map(a => `<option value="${a.id}">${a.name} (${a.block}, ${a.ages.join(' ')})</option>`).join('');
@@ -74,10 +81,10 @@ document.addEventListener('change', () => { syncLevels(); fit(); });
 $('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r = new FileReader(); r.onload = () => { diagram = {name: f.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-'), data: r.result}; $('#pv').innerHTML = `<img class="pv" src="${r.result}">`; }; r.readAsDataURL(f); };
 function fill(a){
   editing = a ? a.id : null; diagram = null; $('#file').value = '';
-  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1';
+  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#objective').value = a && a.objective ? a.objective : '';
   setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
   $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
-  ['setup','look_for','question','equipment'].forEach(k => $('#'+k).value = a ? a[k] : ''); $('#source').value = a && a.source ? a.source : '';
+  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && a.diagram_caption ? a.diagram_caption : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
   $('#pv').innerHTML = a && a.diagram_src ? `<img class="pv" src="${a.diagram_src}"><small>Current diagram. Choose a file to replace it.</small>` : '';
   $('#msg').innerHTML = ''; syncLevels(); fit();
 }
@@ -85,10 +92,11 @@ $('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value))
 $('#clear').onclick = () => { $('#load').value = ''; fill(null); };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 $('#add').onclick = () => {
-  const a = {name: $('#name').value.trim(), block: $('#block').value, ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
+  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
     players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
-    setup: $('#setup').value.trim(), look_for: $('#look_for').value.trim(), question: $('#question').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
-  const miss = []; [['name','Name'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['look_for','What to look for'],['question','Question'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+    setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), pairs_with: vals('pair')};
+  const miss = []; [['name','Name'],['type','Type'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+  if(a.coach.some(c => !c.cue || !c.ask)) miss.push('Each cue needs its question');
   if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
   if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }
   a.id = editing || slug(a.name); a.update = !!editing;

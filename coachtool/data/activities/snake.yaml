@@ -2,6 +2,7 @@ id: snake
 order: 41
 name: Snake
 block: D
+type: ball-mastery
 skills:
 - Communication
 - Scanning
@@ -21,11 +22,12 @@ setup: Grid about 20 by 20 yards. One player is the head of the snake, the only 
   grabs the back of the snake's shirt and joins the snake. The snake grows with every tag. They must stay
   connected for a tag to count. The game ends when everyone has become part of the snake. Start again
   with a new volunteer as the head.
-look_for: The snake will fall apart constantly. That is the fun. Encourage the snake to communicate and
-  call out who they are going after. Remind non-snakes to keep their heads up to find snake-free space.
-  Watch for moments of genuine teamwork as the snake gets longer. Hissing is encouraged and should be
-  modeled by the coach.
-question: When you were in the snake, how did you decide which direction to go?
+coach:
+- cue: The snake will fall apart constantly. That is the fun. Encourage the snake to communicate and call
+    out who they are going after. Remind non-snakes to keep their heads up to find snake-free space. Watch
+    for moments of genuine teamwork as the snake gets longer. Hissing is encouraged and should be modeled
+    by the coach.
+  ask: When you were in the snake, how did you decide which direction to go?
 pairs_with:
 - kangaroo-jacks
 equipment: 1 ball per player (except the snake head) · Disc cones for grid

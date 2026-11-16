@@ -2,6 +2,7 @@ id: duck-tails
 order: 20
 name: Duck Tails
 block: B1
+type: ball-mastery
 skills:
 - Dribbling
 - Protecting
@@ -21,9 +22,10 @@ setup: 'Grid about 20 by 20 yards. Every player has a ball and tucks a pinny in 
   with no elimination: if a tail falls off, tuck it back in and keep playing. For a final competitive
   round, switch to elimination: tail stolen means you are out. Last player with their tail wins. Count
   how many tails each player collects.'
-look_for: Players who face their opponent rather than just running away. That is the beginning of how
-  they will take on a defender. Heads up to see where tails are and where opponents are coming from.
-question: What did you do when someone came to steal your tail?
+coach:
+- cue: Players who face their opponent rather than just running away. That is the beginning of how they
+    will take on a defender. Heads up to see where tails are and where opponents are coming from.
+  ask: What did you do when someone came to steal your tail?
 pairs_with:
 - knockout
 - dinosaur-tag

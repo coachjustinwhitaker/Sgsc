@@ -10,6 +10,36 @@ sys.path.insert(0, str(ROOT / 'tools'))
 from check import check
 def slug(n): return re.sub(r'[^a-z0-9]+', '-', n.lower()).strip('-')
 def lst(v): return v if isinstance(v, list) else [x.strip() for x in str(v or '').split(';') if x.strip()]
+def lines(v):
+    if isinstance(v, list): return [str(x).strip() for x in v if str(x).strip()]
+    return [x.strip() for x in str(v or '').splitlines() if x.strip()]
+def text_val(v):
+    ls = lines(v)
+    return None if not ls else ls[0] if len(ls) == 1 else ls
+def coach_val(row):
+    c = row.get('coach')
+    if isinstance(c, list): return [{'cue': str(x['cue']).strip(), 'ask': str(x['ask']).strip()} for x in c if x.get('cue') or x.get('ask')]
+    out = []
+    for ln in lines(c):
+        cue, _, ask = ln.partition('::'); out.append({'cue': cue.strip(), 'ask': ask.strip()})
+    if not out and (row.get('look_for') or row.get('question')): out = [{'cue': str(row.get('look_for') or '').strip(), 'ask': str(row.get('question') or '').strip()}]
+    return out
+PROG = re.compile(r'^(.*?)(?:\s*\((\d+)\s*min\))?\s*::\s*(.*)$')
+def prog_val(v):
+    out = []
+    if isinstance(v, list):
+        for x in v:
+            s = {'title': str(x.get('title') or '').strip(), 'text': str(x.get('text') or '').strip()}
+            if x.get('minutes'): s['minutes'] = int(x['minutes'])
+            out.append(s)
+        return out
+    for ln in lines(v):
+        m = PROG.match(ln)
+        if not m: out.append({'title': ln, 'text': ''}); continue
+        s = {'title': m.group(1).strip(), 'text': m.group(3).strip()}
+        if m.group(2): s['minutes'] = int(m.group(2))
+        out.append(s)
+    return out
 def rows_from(src):
     if src.suffix.lower() == '.json':
         return [dict(r) for r in json.loads(src.read_text(encoding='utf-8'))['activities']]
@@ -33,11 +63,21 @@ def main():
         new = {'id': i, 'order': order_n, 'name': row['name'], 'block': str(row['block']).upper(), 'skills': lst(row['skills']),
              'ages': lst(row['ages']), 'tracks': lst(row['tracks']), 'levels': lst(row['levels']),
              'players': {'min': int(row['players_min']), 'max': int(row['players_max'])}, 'space': str(row['space']).lower(),
-             'minutes': int(row.get('minutes') or 15), 'setup': row['setup'], 'look_for': row['look_for'], 'question': row['question'],
-             'pairs_with': lst(row.get('pairs_with')), 'equipment': row['equipment']}
+             'minutes': int(row.get('minutes') or 15), 'pairs_with': lst(row.get('pairs_with')), 'equipment': row['equipment']}
         a = dict(old) if old else {}; a.update(new)
+        for _k in ('setup', 'rules', 'scoring'):
+            if _k in row or _k == 'setup':
+                tv = text_val(row.get(_k))
+                if tv is not None: a[_k] = tv
+        cv = coach_val(row)
+        if cv: a['coach'] = cv
+        a.pop('look_for', None); a.pop('question', None)
+        if row.get('progression'): a['progression'] = prog_val(row['progression'])
         if row.get('diagram'): a['diagram'] = row['diagram']
         if (row.get('source') or '').strip(): a['source'] = row['source'].strip()
+        if (row.get('type') or '').strip(): a['type'] = row['type'].strip().lower()
+        for _k in ('objective', 'diagram_caption'):
+            if (row.get(_k) or '').strip(): a[_k] = row[_k].strip()
         if row.get('diagram_data') and a.get('diagram'):
             f = ddir / a['diagram']
             if not f.exists(): newfiles.append(f)
