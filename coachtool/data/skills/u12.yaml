@@ -32,17 +32,6 @@ skills:
   - Hold off a closing opponent with the body and the arm out for balance
   - Keep the ball on the far foot from the defender
   - Release the ball at the right moment
-- id: u12-b1-driving-and-dribbling-intro
-  age: u12
-  block: B1
-  area: Driving and Dribbling
-  level: intro
-  tracks:
-  - rec
-  bullets:
-  - Drive into open space at speed
-  - Accelerate past a defender after a change of direction
-  - Choose between taking on a defender and passing
 - id: u12-b1-passing-intro
   age: u12
   block: B1
@@ -221,39 +210,6 @@ skills:
   - Choose between feint, first touch, or immediate pass based on defender position
   - Use body movement to create space to play forward or escape pressure
   - Execute feints at game speed while scanning for next action
-- id: u12-b1-passing-receiving-intro-comp
-  age: u12
-  block: B1
-  area: Passing & Receiving
-  level: intro
-  tracks:
-  - comp
-  bullets:
-  - Complete short passes with correct surface
-  - Receive the ball with intent to control first
-  - Attempt to pass to open teammates rather than defaulting forward
-- id: u12-b1-passing-receiving-dev-comp
-  age: u12
-  block: B1
-  area: Passing & Receiving
-  level: dev
-  tracks:
-  - comp
-  bullets:
-  - Weight and pace the pass so the teammate can continue without slowing down
-  - Avoid passing to a teammate surrounded by two or more opponents
-  - Receive on the bounce or from the air with a soft first touch
-- id: u12-b1-passing-receiving-app-comp
-  age: u12
-  block: B1
-  area: Passing & Receiving
-  level: app
-  tracks:
-  - comp
-  bullets:
-  - Play the right pass at the right speed and time under active pressure
-  - Play a long pass in the air to a teammate in space
-  - Play first time when the picture demands it and the pass can be accurate
 - id: u12-b1-shooting-intro-comp
   age: u12
   block: B1
@@ -485,39 +441,6 @@ skills:
   - Anticipate transitions before possession is fully lost
   - 'Read opponents'' next actions: pass, dribble, shot'
   - Maintain awareness of teammates and space while pressing
-- id: u12-b3-defensive-technique-movement-intro-comp
-  age: u12
-  block: B3
-  area: Defensive Technique & Movement
-  level: intro
-  tracks:
-  - comp
-  bullets:
-  - Apply basic pressure to slow the attacker
-  - Approach the ball under control, not diving in
-  - Adjust body shape to show play away from goal
-- id: u12-b3-defensive-technique-movement-dev-comp
-  age: u12
-  block: B3
-  area: Defensive Technique & Movement
-  level: dev
-  tracks:
-  - comp
-  bullets:
-  - Apply controlled pressure to deny forward play
-  - Provide cover at appropriate distance and angle
-  - Intercept passes by anticipating rather than reacting
-- id: u12-b3-defensive-technique-movement-app-comp
-  age: u12
-  block: B3
-  area: Defensive Technique & Movement
-  level: app
-  tracks:
-  - comp
-  bullets:
-  - 'Apply pressure with clear defensive intent: win, delay, or force error'
-  - Support pressing teammates with compact shape
-  - Block shots and passes in critical moments
 - id: u12-b3-defensive-decision-making-intro-comp
   age: u12
   block: B3
@@ -529,6 +452,9 @@ skills:
   - Understand when to press vs. delay
   - Begin to recover goal-side when beaten
   - Recognize the importance of helping teammates defend
+  - Apply basic pressure to slow the attacker
+  - Approach the ball under control, not diving in
+  - Adjust body shape to show play away from goal
 - id: u12-b3-defensive-decision-making-dev-comp
   age: u12
   block: B3
@@ -540,6 +466,7 @@ skills:
   - Decide when to step, delay, or recover
   - Shift as a unit toward the ball
   - Deny penetration and force play into less dangerous areas
+  - Apply controlled pressure to deny forward play
 - id: u12-b3-defensive-decision-making-app-comp
   age: u12
   block: B3
@@ -551,6 +478,7 @@ skills:
   - Choose collective solutions over individual actions
   - Recognize when to press high vs. recover shape
   - Protect the goal first while looking for moments to regain possession
+  - 'Apply pressure with clear defensive intent: win, delay, or force error'
 - id: u12-b4-perception-awareness-intro-comp
   age: u12
   block: B4
@@ -782,3 +710,107 @@ skills:
   - Maintain composure in high-pressure game moments
   - Influence teammates emotionally and tactically
   - Show leadership late in games
+- id: u12-b1-driving-intro
+  age: u12
+  block: B1
+  area: Driving
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Drive into open space at speed
+  - Accelerate past a defender after a change of direction
+- id: u12-b1-decision-making-intro
+  age: u12
+  block: B1
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Choose between taking on a defender and passing
+- id: u12-b1-passing-intro-comp
+  age: u12
+  block: B1
+  area: Passing
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Complete short passes with correct surface
+  - Attempt to pass to open teammates rather than defaulting forward
+- id: u12-b1-controlling-intro-comp
+  age: u12
+  block: B1
+  area: Controlling
+  level: intro
+  tracks:
+  - comp
+  bullets:
+  - Receive the ball with intent to control first
+- id: u12-b1-passing-dev-comp
+  age: u12
+  block: B1
+  area: Passing
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Weight and pace the pass so the teammate can continue without slowing down
+  - Avoid passing to a teammate surrounded by two or more opponents
+- id: u12-b1-controlling-dev-comp
+  age: u12
+  block: B1
+  area: Controlling
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Receive on the bounce or from the air with a soft first touch
+- id: u12-b1-passing-app-comp
+  age: u12
+  block: B1
+  area: Passing
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Play the right pass at the right speed and time under active pressure
+  - Play a long pass in the air to a teammate in space
+  - Play first time when the picture demands it and the pass can be accurate
+- id: u12-b3-covering-dev-comp
+  age: u12
+  block: B3
+  area: Covering
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Provide cover at appropriate distance and angle
+- id: u12-b3-denying-the-finish-dev-comp
+  age: u12
+  block: B3
+  area: Denying the Finish
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Intercept passes by anticipating rather than reacting
+- id: u12-b3-shape-line-management-app-comp
+  age: u12
+  block: B3
+  area: Shape & Line Management
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Support pressing teammates with compact shape
+- id: u12-b3-denying-the-finish-app-comp
+  age: u12
+  block: B3
+  area: Denying the Finish
+  level: app
+  tracks:
+  - comp
+  bullets:
+  - Block shots and passes in critical moments

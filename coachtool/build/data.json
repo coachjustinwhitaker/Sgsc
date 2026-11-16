@@ -5381,22 +5381,6 @@
      ]
     },
     {
-     "id": "u10-b1-driving-and-dribbling-intro",
-     "age": "u10",
-     "block": "B1",
-     "area": "Driving and Dribbling",
-     "level": "intro",
-     "tracks": [
-      "rec",
-      "comp"
-     ],
-     "bullets": [
-      "Push the ball a few steps ahead and keep it within reach",
-      "Take on an opponent with a change of pace or direction",
-      "Dribble when it creates danger on goal"
-     ]
-    },
-    {
      "id": "u10-b1-passing-intro",
      "age": "u10",
      "block": "B1",
@@ -5560,6 +5544,35 @@
       "Get narrow and close the center near goal",
       "Stop the cross and block the shot",
       "Stay on your feet until the shot is taken"
+     ]
+    },
+    {
+     "id": "u10-b1-driving-intro",
+     "age": "u10",
+     "block": "B1",
+     "area": "Driving",
+     "level": "intro",
+     "tracks": [
+      "rec",
+      "comp"
+     ],
+     "bullets": [
+      "Push the ball a few steps ahead and keep it within reach"
+     ]
+    },
+    {
+     "id": "u10-b1-dribbling-intro",
+     "age": "u10",
+     "block": "B1",
+     "area": "Dribbling",
+     "level": "intro",
+     "tracks": [
+      "rec",
+      "comp"
+     ],
+     "bullets": [
+      "Take on an opponent with a change of pace or direction",
+      "Dribble when it creates danger on goal"
      ]
     }
    ],
@@ -6124,21 +6137,6 @@
      ]
     },
     {
-     "id": "u12-b1-driving-and-dribbling-intro",
-     "age": "u12",
-     "block": "B1",
-     "area": "Driving and Dribbling",
-     "level": "intro",
-     "tracks": [
-      "rec"
-     ],
-     "bullets": [
-      "Drive into open space at speed",
-      "Accelerate past a defender after a change of direction",
-      "Choose between taking on a defender and passing"
-     ]
-    },
-    {
      "id": "u12-b1-passing-intro",
      "age": "u12",
      "block": "B1",
@@ -6271,6 +6269,33 @@
       "Recognize at once that possession has changed",
       "Accelerate toward the ball or space",
       "Keep the intensity through repeated turnovers"
+     ]
+    },
+    {
+     "id": "u12-b1-driving-intro",
+     "age": "u12",
+     "block": "B1",
+     "area": "Driving",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Drive into open space at speed",
+      "Accelerate past a defender after a change of direction"
+     ]
+    },
+    {
+     "id": "u12-b1-decision-making-intro",
+     "age": "u12",
+     "block": "B1",
+     "area": "Decision-Making",
+     "level": "intro",
+     "tracks": [
+      "rec"
+     ],
+     "bullets": [
+      "Choose between taking on a defender and passing"
      ]
     }
    ],

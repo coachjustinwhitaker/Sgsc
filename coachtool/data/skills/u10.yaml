@@ -68,29 +68,6 @@ skills:
   - Shield under contact and keep control
   - Decide when to hold the ball and when to release it
   - Turn out of pressure with the ball protected
-- id: u10-b1-driving-and-dribbling-intro
-  age: u10
-  block: B1
-  area: Driving and Dribbling
-  level: intro
-  tracks:
-  - rec
-  - comp
-  bullets:
-  - Push the ball a few steps ahead and keep it within reach
-  - Take on an opponent with a change of pace or direction
-  - Dribble when it creates danger on goal
-- id: u10-b1-driving-and-dribbling-dev
-  age: u10
-  block: B1
-  area: Driving and Dribbling
-  level: dev
-  tracks:
-  - comp
-  bullets:
-  - Change pace and direction to create real separation
-  - Choose between driving into space and taking on a defender
-  - Keep the head up to see the next decision while dribbling
 - id: u10-b1-passing-intro
   age: u10
   block: B1
@@ -333,3 +310,43 @@ skills:
   - Choose between blocking the shot and staying goal-side
   - Step in to challenge when the opponent has a chance on goal
   - Cover the near post area when the ball is wide
+- id: u10-b1-driving-intro
+  age: u10
+  block: B1
+  area: Driving
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Push the ball a few steps ahead and keep it within reach
+- id: u10-b1-dribbling-intro
+  age: u10
+  block: B1
+  area: Dribbling
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Take on an opponent with a change of pace or direction
+  - Dribble when it creates danger on goal
+- id: u10-b1-decision-making-dev-comp
+  age: u10
+  block: B1
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose between driving into space and taking on a defender
+- id: u10-b1-dribbling-dev-comp
+  age: u10
+  block: B1
+  area: Dribbling
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Change pace and direction to create real separation
+  - Keep the head up to see the next decision while dribbling
