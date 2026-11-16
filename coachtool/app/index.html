@@ -91,9 +91,15 @@ const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
   if(P.cues) out.push(['cues', 'Coaching cues', 'What to say in the moment.', () => `<div class="card">${P.cues.map(c => `<p><b>${c.when}</b><br>${c.say}</p>`).join('')}</div>`]);
   if(T.club.pathway || T.club.contact) out.push(['club', 'A player ready for more', 'And who to ask.', () => (T.club.pathway ? `<div class="card"><ul>${T.club.pathway.map(x => `<li>${x}</li>`).join('')}</ul></div>` : '') + (T.club.contact ? `<h2>Questions?</h2><div class="card"><p>${T.club.contact}</p></div>` : '')]);
   return out; };
+function helpLinks(n){
+  const H = DATA.help || {}, ctx = `${T.label} ${T.track}${n ? ', week ' + n : ''}`, out = [];
+  if(H.email) out.push(`<a class="btn ghost" href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + ctx)}&body=${encodeURIComponent('Hi,\n\nI could use some help.\n\nTeam: ' + ctx + '\nWhat is going on:\n')}">Ask for help</a>`);
+  if(H.form) out.push(`<a class="btn ghost" href="${H.form}" target="_blank" rel="noopener">Suggest an activity</a>`);
+  return out.length ? `<div class="noprint">${out.join('')}</div>` : '';
+}
 function viewGuide(key){
   const S = SECTIONS();
-  if(!key){ app.innerHTML = tabs('guide') + `<h1>Coach guide</h1><p class="lead">Everything from the first-time tour, whenever you want it.</p>` + S.map(([k, t, sub]) => `<a class="card row" href="#" data-nav="guide/${k}"><b>${t}</b><div class="note">${sub}</div></a>`).join('') + `<button class="ghost" data-nav="onb/1">Replay the tour</button>`; return; }
+  if(!key){ app.innerHTML = tabs('guide') + `<h1>Coach guide</h1><p class="lead">Everything from the first-time tour, whenever you want it.</p>` + S.map(([k, t, sub]) => `<a class="card row" href="#" data-nav="guide/${k}"><b>${t}</b><div class="note">${sub}</div></a>`).join('') + (helpLinks() ? `<h2>Help and ideas</h2><p class="note">Stuck on something, or have an activity your players love? Tell us.</p>${helpLinks()}` : '') + `<button class="ghost" data-nav="onb/1">Replay the tour</button>`; return; }
   const sec = S.find(x => x[0] === key); if(!sec) return viewGuide();
   app.innerHTML = `<a class="back" href="#" data-nav="guide">&larr; Guide</a><h1>${sec[1]}</h1><p class="lead">${sec[2]}</p>` + sec[3]();
 }
@@ -155,7 +161,7 @@ function viewWeek(n){
   }).join('') + '</div>').join('');
   const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
   const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note"><a href="#" data-nav="why/${w.block}">Why this block: ${DATA.blocks[w.block].name}</a> · <a href="#" data-nav="guide">Coach guide</a></p></div>`;
-  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>`;
+  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? gameCard(shape.opening) : '') + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }

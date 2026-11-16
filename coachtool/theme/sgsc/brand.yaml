@@ -12,3 +12,6 @@ navy: '#01428A'
 navy_dark: '#103E77'
 gold: '#C89D3F'
 logo_small_file: logo-small.png
+# Feedback. Leave blank to hide the button.
+help_email: ''
+suggest_form_url: ''

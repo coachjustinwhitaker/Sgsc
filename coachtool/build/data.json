@@ -1,4 +1,8 @@
 {
+ "help": {
+  "email": "",
+  "form": ""
+ },
  "activities": [
   {
    "id": "flying-numbers",
