@@ -226,3 +226,23 @@ why_periodize:
   text: Hold the line when the instinct to fix things is strong. After a hard game you will want to throw
     the plan out. Sometimes that is the right call. But the default should be the plan, because it was
     built when you were thinking clearly, not in the 24 hours after a loss.
+levels:
+- title: Introduction
+  text: Players are becoming aware of a concept and trying it. Decisions are slow and execution is inconsistent.
+    Every player at every position works through this level the same way.
+- title: Development
+  text: Players make repeatable, intentional choices. They understand the concept and are beginning to
+    apply it under pressure, but it is not yet automatic. Still universal, with no position differentiation.
+- title: Application
+  text: Decisions are fast and reliable under real game pressure. This is where position-specific depth
+    begins to show up, grouped by who actually executes the action together, not by fixed labels.
+- title: Your goal
+  text: Not to push every player to Application by the end of the season. Recognize where each player
+    is and create the right conditions for them to move forward from there. Arriving at Introduction and
+    leaving at Development is progress. Reaching Application under pressure by the final weeks is a great
+    season.
+- title: Specialization at U13
+  text: Introduction and Development stay universal in every block. Application is where specialization
+    begins, grouped by function rather than assigned upfront. A player's technique and decision-making
+    at Application are still revealing what kind of player he is becoming. Locking a player into a position
+    too early risks missing who he actually turns out to be.
