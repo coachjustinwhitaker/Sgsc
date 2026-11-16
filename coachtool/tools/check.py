@@ -27,6 +27,9 @@ def check(root=ROOT):
                     errs.append(f'{a["id"]}: block {a["block"]} is not part of {tr} {age}')
                 for lv in a.get('levels', []):
                     if lv not in ladder['levels'][tr]: errs.append(f'{a["id"]}: level {lv} is not used in {tr}')
+    for a in acts.values():
+        for ag, o in (a.get('for_age') or {}).items():
+            if ag not in a['ages']: errs.append(f'{a["id"]}: for_age {ag} is not one of its ages')
     seen = {}
     for a in acts.values():
         for k in ('setup', 'look_for', 'question'):
@@ -51,12 +54,13 @@ def check(root=ROOT):
             if w['level'] not in ladder['levels'][p['track']]: errs.append(f'{f.name} wk{w["week"]}: level {w["level"]} not used in {p["track"]}')
             for i, ses in enumerate(w['sessions'], 1):
                 ids = []; full = []
-                for slot in ('a', 'b'):
+                for slot in [k for k in ('a', 'b') if k in ses]:
                     r = ses[slot]['activity']
                     if not ref_ok(r): errs.append(f'{f.name} wk{w["week"]} session {i} {slot}: unknown activity {r}'); continue
                     ids.append(r.split('#')[0]); full.append(r)
+                    if p['age'] not in acts[r.split('#')[0]]['ages']: errs.append(f'{f.name} wk{w["week"]}: {r} is not an {p["age"]} activity')
                 if len(full) == 2 and full[0] == full[1]: errs.append(f'{f.name} wk{w["week"]} session {i}: A and B are the same activity')
-                if ids and not any(acts[x]['block'] == w['block'] for x in ids):
+                if ids and not any(acts[x]['block'] in [w['block']] + w.get('also_blocks', []) for x in ids):
                     errs.append(f'{f.name} wk{w["week"]} session {i}: neither activity is a {w["block"]} activity')
 
     # skills, goals and age configs
@@ -86,7 +90,8 @@ def check(root=ROOT):
         a = load(f)
         for pid in a['pills']:
             if pid not in vocab: errs.append(f'{f.name}: pill {pid} is not in the skill vocabulary')
-        if not (root / 'data' / 'goals' / (a['goals'] + '.yaml')).exists(): errs.append(f'{f.name}: goals file {a["goals"]} missing')
+        for k, d in (('goals', 'goals'), ('players', 'players'), ('framework', 'framework')):
+            if a.get(k) and not (root / 'data' / d / (a[k] + '.yaml')).exists(): errs.append(f'{f.name}: {k} file {a[k]} missing')
     return errs, acts
 if __name__ == '__main__':
     errs, acts = check()

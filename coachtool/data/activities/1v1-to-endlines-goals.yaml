@@ -7,6 +7,7 @@ skills:
 - Pressing
 - Controlling
 ages:
+- u8
 - u10
 tracks:
 - rec
@@ -28,3 +29,14 @@ pairs_with:
 - gates-passing
 - 2v2-to-endlines-attacking
 equipment: 1 ball per pair · 4 cones per game · Pinnies · Small goals optional
+for_age:
+  u8:
+    setup: 'Pairs working in rectangles about 10 by 15 yards. 1v1 to Endlines: players score by dribbling
+      the ball over their opponent''s end line with the ball within arm''s reach of their body. No shooting,
+      so more touches and more decisions. Progress to 1v1 to Cone Goals: add a cone goal at each end and
+      players score by kicking through below knee height. Run all pairs simultaneously. Fast rotations
+      keep everyone active.'
+    look_for: Players trying to dribble past the defender rather than just kicking and chasing. Reward
+      the attempt regardless of outcome. If players are unevenly matched, play the ball directly to the
+      less skilled player to level the challenge.
+    question: When you had the ball, did you try to go past your opponent or around them? What worked?
