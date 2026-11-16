@@ -6175,6 +6175,10 @@
    "label": "Full game"
   },
   {
+   "id": "set-piece",
+   "label": "Set piece"
+  },
+  {
    "id": "fitness",
    "label": "Fitness"
   }
