@@ -4,6 +4,7 @@ types:
 - {id: warm-up, label: Warm-up}
 - {id: pattern, label: Passing pattern}
 - {id: rondo, label: Rondo or possession}
+- {id: opening-play, label: Opening play}
 - {id: small-sided, label: Small-sided game}
 - {id: positional, label: Positional work}
 - {id: full-game, label: Full game}

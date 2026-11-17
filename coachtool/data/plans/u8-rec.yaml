@@ -5,6 +5,9 @@ sessions_per_week: 1
 weeks:
 - week: 1
   focus: Driving the ball
+  opening:
+    activity: 4v4-open-space-drive
+    note: 'Open grass ahead: drive into it'
   sessions:
   - a:
       activity: red-light-green-light
@@ -13,6 +16,9 @@ weeks:
   level: intro
 - week: 2
   focus: Dribbling under pressure
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take on a defender, then score
   sessions:
   - a:
       activity: 101-dalmatians
@@ -21,6 +27,9 @@ weeks:
   level: intro
 - week: 3
   focus: 'Scanning: looking up'
+  opening:
+    activity: 3v3-four-goals
+    note: Look up to find the open goal
   sessions:
   - a:
       activity: gates-dribbling
@@ -29,6 +38,9 @@ weeks:
   level: intro
 - week: 4
   focus: Scanning in pairs
+  opening:
+    activity: 3v3-four-goals
+    note: 'Revisit: scan before the ball arrives'
   sessions:
   - a:
       activity: shadow-dribbling
@@ -37,6 +49,9 @@ weeks:
   level: intro
 - week: 5
   focus: Direction changes and protecting
+  opening:
+    activity: 3v3-protect-it-for-three
+    note: Win it and keep it for three seconds
   sessions:
   - a:
       activity: dinosaur-tag
@@ -45,6 +60,9 @@ weeks:
   level: intro
 - week: 6
   focus: Competing for the ball
+  opening:
+    activity: 3v3-protect-it-for-three
+    note: 'Revisit: now the defenders can challenge sooner'
   sessions:
   - a:
       activity: knockout
@@ -53,6 +71,9 @@ weeks:
   level: intro
 - week: 7
   focus: Shooting and attacking
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take chances to score
   sessions:
   - a:
       activity: shooting-gallery

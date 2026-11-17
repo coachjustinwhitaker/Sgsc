@@ -47,9 +47,10 @@ parents:
     missed shot makes the next shot less likely.
 shape:
   title: The session
-  note: Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
+  note: Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
   opening:
-    label: Warm-up game
+    label: Play
     minutes: 12 min
     title: 6v6 or 7v7 free small-sided game
     setup: Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner
@@ -57,12 +58,12 @@ shape:
       if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything.
       On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.
     job: Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it?
-      Watch the transitions too. Come in with Activity A already chosen and let the opening game confirm
+      Watch the transitions too. Come in with Activity A already chosen and let the opening play confirm
       your read for Activity B.
     question: When you had a chance to shoot today, what made you take it or pass it up?
     kit: 1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors
   closing:
-    label: Final game
+    label: Play
     minutes: 25 min
     title: Full game
     setup: 'The biggest game of the session. Full field, full-size goals, goalkeepers. Play 11v11 if you

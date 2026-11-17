@@ -5,6 +5,9 @@ sessions_per_week: 2
 weeks:
 - week: 1
   focus: Me & the Ball and Me & My Teammates in a bigger game
+  opening:
+    activity: 3v3-everybody-plays
+    note: Everyone touches it before a goal
   sessions:
   - a:
       activity: flying-numbers
@@ -22,6 +25,9 @@ weeks:
   level: intro
 - week: 2
   focus: Consolidating combination play before new focuses
+  opening:
+    activity: 4v4-use-the-width
+    note: Spread out to open the field
   sessions:
   - a:
       activity: flying-numbers
@@ -39,6 +45,9 @@ weeks:
   level: intro
 - week: 3
   focus: Team defending introduced
+  opening:
+    activity: 4v4-two-in-the-final-third
+    note: Defend with numbers up
   sessions:
   - a:
       activity: flying-numbers
@@ -56,6 +65,9 @@ weeks:
   level: intro
 - week: 4
   focus: 'Team defending deepens: shape and pressure together'
+  opening:
+    activity: 4v4-dont-dive-in
+    note: Slow the attacker down
   sessions:
   - a:
       activity: half-court-soccer
@@ -73,6 +85,9 @@ weeks:
   level: intro
 - week: 5
   focus: 'Transitions introduced: both moments'
+  opening:
+    activity: 3v3-win-it-back-in-five
+    note: React the moment you lose it
   sessions:
   - a:
       activity: flying-numbers-transition
@@ -90,6 +105,9 @@ weeks:
   level: intro
 - week: 6
   focus: 'Transition moments deepen: urgency becoming habit'
+  opening:
+    activity: 4v4-win-it-and-go
+    note: Attack the moment you win it
   sessions:
   - a:
       activity: hawaii

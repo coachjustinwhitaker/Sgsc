@@ -45,9 +45,10 @@ parents:
     it. If you see a parent who is genuinely enthusiastic and engaged, that conversation is worth having.
 shape:
   title: The session
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
   note: About 55 to 60 minutes. Arrive 15 minutes early.
   opening:
-    label: Warm-up game
+    label: Play
     minutes: 10 to 12 min
     title: Free small-sided game
     setup: 'Same setup every week, so players know this game before they arrive. Mini goals or cone goals
@@ -64,10 +65,10 @@ shape:
   practice:
     label: Practice
     minutes: 25 to 30 min
-    note: Pick one activity based on what you saw in the opening game and run it for 20 to 25 minutes.
+    note: Pick one activity based on what you saw in the opening play and run it for 20 to 25 minutes.
       Rotate through the toolkit across the season.
   closing:
-    label: Final game
+    label: Play
     minutes: 10 to 12 min
     title: Back to the game
     setup: 'Same format as the opening. The space can be slightly larger to give players more room. Let
