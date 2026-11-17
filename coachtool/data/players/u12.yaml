@@ -53,9 +53,10 @@ parents:
     Positive sideline energy is genuinely useful. Critical sideline energy genuinely disrupts.
 shape:
   title: The session
-  note: Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
+  note: Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
   opening:
-    label: Warm-up game
+    label: Play
     minutes: 12 min
     title: 5v5 or 6v6 free small-sided game
     setup: Same setup every session. Smaller than the closing game, so more touches and cleaner decisions.
@@ -64,11 +65,11 @@ shape:
       whether the concept from Practice A earlier in the week shows up.
     job: Watch the transition moments specifically. What happens in the first couple of seconds after
       the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity
-      A already chosen and let the opening game confirm your read.
+      A already chosen and let the opening play confirm your read.
     question: When the ball changed hands today, when you won it or lost it, what was your first reaction?
     kit: 1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors
   closing:
-    label: Final game
+    label: Play
     minutes: 25 min
     title: Full game
     setup: 'The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate

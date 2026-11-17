@@ -52,10 +52,10 @@ parents:
     keep things moving. Most players warm up within a few sessions.
 shape:
   title: The session
-  note: About 45 to 50 minutes. Arrive 15 minutes early. Opening game, two activities of about 10 minutes,
-    closing game.
+  why: 'Kids join a team to play. At U6 the play is the point, so there is no challenge to solve yet. Start with play, do a couple of short activities, and finish with play.'
+  note: About 45 to 50 minutes. Arrive 15 minutes early. Play, two activities of about 10 minutes, play.
   opening:
-    label: Warm-up game
+    label: Play
     minutes: 8 to 10 min
     title: Small-sided game, free play
     setup: Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise.
@@ -71,7 +71,7 @@ shape:
     kit: 1 ball per team · Mini or pop-up goals (cone goals as fallback) · Disc cones for boundaries ·
       Pinnies in 2 colors
   closing:
-    label: Final game
+    label: Play
     minutes: 10 min
     title: Back to play
     setup: Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without

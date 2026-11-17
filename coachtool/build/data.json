@@ -3967,6 +3967,1115 @@
    ],
    "type": "set-piece",
    "objective": "Replace the automatic long boot with a read: play it quick while the opponent is scattered, slow it down when the game state calls for it."
+  },
+  {
+   "id": "3v3-four-goals",
+   "order": 101,
+   "name": "3v3 Four Goals",
+   "block": "B1",
+   "skills": [
+    "Scanning",
+    "Controlling",
+    "Decision-Making"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Two mini goals on each end line, about 6 yards apart. Each team defends the two goals on its end and attacks the two on the other. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Have the team that is waiting stand behind one end line and count goals out loud."
+   ],
+   "rules": [
+    "The challenge: two goals to attack and two to defend, so you have to look to find the open one.",
+    "Kick in from the sideline to restart. No offside.",
+    "After a goal, the other team starts with the ball from their end line."
+   ],
+   "scoring": "One point for a goal in either goal. First team to 3, then rotate teams.",
+   "coach": [
+    {
+     "cue": "Look before the ball arrives.",
+     "ask": "Which goal was open, and how did you know?"
+    },
+    {
+     "cue": "Shoot at the goal the defender is not covering.",
+     "ask": "Where was the defender when you picked your goal?"
+    },
+    {
+     "cue": "Take your first touch toward the open goal.",
+     "ask": "Which way did your first touch take you, and why?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Look up before you shoot. With two goals to attack and two to defend, the player who scans finds the open goal.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Make the goals wider so the open goal is easy to see."
+    },
+    {
+     "title": "Harder",
+     "text": "Use three goals per end, or add a second ball to the game."
+    }
+   ]
+  },
+  {
+   "id": "3v3-beat-your-player-bonus",
+   "order": 102,
+   "name": "3v3 Beat Your Player Bonus",
+   "block": "B1",
+   "skills": [
+    "Dribbling",
+    "Decision-Making"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Ask a waiting player to call out when a dribble beats a defender, so the bonus is clear."
+   ],
+   "rules": [
+    "The challenge: go past a defender, then score.",
+    "If a player dribbles past a defender and scores within about five seconds, the goal counts double. The other team and the sideline can call it.",
+    "Passing is always allowed. The bonus is a reward, not a rule.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A goal right after beating a defender is 2. First team to 5.",
+   "coach": [
+    {
+     "cue": "Take on the defender when you have space and your teammates are covered.",
+     "ask": "What made you decide to dribble instead of pass?"
+    },
+    {
+     "cue": "Change speed after you beat the defender.",
+     "ask": "What did you do right after you got past?"
+    },
+    {
+     "cue": "Passed instead? Good, if it was the better choice.",
+     "ask": "When is passing better than taking them on?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Take on a defender when the chance is there. A goal after beating your player is worth double.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Give the dribbler a free first touch, with no defender pressure until they have taken two touches."
+    },
+    {
+     "title": "Harder",
+     "text": "Only count the bonus if the dribbler beats the defender on the outside, away from the goal."
+    }
+   ]
+  },
+  {
+   "id": "4v4-open-space-drive",
+   "order": 103,
+   "name": "4v4 Open Space Drive",
+   "block": "B1",
+   "skills": [
+    "Driving",
+    "Scanning",
+    "Decision-Making"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mark a halfway line with cones. Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Put a cone in the middle of the halfway line so it is easy to see."
+   ],
+   "rules": [
+    "The challenge: open grass ahead of you, so drive the ball into it.",
+    "When a team has the ball in its own half, the other team must stay behind the halfway line.",
+    "Once the ball crosses the halfway line, everyone can play.",
+    "If the ball goes out, restart with a kick-in. The team that did not touch it last gets the ball."
+   ],
+   "scoring": "One point per goal. First team to 4.",
+   "coach": [
+    {
+     "cue": "Take your first touch into the space, not away from it.",
+     "ask": "Where did you see the space, and when?"
+    },
+    {
+     "cue": "Look up as you drive.",
+     "ask": "What did you see when you lifted your head?"
+    },
+    {
+     "cue": "Slow down, or pass, when the defense catches up.",
+     "ask": "What told you to stop driving?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Spot the open grass ahead of you and drive the ball into it. The other team has to stay back until you cross halfway.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Make the field a little wider so the open space is bigger."
+    },
+    {
+     "title": "Harder",
+     "text": "The defense can step over the halfway line once the ball carrier has taken three touches."
+    }
+   ]
+  },
+  {
+   "id": "3v3-protect-it-for-three",
+   "order": 104,
+   "name": "3v3 Protect It for Three",
+   "block": "B1",
+   "skills": [
+    "Protecting",
+    "Controlling",
+    "Body Shape"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Choose one waiting player to count out loud when a team wins the ball."
+   ],
+   "rules": [
+    "The challenge: when you win the ball, keep it.",
+    "When a team wins the ball, the coach or a sideline player counts out loud. Keep it for three seconds and the team gets a bonus point.",
+    "You can protect by shielding it yourself or passing it to a teammate who is free.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. Keeping the ball for three seconds after winning it is 1 point. First team to 5.",
+   "coach": [
+    {
+     "cue": "Get your body between the ball and the defender.",
+     "ask": "Which side was the defender on, and where did you put your body?"
+    },
+    {
+     "cue": "Keep the ball on the foot farthest from the defender.",
+     "ask": "Which foot did you use, and why?"
+    },
+    {
+     "cue": "Look for a free teammate.",
+     "ask": "Who was free when you had the ball?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Win the ball and keep it. Put your body between the ball and the defender and protect it for three seconds.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Count to two instead of three."
+    },
+    {
+     "title": "Harder",
+     "text": "Count to five, or the defender is allowed to challenge from the first touch."
+    }
+   ]
+  },
+  {
+   "id": "3v3-everybody-plays",
+   "order": 105,
+   "name": "3v3 Everybody Plays",
+   "block": "B2",
+   "skills": [
+    "Passing",
+    "Supporting",
+    "Combination Play"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Have each team count its touches out loud, one, two, three, so everyone knows who has played."
+   ],
+   "rules": [
+    "The challenge: all three teammates touch the ball before a goal counts.",
+    "If a team scores without all three touching it, the goal does not count and the other team gets the ball.",
+    "Kick in from the sideline to restart. No offside."
+   ],
+   "scoring": "One point per goal that counts. First team to 4.",
+   "coach": [
+    {
+     "cue": "Show for the ball. Be somewhere your teammate can see you.",
+     "ask": "How did you let your teammate know you were free?"
+    },
+    {
+     "cue": "After you pass, move to a new spot.",
+     "ask": "Where did you go after your pass?"
+    },
+    {
+     "cue": "Find the teammate who has not touched it yet.",
+     "ask": "Who had not touched the ball, and how did you get it to them?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Get everyone involved. A goal only counts once all three teammates have touched the ball.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Only two different players need to touch the ball."
+    },
+    {
+     "title": "Harder",
+     "text": "A pass has to be one or two touches, and the goal counts only if the last pass is a first-time pass."
+    }
+   ]
+  },
+  {
+   "id": "4v4-pass-and-move",
+   "order": 106,
+   "name": "4v4 Pass and Move",
+   "block": "B2",
+   "skills": [
+    "Passing",
+    "Supporting",
+    "Communication"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Stand on the sideline so you can see every player after a pass."
+   ],
+   "rules": [
+    "The challenge: after you pass, you move.",
+    "Any player the coach sees standing still after a pass costs the team the ball. Call it out and give the ball to the other team.",
+    "Everyone can play. No other rules.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "One point per goal. First team to 4.",
+   "coach": [
+    {
+     "cue": "Pass, then go. Move to a space your teammate can pass to.",
+     "ask": "Where did you move after your pass, and why there?"
+    },
+    {
+     "cue": "Tell your teammate where you are going.",
+     "ask": "What did you tell your teammate before the pass?"
+    },
+    {
+     "cue": "Move to the side of the defender, not behind them.",
+     "ask": "Where were you when your teammate looked up?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Pass, then move. Players who stand still after a pass give the ball away.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Call the freeze only after a second still moment."
+    },
+    {
+     "title": "Harder",
+     "text": "After a pass, the passer has to move before the next pass can be played."
+    }
+   ]
+  },
+  {
+   "id": "5v4-with-a-floater",
+   "order": 107,
+   "name": "5v4 With a Floater",
+   "block": "B2",
+   "skills": [
+    "Numerical Advantage",
+    "Passing",
+    "Possession"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "Two teams of four, plus one floater who plays for whichever team has the ball.",
+    "Extra players wait on the sideline and rotate in after each goal.",
+    "Give the floater a different color pinnie from both teams."
+   ],
+   "rules": [
+    "The challenge: the team with the ball always has an extra player.",
+    "The floater switches teams the moment the ball changes hands. They cannot score.",
+    "Kick in from the sideline to restart.",
+    "If the defending team wins the ball, the floater joins them straight away."
+   ],
+   "scoring": "One point per goal by one of the four. The floater cannot score. First team to 4.",
+   "coach": [
+    {
+     "cue": "Use the floater when you are under pressure.",
+     "ask": "When was the floater free, and did you find them?"
+    },
+    {
+     "cue": "Move into a spot where the defense cannot see you and the ball.",
+     "ask": "Where were you when you got the ball?"
+    },
+    {
+     "cue": "Look for the free player before you pass.",
+     "ask": "Who was free, and how did you see that?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Use the extra player. The team with the ball always has five, so keep the ball moving and find the free player.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "The floater can score."
+    },
+    {
+     "title": "Harder",
+     "text": "The floater can only play two touches."
+    }
+   ]
+  },
+  {
+   "id": "3v3-give-and-go-bonus",
+   "order": 108,
+   "name": "3v3 Give and Go Bonus",
+   "block": "B2",
+   "skills": [
+    "Combination Play",
+    "Passing",
+    "Supporting"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Show the give and go once with two players before you start, then let them play."
+   ],
+   "rules": [
+    "The challenge: pass it, run past the defender, get it back.",
+    "A goal scored right after a give and go counts double. A give and go is a pass to a teammate and a return pass to the first player after they run into new space.",
+    "Anyone can call the bonus. If it is not clear, the coach decides.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A goal after a give and go is 2. First team to 5.",
+   "coach": [
+    {
+     "cue": "Pass, then run past the defender.",
+     "ask": "Where did you run after you passed it?"
+    },
+    {
+     "cue": "Return the ball into space ahead of your teammate.",
+     "ask": "Where did you want the ball to go?"
+    },
+    {
+     "cue": "Pass, then go. Do not stand still.",
+     "ask": "How did you get free to receive the ball back?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Pass and run into space to get it back. A goal after a give and go is worth double.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Any two passes between the same two players count as a give and go."
+    },
+    {
+     "title": "Harder",
+     "text": "The return pass has to be a first-time pass."
+    }
+   ]
+  },
+  {
+   "id": "4v4-use-the-width",
+   "order": 109,
+   "name": "4v4 Use the Width",
+   "block": "B2",
+   "skills": [
+    "Passing",
+    "Supporting",
+    "Possession"
+   ],
+   "ages": [
+    "u8",
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Use cones to mark a narrow lane along each sideline, about 5 yards wide. Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Walk the lanes once so players know where they are."
+   ],
+   "rules": [
+    "The challenge: a goal only counts after the ball touches a teammate standing in a side lane.",
+    "One player from the team in possession can stand in a lane. The other team cannot enter the lane.",
+    "The ball can be passed to the lane player and back, or the lane player can play it onward.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "One point per goal that counts. First team to 4.",
+   "coach": [
+    {
+     "cue": "Spread out. Make the field big when you have the ball.",
+     "ask": "Where did you stand to give your teammate space?"
+    },
+    {
+     "cue": "The wide player waits for the ball, then plays it back to the middle.",
+     "ask": "What did you see before you passed?"
+    },
+    {
+     "cue": "Go the long way if the short way is blocked.",
+     "ask": "Why did you play it wide instead of through the middle?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Spread out to open the field. The ball has to touch a player on the wing before a goal can count.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "The lane player can score from the lane."
+    },
+    {
+     "title": "Harder",
+     "text": "Make the lane narrower, or a goal counts only after the ball goes from one lane to the other."
+    }
+   ]
+  },
+  {
+   "id": "4v4-two-in-the-final-third",
+   "order": 110,
+   "name": "4v4 Two in the Final Third",
+   "block": "B3",
+   "skills": [
+    "Compact Shape",
+    "Pressing",
+    "Numerical Advantage"
+   ],
+   "ages": [
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Use cones to mark the final third at each end, about a third of the field. Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Walk the final-third lines once so players see where the limit is."
+   ],
+   "rules": [
+    "The challenge: attackers can only send two players into the final third. The other two have to stay behind it.",
+    "If a third attacker enters the final third, the defending team gets the ball.",
+    "Defenders can all be in their own final third. Stay close together and win it.",
+    "Teams can pass the ball back to the players behind the line to reset.",
+    "If the defending team wins the ball, they attack the other way with the same rule.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "One point per goal. First team to 4.",
+   "coach": [
+    {
+     "cue": "Defenders: stay close together. Shrink the space.",
+     "ask": "How close were you to your teammates when you won it?"
+    },
+    {
+     "cue": "Attackers: nothing there? Pass it back and reset.",
+     "ask": "What did you see that told you to pass back?"
+    },
+    {
+     "cue": "Win it, then go. Attack the other way right away.",
+     "ask": "What did you do the moment you won the ball?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Defend with the numbers advantage and win the ball. Attackers can only send two players into the final third, so the defense is always outnumbered in your favor.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Let attackers send three players forward after the ball has been passed back once."
+    },
+    {
+     "title": "Harder",
+     "text": "Only one attacker can enter the final third at U12 and U14, with a shorter field."
+    }
+   ]
+  },
+  {
+   "id": "3v3-pressure-and-cover",
+   "order": 111,
+   "name": "3v3 Pressure and Cover",
+   "block": "B3",
+   "skills": [
+    "Pressing",
+    "Covering",
+    "Communication"
+   ],
+   "ages": [
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Show the first defender and the cover once with a slow walk-through, then let them play."
+   ],
+   "rules": [
+    "The challenge: one defender goes to the ball and a teammate covers behind.",
+    "When the other team has the ball, one defender pressures. The others stand behind and to the side, close enough to step in if the first defender is beaten.",
+    "If a team wins the ball while a teammate is covering behind, they get a bonus point.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. Winning the ball with a teammate covering is 1 point. First team to 5.",
+   "coach": [
+    {
+     "cue": "Pressure the ball quickly, then slow down as you get close.",
+     "ask": "How did you close down the space?"
+    },
+    {
+     "cue": "Cover player: stand behind and to the side of your teammate.",
+     "ask": "Where was your cover when the first defender got beaten?"
+    },
+    {
+     "cue": "Talk. Say \"I have it\" or \"cover.\"",
+     "ask": "What did you call out when the first defender went to the ball?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "One defender pressures the ball and the other two cover behind. Winning the ball with cover behind you is worth double.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Do not count the cover. Any steal is a bonus."
+    },
+    {
+     "title": "Harder",
+     "text": "Both teammates must be covering for the steal to count at U12 and U14."
+    }
+   ]
+  },
+  {
+   "id": "4v4-dont-dive-in",
+   "order": 112,
+   "name": "4v4 Do Not Dive In",
+   "block": "B3",
+   "skills": [
+    "Delaying",
+    "Pressing",
+    "Decision-Making"
+   ],
+   "ages": [
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Show the attacker, the first defender and the show-to-one-side once, then let them play."
+   ],
+   "rules": [
+    "The challenge: slow the attacker down. Do not dive in.",
+    "If a defender dives in and the attacker beats them with a dribble, the attacking team gets a bonus point.",
+    "Defenders can win the ball when the attacker makes a mistake, a heavy touch or a bad pass.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A beaten dive-in is 1 point for the attackers. First team to 5.",
+   "coach": [
+    {
+     "cue": "Get close, then stop. Stay on your feet.",
+     "ask": "What did you do when the attacker came at you?"
+    },
+    {
+     "cue": "Show the attacker to one side.",
+     "ask": "Which way did you want them to go, and why?"
+    },
+    {
+     "cue": "Wait for the heavy touch.",
+     "ask": "What did you see that told you to step in?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Slow the attacker down instead of diving in. If you dive in and get beaten, the attacker earns a point for the team.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Only count the dive-in point when the attacker beats the defender and is facing goal."
+    },
+    {
+     "title": "Harder",
+     "text": "Defenders get a bonus when they force the attacker out wide."
+    }
+   ]
+  },
+  {
+   "id": "3v3-pick-up-your-player",
+   "order": 113,
+   "name": "3v3 Pick Up Your Player",
+   "block": "B3",
+   "skills": [
+    "Marking",
+    "Communication",
+    "Compact Shape"
+   ],
+   "ages": [
+    "u10",
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Number the pinnies 1, 2 and 3. Each player marks the opponent with the same number.",
+    "Hand out pinnies by number so every player can see their opponent's number."
+   ],
+   "rules": [
+    "The challenge: stay close to your player and between them and the goal.",
+    "When the ball is lost, find your number straight away.",
+    "A goal scored by a player whose marker is more than three steps away does not count for the attackers, and the defense gets a point.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A goal against an unmarked player is 1 point for the defenders. First team to 5.",
+   "coach": [
+    {
+     "cue": "Find your player. Stay between them and the goal.",
+     "ask": "Where were you when your player had the ball?"
+    },
+    {
+     "cue": "Stay close enough to touch them, far enough to see the ball.",
+     "ask": "How close were you, and could you see the ball?"
+    },
+    {
+     "cue": "Talk to a teammate who has lost their player.",
+     "ask": "What did you say?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Stay close to your player. A goal scored by someone who was left open does not count for the other team.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Players can switch markers once, by calling it."
+    },
+    {
+     "title": "Harder",
+     "text": "Marks change every two minutes, so players have to find a new opponent."
+    }
+   ]
+  },
+  {
+   "id": "3v3-win-it-back-in-five",
+   "order": 114,
+   "name": "3v3 Win It Back in Five",
+   "block": "B4",
+   "skills": [
+    "Pressing",
+    "Decision-Making",
+    "Communication"
+   ],
+   "ages": [
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "3v3. Extra players wait on the sideline and rotate in after each goal.",
+    "Tell the team to start counting the moment the ball changes hands."
+   ],
+   "rules": [
+    "The challenge: lose it and win it right back.",
+    "When a team loses the ball, they get five seconds to win it back. The coach or a sideline player counts out loud.",
+    "Winning it back in five seconds earns a bonus point. After five, the game goes on with no bonus.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. Winning it back in five seconds is 1 point. First team to 5.",
+   "coach": [
+    {
+     "cue": "Stop, then go. React the second you lose it.",
+     "ask": "What was your first thought when you lost the ball?"
+    },
+    {
+     "cue": "The closest player goes to the ball. Everyone else closes the passing options.",
+     "ask": "Who went to the ball, and who cut off the pass?"
+    },
+    {
+     "cue": "Winning it back is the start of the next attack.",
+     "ask": "What did you do when you won it back?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "React the moment you lose it. Win it back in five seconds and the team earns a point.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Give the team seven seconds."
+    },
+    {
+     "title": "Harder",
+     "text": "Three seconds, or no bonus unless the whole team moved."
+    }
+   ]
+  },
+  {
+   "id": "4v4-win-it-and-go",
+   "order": 115,
+   "name": "4v4 Win It and Go",
+   "block": "B4",
+   "skills": [
+    "Decision-Making",
+    "Pressing",
+    "Combination Play"
+   ],
+   "ages": [
+    "u12",
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller if it plays loose.",
+    "Mini goals or cone goals at each end. No goalkeepers.",
+    "4v4. Extra players wait on the sideline and rotate in after each goal.",
+    "Tell players to start the count the moment they win the ball."
+   ],
+   "rules": [
+    "The challenge: when you win the ball, go forward right away.",
+    "A goal scored within eight seconds of winning the ball counts double. The coach or sideline counts out loud.",
+    "If the defending team has time to get back, go ahead and pass or build up. There is no penalty for taking more time.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A goal within eight seconds of winning the ball is 2. First team to 5.",
+   "coach": [
+    {
+     "cue": "Win it, look up and go.",
+     "ask": "What did you see the moment you won it?"
+    },
+    {
+     "cue": "Pass forward early, to the open player.",
+     "ask": "Who was open, and how fast did you play it?"
+    },
+    {
+     "cue": "Lost it? Get back and win it again.",
+     "ask": "What did you do when you lost the ball?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Attack the moment you win it. Shoot within eight seconds of winning the ball and the goal counts double.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "Give ten seconds."
+    },
+    {
+     "title": "Harder",
+     "text": "Six seconds, and a counter has to use at least one pass."
+    }
+   ]
+  },
+  {
+   "id": "5v5-first-time-finish",
+   "order": 116,
+   "name": "5v5 First-Time Finish",
+   "block": "B5",
+   "skills": [
+    "Shooting",
+    "Decision-Making",
+    "Combination Play"
+   ],
+   "ages": [
+    "u14"
+   ],
+   "tracks": [
+    "rec"
+   ],
+   "levels": [
+    "intro"
+   ],
+   "players": {
+    "min": 6,
+    "max": 16
+   },
+   "space": "quarter",
+   "minutes": 12,
+   "pairs_with": [],
+   "equipment": "Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors",
+   "setup": [
+    "Keep it small. Mark a field about 40 by 30 yards. Go smaller if it plays loose.",
+    "A large goal or cone goal at each end. Add a goalkeeper if you have one willing.",
+    "5v5. Extra players wait on the sideline and rotate in after each goal.",
+    "Make the goals as big as you can, so players take shots."
+   ],
+   "rules": [
+    "The challenge: a first-time shot at goal counts double.",
+    "A first-time shot means the player does not take a touch before shooting.",
+    "Players can still take a touch and shoot. It only counts as 1.",
+    "Kick in from the sideline to restart."
+   ],
+   "scoring": "A goal is 1 point. A first-time goal is 2. First team to 6.",
+   "coach": [
+    {
+     "cue": "Get your body ready before the ball arrives.",
+     "ask": "What did you do before the pass reached you?"
+    },
+    {
+     "cue": "Move into the space where the cutback or the pass will arrive.",
+     "ask": "Where did you run, and why there?"
+    },
+    {
+     "cue": "Missed? Reset right away.",
+     "ask": "What did you do right after the miss?"
+    }
+   ],
+   "type": "opening-play",
+   "objective": "Take the chance when it comes. A goal from a first-time shot counts double.",
+   "progression": [
+    {
+     "title": "Easier",
+     "text": "A touch and a shot with the same foot counts as a first-time shot."
+    },
+    {
+     "title": "Harder",
+     "text": "Only count the bonus if the shot is on target."
+    }
+   ]
   }
  ],
  "teams": [
@@ -4225,9 +5334,10 @@
     },
     "shape": {
      "title": "The session",
-     "note": "About 45 to 50 minutes. Arrive 15 minutes early. Opening game, two activities of about 10 minutes, closing game.",
+     "why": "Kids join a team to play. At U6 the play is the point, so there is no challenge to solve yet. Start with play, do a couple of short activities, and finish with play.",
+     "note": "About 45 to 50 minutes. Arrive 15 minutes early. Play, two activities of about 10 minutes, play.",
      "opening": {
-      "label": "Warm-up game",
+      "label": "Play",
       "minutes": "8 to 10 min",
       "title": "Small-sided game, free play",
       "setup": "Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise. Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age. Split however many players you have into two roughly equal teams. No goalkeeper, no offside, no rules beyond kick-in restarts. Keep the field small enough that every player is near the action most of the time. When in doubt, go smaller. Mark the space, put the ball down, and step back. Restart quickly after every goal and celebrate each one.",
@@ -4236,7 +5346,7 @@
       "kit": "1 ball per team · Mini or pop-up goals (cone goals as fallback) · Disc cones for boundaries · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Final game",
+      "label": "Play",
       "minutes": "10 min",
       "title": "Back to play",
       "setup": "Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without interruption. Your job is to restart quickly after goals and keep the energy up. Bring everyone in at the end. High-fives all around, then one very simple question to close the loop. End while they still want more.",
@@ -4421,6 +5531,10 @@
      {
       "week": 1,
       "focus": "Driving the ball",
+      "opening": {
+       "activity": "4v4-open-space-drive",
+       "note": "Open grass ahead: drive into it"
+      },
       "sessions": [
        {
         "a": {
@@ -4435,6 +5549,10 @@
      {
       "week": 2,
       "focus": "Dribbling under pressure",
+      "opening": {
+       "activity": "3v3-beat-your-player-bonus",
+       "note": "Take on a defender, then score"
+      },
       "sessions": [
        {
         "a": {
@@ -4449,6 +5567,10 @@
      {
       "week": 3,
       "focus": "Scanning: looking up",
+      "opening": {
+       "activity": "3v3-four-goals",
+       "note": "Look up to find the open goal"
+      },
       "sessions": [
        {
         "a": {
@@ -4463,6 +5585,10 @@
      {
       "week": 4,
       "focus": "Scanning in pairs",
+      "opening": {
+       "activity": "3v3-four-goals",
+       "note": "Revisit: scan before the ball arrives"
+      },
       "sessions": [
        {
         "a": {
@@ -4477,6 +5603,10 @@
      {
       "week": 5,
       "focus": "Direction changes and protecting",
+      "opening": {
+       "activity": "3v3-protect-it-for-three",
+       "note": "Win it and keep it for three seconds"
+      },
       "sessions": [
        {
         "a": {
@@ -4491,6 +5621,10 @@
      {
       "week": 6,
       "focus": "Competing for the ball",
+      "opening": {
+       "activity": "3v3-protect-it-for-three",
+       "note": "Revisit: now the defenders can challenge sooner"
+      },
       "sessions": [
        {
         "a": {
@@ -4505,6 +5639,10 @@
      {
       "week": 7,
       "focus": "Shooting and attacking",
+      "opening": {
+       "activity": "3v3-beat-your-player-bonus",
+       "note": "Take chances to score"
+      },
       "sessions": [
        {
         "a": {
@@ -4635,9 +5773,10 @@
     },
     "shape": {
      "title": "The session",
+     "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
      "note": "About 55 to 60 minutes. Arrive 15 minutes early.",
      "opening": {
-      "label": "Warm-up game",
+      "label": "Play",
       "minutes": "10 to 12 min",
       "title": "Free small-sided game",
       "setup": "Same setup every week, so players know this game before they arrive. Mini goals or cone goals at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline. Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper throughout the season so every player gets time in the position.",
@@ -4648,10 +5787,10 @@
      "practice": {
       "label": "Practice",
       "minutes": "25 to 30 min",
-      "note": "Pick one activity based on what you saw in the opening game and run it for 20 to 25 minutes. Rotate through the toolkit across the season."
+      "note": "Pick one activity based on what you saw in the opening play and run it for 20 to 25 minutes. Rotate through the toolkit across the season."
      },
      "closing": {
-      "label": "Final game",
+      "label": "Play",
       "minutes": "10 to 12 min",
       "title": "Back to the game",
       "setup": "Same format as the opening. The space can be slightly larger to give players more room. Let it run without stopping and step all the way back. Alternative: one large goal at one end with two cone goals at the halfway line. One team defends the large goal, the other scores through the halfway cones. It gives players a taste of a more directional game.",
@@ -4952,6 +6091,10 @@
      {
       "week": 1,
       "focus": "Me & the Ball under pressure — settling into 7v7",
+      "opening": {
+       "activity": "3v3-beat-your-player-bonus",
+       "note": "Take on a defender, then score"
+      },
       "sessions": [
        {
         "a": {
@@ -4980,6 +6123,10 @@
      {
       "week": 2,
       "focus": "Me & the Ball — control and scanning in space",
+      "opening": {
+       "activity": "3v3-four-goals",
+       "note": "Look up to find the open goal"
+      },
       "sessions": [
        {
         "a": {
@@ -5008,6 +6155,10 @@
      {
       "week": 3,
       "focus": "Me & My Teammates — introduced: pass and move",
+      "opening": {
+       "activity": "4v4-pass-and-move",
+       "note": "Pass, then move"
+      },
       "sessions": [
        {
         "a": {
@@ -5036,6 +6187,10 @@
      {
       "week": 4,
       "focus": "Me & My Teammates — combination play deepens",
+      "opening": {
+       "activity": "3v3-give-and-go-bonus",
+       "note": "Pass and run to get it back"
+      },
       "sessions": [
        {
         "a": {
@@ -5064,6 +6219,10 @@
      {
       "week": 5,
       "focus": "Me & My Teammates — numerical advantage and finishing",
+      "opening": {
+       "activity": "5v4-with-a-floater",
+       "note": "Use the extra player"
+      },
       "sessions": [
        {
         "a": {
@@ -5092,6 +6251,10 @@
      {
       "week": 6,
       "focus": "Me & My Team Defending, introduced: press, delay, cover",
+      "opening": {
+       "activity": "3v3-pressure-and-cover",
+       "note": "One presses, the others cover"
+      },
       "sessions": [
        {
         "a": {
@@ -5120,6 +6283,10 @@
      {
       "week": 7,
       "focus": "Me & My Team Defending: marking and staying compact",
+      "opening": {
+       "activity": "4v4-two-in-the-final-third",
+       "note": "Defend with numbers up"
+      },
       "sessions": [
        {
         "a": {
@@ -5262,6 +6429,28 @@
       "text": "Pick one thing to look for before the session starts. Watch for it. When it happens, ask one good question. That beats a dozen instructions from the sideline."
      }
     ],
+    "shape": {
+     "title": "The session",
+     "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
+     "note": "About 75 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
+     "opening": {
+      "label": "Play",
+      "minutes": "10 to 12 min",
+      "title": "Small-sided game, one added rule",
+      "setup": "Keep it small, 3v3 or 4v4, with mini goals or cone goals and no goalkeepers. Smaller than the game means more touches and more decisions. The added rule is the challenge for the week. Say it once, start the game, then step back. Quick restarts. With more than eight players, run two games side by side and rotate teams.",
+      "job": "Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use Activity A. Do not stop the game to coach. Save your voice for the question.",
+      "question": "What did your team figure out today that made the rule easier?",
+      "kit": "1 ball per game · Mini goals or cone goals · Disc cones · Pinnies in 2 colors"
+     },
+     "closing": {
+      "label": "Play",
+      "minutes": "15 to 20 min",
+      "title": "7v7 game",
+      "setup": "The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Practice B days, notice whether anything from Practice A carried over.",
+      "question": "Was there a moment today where you and a teammate figured something out together?",
+      "kit": "Goals · Disc cones · Pinnies in 2 colors"
+     }
+    },
     "prepared": "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. Practice A is the familiar anchor. Practice B carries the concept for the week. Know which one you are running.",
     "parents": {
      "intro": "Before the session, take 30 seconds to walk over and say something like:",
@@ -5649,6 +6838,10 @@
      {
       "week": 1,
       "focus": "Me & the Ball and Me & My Teammates in a bigger game",
+      "opening": {
+       "activity": "3v3-everybody-plays",
+       "note": "Everyone touches it before a goal"
+      },
       "sessions": [
        {
         "a": {
@@ -5677,6 +6870,10 @@
      {
       "week": 2,
       "focus": "Consolidating combination play before new focuses",
+      "opening": {
+       "activity": "4v4-use-the-width",
+       "note": "Spread out to open the field"
+      },
       "sessions": [
        {
         "a": {
@@ -5705,6 +6902,10 @@
      {
       "week": 3,
       "focus": "Team defending introduced",
+      "opening": {
+       "activity": "4v4-two-in-the-final-third",
+       "note": "Defend with numbers up"
+      },
       "sessions": [
        {
         "a": {
@@ -5733,6 +6934,10 @@
      {
       "week": 4,
       "focus": "Team defending deepens: shape and pressure together",
+      "opening": {
+       "activity": "4v4-dont-dive-in",
+       "note": "Slow the attacker down"
+      },
       "sessions": [
        {
         "a": {
@@ -5761,6 +6966,10 @@
      {
       "week": 5,
       "focus": "Transitions introduced: both moments",
+      "opening": {
+       "activity": "3v3-win-it-back-in-five",
+       "note": "React the moment you lose it"
+      },
       "sessions": [
        {
         "a": {
@@ -5789,6 +6998,10 @@
      {
       "week": 6,
       "focus": "Transition moments deepen: urgency becoming habit",
+      "opening": {
+       "activity": "4v4-win-it-and-go",
+       "note": "Attack the moment you win it"
+      },
       "sessions": [
        {
         "a": {
@@ -5971,18 +7184,19 @@
     },
     "shape": {
      "title": "The session",
-     "note": "Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.",
+     "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
+     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
      "opening": {
-      "label": "Warm-up game",
+      "label": "Play",
       "minutes": "12 min",
       "title": "5v5 or 6v6 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches and cleaner decisions. Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch specifically for whether the concept from Practice A earlier in the week shows up.",
-      "job": "Watch the transition moments specifically. What happens in the first couple of seconds after the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity A already chosen and let the opening game confirm your read.",
+      "job": "Watch the transition moments specifically. What happens in the first couple of seconds after the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity A already chosen and let the opening play confirm your read.",
       "question": "When the ball changed hands today, when you won it or lost it, what was your first reaction?",
       "kit": "1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Final game",
+      "label": "Play",
       "minutes": "25 min",
       "title": "Full game",
       "setup": "The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate it so every player experiences the position across the season. No offside until players are genuinely ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked for: a compact defensive shape, or a player who sprints to press the instant possession is lost. On Practice B days, notice whether anything from the first session carried over.",
@@ -6385,6 +7599,10 @@
      {
       "week": 1,
       "focus": "Ball skills and combination play on the bigger field",
+      "opening": {
+       "activity": "3v3-everybody-plays",
+       "note": "Everyone touches it before a goal"
+      },
       "sessions": [
        {
         "a": {
@@ -6413,6 +7631,10 @@
      {
       "week": 2,
       "focus": "Team defending with more players and more space",
+      "opening": {
+       "activity": "4v4-two-in-the-final-third",
+       "note": "Defend with numbers up"
+      },
       "sessions": [
        {
         "a": {
@@ -6441,6 +7663,10 @@
      {
       "week": 3,
       "focus": "Both transition moments revisited",
+      "opening": {
+       "activity": "4v4-win-it-and-go",
+       "note": "Attack the moment you win it"
+      },
       "sessions": [
        {
         "a": {
@@ -6469,6 +7695,10 @@
      {
       "week": 4,
       "focus": "Finishing introduced: the decisive action in front of goal",
+      "opening": {
+       "activity": "5v5-first-time-finish",
+       "note": "Take the chance when it comes"
+      },
       "sessions": [
        {
         "a": {
@@ -6497,6 +7727,10 @@
      {
       "week": 5,
       "focus": "Finishing deepens: numbers-up decisions and arriving in the box",
+      "opening": {
+       "activity": "5v4-with-a-floater",
+       "note": "Use the extra player"
+      },
       "sessions": [
        {
         "a": {
@@ -6525,6 +7759,10 @@
      {
       "week": 6,
       "focus": "Finishing in context: after transition and combination play",
+      "opening": {
+       "activity": "5v5-first-time-finish",
+       "note": "Revisit: finish in the flow of the game"
+      },
       "sessions": [
        {
         "a": {
@@ -6704,18 +7942,19 @@
     },
     "shape": {
      "title": "The session",
-     "note": "Up to 90 minutes. Arrive 15 minutes early. Opening game, Activity A, Activity B, closing game.",
+     "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
+     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
      "opening": {
-      "label": "Warm-up game",
+      "label": "Play",
       "minutes": "12 min",
       "title": "6v6 or 7v7 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.",
-      "job": "Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with Activity A already chosen and let the opening game confirm your read for Activity B.",
+      "job": "Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with Activity A already chosen and let the opening play confirm your read for Activity B.",
       "question": "When you had a chance to shoot today, what made you take it or pass it up?",
       "kit": "1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors"
      },
      "closing": {
-      "label": "Final game",
+      "label": "Play",
       "minutes": "25 min",
       "title": "Full game",
       "setup": "The biggest game of the session. Full field, full-size goals, goalkeepers. Play 11v11 if you have the numbers. Short of players? Play 9v9 or 10v10 on a narrower field rather than leaving gaps. Alternatively, put a full-size goal with a keeper at one end and two small goals at the halfway line for the other team to attack. Offside applies, so introduce it early in the season and be patient with it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked: a team that stays compact across three lines, a player who sprints to press the instant possession is lost, a forward who shoots when the chance comes.",
@@ -9081,6 +10320,10 @@
    "label": "Rondo or possession"
   },
   {
+   "id": "opening-play",
+   "label": "Opening play"
+  },
+  {
    "id": "small-sided",
    "label": "Small-sided game"
   },
@@ -9311,5 +10554,5 @@
  "credit": {
   "author": "Coach Justin Whitaker"
  },
- "updated": "Nov 16, 2026"
+ "updated": "Nov 17, 2026"
 }

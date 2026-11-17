@@ -5,6 +5,9 @@ sessions_per_week: 2
 weeks:
 - week: 1
   focus: Me & the Ball under pressure — settling into 7v7
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take on a defender, then score
   sessions:
   - a:
       activity: flying-numbers
@@ -22,6 +25,9 @@ weeks:
   level: intro
 - week: 2
   focus: Me & the Ball — control and scanning in space
+  opening:
+    activity: 3v3-four-goals
+    note: Look up to find the open goal
   sessions:
   - a:
       activity: 1v1-to-endlines-goals
@@ -39,6 +45,9 @@ weeks:
   level: intro
 - week: 3
   focus: 'Me & My Teammates — introduced: pass and move'
+  opening:
+    activity: 4v4-pass-and-move
+    note: Pass, then move
   sessions:
   - a:
       activity: flying-numbers
@@ -56,6 +65,9 @@ weeks:
   level: intro
 - week: 4
   focus: Me & My Teammates — combination play deepens
+  opening:
+    activity: 3v3-give-and-go-bonus
+    note: Pass and run to get it back
   sessions:
   - a:
       activity: gates-passing#triangle-goal-game
@@ -73,6 +85,9 @@ weeks:
   level: intro
 - week: 5
   focus: Me & My Teammates — numerical advantage and finishing
+  opening:
+    activity: 5v4-with-a-floater
+    note: Use the extra player
   sessions:
   - a:
       activity: 2v2-to-endlines-attacking
@@ -90,6 +105,9 @@ weeks:
   level: intro
 - week: 6
   focus: 'Me & My Team Defending, introduced: press, delay, cover'
+  opening:
+    activity: 3v3-pressure-and-cover
+    note: One presses, the others cover
   sessions:
   - a:
       activity: flying-numbers
@@ -107,6 +125,9 @@ weeks:
   level: intro
 - week: 7
   focus: 'Me & My Team Defending: marking and staying compact'
+  opening:
+    activity: 4v4-two-in-the-final-third
+    note: Defend with numbers up
   sessions:
   - a:
       activity: pressure-cover-3v3

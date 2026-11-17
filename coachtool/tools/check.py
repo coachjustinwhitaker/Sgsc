@@ -72,6 +72,13 @@ def check(root=ROOT):
     for pf in sorted((root / 'data' / 'plans').glob('*.yaml')):
         pl = load(pf)
         for w in pl.get('weeks', []):
+            o = w.get('opening')
+            if o:
+                oa = acts.get(o.get('activity'))
+                if not oa: errs.append(f'plan {pf.name} week {w.get("week")}: opening activity {o.get("activity")} does not exist')
+                else:
+                    if oa['type'] != 'opening-play': errs.append(f'plan {pf.name} week {w.get("week")}: opening {oa["id"]} is not an opening-play activity')
+                    if pl['age'] not in oa['ages'] or pl['track'] not in oa['tracks']: errs.append(f'plan {pf.name} week {w.get("week")}: opening {oa["id"]} is not for {pl["track"]} {pl["age"]}')
             for ses in w.get('sessions', []):
                 b, lv = ses.get('block'), ses.get('level')
                 if b and b not in ladder[pl['track']].get(pl['age'], []): errs.append(f'plan {pf.name} week {w.get("week")}: block {b} is not part of {pl["track"]} {pl["age"]}')
