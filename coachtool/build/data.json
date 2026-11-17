@@ -3,7 +3,7 @@
  "help": {
   "email": "",
   "form": "",
-  "support": "Your Age Group Coordinator and the club Technical Director are there for exactly this."
+  "support": "Your age group coordinator or club technical director is there for exactly this."
  },
  "activities": [
   {
@@ -4333,22 +4333,13 @@
      ]
     }
    ],
-   "club": {
-    "format": "5v5",
-    "rules": [
-     {
-      "label": "Format",
-      "text": "SGSC plays 5v5 at this age.",
-      "source": "Sierra Gold Soccer Club"
-     }
-    ]
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
-     "text": "SGSC plays 5v5 at this age.",
-     "source": "Sierra Gold Soccer Club",
-     "origin": "club"
+     "text": "4v4",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
     },
     {
      "label": "Ball",
@@ -4873,28 +4864,13 @@
      ]
     }
    ],
-   "club": {
-    "format": "5v5",
-    "pathway": [
-     "Some players will show a real passion and natural ability this season",
-     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
-     "Talk to your club director about what that pathway looks like"
-    ],
-    "contact": "Got a question about an activity? Not sure what to run with a particular group? Want to talk through what you are seeing at training? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time.",
-    "rules": [
-     {
-      "label": "Format",
-      "text": "SGSC plays 5v5 at this age.",
-      "source": "Sierra Gold Soccer Club"
-     }
-    ]
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
-     "text": "SGSC plays 5v5 at this age.",
-     "source": "Sierra Gold Soccer Club",
-     "origin": "club"
+     "text": "4v4",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
     },
     {
      "label": "Ball",
@@ -5578,9 +5554,7 @@
      ]
     }
    ],
-   "club": {
-    "format": "7v7"
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
@@ -6318,15 +6292,7 @@
      ]
     }
    ],
-   "club": {
-    "format": "9v9",
-    "pathway": [
-     "Some players will show real passion and ability this season",
-     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
-     "Talk to your club director about what that pathway looks like"
-    ],
-    "contact": "Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce a new concept to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
@@ -7228,68 +7194,13 @@
      ]
     }
    ],
-   "club": {
-    "format": "11v11",
-    "rules": [
-     {
-      "label": "Format",
-      "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Heading",
-      "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Offside",
-      "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Build-out line",
-      "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Substitutions",
-      "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Rosters",
-      "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Free kicks and penalties",
-      "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Officials",
-      "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Head injuries",
-      "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     }
-    ],
-    "pathway": [
-     "Some players will show real passion and ability this season",
-     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
-     "Talk to your club director about what that pathway looks like"
-    ],
-    "contact": "Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce finishing to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
-     "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "11v11. US Soccer's small-sided chart ends at U12, so U13 and up play the full game.",
+     "source": "US Soccer Player Development Initiatives (chart covers U6 to U12)",
+     "origin": "core"
     },
     {
      "label": "Ball",
@@ -7299,51 +7210,24 @@
     },
     {
      "label": "Offside",
-     "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "Offside applies.",
+     "source": "Laws of the Game",
+     "origin": "core"
     },
     {
      "label": "Heading",
-     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "tracks": [
+      "rec"
+     ],
+     "text": "Allowed for the whole age group. Rec groups mix two birth years, so one rule covers every player. Build up slowly in training: light balls, short distances, very few headers.",
+     "source": "Methodology default: rec players start heading at U14, comp players at U12",
+     "origin": "core"
     },
     {
      "label": "Head injuries",
-     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Build-out line",
-     "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Substitutions",
-     "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Rosters",
-     "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Free kicks and penalties",
-     "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Officials",
-     "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
     }
    ],
    "ladder": [
@@ -9050,68 +8934,13 @@
      ]
     }
    ],
-   "club": {
-    "format": "11v11",
-    "rules": [
-     {
-      "label": "Format",
-      "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Heading",
-      "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Offside",
-      "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Build-out line",
-      "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Substitutions",
-      "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Rosters",
-      "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Free kicks and penalties",
-      "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Officials",
-      "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     },
-     {
-      "label": "Head injuries",
-      "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
-      "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13"
-     }
-    ],
-    "pathway": [
-     "Some players will show real passion and ability this season",
-     "Sierra Gold's competitive program exists to open more doors for those players when they are ready",
-     "Talk to your club director about what that pathway looks like"
-    ],
-    "contact": "Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce finishing to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time."
-   },
+   "club": {},
    "rules": [
     {
      "label": "Format",
-     "text": "11v11 on a full-size field, roughly 100 to 120 yards long and 50 to 80 yards wide. Size 5 ball. Goals are 8 feet by 24 feet.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "11v11. US Soccer's small-sided chart ends at U12, so U13 and up play the full game.",
+     "source": "US Soccer Player Development Initiatives (chart covers U6 to U12)",
+     "origin": "core"
     },
     {
      "label": "Ball",
@@ -9121,51 +8950,15 @@
     },
     {
      "label": "Offside",
-     "text": "Offside applies. Teach it early. Club linesmen cannot call offside, so with one referee the referee makes that call.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "Offside applies.",
+     "source": "Laws of the Game",
+     "origin": "core"
     },
     {
      "label": "Head injuries",
-     "text": "A player removed for a suspected head injury cannot return that day and needs clearance from a licensed healthcare provider before playing again.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Heading",
-     "text": "Deliberate heading is allowed in games at 11v11. Build up to it gradually in training and keep the number of headers low.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Build-out line",
-     "text": "None at 11v11. The build-out line used at 7v7 and 9v9 goes away. Goalkeepers and defenders now play out of the back under real pressure.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Substitutions",
-     "text": "Unlimited, at any stoppage with the referee's permission. Substitutes wait at the halfway line until the referee waves them on.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Rosters",
-     "text": "Up to 18 on a game-day roster. A team needs at least 7 players to play.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Free kicks and penalties",
-     "text": "Opponents stand 10 yards back on free kicks. Penalty kicks are taken from 12 yards.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
-    },
-    {
-     "label": "Officials",
-     "text": "Three referees where possible. One referee with two club linesmen is allowed when licensed officials are short.",
-     "source": "NorCal 2025-2026 Handbook, sections 5.3, 5.4, 5.12, 5.13",
-     "origin": "club"
+     "text": "If a head injury is suspected, play stops for evaluation. The player may be substituted. Return requires clearance from a health care professional or certified athletic trainer.",
+     "source": "US Soccer Player Development Initiatives, small-sided games chart",
+     "origin": "core"
     }
    ],
    "ladder": [
@@ -9502,7 +9295,7 @@
      "cue": "Outside push, instant inside snap, one fluid move."
     }
    ],
-   "source": "Strikers White, The Foundation"
+   "source": "The Foundation"
   }
  ],
  "routine_kinds": [

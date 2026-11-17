@@ -11,7 +11,7 @@ Brand-free records in, pages out.
 - `tools/check.py`: validates the records. `tools/build.py <plan> <brand>`: writes `build/<plan>.<brand>.html`.
 - `tools/import_u10.py`: one-time import from the old U10 page, kept for provenance.
 
-Run: `python3 tools/check.py` then `python3 tools/build.py u10-rec sgsc`.
+Run: `python3 tools/check.py` then `python3 tools/build.py all (builds with the neutral theme; pass a club id to use another, e.g. `all sgsc`)`.
 
 ## Adding activities and diagrams
 - Easiest: open `build/activity-builder.html` (made by `python3 tools/build.py author`), add activities or load one to edit, download the batch, then run `python3 tools/import_csv.py activity-batch.json`.
