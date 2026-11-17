@@ -796,6 +796,9 @@ skills:
   - comp
   bullets:
   - Intercept passes by anticipating rather than reacting
+  - Judge the distance from goal before committing to challenge
+  - Isolate the player on the ball when you can, 2v1 to 1v1
+  - 'Take a good defensive posture: on your toes, knees bent, staggered stance, eyes on the ball'
 - id: u12-b3-shape-line-management-app-comp
   age: u12
   block: B3
@@ -814,3 +817,18 @@ skills:
   - comp
   bullets:
   - Block shots and passes in critical moments
+  - Engage when the chance comes and commit fully to block the attempt
+  - Keep the ball after stealing it and play on in one touch to a teammate
+- id: u12-b3-denying-the-finish-intro
+  age: u12
+  block: B3
+  area: Denying the Finish
+  level: intro
+  tracks:
+  - comp
+  - rec
+  bullets:
+  - Turn your shoulders and hips 45 to 90 degrees toward your own goal
+  - Look for the ball, the nearest teammates and the nearest opponents in relation to your goal
+  - Stay patient and do not commit too early, wait for teammates
+  - Block the shot when the opponent is in a scoring position

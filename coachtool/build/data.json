@@ -5543,7 +5543,9 @@
      "bullets": [
       "Get narrow and close the center near goal",
       "Stop the cross and block the shot",
-      "Stay on your feet until the shot is taken"
+      "Stay on your feet until the shot is taken",
+      "Turn your shoulders and hips 45 to 90 degrees toward your own goal",
+      "Look for the ball, the nearest teammates and the nearest opponents in relation to your goal"
      ]
     },
     {
@@ -6296,6 +6298,23 @@
      ],
      "bullets": [
       "Choose between taking on a defender and passing"
+     ]
+    },
+    {
+     "id": "u12-b3-denying-the-finish-intro",
+     "age": "u12",
+     "block": "B3",
+     "area": "Denying the Finish",
+     "level": "intro",
+     "tracks": [
+      "comp",
+      "rec"
+     ],
+     "bullets": [
+      "Turn your shoulders and hips 45 to 90 degrees toward your own goal",
+      "Look for the ball, the nearest teammates and the nearest opponents in relation to your goal",
+      "Stay patient and do not commit too early, wait for teammates",
+      "Block the shot when the opponent is in a scoring position"
      ]
     }
    ],
@@ -7188,6 +7207,24 @@
       "Willing to shoot or play the final pass",
       "Accept missed chances without frustration",
       "Reset quickly after attempts"
+     ]
+    },
+    {
+     "id": "u14-b3-denying-the-finish-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Denying the Finish",
+     "level": "intro",
+     "tracks": [
+      "comp",
+      "rec"
+     ],
+     "bullets": [
+      "Get narrow and close the center near goal",
+      "Pressure the player on the ball so he cannot shoot or cross freely",
+      "Block the shot when the opponent is about to attempt on goal",
+      "Turn your shoulders and hips 45 to 90 degrees toward your own goal",
+      "Look for the ball, the nearest teammates and the nearest opponents in relation to your goal"
      ]
     }
    ],
@@ -8648,7 +8685,9 @@
      "bullets": [
       "Provide cover at the correct distance and angle for the specific press in front",
       "Recognize when to slide across to cover a teammate who has stepped",
-      "Communicate cover position so the pressing teammate can commit fully"
+      "Communicate cover position so the pressing teammate can commit fully",
+      "Close mark with an eye on both the ball and your opponent, and mark closer the closer you are to goal",
+      "Stay in your zone when the opponent moves, and pass the runner on or pick up the one coming in"
      ]
     },
     {
@@ -8664,7 +8703,8 @@
       "Strikers + Attacking Mids: The second Striker or AM covers the passing lane the first press has shown the opponent away from, closing the release before it happens.",
       "Wingers + Fullbacks/Wing Backs: The Fullback/Wing Back covers in behind the Winger's press, ready for the ball played in behind or square.",
       "Attacking Mids + Defensive Mid: The Defensive Mid covers centrally while the AM presses, staying connected enough to prevent the central lane opening.",
-      "Center Backs + Defensive Mid: The covering CB reads the stepping CB's press and adjusts the line so no gap opens in behind."
+      "Center Backs + Defensive Mid: The covering CB reads the stepping CB's press and adjusts the line so no gap opens in behind.",
+      "Switch from zonal to player marking when it is needed"
      ]
     },
     {
@@ -8959,6 +8999,54 @@
       "Attacking Mids + Wingers: The Final Pass: Take ownership of the risk in playing the final ball, reinforced by how it is coached: praise the attempted through ball that gets intercepted as much as the one that connects, so the decision to try stays the same regardless of outcome.",
       "Fullbacks/Wing Backs + Attacking Mids: Delivery from Wide: Build the delivery decision through repetition under time pressure until picking the right ball, cross or cutback, becomes the default rather than a choice made under stress.",
       "All Positions: Numbers in the Box / Game State: Give players a specific job and communication trigger for the moment, who calls the game state, what gets said when protecting a lead versus chasing a goal, so the response is a rehearsed habit, not a personality trait some players have and others don't."
+     ]
+    },
+    {
+     "id": "u14-b3-denying-the-finish-intro",
+     "age": "u14",
+     "block": "B3",
+     "area": "Denying the Finish",
+     "level": "intro",
+     "tracks": [
+      "comp",
+      "rec"
+     ],
+     "bullets": [
+      "Get narrow and close the center near goal",
+      "Pressure the player on the ball so he cannot shoot or cross freely",
+      "Block the shot when the opponent is about to attempt on goal",
+      "Turn your shoulders and hips 45 to 90 degrees toward your own goal",
+      "Look for the ball, the nearest teammates and the nearest opponents in relation to your goal"
+     ]
+    },
+    {
+     "id": "u14-b3-denying-the-finish-dev-comp",
+     "age": "u14",
+     "block": "B3",
+     "area": "Denying the Finish",
+     "level": "dev",
+     "tracks": [
+      "comp"
+     ],
+     "bullets": [
+      "Deny the cross into space or to a player",
+      "Stop the opponent from passing or running to receive behind the defensive line"
+     ]
+    },
+    {
+     "id": "u14-b3-denying-the-finish-app-comp",
+     "age": "u14",
+     "block": "B3",
+     "area": "Denying the Finish",
+     "level": "app",
+     "tracks": [
+      "comp"
+     ],
+     "bullets": [
+      "Engage and commit on a chance on goal without being eliminated by the dribble",
+      "Defend the cross as a group: weak-side fullback connects to the back line and center backs stay central",
+      "Win the second ball or clear it after the block",
+      "Intercept a long ball at its highest point"
      ]
     }
    ],
