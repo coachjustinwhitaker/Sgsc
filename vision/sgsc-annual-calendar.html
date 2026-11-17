@@ -18,6 +18,7 @@
 <div class="cover-meta"><div><strong>Year</strong>June to May</div><div><strong>Items</strong>135</div></div>
 </header>
 <nav class="doc-nav" aria-label="Documents"><a href="index.html">All documents</a><span aria-current="page">Annual calendar</span><a href="sgsc-monthly-governance.html">Monthly governance</a><a href="sgsc-operations.html">Operations</a></nav>
+<div class="filter-bar no-print" role="group" aria-label="Filter items by owner"><span class="filter-label">Show</span><div class="chips"><button type="button" class="chip" data-group="all" aria-pressed="true">All</button><button type="button" class="chip" data-group="board" aria-pressed="false">Whole Board</button><button type="button" class="chip" data-group="members" aria-pressed="false">Board members</button><button type="button" class="chip" data-group="ops" aria-pressed="false">Operations</button><button type="button" class="chip" data-group="coaches" aria-pressed="false">Coaches</button></div><label class="filter-role">Role <select id="role-filter"></select></label><span id="filter-status" aria-live="polite"></span></div>
 <div class="callout callout-note"><p>The calendar runs June to May, the club's planning year. It starts after tryouts, when fall planning goes into action. The seasonal year still runs August 1 to July 31, and competitive teams play it as one season in two halves, so competitive coaches carry over from fall to spring.</p><p>What happens at every Board meeting is on the <a href="sgsc-monthly-governance.html">Monthly Governance</a> page. The weekly and monthly operations cycle is on the <a href="sgsc-operations.html">Operations</a> page.</p><p>Filing dates assume the fiscal year ends July 31. References point to the manuals: <strong>B</strong> is the Board Policy Manual and <strong>C</strong> is the Coaching Policy Manual. Checkmarks save in your own browser only, so they are a personal tracker, not a shared one.</p></div>
 <p class="no-print"><button id="reset" type="button" class="button">Clear my checkmarks</button></p>
 <nav class="toc" id="contents"><h2 class="no-num">Contents</h2><ul><li><a href="#jun">June</a></li><li><a href="#jul">July</a></li><li><a href="#aug">August</a></li><li><a href="#sep">September</a></li><li><a href="#oct">October</a></li><li><a href="#nov">November</a></li><li><a href="#dec">December</a></li><li><a href="#jan">January</a></li><li><a href="#feb">February</a></li><li><a href="#mar">March</a></li><li><a href="#apr">April</a></li><li><a href="#may">May</a></li><li><a href="#as-needed">As needed</a></li></ul></nav>
@@ -223,6 +224,32 @@ var boxes=document.querySelectorAll('ul.tasks input');
 boxes.forEach(function(b){b.checked=!!s[b.id];b.closest('li').classList.toggle('done',b.checked);
 b.addEventListener('change',function(){s[b.id]=b.checked;b.closest('li').classList.toggle('done',b.checked);try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}})});
 var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
+})();
+</script>
+<script>
+(function(){
+var G={board:['Board','Nominating committee'],
+members:['President','Secretary','Treasurer','Director of Coaching','Events director'],
+ops:['Lead staff','Registrar','Rec director','Technical Director','Safety coordinator','Field Director','Equipment Director','Referee Assignor'],
+coaches:['Coaches']};
+var groupOf={};Object.keys(G).forEach(function(g){G[g].forEach(function(r){groupOf[r]=g})});
+var items=[].slice.call(document.querySelectorAll('ul.tasks > li')).map(function(li){var r=li.querySelector('.who').textContent.trim();return{li:li,role:r,group:groupOf[r]||'other'}});
+var chips=[].slice.call(document.querySelectorAll('.chip')),sel=document.getElementById('role-filter'),status=document.getElementById('filter-status');
+var group='all',role='all';
+function fillRoles(){var counts={};items.forEach(function(i){if(group==='all'||i.group===group)counts[i.role]=(counts[i.role]||0)+1});
+var names=Object.keys(counts).sort();var total=names.reduce(function(a,n){return a+counts[n]},0);
+sel.innerHTML='';var o=document.createElement('option');o.value='all';o.textContent='All roles ('+total+')';sel.appendChild(o);
+names.forEach(function(n){var x=document.createElement('option');x.value=n;x.textContent=n+' ('+counts[n]+')';sel.appendChild(x)});
+sel.value=names.indexOf(role)>-1?role:(role='all')}
+function apply(){var shown=0;
+items.forEach(function(i){var ok=(group==='all'||i.group===group)&&(role==='all'||i.role===role);i.li.hidden=!ok;if(ok)shown++});
+document.querySelectorAll('section[id]').forEach(function(s){var any=s.querySelector('ul.tasks > li:not([hidden])');s.hidden=!any;
+var l=document.querySelector('.toc a[href="#'+s.id+'"]');if(l&&l.parentNode)l.parentNode.hidden=!any});
+status.textContent='Showing '+shown+' of '+items.length+' items'}
+chips.forEach(function(c){c.addEventListener('click',function(){group=c.dataset.group;role='all';
+chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});fillRoles();apply()})});
+sel.addEventListener('change',function(){role=sel.value;apply()});
+fillRoles();apply();
 })();
 </script>
 </body>
