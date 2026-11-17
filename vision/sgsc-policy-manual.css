@@ -476,3 +476,10 @@ body.vision .toc li { padding: 0.1rem 0; font-size: 0.95rem; }
   body.vision .cover h1 { font-size: 2rem; }
   body.vision .toc ul { columns: 2; column-gap: var(--space-2); }
 }
+
+/* ---------- Index polish (body.home only) ---------- */
+body.home .doc-feature .desc, body.home .doc-card .desc, body.home .cover .lead { text-wrap: balance; }
+body.home .doc-feature img { object-position: 30% 65%; }
+body.home .doc-feature .body { justify-content: center; padding: var(--space-3) var(--space-4) var(--space-3) var(--space-3); }
+body.home .group-title { margin-top: var(--space-5); }
+body.home .doc-card { border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 1px 2px rgba(1, 47, 99, 0.05); }
