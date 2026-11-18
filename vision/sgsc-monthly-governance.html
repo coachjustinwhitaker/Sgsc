@@ -83,5 +83,9 @@ b.addEventListener('change',function(){s[b.id]=b.checked;b.closest('li').classLi
 var r=document.getElementById('reset');if(r)r.addEventListener('click',function(){s={};try{localStorage.removeItem(K)}catch(e){}boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')})});
 })();
 </script>
+<script>window.SGSC_FILTER={shared:['All roles'],groups:[
+{key:'board',label:'Whole Board',roles:['Board','All roles']},
+{key:'officers',label:'Officers',roles:['President','Secretary','Treasurer']}]};</script>
+<script src="sgsc-filter.js"></script>
 </body>
 </html>
