@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Field SOP — Sierra Gold Soccer Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/*
+  SGSC Design System — Base CSS
+  ==============================
+  Colors:
+    Navy:       #01428A
+    Navy dark:  #0d3668
+    Navy deep:  #0a2540
+    Gold:       #C89D3F
+    Gold warm:  #DFC477
+    Gold pale:  #f5edce
+
+  Typography:
+    Headings:   Montserrat 700/800/900 (Google Fonts)
+    Body:       Open Sans 400/600 (Google Fonts)
+
+  Layout:
+    Max width 900px, centered
+    clamp() for fluid responsive sizing
+    Mobile and iPad first
+*/
+
+  :root {
+    --navy: #01428A;
+    --navy-dark: #0d3668;
+    --navy-deeper: #0a2540;
+    --gold: #C89D3F;
+    --gold-warm: #DFC477;
+    --gold-pale: #f5edce;
+    --white: #ffffff;
+    --off-white: #f8f6f1;
+    --text: #1a1a2e;
+    --text-light: #4a5568;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(15px, 2.2vw, 17px);
+    color: var(--text);
+    background: var(--off-white);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 80% 20%, rgba(200,157,63,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 80%, rgba(13,54,104,0.8) 0%, transparent 50%);
+    color: var(--white);
+    padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(200,157,63,0.03) 40px, rgba(200,157,63,0.03) 41px);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 1.8vw, 13px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .hero-motto {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(13px, 2.4vw, 18px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 64px) clamp(16px, 4vw, 40px);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: clamp(24px, 4vw, 40px);
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .section-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 6vw, 52px);
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3.5vw, 30px);
+    color: var(--navy-dark);
+    line-height: 1.2;
+  }
+  .bg-white { background: var(--white); }
+  .bg-off   { background: var(--off-white); }
+
+  .lede {
+    font-size: clamp(14px, 2vw, 16px);
+    color: var(--text-light);
+    max-width: 640px;
+    margin-bottom: clamp(20px, 3vw, 32px);
+    line-height: 1.75;
+  }
+  .lede strong { color: var(--navy-dark); }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(1,66,138,0.08);
+    padding: clamp(20px, 3vw, 28px);
+  }
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(15px, 2.2vw, 18px);
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .card p { font-size: clamp(13px, 1.85vw, 15px); color: var(--text-light); }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .card .mono-code {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--navy-dark);
+    background: var(--gold-pale);
+    border: 1px solid var(--gold);
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  /* TRAINING FLOW (used here for procedure steps) */
+  .flow-steps { display: flex; flex-direction: column; gap: 0; }
+  .flow-step { display: flex; gap: 0; position: relative; }
+  .flow-step::before {
+    content: '';
+    position: absolute;
+    left: 22px; top: 44px; bottom: -1px;
+    width: 2px;
+    background: var(--gold);
+    opacity: 0.3;
+  }
+  .flow-step:last-child::before { display: none; }
+  .flow-num {
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold-warm);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  .flow-content {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    flex: 1;
+    box-shadow: 0 1px 6px rgba(1,66,138,0.07);
+  }
+  .flow-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(13px, 2vw, 15px);
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .flow-content p {
+    font-size: clamp(12.5px, 1.8vw, 14px);
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .flow-content .flag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #92400e;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+
+  /* RESPONSIBILITIES / REMINDERS */
+  .resp-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .resp-list li {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 14px 18px 14px 52px;
+    position: relative;
+    box-shadow: 0 1px 5px rgba(1,66,138,0.06);
+    font-size: clamp(13px, 1.9vw, 15px);
+    color: var(--text-light);
+  }
+  .resp-list li::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+  .resp-list li strong { font-weight: 700; color: var(--navy); display: block; margin-bottom: 2px; }
+
+  /* LAST UPDATED */
+  .last-updated {
+    display: inline-block;
+    background: rgba(200,157,63,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-warm);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 1.5vw, 12px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 12px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy-deeper);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: clamp(24px, 4vw, 40px) clamp(16px, 4vw, 40px);
+    font-size: clamp(12px, 1.7vw, 13px);
+    margin-top: 8px;
+  }
+  .site-footer .footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--gold-warm);
+    font-size: clamp(14px, 2vw, 16px);
+    margin-bottom: 6px;
+  }
+  .site-footer .footer-byline { color: rgba(255,255,255,0.5); font-size: clamp(11px, 1.5vw, 12px); letter-spacing: 0.04em; }
+
+  @media print {
+    .hero { padding: 24px 20px; }
+    .section { padding: 24px 16px; }
+    .flow-content, .card, .resp-list li { box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">SGSC Field Operations</div>
+  <div class="hero-title">El Dorado High School</div>
+  <div class="hero-motto">Field SOP</div>
+  <div class="last-updated">Updated September 2026</div>
+</div>
+
+<div class="section bg-white">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">Access Info</div>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Lockbox</div>
+      <p>On the fence closest to the baseball fields, behind the soccer goals.</p>
+      <span class="mono-code">Combo shared with coaches</span>
+    </div>
+    <div class="card">
+      <div class="card-title">Keychain</div>
+      <p>Small key opens the soccer shed and gates. Key labeled "RR" opens the restrooms. Key labeled "AB" opens the announcer's booth for the lights.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Goals</div>
+      <p>Secured with a separate combo lock, not a key.</p>
+      <span class="mono-code">Combo shared with coaches</span>
+    </div>
+  </div>
+</div>
+
+<div class="section bg-off">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">First Coach: Setup</div>
+  </div>
+  <p class="lede"><strong>Arrive at least 70 minutes before the first game.</strong> Visiting teams often travel over an hour and can start arriving about an hour before kickoff, so bathrooms need to be open before anyone shows up.</p>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <h4>Line up volunteers</h4>
+        <p>Get a couple of adult volunteers ahead of time to help move goals. Setup takes at least 10-15 minutes.</p>
+        <span class="flag">Goals cannot be moved solo</span>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <h4>Open the lockbox</h4>
+        <p>Enter the lockbox combo. Take the keychain.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <h4>Bathrooms first</h4>
+        <p>Unlock the RR padlock on one restroom door and swing the gate open. The padlock won't release the key until it's back in the locked position, so lock it onto the wall to hold the gate open, then pull the key out. Repeat for the second restroom door.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <h4>Open the shed</h4>
+        <p>Unlock the soccer shed with the small key. It's the light-colored standalone shed running perpendicular to the fence, separate from the blue sheds near the hill. Take only the corner flags. Do not remove any other school equipment. Relock the shed.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <h4>Unlock the goals</h4>
+        <p>Use the goal combo lock.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <h4>Move the goals</h4>
+        <p>Use the handles only, with your volunteers helping. The frames are old and re-welded, with weak points at the corners.</p>
+        <span class="flag">Goals cannot be moved solo</span>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div class="flow-content">
+        <h4>Set out corner flags</h4>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div class="flow-content">
+        <h4>Return the keychain</h4>
+        <p>Back to the lockbox, spin the combo. Do not carry keys in your coach's bag.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section bg-white">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">Last Coach: Cleanup</div>
+  </div>
+  <p class="lede">Only do this after the final game or session of the day.</p>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <h4>Get the keychain</h4>
+        <p>From the lockbox.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <h4>Move goals back into position</h4>
+        <p>Use the handles, with multiple people helping.</p>
+        <span class="flag">Goals cannot be moved solo</span>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <h4>Lock the goals</h4>
+        <p>Use the goal combo lock.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <h4>Lock the restrooms</h4>
+        <p>Both sides, with the RR key. Push the locking arm firmly into the locked position. The key will not release in the open position.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <h4>Return corner flags</h4>
+        <p>Collect them and return them to the shed. Lock the shed with the small key.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <h4>Clear the bench areas</h4>
+        <p>Pick up all trash before you go.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div class="flow-content">
+        <h4>Return the keychain</h4>
+        <p>Back to the lockbox, spin the combo. Do not take keys home.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section bg-off">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">Lights (Night Games and Later Practices)</div>
+  </div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <h4>Get the AB key</h4>
+        <p>From the lockbox.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <h4>Unlock the announcer's booth</h4>
+        <p>Unlock the door and go in.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <h4>Find the switches</h4>
+        <p>On the wall straight ahead, near the windows, at about shoulder height on the left, are two switches. These turn on the field lights.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <h4>Give them time to warm up</h4>
+        <p>Lights take about 10 minutes to reach full brightness. Turn them on with enough lead time before kickoff.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section bg-white">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">Reminders</div>
+  </div>
+  <ul class="resp-list">
+    <li data-icon="🔒"><strong>Restroom locks are stubborn.</strong> The key won't release unless the locking arm is firmly pushed into the locked position first. Takes some getting used to.</li>
+    <li data-icon="🔢"><strong>Goals use a combo lock, not a key.</strong></li>
+    <li data-icon="🔑"><strong>The small key does double duty.</strong> It also opens the main stadium gates near the concrete stairs.</li>
+    <li data-icon="💡"><strong>Lights take about 10 minutes to warm up.</strong> Don't wait until kickoff to flip them on.</li>
+    <li data-icon="🎒"><strong>Keychain stays in the lockbox.</strong> Return it after every use, even mid-day. Never in a coach's bag.</li>
+    <li data-icon="👥"><strong>Line up your goal volunteers before arrival.</strong> Not after you get to the field.</li>
+  </ul>
+</div>
+
+<div class="site-footer">
+  <div class="footer-title">Sierra Gold Soccer Club</div>
+  <div class="footer-byline">Field Operations — El Dorado High School</div>
+</div>
+
+</body>
+</html>
